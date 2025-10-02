@@ -21,6 +21,7 @@ body {
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .container {
@@ -346,6 +347,30 @@ body.subbag .hero {
     transform: translateY(0);
   }
 }
+.juicer-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 40px; /* Sesuaikan tinggi agar menutupi "Powered by Juicer" */
+  background: #fff;
+  z-index: 2;
+  pointer-events: none;
+  /* Optional: tambahkan shadow agar lebih natural */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+}
+iframe.berita {
+  width: 100vw;
+  max-width: 100vw;
+  height: 300px;
+  display: block;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+/* Carousel */
 .carousel__viewport {
   position: absolute;
   top: 0;
@@ -699,6 +724,28 @@ body.subbag .hero {
   margin-bottom: 2rem;
   font-weight: 700;
 }
+.laporan {
+  margin-left: 17px;
+  margin-top: 180px;
+}
+.laporan h2 {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.administrasi {
+  margin-left: 17px;
+  margin-top: 180px;
+  margin-bottom: 130px;
+}
+.administrasi h2 {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
 /* =================================
    Cards Lainnya
 ================================= */
@@ -997,8 +1044,7 @@ button {
 }
 /* 6 */
 .btn-6 {
-  background: rgb(247, 150, 192);
-  background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
+  background: rgb(0, 51, 102, 1);
   line-height: 42px;
   padding: 0;
   border: none;
@@ -1015,7 +1061,7 @@ button {
   content: "";
   height: 0%;
   width: 1px;
-  box-shadow: -1px -1px 20px 0px rgba(255, 255, 255, 1), -4px -4px 5px 0px rgba(255, 255, 255, 1), 7px 7px 20px 0px rgba(0, 0, 0, 0.4), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px -1px 20px 0px rgba(0, 51, 102, 1), -4px -4px 5px 0px rgba(0, 51, 102, 1), 7px 7px 20px 0px rgba(0, 51, 102, 0.4), 4px 4px 5px 0px rgba(0, 51, 102, 0.3);
 }
 .btn-6:before {
   right: 0;
@@ -1029,7 +1075,7 @@ button {
 }
 .btn-6:hover {
   background: transparent;
-  color: #76aef1;
+  color: rgba(218, 106, 7, 1);
   box-shadow: none;
 }
 .btn-6:hover:before {
@@ -1040,6 +1086,7 @@ button {
   transition: all 500ms ease;
   height: 100%;
 }
+
 .btn-6 span:before,
 .btn-6 span:after {
   position: absolute;
@@ -1066,6 +1113,7 @@ button {
 .btn-6 span:hover:after {
   width: 100%;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .lainnya {
@@ -1444,6 +1492,7 @@ button {
   padding-right: -500px;
 }
 /* Animated Banners */
+
 .interior-header {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/319606/city-banner-bg.jpg");
   width: 100vw;
@@ -1797,6 +1846,149 @@ svg .m {
 .t {
   mix-blend-mode: unset !important;
 }
+.newtonsCradle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: scale(1.4);
+}
+
+.frameCover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px);
+  z-index: 11;
+  height: 1px;
+  width: 150px;
+  background-color: #d4e4ff;
+  border-top: 3px solid #d4e4ff;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 0 2px #7ab1fd, 0 0 0 8px #d9fff5, 0 0 0 10.5px #7ab1fd;
+}
+
+.frame {
+  z-index: 10;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100px;
+  width: 150px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 0 2.5px #7ab1fd, 0 0 0 8px #d9fff5, 0 0 0 10.5px #7ab1fd;
+}
+
+.frame::before,
+.frame::after {
+  z-index: 10;
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  height: 10px;
+  width: 22.5px;
+  border: 2.5px solid #7ab1fd;
+  border-radius: 2px;
+  background-color: #d9fff5;
+}
+
+.frame::before {
+  left: -18px;
+}
+
+.frame::after {
+  right: -18px;
+}
+
+.base {
+  z-index: 11;
+  margin-top: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 202.5px;
+  border-radius: 4px 4px 0 0;
+  background-image: linear-gradient(#a3aeff 0 70%, #11426a 70%);
+}
+
+.sphere-wrap {
+  position: relative;
+  display: flex;
+  z-index: 9;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sphere-wrap.left {
+  animation: swing-left 2s ease-in-out infinite;
+  transform-origin: top right;
+}
+
+.sphere-wrap.right {
+  animation: swing-right 2s ease-in-out infinite;
+  transform-origin: top left;
+}
+
+.string {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  height: 50px;
+  width: 2px;
+  background-color: #11426a;
+  z-index: 0;
+}
+
+.sphere {
+  z-index: 9;
+  position: relative;
+  height: 19.5px;
+  width: 19.5px;
+  margin-top: 58px;
+  border-radius: 50%;
+  border: 1.75px solid #11426a;
+  background: radial-gradient(circle at 28% 28%, white 0% 20%, #ffe791 20% 60%, #eec223 60% 100%);
+}
+
+.sphere.center::before {
+  content: "";
+  display: block;
+  height: 60px;
+  width: 2px;
+  background-color: #11426a;
+  transform: translateX(7.5px) translateY(-61px);
+}
+
+/* Animations */
+@keyframes swing-left {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swing-right {
+  0%,
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 /* =================================
    FOOTER
 ================================= */
@@ -1804,7 +1996,15 @@ svg .m {
   background: #003366;
   color: white;
   padding: 60px 0 30px;
-  width: auto;
+  width: 100vw;
+  margin-top: auto;
+  left: 0;
+  right: 0;
+}
+.footer .container {
+  max-width: 100vw;
+  margin: 0;
+  padding: 0 20px;
 }
 
 .footer-content {
