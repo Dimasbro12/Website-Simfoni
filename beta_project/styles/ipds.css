@@ -1,7 +1,185 @@
 /* =================================
-   TIM IPDS CUSTOM STYLES
-   Base styles dari style.css
+   HEADER
 ================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =================================
+   HEADER & NAVIGATION
+================================= */
+.header {
+  background: rgba(0, 51, 102, 0.95);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  background: rgba(0, 51, 102, 1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.logo i {
+  margin-right: 10px;
+  color: #ff6600;
+  font-size: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-menu a:hover {
+  color: #ff6600;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ff6600;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-toggle i {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle i {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #333 !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dropdown-menu a:hover {
+  background: #f8f9fa;
+  color: #ff6600 !important;
+  padding-left: 25px;
+}
+
+.dropdown-menu a::after {
+  display: none;
+}
 
 /* Override untuk hero section */
 body {
@@ -9,19 +187,20 @@ body {
 }
 
 /* =================================
-   HERO SECTION
+   HERO BANNER SECTION
 ================================= */
-.hero-ipds {
-  background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(51, 102, 204, 0.85)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23003366" width="1200" height="400"/><g opacity="0.1"><circle cx="100" cy="100" r="80" fill="%23ffffff"/><circle cx="900" cy="300" r="100" fill="%23ffffff"/><rect x="500" y="50" width="200" height="200" rx="20" fill="%23ffffff"/></g></svg>');
-  background-size: cover;
+.ipds-hero {
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.7), rgba(255, 102, 0, 0.5)), url('https://picsum.photos/1920/1080?blur=3');
   background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   min-height: 60vh;
   display: flex;
+  justify-content: center;
   align-items: center;
-  position: relative;
-  color: white;
-  margin-top: 0;
+  text-align: center;
+  color: #fff;
+  padding: 0; /* hapus padding yang bikin isi turun */
 }
 
 .hero-overlay {
@@ -30,34 +209,119 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 51, 102, 0.3);
+  /* background: rgba(0, 51, 102, 0.3); */
 }
 
-.hero-content {
+.ipds-hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   padding: 80px 20px;
 }
 
-.hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+.ipds-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 700;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
   animation: fadeInUp 1s ease;
 }
 
-.hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+.ipds-hero p {
+  font-size: clamp(1rem, 2vw, 1.4rem);
   font-weight: 300;
   max-width: 800px;
   margin: 0 auto;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
   animation: fadeInUp 1s ease 0.3s both;
 }
 
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #ff6600;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  animation: fadeInUp 1s ease 0.5s both;
+}
+.cta-button:hover {
+  background: #ff3300;
+  transform: translateY(-3px);
+}
+
+/* HERO MOBILE FIX */
+@media (max-width: 768px) {
+  .ipds-hero {
+    background-attachment: scroll; /* agar lancar di hp */
+    min-height: 100vh; /* tetap full view */
+  }
+}
+
 /* =================================
-   SECTION TITLE
+   WELCOME
+================================= */
+.ipds-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px; /* beri jarak antar teks dan gambar */
+  padding: 160px 8% 70px 8%; /* jangan terlalu besar paddingnya */
+  background: #fafafa;
+  padding-top: 0%;
+  max-width: 95%;
+}
+
+.ipds-welcome_text {
+  flex: 1; /* biar teks ambil porsi seimbang */
+}
+
+.ipds-welcome_text h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.ipds-welcome_text p {
+  font-size: 1.1rem;
+  line-height: 1.6; /* biar enak dibaca */
+  color: #555;
+  text-align: justify;
+}
+
+.ipds-welcome_img {
+  flex: 1; /* biar gambar juga seimbang */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ipds-welcome_img img {
+  max-width: 80%; /* biar nggak kepotong */
+  height: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .ipds-welcome {
+    flex-direction: column;
+    text-align: center;
+    padding: 150px 8% 60px 8%;
+  }
+  .ipds-welcome-text {
+    margin-bottom: 20px;
+  }
+}
+
+/* =================================
+   LAYANAN IPDS
 ================================= */
 .section-title {
   font-size: 2.5rem;
@@ -70,7 +334,7 @@ body {
 }
 
 .section-title::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -89,208 +353,6 @@ body {
   margin: 0 auto 50px;
 }
 
-/* =================================
-   TENTANG IPDS SECTION
-================================= */
-.tentang-ipds {
-  padding: 100px 0;
-  background: #f9f9f9;
-}
-
-.tentang-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.tentang-text h2 {
-  font-size: 2.5rem;
-  color: #003366;
-  margin-bottom: 25px;
-  font-weight: 700;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.tentang-text h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, #003366, #3366cc);
-  border-radius: 2px;
-}
-
-.tentang-text p {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: #555;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-.tentang-text .read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #003366;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.05rem;
-  transition: all 0.3s ease;
-  position: relative;
-  margin-top: 10px;
-}
-
-.tentang-text .read-more::before {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #003366;
-  transition: width 0.3s ease;
-}
-
-.tentang-text .read-more:hover::before {
-  width: calc(100% - 30px);
-}
-
-.tentang-text .read-more:hover {
-  color: #3366cc;
-  transform: translateX(5px);
-}
-
-.tentang-text .read-more i {
-  transition: transform 0.3s ease;
-}
-
-.tentang-text .read-more:hover i {
-  transform: translateX(5px);
-}
-
-.tentang-illustration {
-  position: relative;
-}
-
-.tentang-illustration svg {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
-}
-
-/* =================================
-   PROFIL TIM
-================================= */
-.profil-tim {
-  padding: 80px 0;
-  background: white;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
-}
-
-.team-card {
-  background: white;
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.team-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, #003366, #3366cc);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-}
-
-.team-card:hover::before {
-  transform: scaleX(1);
-}
-
-.team-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.team-photo {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #003366, #3366cc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: transform 0.4s ease;
-}
-
-.team-card:hover .team-photo {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.team-photo i {
-  font-size: 80px;
-  color: white;
-}
-
-.team-card h3 {
-  font-size: 1.3rem;
-  color: #003366;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.team-card .position {
-  color: #3366cc;
-  font-weight: 500;
-  margin-bottom: 15px;
-  font-size: 0.95rem;
-}
-
-.team-details {
-  padding-top: 15px;
-  border-top: 1px solid #eee;
-  margin-top: 15px;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.team-card:hover .team-details {
-  opacity: 1;
-  max-height: 200px;
-}
-
-.team-details p {
-  font-size: 0.9rem;
-  color: #666;
-  line-height: 1.6;
-}
-
-/* =================================
-   LAYANAN IPDS
-================================= */
 .layanan-ipds {
   padding: 80px 0;
   background: #f9f9f9;
@@ -327,7 +389,7 @@ body {
 }
 
 .layanan-image::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -50%;
   right: -50%;
@@ -361,65 +423,64 @@ body {
 /* =================================
    KOLEKSI
 ================================= */
-.koleksi {
-  padding: 80px 0;
-  background: white;
+/* Platform*/
+.platform-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.koleksi-list {
-  max-width: 900px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.koleksi-item {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.koleksi-item:hover {
-  transform: translateX(10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
-
-.koleksi-image {
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #003366, #3366cc);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.koleksi-image i {
-  font-size: 40px;
-  color: white;
-}
-
-.koleksi-content h3 {
-  font-size: 1.4rem;
+.platform-section h1 {
+  text-align: center;
+  font-size: 2.5rem;
   color: #003366;
-  margin-bottom: 8px;
-  font-weight: 600;
+  margin-bottom: 30px;
 }
 
-.koleksi-content p {
-  font-size: 1rem;
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.platform-item {
+  background: white;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.platform-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.platform-item:hover img {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+/* Atur ukuran gambar agar seragam */
+.platform-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.platform-item h3 {
+  font-size: 1.3rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.platform-item p {
   color: #666;
-  line-height: 1.6;
+  font-size: 0.9rem;
 }
 
-/* =================================
+/* ===============================
    DARK CARD SECTIONS (Diseminasi, Pengolahan, Jaringan)
 ================================= */
 .diseminasi,
@@ -467,7 +528,7 @@ body {
 }
 
 .card-dark::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -532,9 +593,86 @@ body {
 }
 
 /* =================================
-   FOOTER (menggunakan style dari style.css)
+   FOOTER
 ================================= */
-/* Footer sudah di-import dari style.css */
+.footer {
+  background: #003366;
+  color: white;
+  padding: 60px 0 30px;
+  width: 100vw;
+  margin-top: auto;
+  left: 0;
+  right: 0;
+}
+/* .footer .container {
+  max-width: 100vw;
+  margin: 0;
+  padding: 0 20px;
+} */
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ff6600;
+}
+
+.footer-section p,
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ff6600;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 102, 0, 0.2);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #ff6600;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  color: #ccc;
+}
+iframe {
+  border: none;
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 /* =================================
    ANIMATIONS
