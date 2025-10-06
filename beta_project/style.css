@@ -1313,7 +1313,7 @@ button {
 }
 
 .stat-card i {
-  font-size: 2.5rem;
+  font-size: 32px;
   color: #ff6600;
   margin-bottom: 0;
   flex-shrink: 0;
@@ -1324,19 +1324,37 @@ button {
 }
 
 .stat-card h3 {
-  font-size: 1.3rem;
+  font-size: 24px;
   color: #003366;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   font-weight: 700;
 }
 
 .stat-card p {
-  color: #666;
-  font-size: 0.9rem;
+  color: #003366;
+  font-weight: 700;
+  font-size: 16px;
   margin: 0;
-  line-height: 1.4;
 }
 
+.stat-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.stat-card:hover .stat-card-inner {
+  transform: rotateX(180deg);
+}
+.stat-card-back {
+  transform: rotateX(180deg);
+}
+.stat-card-front,
+.stat-card-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
 /* =================================
    Struktur Tim
 ================================= */
