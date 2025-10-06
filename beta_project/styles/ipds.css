@@ -1,0 +1,660 @@
+/* =================================
+   TIM IPDS CUSTOM STYLES
+   Base styles dari style.css
+================================= */
+
+/* Override untuk hero section */
+body {
+  padding-top: 70px;
+}
+
+/* =================================
+   HERO SECTION
+================================= */
+.hero-ipds {
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(51, 102, 204, 0.85)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23003366" width="1200" height="400"/><g opacity="0.1"><circle cx="100" cy="100" r="80" fill="%23ffffff"/><circle cx="900" cy="300" r="100" fill="%23ffffff"/><rect x="500" y="50" width="200" height="200" rx="20" fill="%23ffffff"/></g></svg>');
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+  margin-top: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 51, 102, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+/* =================================
+   SECTION TITLE
+================================= */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #003366, #3366cc);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+/* =================================
+   TENTANG IPDS SECTION
+================================= */
+.tentang-ipds {
+  padding: 100px 0;
+  background: #f9f9f9;
+}
+
+.tentang-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.tentang-text h2 {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 25px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.tentang-text h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #003366, #3366cc);
+  border-radius: 2px;
+}
+
+.tentang-text p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.tentang-text .read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #003366;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-top: 10px;
+}
+
+.tentang-text .read-more::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #003366;
+  transition: width 0.3s ease;
+}
+
+.tentang-text .read-more:hover::before {
+  width: calc(100% - 30px);
+}
+
+.tentang-text .read-more:hover {
+  color: #3366cc;
+  transform: translateX(5px);
+}
+
+.tentang-text .read-more i {
+  transition: transform 0.3s ease;
+}
+
+.tentang-text .read-more:hover i {
+  transform: translateX(5px);
+}
+
+.tentang-illustration {
+  position: relative;
+}
+
+.tentang-illustration svg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+}
+
+/* =================================
+   PROFIL TIM
+================================= */
+.profil-tim {
+  padding: 80px 0;
+  background: white;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.team-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #003366, #3366cc);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover::before {
+  transform: scaleX(1);
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #003366, #3366cc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-photo {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.team-photo i {
+  font-size: 80px;
+  color: white;
+}
+
+.team-card h3 {
+  font-size: 1.3rem;
+  color: #003366;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.team-card .position {
+  color: #3366cc;
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.team-details {
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  margin-top: 15px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.team-card:hover .team-details {
+  opacity: 1;
+  max-height: 200px;
+}
+
+.team-details p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* =================================
+   LAYANAN IPDS
+================================= */
+.layanan-ipds {
+  padding: 80px 0;
+  background: #f9f9f9;
+}
+
+.layanan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.layanan-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.layanan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.layanan-image {
+  background: linear-gradient(135deg, #003366, #3366cc);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.layanan-image::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.layanan-image i {
+  font-size: 80px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.layanan-card h3 {
+  font-size: 1.5rem;
+  color: #003366;
+  margin: 25px 25px 15px;
+  font-weight: 600;
+}
+
+.layanan-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0 25px 25px;
+}
+
+/* =================================
+   KOLEKSI
+================================= */
+.koleksi {
+  padding: 80px 0;
+  background: white;
+}
+
+.koleksi-list {
+  max-width: 900px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.koleksi-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.koleksi-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.koleksi-image {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #003366, #3366cc);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.koleksi-image i {
+  font-size: 40px;
+  color: white;
+}
+
+.koleksi-content h3 {
+  font-size: 1.4rem;
+  color: #003366;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.koleksi-content p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* =================================
+   DARK CARD SECTIONS (Diseminasi, Pengolahan, Jaringan)
+================================= */
+.diseminasi,
+.pengolahan-data {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+}
+
+.jaringan {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1a252f, #2c3e50);
+}
+
+.diseminasi .section-title,
+.pengolahan-data .section-title,
+.jaringan .section-title {
+  color: white;
+}
+
+.diseminasi .section-title::after,
+.pengolahan-data .section-title::after,
+.jaringan .section-title::after {
+  background: linear-gradient(90deg, #3366cc, #66ccff);
+}
+
+.diseminasi-grid,
+.pengolahan-grid,
+.jaringan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.card-dark {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 35px 25px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(51, 102, 204, 0.1), rgba(102, 204, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-dark:hover::before {
+  opacity: 1;
+}
+
+.card-dark:hover {
+  transform: translateY(-10px);
+  border-color: rgba(51, 102, 204, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  font-size: 50px;
+  color: #66ccff;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.card-dark:hover .card-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.card-dark h3 {
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.card-dark p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-seemore {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-seemore:hover {
+  background: white;
+  color: #2c3e50;
+  transform: scale(1.05);
+}
+
+/* =================================
+   FOOTER (menggunakan style dari style.css)
+================================= */
+/* Footer sudah di-import dari style.css */
+
+/* =================================
+   ANIMATIONS
+================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10%, -10%);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .layanan-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .hero-content {
+    padding: 60px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .org-level.level-3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .layanan-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .koleksi-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .diseminasi-grid,
+  .pengolahan-grid,
+  .jaringan-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .org-card {
+    min-width: 150px;
+    padding: 20px;
+  }
+
+  .org-icon {
+    font-size: 2rem;
+  }
+
+  .card-dark {
+    padding: 25px 20px;
+  }
+
+  .card-icon {
+    font-size: 40px;
+  }
+}

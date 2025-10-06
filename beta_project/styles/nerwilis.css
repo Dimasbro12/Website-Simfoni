@@ -1,0 +1,774 @@
+/* =================================
+   TIM NERWILIS CUSTOM STYLES
+   Base styles dari style.css
+================================= */
+
+body {
+  padding-top: 70px;
+}
+
+/* =================================
+   HERO SECTION
+================================= */
+.hero-nerwilis {
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.8), rgba(255, 102, 0, 0.6)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23003366" width="1200" height="600"/><g fill="%23ffffff" opacity="0.1"><circle cx="200" cy="150" r="80"/><circle cx="800" cy="200" r="120"/><circle cx="1000" cy="400" r="100"/><rect x="100" y="350" width="200" height="150" rx="20"/><rect x="600" y="100" width="150" height="200" rx="15"/></g></svg>');
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 51, 102, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+/* =================================
+   SECTION TITLE
+================================= */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #003366, #3366cc);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+/* =================================
+   INTRO SECTION - TENTANG TIM NERACA WILAYAH
+================================= */
+.intro-nerwilis {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.intro-text h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.intro-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.stats-highlight {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+.stat-item:hover {
+  transform: translateY(-10px);
+  border-color: #003366;
+  box-shadow: 0 15px 40px rgba(0, 51, 102, 0.15);
+}
+
+.stat-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #003366, #0066cc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.stat-icon i {
+  font-size: 30px;
+  color: white;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.intro-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.intro-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.intro-image:hover img {
+  transform: scale(1.05);
+}
+
+.team-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.team-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card {
+  position: absolute;
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: scale(0.7);
+  cursor: pointer;
+}
+
+.card img {
+  width: 220px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Posisi */
+.center {
+  opacity: 1;
+  z-index: 5;
+  transform: translateX(0) scale(1);
+}
+
+.left-1 {
+  opacity: 0.9;
+  transform: translateX(-240px) scale(0.85);
+  z-index: 4;
+}
+
+.left-2 {
+  opacity: 0.7;
+  transform: translateX(-460px) scale(0.7);
+  z-index: 3;
+}
+
+.right-1 {
+  opacity: 0.9;
+  transform: translateX(240px) scale(0.85);
+  z-index: 4;
+}
+
+.right-2 {
+  opacity: 0.7;
+  transform: translateX(460px) scale(0.7);
+  z-index: 3;
+}
+
+.hidden {
+  opacity: 0;
+  transform: scale(0.5);
+  z-index: 1;
+}
+
+/* Arrows */
+.nav-arrow {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 10px 14px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 0.3s;
+  z-index: 6;
+}
+
+.nav-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.nav-arrow.left {
+  left: -50px;
+}
+
+.nav-arrow.right {
+  right: -50px;
+}
+
+/* Info Anggota */
+.member-info {
+  margin-top: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.member-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.member-role {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Dots */
+.dots-container {
+  margin-top: 15px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #333;
+}
+
+/* =================================
+   ANALISIS EKONOMI SECTION
+================================= */
+.analisis-ekonomi {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1a252f, #2c3e50);
+  position: relative;
+  overflow: hidden;
+}
+
+.analisis-ekonomi::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(0, 102, 204, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(51, 102, 204, 0.1) 0%, transparent 50%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title-light {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.section-subtitle-light {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Main Grid Cards (2x2) */
+.analisis-grid-main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.analisis-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.analisis-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(51, 102, 204, 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.analisis-card:hover::before {
+  opacity: 1;
+}
+
+.analisis-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(51, 102, 204, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.card-image {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.analisis-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
+/* Secondary Grid Cards (3 columns) */
+.analisis-grid-secondary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.analisis-card-small {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.analisis-card-small:hover {
+  transform: translateY(-10px);
+  border-color: rgba(51, 102, 204, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-image-small {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.analisis-card-small:hover .card-image-small img {
+  transform: scale(1.1);
+}
+
+.card-content-small {
+  padding: 25px;
+}
+
+.card-content-small h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.card-content-small p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* =================================
+   CONTACT SECTION
+================================= */
+.contact-section {
+  padding: 100px 0;
+  background: linear-gradient(rgba(34, 139, 34, 0.85), rgba(34, 139, 34, 0.85)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1600&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.contact-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(34, 139, 34, 0.3);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #003366;
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, #003366, #0066cc);
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 51, 102, 0.3);
+  background: linear-gradient(135deg, #0066cc, #003366);
+}
+
+.btn-submit i {
+  transition: transform 0.3s ease;
+}
+
+.btn-submit:hover i {
+  transform: translateX(5px);
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+@media (max-width: 1024px) {
+  .intro-content {
+    gap: 60px;
+  }
+
+  .analisis-grid-main {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .analisis-grid-secondary {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: 2rem;
+  }
+
+  .intro-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .stats-highlight {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-title-light {
+    font-size: 2rem;
+  }
+
+  .section-subtitle-light {
+    font-size: 1rem;
+  }
+
+  .analisis-grid-main,
+  .analisis-grid-secondary {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .contact-form-wrapper {
+    padding: 30px 25px;
+  }
+
+  .contact-section {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .intro-nerwilis,
+  .analisis-ekonomi,
+  .contact-section {
+    padding: 60px 0;
+  }
+
+  .intro-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro-subtitle {
+    font-size: 1rem;
+  }
+
+  .stat-item {
+    padding: 20px 15px;
+  }
+
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .stat-icon i {
+    font-size: 25px;
+  }
+
+  .stat-item h3 {
+    font-size: 2rem;
+  }
+
+  .section-title-light {
+    font-size: 1.8rem;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-content,
+  .card-content-small {
+    padding: 20px;
+  }
+
+  .contact-form-wrapper {
+    padding: 25px 20px;
+  }
+
+  .btn-submit {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
