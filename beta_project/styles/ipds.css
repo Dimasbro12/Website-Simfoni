@@ -1,4 +1,5 @@
 /* =================================
+<<<<<<< HEAD
    TIM IPDS CUSTOM STYLES
    Base styles dari style.css
 ================================= */
@@ -58,483 +59,142 @@ body {
 
 /* =================================
    SECTION TITLE
+=======
+   KOLEKSI
+>>>>>>> 66aeaff4732b933f76aeb75a85eaeaee25b681db
 ================================= */
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #003366;
+/* kegiatan */
+.kegiatan-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 8%;
   text-align: center;
-  margin-bottom: 15px;
-  position: relative;
-  padding-bottom: 15px;
 }
 
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #003366, #3366cc);
-  border-radius: 2px;
-}
-
-.section-subtitle {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #666;
-  max-width: 700px;
-  margin: 0 auto 50px;
-}
-
-/* =================================
-   TENTANG IPDS SECTION
-================================= */
-.tentang-ipds {
-  padding: 100px 0;
-  background: #f9f9f9;
-}
-
-.tentang-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.tentang-text h2 {
-  font-size: 2.5rem;
+.kegiatan-title {
+  font-size: 1.8rem;
   color: #003366;
-  margin-bottom: 25px;
   font-weight: 700;
   position: relative;
-  padding-bottom: 15px;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
-.tentang-text h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, #003366, #3366cc);
-  border-radius: 2px;
-}
-
-.tentang-text p {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: #555;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-.tentang-text .read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #003366;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.05rem;
-  transition: all 0.3s ease;
-  position: relative;
-  margin-top: 10px;
-}
-
-.tentang-text .read-more::before {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #003366;
-  transition: width 0.3s ease;
-}
-
-.tentang-text .read-more:hover::before {
-  width: calc(100% - 30px);
-}
-
-.tentang-text .read-more:hover {
-  color: #3366cc;
-  transform: translateX(5px);
-}
-
-.tentang-text .read-more i {
-  transition: transform 0.3s ease;
-}
-
-.tentang-text .read-more:hover i {
-  transform: translateX(5px);
-}
-
-.tentang-illustration {
-  position: relative;
-}
-
-.tentang-illustration svg {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
-}
-
-/* =================================
-   PROFIL TIM
-================================= */
-.profil-tim {
-  padding: 80px 0;
-  background: white;
-}
-
-.team-grid {
+.kegiatan-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
-.team-card {
+.kegiatan-item {
   background: white;
+  padding: 20px;
   border-radius: 15px;
-  padding: 30px;
   text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 260px;
+  margin: 0 auto;
 }
 
-.team-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, #003366, #3366cc);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
+.kegiatan-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
 }
 
-.team-card:hover::before {
-  transform: scaleX(1);
+.kegiatan-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
 }
 
-.team-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+.kegiatan-item:hover img {
+  filter: brightness(80%);
 }
 
-.team-photo {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #003366, #3366cc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: transform 0.4s ease;
-}
-
-.team-card:hover .team-photo {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.team-photo i {
-  font-size: 80px;
-  color: white;
-}
-
-.team-card h3 {
-  font-size: 1.3rem;
-  color: #003366;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.team-card .position {
-  color: #3366cc;
-  font-weight: 500;
-  margin-bottom: 15px;
-  font-size: 0.95rem;
-}
-
-.team-details {
-  padding-top: 15px;
-  border-top: 1px solid #eee;
-  margin-top: 15px;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.team-card:hover .team-details {
-  opacity: 1;
-  max-height: 200px;
-}
-
-.team-details p {
-  font-size: 0.9rem;
+.kegiatan-item p {
   color: #666;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+  /* text-align: justify; */
 }
 
-/* =================================
-   LAYANAN IPDS
-================================= */
-.layanan-ipds {
-  padding: 80px 0;
-  background: #f9f9f9;
+/* layanan */
+.layanan-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 8%;
+  text-align: center;
+}
+
+.layanan-title {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .layanan-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
-.layanan-card {
+.layanan-item {
   background: white;
+  padding: 20px;
   border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
-}
-
-.layanan-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.layanan-image {
-  background: linear-gradient(135deg, #003366, #3366cc);
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.layanan-image::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  animation: pulse 3s ease-in-out infinite;
-}
-
-.layanan-image i {
-  font-size: 80px;
-  color: white;
-  position: relative;
-  z-index: 2;
-}
-
-.layanan-card h3 {
-  font-size: 1.5rem;
-  color: #003366;
-  margin: 25px 25px 15px;
-  font-weight: 600;
-}
-
-.layanan-card p {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.7;
-  margin: 0 25px 25px;
-}
-
-/* =================================
-   KOLEKSI
-================================= */
-.koleksi {
-  padding: 80px 0;
-  background: white;
-}
-
-.koleksi-list {
-  max-width: 900px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.koleksi-item {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.koleksi-item:hover {
-  transform: translateX(10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
-
-.koleksi-image {
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #003366, #3366cc);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.koleksi-image i {
-  font-size: 40px;
-  color: white;
-}
-
-.koleksi-content h3 {
-  font-size: 1.4rem;
-  color: #003366;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.koleksi-content p {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
-}
-
-/* =================================
-   DARK CARD SECTIONS (Diseminasi, Pengolahan, Jaringan)
-================================= */
-.diseminasi,
-.pengolahan-data {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-}
-
-.jaringan {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #1a252f, #2c3e50);
-}
-
-.diseminasi .section-title,
-.pengolahan-data .section-title,
-.jaringan .section-title {
-  color: white;
-}
-
-.diseminasi .section-title::after,
-.pengolahan-data .section-title::after,
-.jaringan .section-title::after {
-  background: linear-gradient(90deg, #3366cc, #66ccff);
-}
-
-.diseminasi-grid,
-.pengolahan-grid,
-.jaringan-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
-}
-
-.card-dark {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 35px 25px;
   text-align: center;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 260px;
+  margin: 0 auto;
 }
 
-.card-dark::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(51, 102, 204, 0.1), rgba(102, 204, 255, 0.1));
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.layanan-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
 }
 
-.card-dark:hover::before {
-  opacity: 1;
+.layanan-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
 }
 
-.card-dark:hover {
-  transform: translateY(-10px);
-  border-color: rgba(51, 102, 204, 0.5);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+.layanan-item:hover img {
+  filter: brightness(80%);
 }
 
-.card-icon {
-  font-size: 50px;
-  color: #66ccff;
-  margin-bottom: 20px;
-  transition: transform 0.4s ease;
+.layanan-item .title-h3 {
+  padding: 15px 0 15px 0;
 }
 
-.card-dark:hover .card-icon {
-  transform: scale(1.2) rotate(10deg);
+.layanan-item p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+  /* text-align: justify; */
 }
 
-.card-dark h3 {
-  font-size: 1.4rem;
-  color: white;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-.card-dark p {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.btn-seemore {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 10px 25px;
+.card-btn {
+  background: linear-gradient(90deg, #0056b3, #0073e6);
+  color: #fff;
+  border: none;
   border-radius: 25px;
+  padding: 8px 20px;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
-.btn-seemore:hover {
-  background: white;
-  color: #2c3e50;
-  transform: scale(1.05);
+.card-btn:hover {
+  background: linear-gradient(90deg, #0073e6, #00aaff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 115, 230, 0.3);
 }
-
-/* =================================
-   FOOTER (menggunakan style dari style.css)
-================================= */
-/* Footer sudah di-import dari style.css */
 
 /* =================================
    ANIMATIONS

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i");
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
 :root {
   --orange: #fd9940;
   --darkorange: #dd7d25;
@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden; /* hilangkan scroll horizontal saja */
 }
 
@@ -50,6 +50,7 @@ a {
   position: fixed;
   width: 100%;
   top: 0;
+  height: 50px;
   z-index: 1000;
   transition: all 0.3s ease;
 }
@@ -100,7 +101,7 @@ a {
 }
 
 .nav-menu a::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 0;
   height: 2px;
@@ -201,9 +202,10 @@ a {
 .dropdown-menu a::after {
   display: none;
 }
+
 /* WELCOME */
 .welcome {
-  max-width: 1200px;
+  max-width: 1100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -257,7 +259,7 @@ a {
 .hero {
   margin-top: 40px;
   min-height: 50vh;
-  background: linear-gradient(135deg, rgba(0, 51, 102, 0.7), rgba(255, 102, 0, 0.5)), url("https://picsum.photos/1920/1080?blur=3");
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.7), rgba(255, 102, 0, 0.5)), url('https://picsum.photos/1920/1080?blur=3');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;

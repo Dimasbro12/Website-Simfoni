@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jaringan - IPDS BPS Kota Surabaya</title>
+    <meta name="description" content="Tim IPDS BPS Kota Surabaya - Integrasi Pengolahan dan Diseminasi Statistik" />
+
+    <!-- External CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="../styles/jaringan.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="../home.html" class="logo">
+          <i class="fas fa-chart-bar"></i>
+          BPS Kota Surabaya
+        </a>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="ipds.html">Beranda</a></li>
+          <li><a href="jaringan.html">Jaringan</a></li>
+          <li><a href="diseminasi.html">Diseminasi</a></li>
+          <li><a href="pengolahan.html">Pengolahan</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Start -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Jaringan</h1>
+        <p>Integritas Pengolahan dan Diseminasi Statistik</p>
+        <a href="#welcome" class="cta-button">Kunjungi Lebih Lanjut</a>
+      </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- Welcome Start-->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Jaringan</h1>
+        <p>
+          Jaringan IPDS (Integrasi Pengolahan dan Diseminasi Statistik) merupakan bagian dari BPS yang bertanggung jawab dalam pengelolaan sistem jaringan komunikasi dan penerapan teknologi untuk mendukung pengolahan serta penyebaran data
+          statistik. Perannya mencakup pengelolaan akses data, pengembangan teknologi seperti CAPI (Computer Assisted Personal Interviewing), dan integrasi berbagai sumber data dari seluruh unit kerja di BPS.
+        </p>
+      </div>
+      <div class="welcome-img">
+        <img src="../assets/welcome.png" alt="Selamat Datang" />
+      </div>
+    </section>
+
+    <!-- Pemeliharaan TI Start -->
+    <section class="laporan" id="laporan">
+      <div class="laporan-img">
+        <img src="../assets/astabaya.png" alt="Pemeliharaan TI" />
+      </div>
+
+      <div class="laporan-text">
+        <h1>Laporan Pemeliharaan TI</h1>
+        <p>
+          Dokumen ini berisi catatan kegiatan pemeliharaan infrastruktur teknologi informasi di lingkungan BPS, termasuk pengecekan, perbaikan, dan pembaruan perangkat keras maupun perangkat lunak. Laporan ini bertujuan memastikan seluruh
+          sistem TI berjalan optimal, aman, dan mendukung kelancaran pengolahan serta penyebaran data statistik.
+        </p>
+
+        <div class="laporan-buttons">
+          <a href="https://drive.google.com/drive/folders/1CeNNumlG-zn0i5mBvEzvXyf1eZrBhpiV?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn lihat">Lihat</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScNMYEzMdsiHIGIoXU3I0Bz4VbZe4QLRlcXvqtaCTjmLm6Vyw/viewform?usp=preview" target="_blank" rel="noopener noreferrer" class="btn tambah">Tambah</a>
+        </div>
+      </div>
+    </section>
+    <!-- Pemeliharaan TI End -->
+
+    <!-- isilaporan -->
+    <section class="isilaporan-section">
+      <!-- <h1 class="isilaporan-title">isilaporan IPDS</h1> -->
+      <div class="isilaporan-grid">
+        <div class="isilaporan-item">
+          <a href="https://www.google.com" ,target="_blank">
+            <img src="../assets/zona-integritas.png" alt="zona-integritas" />
+            <h3>Laporan Pemutakhiran MFD dan MBS</h3>
+            <p>Daftar desa/kelurahan di seluruh Indonesia yang disusun berdasarkan hierarki wilayah.</p>
+          </a>
+        </div>
+        <div class="isilaporan-item">
+          <a href="https://www.google.com" ,target="_blank">
+            <img src="../assets/zona-integritas.png" alt="zona-integritas" />
+            <h3 class="isilaporan-h3-2">Laporan SBR</h3>
+            <p class="isilaporan-p2">Daftar unit ekonomi yang dikelola BPS.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistik Kependudukan dan Ketenagakerjaan -->
+    <section class="produksi" id="produksi">
+      <div class="container">
+        <div class="main-grid">
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../beta_project/assets/img/SPM-BPS.png" alt="SPM" />
+              <div class="card-title">
+                <h3>VPEK</h3>
+                <p class="p-Kepegawaian">Statistik Jasa Penunjang Angkutan</p>
+              </div>
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">IBS Bulanan</a>
+                  <a href="#">IBS Tahunan</a>
+                  <a href="#">IMK Tahunan</a>
+                  <a href="#">IMK Triwulan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../beta_project/assets/img/RPD-BPS.png" alt="RPD" />
+              <div class="card-title">
+                <h3>VPBD</h3>
+                <p class="p-Kepegawaian">Survei Perdagangan Barang Kosmetik</p>
+              </div>
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">Survei Kontruksi Triwulan</a>
+                  <a href="#">Survei Kontruksi Tahunan</a>
+                  <a href="#">Survei Captive Power</a>
+                  <a href="#">UDP</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kegiatan Start -->
+    <div class="cards-container">
+      <h1>Project APP</h1>
+      <ul class="cards">
+        <li class="card">
+          <div>
+            <h3 class="card-title">Umum</h3>
+            <div class="card-content">
+              <img src="assets/umum.png" style="width: 60px; height: 60px" alt="SK" />
+            </div>
+          </div>
+          <div class="card-link-wrapper">
+            <a href="#" class="card-link">Lihat Detail</a>
+          </div>
+        </li>
+        <li class="card">
+          <div>
+            <h3 class="card-title">IPDS</h3>
+            <div class="card-content">
+              <img src="assets/ipds.png" style="width: 60px; height: 60px" alt="Srikandi" />
+            </div>
+          </div>
+          <div class="card-link-wrapper">
+            <a href="#" class="card-link">Lihat Detail</a>
+          </div>
+        </li>
+        <li class="card">
+          <div>
+            <h3 class="card-title">Humas</h3>
+            <div class="card-content">
+              <img src="assets/humas.png" style="width: 60px; height: 60px" alt="SIMPENSU" />
+            </div>
+          </div>
+          <div class="card-link-wrapper">
+            <a href="#" class="card-link">Lihat Detail</a>
+          </div>
+        </li>
+        <li class="card">
+          <div>
+            <h3 class="card-title">Sosial</h3>
+            <div class="card-content">
+              <img src="assets/sosial.png" style="width: 60px; height: 60px" alt="SEKAR" />
+            </div>
+          </div>
+          <div class="card-link-wrapper">
+            <a href="#" class="card-link">Lihat Detail</a>
+          </div>
+        </li>
+        <li class="card">
+          <div>
+            <h3 class="card-title">Produksi</h3>
+            <div class="card-content">
+              <img src="assets/produksi.png" style="width: 60px; height: 60px" alt="MOU" />
+            </div>
+          </div>
+          <div class="card-link-wrapper">
+            <a href="#" class="card-link">Lihat Detail</a>
+          </div>
+        </li>
+        <li class="card">
+          <div>
+            <h3 class="card-title">Nerwilis</h3>
+            <div class="card-content">
+              <img src="assets/nerwilis.png" style="width: 60px; height: 60px" alt="MOU" />
+            </div>
+          </div>
+          <div class="card-link-wrapper">
+            <a href="#" class="card-link">Lihat Detail</a>
+          </div>
+        </li>
+        <li class="card">
+          <div>
+            <h3 class="card-title">Sakip-ZI</h3>
+            <div class="card-content">
+              <img src="assets/sakip.png" style="width: 60px; height: 60px" alt="MOU" />
+            </div>
+          </div>
+          <div class="card-link-wrapper">
+            <a href="#" class="card-link">Lihat Detail</a>
+          </div>
+        </li>
+        <li class="card">
+          <div>
+            <h3 class="card-title">Harga</h3>
+          </div>
+          <div class="card-content">
+            <img src="assets/harga.png" style="width: 60px; height: 60px" alt="MOU" />
+          </div>
+          <div class="card-link-wrapper">
+            <a href="#" class="card-link">Lihat Detail</a>
+          </div>
+        </li>
+        <li class="card">
+          <div>
+            <h3 class="card-title">Distribusi Dan Jasa</h3>
+            <div class="card-content">
+              <img src="assets/distribusi.png" style="width: 60px; height: 60px" alt="MOU" />
+            </div>
+          </div>
+          <div class="card-link-wrapper">
+            <a href="#" class="card-link">Lihat Detail</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Kegiatan Start -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>BPS Kota Surabaya</h3>
+            <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <p>Email: bps3578@bps.go.id</p>
+            <p>Telepon: (031) 8296692</p>
+          </div>
+          <div class="footer-section">
+            <h3>Layanan</h3>
+            <a href="#">Data Statistik</a>
+            <a href="#">Dokumentasi</a>
+            <a href="#">Layanan Kearsipan</a>
+            <a href="pojok-statistik.html">Pojok Statistik</a>
+            <a href="#">Kelurahan Cantik</a>
+          </div>
+          <div class="footer-section">
+            <h3>Hubungi Kami</h3>
+            <p>Ikuti media sosial kami untuk update terbaru</p>
+            <div class="social-links">
+              <a href="https://www.facebook.com/surabayakota.bps.go.id/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPo5btTNZoTAIAKPbLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084462/RO=10/RU=https%3a%2f%2ftwitter.com%2fbps_surabaya/RK=2/RS=lOK88kby79v.CKODxjVvgx4R7GI-"
+                title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPrqQ9TdZoGQIACCvLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084542/RO=10/RU=https%3a%2f%2fwww.instagram.com%2fbpskotasurabaya%2f/RK=2/RS=A.x9yjFwkHyFoZw.jW97bxuM0eM-"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrKAX7GTdZoEAIAnZDLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084678/RO=10/RU=https%3a%2f%2fwww.youtube.com%2f%40bpskotasurabaya3578/RK=2/RS=3.S5VICmokrlo9U3LBzg3k4TV5I-"
+                title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" title="Website"><i class="fab fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 BPS Kota Surabaya. Semua hak dilindungi undang-undang.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../home.js"></script>
+  </body>
+</html>

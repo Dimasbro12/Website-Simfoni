@@ -1,0 +1,297 @@
+/* WELCOME */
+.welcome {
+  /* max-width: 1100px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 8% 20px 8%;
+  background: #fafafa;
+  margin: 0 auto;
+}
+
+.welcome-text {
+  flex: 1;
+}
+
+.welcome-text h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.welcome-text p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+}
+
+.welcome-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-img img {
+  max-width: 50%;
+  height: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .welcome {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 8% 0 8%;
+  }
+  .welcome-text {
+    margin-bottom: 20px;
+  }
+}
+
+/* =================================
+   KOLEKSI
+================================= */
+/* kegiatan */
+.kegiatan-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8% 10px 8%;
+  background-color: #1c64ac3d;
+}
+
+.kegiatan-section h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #003366;
+}
+
+.kegiatan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* lebih kecil */
+  gap: 10px; /* jarak antar item lebih rapat */
+  margin: 0 auto;
+}
+
+.kegiatan-item {
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 250px; /* batasi ukuran kotak */
+  margin: 0 auto; /* biar center */
+}
+
+.kegiatan-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.kegiatan-item:hover img {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+/* Atur ukuran gambar agar seragam */
+.kegiatan-item img {
+  width: 150px; /* tadinya 200px */
+  height: 150px;
+  object-fit: contain;
+}
+
+.kegiatan-item h3 {
+  font-size: 1.1rem; /* sedikit diperkecil */
+  color: #003366;
+  margin-bottom: 8px;
+}
+
+.kegiatan-item p {
+  color: #666;
+  font-size: 0.8rem; /* lebih kecil */
+}
+
+/* Platform*/
+.layanan-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 8% 10px 8%;
+  background-color: #ffffff93;
+}
+
+.layanan-section h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #003366;
+}
+
+.layanan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* lebih kecil */
+  gap: 10px; /* jarak antar item lebih rapat */
+  margin: 0 auto;
+}
+
+.layanan-item {
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 250px; /* batasi ukuran kotak */
+  margin: 0 auto; /* biar center */
+}
+
+.layanan-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.layanan-item:hover img {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+/* Atur ukuran gambar agar seragam */
+.layanan-item img {
+  width: 150px; /* tadinya 200px */
+  height: 150px;
+  object-fit: contain;
+}
+
+.layanan-item h3 {
+  font-size: 1.1rem; /* sedikit diperkecil */
+  color: #003366;
+  margin-bottom: 8px;
+}
+
+.layanan-item p {
+  color: #000;
+  font-size: 1.2rem; /* lebih kecil */
+  font-weight: 500;
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10%, -10%);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .layanan-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .hero-content {
+    padding: 60px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .org-level.level-3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .layanan-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .koleksi-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .diseminasi-grid,
+  .pengolahan-grid,
+  .jaringan-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .org-card {
+    min-width: 150px;
+    padding: 20px;
+  }
+
+  .org-icon {
+    font-size: 2rem;
+  }
+
+  .card-dark {
+    padding: 25px 20px;
+  }
+
+  .card-icon {
+    font-size: 40px;
+  }
+}
