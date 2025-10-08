@@ -91,120 +91,130 @@
   Pilar 1
 ================================= */
 .cards-container {
-  max-width: 1200px;
-  margin: 0px 8%;
-  padding: 20px;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 30px 8%;
 }
 
 .cards-container h1 {
-  text-align: left;
   font-size: 1.8rem;
   color: #003366;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
-.cards {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc(100% / 3 - 20px); /* default: 3 card */
-  grid-column-gap: 20px;
-  padding: 25px 0px;
-  list-style: none;
+.cards-scroll {
+  display: flex;
+  gap: 25px;
   overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 15px 0;
   scroll-snap-type: x mandatory;
 }
 
+.cards-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb,
+.cards-scroll::-webkit-scrollbar-track {
+  border-radius: 92px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb {
+  background: var(--darkorange);
+}
+
+.cards-scroll::-webkit-scrollbar-track {
+  background: var(--thumb);
+}
 .card {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+  flex: 0 0 320px;
   background: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
-  scroll-snap-align: start;
-  transition: all 0.2s;
-  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   text-align: center;
+  padding: 30px 25px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  scroll-snap-align: start;
 }
 
 .card:hover {
-  color: var(--white);
-  background: var(--orange);
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #ff7a00, #ffb347);
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
-.card .card-title {
-  font-size: 20px;
+/* Konten kartu */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.card .card-content {
-  margin: 20px 0;
-  max-width: 100%;
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.card .card-content img {
-  width: 100px; /* default ukuran gambar */
-  height: auto; /* biar proporsional */
-  max-width: 100%; /* biar tidak lebih besar dari card */
-  transition: transform 0.2s ease;
+/* Gambar besar */
+.card-content img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
 }
 
-.card:hover .card-content img {
-  transform: scale(1.1); /* efek zoom saat hover */
+.card:hover img {
+  transform: scale(1.05);
 }
 
-.card .card-link-wrapper {
-  margin-top: auto;
-}
-
-.card .card-link {
+/* Tombol */
+.card-link {
   display: inline-block;
-  text-decoration: none;
-  color: white;
   background: var(--orange);
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: background 0.2s;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
 .card:hover .card-link {
   background: var(--darkorange);
 }
 
-.cards::-webkit-scrollbar {
-  height: 12px;
+.scroll-btn {
+  background: linear-gradient(90deg, #ff7a00, #ffae42);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.cards::-webkit-scrollbar-thumb,
-.cards::-webkit-scrollbar-track {
-  border-radius: 92px;
-}
-
-.cards::-webkit-scrollbar-thumb {
-  background: var(--darkorange);
-}
-
-.cards::-webkit-scrollbar-track {
-  background: var(--thumb);
+.scroll-btn:hover {
+  background: linear-gradient(90deg, #ffae42, #ffd580);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
 }
 
 /* Responsif */
-@media (max-width: 699px) {
-  .cards {
-    grid-auto-columns: calc(100% / 2 - 15px); /* tablet: 2 card */
-  }
-
-  .card .card-content img {
-    width: 80px; /* lebih kecil di tablet */
+@media (max-width: 768px) {
+  .card-content img {
+    width: 180px;
   }
 }
 
-@media (max-width: 499px) {
-  .cards {
-    grid-auto-columns: 100%; /* HP kecil: 1 card */
-  }
-
-  .card .card-content img {
-    width: 70px; /* lebih kecil di HP */
+@media (max-width: 480px) {
+  .card-content img {
+    width: 150px;
   }
 }
 
