@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* =================================
    HEADER
 ================================= */
@@ -234,6 +235,14 @@ body {
   margin-bottom: 2rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
   animation: fadeInUp 1s ease 0.3s both;
+=======
+.calendar-icon,
+.clipboard-icon,
+.target-icon {
+  position: absolute;
+  opacity: 0;
+  animation: fadeInScale 1s ease forwards;
+>>>>>>> 329815b8eb91b84e59f52d84c715888e42b7e0c9
 }
 
 .cta-button {
@@ -288,7 +297,22 @@ body {
   padding-bottom: 15px;
 }
 
+<<<<<<< HEAD
 .pojok-welcome_text p {
+=======
+.content-text h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6600, #ff8533);
+  border-radius: 2px;
+}
+
+.content-text p {
+>>>>>>> 329815b8eb91b84e59f52d84c715888e42b7e0c9
   font-size: 1.1rem;
   line-height: 1.6; /* biar enak dibaca */
   color: #555;
@@ -364,10 +388,22 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+<<<<<<< HEAD
 .btn-data-magang:hover {
   background: #3a4a94;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+=======
+.read-more::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff6600;
+  transition: width 0.3s ease;
+>>>>>>> 329815b8eb91b84e59f52d84c715888e42b7e0c9
 }
 
 /* =================================

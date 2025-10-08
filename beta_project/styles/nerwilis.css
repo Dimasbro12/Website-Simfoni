@@ -9,6 +9,7 @@
 }
 
 /* =================================
+<<<<<<< HEAD
    HEADER
 ================================= */
 * {
@@ -245,6 +246,8 @@ body {
 }
 
 /* =================================
+=======
+>>>>>>> 329815b8eb91b84e59f52d84c715888e42b7e0c9
    SECTION TITLE
 ================================= */
 .section-title {
@@ -258,7 +261,7 @@ body {
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -531,7 +534,7 @@ body {
 }
 
 .analisis-ekonomi::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -583,7 +586,7 @@ body {
 }
 
 .analisis-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -702,7 +705,7 @@ body {
 ================================= */
 .contact-section {
   padding: 100px 0;
-  background: linear-gradient(rgba(34, 139, 34, 0.85), rgba(34, 139, 34, 0.85)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1600&auto=format&fit=crop');
+  background: linear-gradient(rgba(34, 139, 34, 0.85), rgba(34, 139, 34, 0.85)), url("https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1600&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -766,7 +769,7 @@ body {
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
 }
 
