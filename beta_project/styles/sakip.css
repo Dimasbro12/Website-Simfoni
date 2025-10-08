@@ -99,43 +99,59 @@
 
 /* Kontainer utama */
 .cards-container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 30px 8%;
 }
 
 .cards-container h1 {
   font-size: 1.8rem;
   color: #003366;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-weight: 700;
 }
 
-/* Layout flex */
-.cards {
+.cards-scroll {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
   gap: 25px;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 15px 0;
+  scroll-snap-type: x mandatory;
 }
 
-/* Kartu */
+.cards-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb,
+.cards-scroll::-webkit-scrollbar-track {
+  border-radius: 92px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb {
+  background: var(--darkorange);
+}
+
+.cards-scroll::-webkit-scrollbar-track {
+  background: var(--thumb);
+}
 .card {
+  flex: 0 0 320px;
   background: var(--white);
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  flex: 1 1 300px;
-  max-width: 340px;
   text-align: center;
   padding: 30px 25px;
   transition: transform 0.3s ease, background 0.3s ease;
+  scroll-snap-align: start;
 }
 
 .card:hover {
-  background: var(--orange);
-  color: var(--white);
   transform: translateY(-5px);
+  background: linear-gradient(135deg, #ff7a00, #ffb347);
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
 /* Konten kartu */
@@ -151,9 +167,9 @@
   margin-bottom: 20px;
 }
 
-/* Gambar lebih besar */
+/* Gambar besar */
 .card-content img {
-  width: 220px; /* sebelumnya kecil, sekarang besar */
+  width: 100px;
   height: auto;
   margin-bottom: 25px;
   transition: transform 0.3s ease;
@@ -179,42 +195,34 @@
   background: var(--darkorange);
 }
 
-/* Scrollbar */
-.cards::-webkit-scrollbar {
-  height: 12px;
+.scroll-btn {
+  background: linear-gradient(90deg, #ff7a00, #ffae42);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.cards::-webkit-scrollbar-thumb,
-.cards::-webkit-scrollbar-track {
-  border-radius: 92px;
-}
-
-.cards::-webkit-scrollbar-thumb {
-  background: var(--darkorange);
-}
-
-.cards::-webkit-scrollbar-track {
-  background: var(--thumb);
+.scroll-btn:hover {
+  background: linear-gradient(90deg, #ffae42, #ffd580);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
 }
 
 /* Responsif */
-@media (max-width: 699px) {
-  .cards {
-    grid-auto-columns: calc(100% / 2 - 15px);
-  }
-
-  .card .card-content img {
-    width: 110px; /* tetap lebih besar dibanding versi lama */
+@media (max-width: 768px) {
+  .card-content img {
+    width: 180px;
   }
 }
 
-@media (max-width: 499px) {
-  .cards {
-    grid-auto-columns: 100%;
-  }
-
-  .card .card-content img {
-    width: 90px;
+@media (max-width: 480px) {
+  .card-content img {
+    width: 150px;
   }
 }
 
