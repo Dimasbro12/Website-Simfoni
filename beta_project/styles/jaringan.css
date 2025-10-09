@@ -61,21 +61,41 @@
 }
 
 .btn.lihat {
-  background-color: #004aad;
+  background: linear-gradient(90deg, #056ad0, #014589);
   color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50%;
 }
 
 .btn.lihat:hover {
-  background-color: #003580;
+  background: linear-gradient(90deg, #023a72, #197bdc);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
 }
 
 .btn.tambah {
-  background-color: #00a86b;
+  background: linear-gradient(90deg, #ff7a00, #ffae42);
   color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50%;
 }
 
 .btn.tambah:hover {
-  background-color: #008f5a;
+  background: linear-gradient(90deg, #ffae42, #ffd580);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
 }
 
 /* Responsive */
@@ -316,6 +336,9 @@
   padding-left: 25px;
 }
 
+/* ===================
+  Card Slider
+====================== */
 .cards-container {
   max-width: 1200px;
   margin: 0px 8%;
