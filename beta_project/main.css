@@ -25,7 +25,12 @@ body {
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge baru */
+  background-color: transparent; /* Chrome, Safari, Edge baru */
+}
+
+html:hover ::-webkit-scrollbar,
+body:hover ::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.3); /* Chrome, Safari, Edge baru */
 }
 
 body {
