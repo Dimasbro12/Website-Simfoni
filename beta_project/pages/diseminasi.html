@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diseminasi - IPDS BPS Kota Surabaya</title>
+    <meta name="description" content="Tim IPDS BPS Kota Surabaya - Integrasi Pengolahan dan Diseminasi Statistik" />
+    <link rel="icon" type="image/png" href="../assets/bps.png" />
+
+    <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/diseminasi.css" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="header" id="header">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <!-- Hamburger di kiri -->
+          <button class="navbar-toggler text-white border-0" type="button" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="../index.html"><img src="../assets/bps.png" alt="logo BPS" />BPS Kota Surabaya</a>
+
+          <!-- Menu untuk desktop -->
+          <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto text-center text-md-start">
+              <li class="nav-item"><a class="nav-link" href="ipds.html">Beranda</a></li>
+              <li class="nav-item"><a class="nav-link" href="jaringan.html">Jaringan</a></li>
+              <li class="nav-item"><a class="nav-link" href="diseminasi.html">Diseminasi</a></li>
+              <li class="nav-item"><a class="nav-link" href="pengolahan.html">Pengolahan</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar (Mobile) -->
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="ipds.html">Beranda</a></li>
+          <li><a href="jaringan.html">Jaringan</a></li>
+          <li><a href="diseminasi.html">Diseminasi</a></li>
+          <li><a href="pengolahan.html">Pengolahan</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Start -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Diseminasi</h1>
+        <p>Integritas Pengolahan dan Diseminasi Statistik</p>
+        <a href="#welcome" class="cta-button">Kunjungi Lebih Lanjut</a>
+      </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- Welcome Start-->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Diseminasi</h1>
+        <p>
+          Diseminasi BPS adalah kegiatan penyebarluasan informasi statistik yang dilakukan oleh Badan Pusat Statistik (BPS) kepada publik. Tujuannya adalah untuk memastikan bahwa data dan informasi statistik yang dihasilkan BPS dapat
+          diakses, dipahami, dan dimanfaatkan oleh berbagai pihak, termasuk pemerintah, akademisi, pelaku bisnis, dan masyarakat umum.
+        </p>
+      </div>
+      <div class="welcome-img">
+        <img src="../assets/img/welcome_diseminasi.png" alt="Selamat Datang" />
+      </div>
+    </section>
+
+    <!-- pelayanan konsultasi Start -->
+    <section class="laporan" id="laporan">
+      <div class="laporan-img">
+        <img src="../assets/img/ilustrasi_konsultasi (1).png" alt="pelayanan konsultasi" />
+      </div>
+
+      <div class="laporan-text">
+        <h1>Pelayanan Konsultasi</h1>
+        <p>
+          Layanan konsultasi BPS adalah layanan yang disediakan oleh Badan Pusat Statistik (BPS) untuk memberikan informasi dan bantuan terkait data statistik kepada masyarakat. Layanan ini dapat diakses secara langsung (tatap muka) maupun
+          online.
+        </p>
+
+        <div class="laporan-buttons">
+          <a href="https://drive.google.com/drive/folders/1CeNNumlG-zn0i5mBvEzvXyf1eZrBhpiV?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn lihat">Lihat Laporan</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScNMYEzMdsiHIGIoXU3I0Bz4VbZe4QLRlcXvqtaCTjmLm6Vyw/viewform?usp=preview" target="_blank" rel="noopener noreferrer" class="btn tambah">Laporan PST</a>
+        </div>
+      </div>
+    </section>
+    <!-- pelayanan konsultasi End -->
+
+    <!-- Pemetaan dan Rakor-->
+    <section class="produksi">
+      <div class="container">
+        <div class="main-grid">
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../assets/img/icon_pemetaan (1).png" alt="SPM" />
+              <div class="card-title">
+                <h3>Bidang TI</h3>
+                <!-- <p class="p-Kepegawaian">Statistik Jasa Penunjang Angkutan</p> -->
+              </div>
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">Pemanfaatan Adobe</a>
+                  <a href="#">Pemutakhiran Website</a>
+                  <a href="#">Penggadaan Software</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../assets/img/icon_rakor (1).png" alt="RPD" />
+              <div class="card-title">
+                <h3>Pelatihan dan Sosialisasi</h3>
+                <!-- <p class="p-Kepegawaian">Survei Perdagangan Barang Kosmetik</p> -->
+              </div>
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">Pelatihan Metabase</a>
+                  <a href="#">Knowledge Sharing Program Indonesia Pintar dan Akses Pende</a>
+                  <a href="#">Sosialisasi Karissa</a>
+                  <a href="#">Sosialisasi Pembahasan Desentralisasi Pengadaan Software Data dan Publikasi</a>
+                  <a href="#">Sosialisasi Kompetisi Inovasi-KIPP</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../beta_project/assets/img/RPD-BPS.png" alt="RPD" />
+              <div class="card-title">
+                <h3>Administrasi dan Evaluasi</h3>
+                <!-- <p class="p-Kepegawaian">Survei Perdagangan Barang Kosmetik</p> -->
+              </div>
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">Penilaian Mandiri PEKPPP</a>
+                  <a href="#">PPID</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- laporan brs Start -->
+    <section class="laporan-brs" id="laporan-brs">
+      <div class="laporan-brs-text">
+        <h1>Laporan BRS</h1>
+        <p>
+          Berita Resmi Statistik merupakan salah satu publikasi BPS, berisi Official Statistics yang memuat hasil sajian ringkas tentang fenomena yang berhubungan dengan statistik bidang ekonomi, bidang kesejahteraan rakyat, dan
+          bidang-bidang lainnya.
+        </p>
+
+        <div class="laporan-brs-buttons">
+          <a href="https://drive.google.com/drive/folders/1CeNNumlG-zn0i5mBvEzvXyf1eZrBhpiV?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn lihat">Lihat Laporan</a>
+        </div>
+      </div>
+
+      <div class="laporan-brs-img">
+        <img src="../assets/img/ilustrasi_brs (1).png" alt="laporan brs" />
+      </div>
+    </section>
+    <!-- laporan brs End -->
+
+    <!-- Pilar 1 Start -->
+    <section class="cards-container">
+      <h1>PST (Pelayanan Statistik Terpadu) BPS Kota Surabaya</h1>
+      <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Sosialisasi Halo PST</h2>
+            <img src="../assets/img/icon_sosialisasi pst (1).png" alt="Pespa" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Rapat Review & Monev SP</h2>
+            <img src="../assets/img/icon_monev sp (1).png" alt="Sejuta Rasa" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Briefing SKD</h2>
+            <img src="../assets/img/icon_briefing (1).png" alt="Dharma" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">FGD SPP</h2>
+            <img src="../assets/img/icon_fgd (1).png" alt="Khotmil" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Webinar Service Excellent</h2>
+            <img src="../assets/img/icon_webinar (1).png" alt="Sholat" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SKD</h2>
+            <img src="../assets/img/icon_skd (1).png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pilar 1 End -->
+
+    <!-- publikasi -->
+    <section class="publikasi-section">
+      <h1 class="publikasi-title">Publikasi IPDS</h1>
+      <div class="publikasi-grid">
+        <div class="publikasi-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_dda (1).png" alt="zona-integritas" />
+            <h3>DDA</h3>
+            <p>Daerah Dalam Angka</p>
+          </a>
+        </div>
+        <div class="publikasi-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_kcda (1).png" alt="zona-integritas" />
+            <h3 class="publikasi-h3-2">KCDA</h3>
+            <p class="publikasi-p2">Kecamatan Dalam Angka</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>BPS Kota Surabaya</h3>
+            <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <p>Email: bps3578@bps.go.id</p>
+            <p>Telepon: (031) 8296692</p>
+          </div>
+          <div class="footer-section">
+            <h3>Layanan</h3>
+            <a href="#">Data Statistik</a>
+            <a href="#">Dokumentasi</a>
+            <a href="#">Layanan Kearsipan</a>
+            <a href="pojok-statistik.html">Pojok Statistik</a>
+            <a href="#">Kelurahan Cantik</a>
+          </div>
+          <div class="footer-section">
+            <h3>Hubungi Kami</h3>
+            <p>Ikuti media sosial kami untuk update terbaru</p>
+            <div class="social-links">
+              <a href="https://www.facebook.com/surabayakota.bps.go.id/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPo5btTNZoTAIAKPbLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084462/RO=10/RU=https%3a%2f%2ftwitter.com%2fbps_surabaya/RK=2/RS=lOK88kby79v.CKODxjVvgx4R7GI-"
+                title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPrqQ9TdZoGQIACCvLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084542/RO=10/RU=https%3a%2f%2fwww.instagram.com%2fbpskotasurabaya%2f/RK=2/RS=A.x9yjFwkHyFoZw.jW97bxuM0eM-"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrKAX7GTdZoEAIAnZDLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084678/RO=10/RU=https%3a%2f%2fwww.youtube.com%2f%40bpskotasurabaya3578/RK=2/RS=3.S5VICmokrlo9U3LBzg3k4TV5I-"
+                title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" title="Website"><i class="fab fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 BPS Kota Surabaya. Semua hak dilindungi undang-undang.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script>
+      function toggleDropdown(el) {
+        const dropdown = el.parentElement;
+        dropdown.classList.toggle("show");
+      }
+
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const sidebarToggle = document.getElementById("sidebarToggle");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Toggle submenu
+      document.querySelectorAll(".toggle-submenu").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const parent = btn.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+
+      // Scroll effect untuk navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+    <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

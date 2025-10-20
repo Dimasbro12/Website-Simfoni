@@ -5,32 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simfoni BPS Kota Surabaya - Pusat Informasi Statistik dan Kearsipan</title>
     <meta name="description" content="Simfoni, pusat informasi kegiatan statistik dan kearsipan BPS Kota Surabaya. Menyajikan berbagai data, dokumentasi, dan layanan terintegrasi untuk transparansi dan kemudahan akses informasi." />
+    <link rel="icon" type="image/png" href="../assets/bps.png" />
 
     <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../style2.css" />
+    <link rel="stylesheet" href="../styles/sosial.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body class="subbag">
-    <!-- Header -->
+    <!-- Header Start -->
     <header class="header" id="header">
-      <nav class="navbar container">
-        <a href="#" class="logo">
-          <i class="fas fa-chart-bar"></i>
-          BPS KOTA Surabaya
-        </a>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="../home.html">Home</a></li>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <!-- Hamburger di kiri -->
+          <button class="navbar-toggler text-white border-0" type="button" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="#"><img src="../assets/bps.png" alt="logo BPS" />BPS Kota Surabaya</a>
+
+          <!-- Menu untuk desktop -->
+          <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto text-center text-md-start">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="subbag.html">Subbag Umum</a></li>
+              <li class="nav-item"><a class="nav-link" href="pss.html">PSS</a></li>
+              <li class="nav-item"><a class="nav-link" href="pojok-statistik.html">Pojok Statistik</a></li>
+              <li class="nav-item"><a class="nav-link" href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button">Tim</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="ipds.html">IPDS</a></li>
+                  <li><a class="dropdown-item" href="humas.html">Humas</a></li>
+                  <li><a class="dropdown-item" href="sosial.html">Sosial</a></li>
+                  <li><a class="dropdown-item" href="produksi.html">Produksi</a></li>
+                  <li><a class="dropdown-item" href="nerwilis.html">Nerwilis</a></li>
+                  <li><a class="dropdown-item" href="sakip.html">Sakip-ZI</a></li>
+                  <li><a class="dropdown-item" href="harga.html">Harga</a></li>
+                  <li><a class="dropdown-item" href="disjas.html">Disjas</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar (Mobile) -->
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="subbag.html">Subbag Umum</a></li>
-          <li><a href="#rbzi">RB/ZI</a></li>
+          <li><a href="pss.html">PSS</a></li>
           <li><a href="pojok-statistik.html">Pojok Statistik</a></li>
           <li><a href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
-          <li class="dropdown">
-            <a href="#tim" class="dropdown-toggle">Tim <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#umum">Umum</a></li>
+          <li class="has-submenu">
+            <a href="#" class="toggle-submenu"> Lainnya <i class="fa-solid fa-chevron-down"></i> </a>
+            <ul class="submenu">
               <li><a href="ipds.html">IPDS</a></li>
               <li><a href="humas.html">Humas</a></li>
               <li><a href="sosial.html">Sosial</a></li>
@@ -42,496 +81,432 @@
             </ul>
           </li>
         </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
     </header>
+    <!-- Header End -->
 
     <!-- Hero Section -->
-    <section class="hero" id="subbag">
+    <section class="hero" id="home">
       <div class="hero-content">
         <h1>Tim Sosial</h1>
-        <h3>Simfoni BPS Kota Surabaya</h3>
+        <p>Mengenal Struktur Organisasi, Profil, dan Tugas Tim Sosial BPS Kota Surabaya</p>
       </div>
     </section>
+
     <!-- Tentang Section -->
     <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Tentang Tim Sosial</h1>
+        <p>Kelompok kerja di dalam BPS kota yang khusus menangani aspek sosial dari data statistik — seperti kesejahteraan rakyat, kemiskinan, tenaga kerja, demografi sosial, ketenagakerjaan, dan lain-lain.</p>
+      </div>
+      <div class="welcome-img">
+        <img src="../assets/img/Ilustrasi_Sosial-BPS.png" alt="Sosial" style="width: 250px; height: auto" />
+      </div>
+    </section>
+    <!-- Tentang -->
+
+    <!--Statistik Ketahanan Sosial Section -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Statistik Ketahanan Sosial</h1>
+        <p style="margin-right: 24px; text-align: justify">
+          Statistik Ketahanan Sosial melaksanakan kegiatan terkait ketahanan sosial masyarakat, seperti statistik mengenai kemiskinan, kriminalitas, lingkungan hidup, dan aspek aspek lain yang memengaruhi ketahanan sosial suatu wilayah
+        </p>
+      </div>
+      <div class="welcome-img" style="margin-left: auto">
+        <ul class="cards">
+          <li class="card">
+            <div>
+              <h3 class="card-title">Potensi Desa</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_PotensiDesa-BPS.png" style="width: 60px; height: 60px" alt="SK" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Politik dan Keamanan</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_PolitikKeamanan-BPS.png" style="width: 60px; height: 60px" alt="Srikandi" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">DTSEN</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_DTSEN-BPS.png" style="width: 60px; height: 60px" alt="SIMPENSU" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Sekolah Rakyat</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_SekolahRakyat-BPS.png" style="width: 60px; height: 60px" alt="SEKAR" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Pendataan Perumahan</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_PendataanPerumahan-BPS.png" style="width: 60px; height: 60px" alt="MOU" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Statistik Kependudukan dan Ketenagakerjaan -->
+    <section class="sh-section" id="statistik-kependudukan-ketenagakerjaan">
+      <div class="sh-header">
+        <h1>Statistik Kependudukan dan Ketenagakerjaan</h1>
+        <p>
+          Statistik Kependudukan dan Ketenagakerjaan memiliki tujuan untuk menyediakan data statistik kependudukan dan ketenagakerjaan yang berkualitas, meningkatkan kolaborasi, integrasi, sinkronisasi, dan standarisasi dalam
+          penyelenggaraan SSN.
+        </p>
+      </div>
+
+      <ul class="sh-card-list">
+        <li class="sh-card">
+          <div class="sh-card-content">
+            <img src="../assets/img/Ilustrasi_Seruti-BPS.png" alt="SERUTI" />
+            <div class="card-title">
+              <h3>SERUTI</h3>
+              <p class="p-Kepegawaian">Survei Ekonomi Rumah Tangga Triwulan</p>
+            </div>
+            <div class="sh-dropdown">
+              <div class="sh-dropdown-toggle" onclick="toggleDropdown(this)">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="sh-dropdown-content">
+                <a href="#">Dokumentasi SOP untuk kegiatan harga</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="sh-card">
+          <div class="sh-card-content">
+            <img src="../assets/img/RPD-BPS.png" alt="RPD" />
+            <div class="card-title">
+              <h3>SUPAS</h3>
+              <p class="p-Kepegawaian">Survei Penduduk Antar Sensus</p>
+            </div>
+            <div class="sh-dropdown">
+              <div class="sh-dropdown-toggle" onclick="toggleDropdown(this)">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="sh-dropdown-content">
+                <a href="#">Pendukung</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Statistik Kesejahteraan Rakyat -->
+    <section class="sh-section" id="statistik-kependudukan-ketenagakerjaan">
+      <div class="sh-header">
+        <h1>Statistik Kesejahteraan Rakyat</h1>
+        <p>Kegiatan pada Statistik Kesejahteraan Rakyat berfokus pada pengumpulan, pengolahan, dan penyajian data statistik yang berkaitan dengan kesejahteraan rakyat.</p>
+      </div>
+
+      <ul class="sh-card-list">
+        <li class="sh-card">
+          <div class="sh-card-content">
+            <img src="../assets/img/Ilustrasi_Seruti-BPS.png" alt="SERUTI" />
+            <div class="card-title">
+              <h3>SERUTI</h3>
+              <p class="p-Kepegawaian">Survei Ekonomi Rumah Tangga Triwulan</p>
+            </div>
+            <div class="sh-dropdown">
+              <div class="sh-dropdown-toggle" onclick="toggleDropdown(this)">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="sh-dropdown-content">
+                <a href="#">Dokumentasi SOP untuk kegiatan harga</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="sh-card">
+          <div class="sh-card-content">
+            <img src="../assets/img/SPM-BPS.png" alt="SPM" />
+            <div class="card-title">
+              <h3>SUSENAS</h3>
+              <p class="p-Kepegawaian">Survei Sosial Ekonomi Nasional</p>
+            </div>
+            <div class="sh-dropdown">
+              <div class="sh-dropdown-toggle" onclick="toggleDropdown(this)">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="sh-dropdown-content">
+                <a href="#">Pendukung</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Kelurahan Cantik -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Kelurahan CANTIK</h1>
+        <p>
+          Kelurahan CANTIK adalah konsep pembangunan dengan penguatan capacity building aparatur kelurahan dan partisipasi masyarakat dalam pemutakhiran data statistik sektoral. Data ini digunakan untuk perencanaan pembangunan yang lebih
+          tepat sasaran.
+        </p>
+        <button class="custom-btn btn-6"><span>Selanjutnya</span></button>
+      </div>
+      <div class="welcome-img">
+        <img src="../assets/img/Ilustrasi_kelurahancantik-BPS.png" alt="Kelurahan CANTIK" style="width: 250px; height: auto" />
+      </div>
+    </section>
+
+    <!-- Laporan Kegiatan-->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Laporan Kegiatan</h1>
+        <p>Kumpulan laporan dokumen kegiatan Tim Sosial</p>
+      </div>
+      <div class="welcome-img">
+        <iframe
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0AfBX5G_rsoYukklJHGfl5m1VsJX3PQrjJSoEXl4HD96_bpUOk6dqGXwyMQ96ow/pubhtml?widget=true&amp;headers=false"
+          style="width: 100%; min-height: 500px; border: none; display: block"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Publikasi Kegiatan -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Publikasi Kegiatan</h1>
+        <p>Kumpulan publikasi kegiatan</p>
+      </div>
+      <div class="welcome-img">
+        <div
+          class="pa-gallery-player-widget"
+          style="width: 100%; height: 480px; display: none"
+          data-link="https://photos.google.com/share/AF1QipNM29xnjJSCdiY-5OLcjqbPkRJg5Eu3FY8V_mlkGLUKgeiLEsO4eiJLqR2PDNQ1Qg?key=d09FLWQ4RlJWX0tHTnl0RjFYczhZUGo2dUlxNDF3"
+          data-background-color="#003366"
+          data-title="GDG Bandung x ISTTS x SurabayaDev · Saturday, Mar 22 📸"
+          data-description="Shared album · Tap to view!"
+        >
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOVB4GxgCq1XiYSMjs7iUCA2TjlQYSLDnwQIU7RDjopREBfzv72nL8tUrjdH9iZea6rnAh6Ed5IDJu1qF6jcRSee3BnldOmgVZhSNoHqOS7nsgUhD0=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczP2FTJXIOuwcN0-OW3RLbF-XbgazzHjJHPEgBYD39flpKjPVKRM2rVSU9A3fFZaTwkmAyVDY-Iyk4JzI2QDb9OD4SCDqdUOANtPzb1pnRllB_zpIDk=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNQKzr08q9oU3AUTsLnq_xXB4yJ__tnE1XJW4RKBSZqoY4N3Y8j0giTiKReK5anPANVljPcyfV1awSmsSUCHrmtXRaw-cpGRMtQOYbO5PlL2OCnm9Y=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPFoG5hRmpf6eNiQSv-0p5Hnm1l0p3t-s5OE0L5JdK4WWWZZlFhlZA27_17z0Q0cQxAk2uhpBG0RaoEpu-lmDNO-ID8fAKal-v283Ubts7pP8CqF_U=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNNjUX84k7pE1-TDffXHoCuOjl3d9nUuOLgMNokXL-WE9mIEVo14RamUAa3x1NIzX1zYTCcgKfl5XKKTsXD7MsSRTKVkN_VDAffnB4p6IiOTKqL_g=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMEIjwRL7TlhTd_XqP7tzzUMcOBERuM_H0zOcdzvZIQLRRsjlXcCx7jXYEkgzz1i-AONkyZKFxLx_64NogEnF1I7NGN3kz9EcOTzom4IdMyRHQMPQ=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOIjWMZR75DKtYWUWHG9cgYMKtkRlKXnILynKCClq9OUrjhz7TYwIz60jORpsVoLNIuVDLhFLDiUW-r9_HjeiexBNg1LSGZZbndJ9hDA-m73b0JFwE=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNRDtOSspcmRoqjLIBZsSYQ54nJrF0kffLpUrnq2GjxuQMnkUagnNgW39t_3Is1UwooTQgLh5vtdlZXaQxeL1DT_BRXi0ahpcrctYJrRz9x5BxtLXo=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNzWy1q97IQYZJMKYs3H8BzPKikFYq7bB7cwKCshbYxvdfNIFlEfKbIe31CqHh7q7fMNhhCiaPmhS0qcUA00vucst8hz8RosYomM7BRE7jYPlEgn84=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczN5gL8FkDRcUCUYKFOZp1HbB4fSEFhVwJjk9JuwMkl4pDHpno51HFCGGiSAZ40vlzDYkef-ndTjDtfVY-YsoOCJSdT-uruj16DGaqbDBty_YEQ649Y=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOKNJkvw8toOLzemkVcVVh4jOpuxzVB0xD5bESpLkpys9tv7Nr2OgKHZe8ChXy2vd8FoWUXgPOOo1pNUoEQCwQhtPuooalsocnpQYf-gcsWY9_2K2c=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczM0mclr77vEybxfnrOr9HnoucEKpt6r4N57ecTsRWgybA6d9hUMf0LBUnzRmYChV8VHtAFEnKXKjLL8tluJd2JzoIuG-iZSkUqOJhgENpnGYRVmkog=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMrw3hd2inKofETesez2GBaGBtUg0R2tKFKm4oy4uP_3O_RmAePC_A94deeWMAEFJOYB7erpdhHUW2n9dq5-oktjzW6gSqmAB9HhV_JpGvkZJQgb_E=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPgSYMiJ8ETYX-XYcplil9UEQZWBBRrgluFXG8qZlh6Cq7cPD1OT65PjInIPR86MHeqqLSpKX7OJELPIeJ1YbvxZQE1jNhZrEPWzIWuMEon3MLOiaY=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNGX_5kL14ob1h2RmFx3EHhY6M5nWPoQ11c08aSWD9H6sW2spEe-xnNQYS8zGW1SldmreGBkDsQxUsVr32oTf58j6ooFLl3jYESzij5QBODOd4ajWg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOGuMpmd_uaAjXnflCPEcfrXu9nbIdSQlP7TX-vt_P4hSBZC7UCV4TXS43yRS4idvHrUU0Oooi7AfPl_Zas6EhJ9fczq2hnvfl98sfadsFFxp_xVaw=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPBkwG2QLX9Xb7mF2MSXDICu-hNJqqA0DmVnWogy6vf8MsSotU5sgFCvP26FxVhrWeEm5DIg7W7-QEdrx9IX_V2RsujGrSWqiGKO59SUsTUgumE1d4=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczP8j1XKPEh1VhMFkfwj2Jr9D3O6d0xk8841HG8uLblAD7N29PyF6LsnTNDSg5ITKRWC2q3Mk5JQjbTmSfp8Via2FCjzWiwHuxMwvHfnqMdIq5wyToo=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczN5gSWQH5tUPqNB1ulemf0ifZhPVQkYWwVMFN9f3C1ObMpWM4kwxiynl4Q6rnTw21p6TLGZXZrQEZwr6q91MOOlxRhZ8nbJEWF2zjRTpjGh5BJ2w-A=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPJAC803M5Rkbj4Qksulg43ZDcW_eUssnUTQi2QpVisfszJ2MG_EiovXjusRPtOZdyAFfLIOL1W2zMPsiI61UgurBbDNaVf9u89-bqAkp2MVPdv9BU=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOX9uLnYu6ZbNSLo9BVZqpeWFdxj1dpbobgMnCYi7mH5vs5xaaPgX9D6lTdrd-t5C4PGhYh2_Kise729lo4x9XdOO5fgRN5Yx4CH_7xWy4VUdUcmtU=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMTqI_NbQNBHv5xvxzW-WQeVxmUJHC_qrwIuIZhriNw_1Z12U52YyZPHvuUbFOwdlywbZXn3Ifi7AnPzqp9p3GWKPTsIjnfwP9MmavvklwUMPku_TY=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPzj_KiwEGAU5ekWeJC1pY1Hz63_2oftE4YlfX_rHfTjEKi2zgcYB1Ql_czhYx7SYyOl-u81XHvCUTkH56sb0Np0QxTcTtmyQIu-DfATMO3NuJT-ug=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMccmPC5e-0p3IWYnwlJWrBHotavLygb9lPJWfFi7nl1Gx7GnRsF3KNi3pEmXOBOPWLOTcJ5PeTb6x2MJbtn9rlJlIzkhaf8aSCgZYe-cU4jZwfHPE=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNh32lVgsHLlvU0kklngeOdmOs0DOc8gk-NZ56h8TY2m6zECLuI7G6xgt9s_TXj9PxroQiTrsv6P7owKMlV8wxannfm0sKL3yimGP5rd0iQ3N-VnEU=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOBLQyxxF8YC0NCUPpn4RNBXnpOnhiTVEElEx7fxtO8Xr_lCyjXceb1j5IE2sjSTcSPZ6r5CRCPlZcl9sjIf1l-qctqtSmGNJOPrhATECU9YJBVYcA=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPG1H6P6mOdZaovpQLpjQW_g9SgR9F4IMHLz8Q53gM4ZzfwZjruD_u4fYLDL2AVJ8v3HVe06smmYcgDdGLMckPlP2c_vFOh6lwZcKIROaI2Cem1nuw=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOILlRJNJ4fntsS2bd7IPwuCDHQuK51YaAjPO_u1fhSXkPo_9rPb5IZSZCxEDD7z-APa3BTzI-aBvh0V3xqR-wo7s8WD-3ilkYHwYZiRBxqBKqmpOM=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPMcTmh06Ptk2inByRUMHg3Xan9k-UZePUO942t25Etma2rUJIBl6dy83UXHjzN8r50hAI08JTw09vtOE9lzFTADi9G8zLGOyGnxBwl1HYiFKTBVLs=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczN5h6vC3zuYtQ2zm-_OwnxMhKf6rQ2hBdrtTRnmpbyPUtiraVkQ0F3SaF9TrcPgjVnEJsyKKjV8jQMEUAPuY_27LkAR3i0zN108lzxzshzrOqBypYE=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOn4zDiohrTjkAI3FnHlbK7d2NcM4AQvC1uKwD6r0SoIwOfZg_O53pGpkxeAr_3-5yIU_d-ukm82FeHqIUhdHKl88rWhVwrgD4n90V-E9VdCRspoeg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPFm_RqjFoeas8h5_jVb7e7GkE21WlhW-5gDU8pAhv_jNwnQlbbDXUEd3dUrlFbxFY5tOs0gdxudn_09wa4Jd0WoFKsX8ZN64K_uWiLEl8r5IksbSk=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO7Yzt6aYAVlDFXNXjJmsPw-wgco1UcKGR4BVGiH7rvbqQsoOdL1Ocf9JvCoafBmnPVHxsRc_GXAcG-ccnhLB7ZxT--1OzdvThYnwQE7WleLigBClI=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOD6ad2Eju8j1OM0dKxFtVsAq5wEmovcm89X5qjE0jXeLLn6hqvpapPb7EgRvKD-9_dbzJkv60nm79Yuei_hV1zUre5gJ613KMp6sEqto_4xQut2Wc=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPoeB1pBcEtAqgPwnLyPvPDIgCtz7tPzSBzvUxZqFdSW5VXK-jIHUNIwGpn2561GLS1KGDdoQiPO3tP11eD3vm9HNWw9K2XQ-6pHnAL1ldgI_Q-i74=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPdNgrm1Awyh1n_GBY8YkSIgrjaO6m0f-xUORuSPijwquxRb8Auq6mYmgkvmRB5JR4SzSYwoOOL0KH1An7LW3oglIGFc8akMbs7GRzmXLrJWbtw4CA=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPtmMihBNCzTo5LqBGrd_sj4RKM3NRR8R9maBYhiaR9ZowYsUNBgdw3qCm8SC36QoNwwSk0nwXQ-UNshd2VKzAoNSU91cKqZ5skn2kgsBtDu3hS2-k=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNUUuPds8_CGqe-ReYi7zvvh9BmGupMr2f-QgMpWOYXR1HdEn6I0OwbsdijTGd2a2Z6FmUCS4Aby1Kse9J3moJ2iPLAbwEYREGcKGzFLN3LHyQ_3iU=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMa8GWLmYOSdCljwId7qYcRfA2hJjGvlcomQW2uJ0vBLMe7xSdk8QaClSaUhgaLGr2koKc0XkwMSWgfdwooEGBUXxMe5Fjwp8TyYj7e3mlLk5yfdTg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPybfjwr4TlsJOpZYBiKholqfB2AfiVKFqDvXbrlmtmR0bi_EinbViHpLXdoAtLSglg5Po0qWg1tvRmPYTuNsl074pDNdo-Tyhr3Wuj7VlpYPvvGvQ=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczP4kn11kVEAP5X0Hirks_nHEv883PLOmM4x9XWDDW1gmsqTkaUaz4bqdudCyWPzWEVVWlRcvfO6po7D_sX8cNFpbC9uM2Y9SkA0aJAWWRPncwTdNT0=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOl9q_s82YOImHdtdeCY1RKxIR-pqjR01AlbClWWdx1xRR14uRyMxER7_u8eQ4zGg3CZSp6vsZItjAYlJ7l8zttPVH9JPUiu5aPce4OzPjGxHSYfTk=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPMECsfEQoywnuW2Vr0K8Onga_Hh24MWAPL7N_t1UJsZ9VGlTRrkMszj-43kgsDjVA0uyBCuQmYP-kEo8_L6cyenFImJpDAeacWZQEkkLnO6Yd-a8M=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOEhek8Zf76kWr9iZbZcENOkGOMaoeRadRiwNmIoRqbw-2oMp2GibSkSLtU2nPG8akNkTgDJmzU4HHJQDyJ_YUdreeM5-QG8VCcmEq3CUcjG77FRXU=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNGiWstIuyh6Qm0RKjlE_ffmngloNgaqnX481IK1ADVVDMI-Pi-x0b1UREXX-cz9jsBmQLAhUbCGTgTFX07lnhRyWfLf2idBTHGZGgPcpjvq3hAJp0=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMl7elUkTNPtafKrLKRv76uoO9pS0RhAk-jndma_TMG1NBUoYg9cy4zEjLr5LTvm6MoCzR0Ztu60YteCFn5WIRoIDjJ5mkpD7NRUgLsne2dH-Y0EnI=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPAm7nQayTJ97ygyf59K1fLYuzpfJZR3qdEEC2DmNDoQpsGFDq5DecrU3dQRd8gNBnFopEhYwq1kxQ0VVsvtgXF1qG-nRuNsC8YtlP2nQEQ3alptu0=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPys6p9t6TDnEay7qEqyjziGge9po0uGHm47H7jMrUzBzDrqrjbY1YwRE1biCfkaWXL6jyqqCwrQ-RzOPBjR1lxF5rTnbmIUXfEVoqFKRI2MwfTl_o=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO7OTIW_GqIupwiaIxiPeMb5h6MwUITtlVFj_NoyGorrMYCKkD8coSuanr_lWTW5Ntt1SkpDjzhaE38ujmU35AcwZ-VToXg_7JuyETXDk846ub1D54=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOzHR1grMwQk4FfU1POSOgQxxPaH0eNEbbjKlySdBSRNEesByH5rpIJBh8zUvNfMhMY2dDhOZX3pXlIkwEOR82Ym9ry1ecW018xkqqPclI6MXP4gSI=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPnJOxKOT8nFUV6A2Qj-9Bf-sQLzbnlJMb_2az-a0KijYSYoPQ6CTzYG7eFtX7gDp8Of92m9PGqmiZJTNpoiL1_7eFzmk2qr20ZJsildgN4OoROnF8=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNMKlkJKyRkVDHzQh0PjfKyWDi6WIckJ04zftxRjN7iSha4mcFVuFzrxF_rmrqeu3qZLYEhqKuzS25U1z2CI66V-3ndzwKiQt8jakN_UEyyNCpvR0E=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMeBvPi-760mMbqIeZ-Ch33ZN9elZG1TnDlb3VVpU-rxhaCLTjHLAXJYpWoX_QmgOGKdHIC7s0eJy0RWW_BjP1mmeSIr5JU44fHA5M7mgfShoHmiKs=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOZljlx1rFHzPK0XnD4Yg7JBUs5AGJS7o51aebooYFUYd4UyEBqaIE2CEAc8_bSN3RBqNsobKuhVyJ60VVkVGk9u4SX1XL-FWfz5P1lN9DirSSmsuc=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczM5gqB6LPYUzMFIaDZtWm5BJcS103Th-de9CPs6BKF2KIzLZ0loaa6bfYFdAk62mkVMFHvwxywavBUXAIFdS6ChG7uEh0UT5g0AIYhjJWQTms4tYjg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO9WUWmam6W8Msov9IT9dMWivcy1ka4JkB6l5YVem_oEktihqgxg-5AqsBAJmp8jfd87zi01G8koXk_zpSYJXPpyYvN_uEY88ES_HntLtVLIEkw2Do=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPfBsxOYeh4bioKEOG5zbCwHtjtoi4R5A-lkOCuJwNNUhzPHIT7OBytNl5dHBooeNywECb9wrDVi8poNU1lV15m0sI72eMGof9CmyFzaawD693GXaE=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPYqrYtkTE6D4L-pqm7l3C-goiZZ6HJwvS4D_CPNf9YPuNRiINGJDye76YUDT1gKDwICqk0f69kP8eh1F7HofOWFH4kgVB3v3-BacU97kAth5PI0Rc=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPUL94UCncW4ct4njv7qpPQXUG47XNA7g5hH0Gx7SfyI8YKmCZe4HrYEgt57LRuHPlKQo520_8MuvjvryWy9YhZPYCvl_JjC0KLF8EIX5Fwejwhs6k=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMfdryfgqeaXIigNM06jpMaOMfoYzsg8KHfNqrd4FqMu781QL5ONYa7lOvFUSE1FrUSe0GIK5Nt41X8nl5r3vTzzEH8oSMBuwO49gBLhu4_40fWO0w=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczObwSVS-TaJtfSmXRpgmb50qGtctlEUB0cXslfVHw5ua6KEA0dreYFmHWEcaePfu9Fg3lVmGsxotMo4XKmT65ve694j3JHrehtsNmRKxU2H4LMNd2Q=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPbMPeBHBArk8pBSPdcTRL35AGTab6Ua1cBwTzMLCw3heKK0omXdsOj2LovIFyIvxL3WP3wNn9_KaQf8kEhTNNJUv9ZEFrZJStER8IiFTRGd-s8Uos=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO4Vs53CkHWl4b6zAcl9YUV_LkRB5yByc9Qhz2CkCt164HRZMtJwD03etfxDUn_NzdxgiH3xljN97mzDJY38YqKHth64cYKyTBPIFbKnNv8fpGR2Cs=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNWNYGsUNoHwCWzI7VIQ-cZwICBBLo-e5Bh443elYKaJX_cUlW7KNpDfILblsS5WTfI3VWNH17rG7pRA_Lj9Vj-tAeRdebOFUv0r3XJTdsHqY3Ufpc=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPGcnGNCyP59sURsrUAFNqR_uGtX43h5cWMl0XNtEA_Om8GIWsnqqa0MDWuvC1OjzSVFXts_Wnuqb7q9CJxevv1m7Vv55irkVBfdx5jcyNxRJZr0_M=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMcQO6v-gj5tVUlYUQ2zR3O7-eBr91JcULr2PMKfH9leEvyYnGMuXz1bAAZrqXrwno1tqtb-YNBOflpfIfbIhwHnf5nJSqHeorxCGMKpYcE29s9YQM=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczP3vmjCBu9CTzCkS7nMpjCCnlfea9R5xIRlGnqHbBEAZORb1LhCA_9JpAJ9Z0dBuIYr2jzuNLJAdyNS9XYwTNtHbwVWJPLmawTMxvdseCjyDHGHbOg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO34OwAMqFUeYv8eKtIvQV9PP0bVdJJzzT7058kMScVQUh2W3iBMb00LeP3q7kFKBeQQ6qUbX1ngzu8D0JzfcebyYxdw3E3UX5I6V03OmKwXh3UyBg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMiyKuuTCxQCAYXMac-oCOvF8bKz8pIPiaKQZd9TRyeBROzpG6hiETf2beDHq5D-DO9LSnUyJYU3RVVtHXVEYRFt0DlB16EpMf3aoO1laa17sdhO44=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOiUTCqSwGd7HwMn-IXuTY3BAfRk1Ufy00RBNKcPENlibVVvMUbzOWJVubxxxOol2gcuHbL6QCKbFh6N5hamh0wvt1ypNR8E4Mkc33J16qSBuvEwYQ=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPQGkeTFK2Ai4ORfDmdhtITsSyC7jqOqpj9iNRKUOeeZJGandVKNbEsqlQAv2aHJKMyDi1CT_M7qp2qIcC61Oqw3mDA650DqfixFlY6x1rEBdeDbec=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMp2tYSm-DXs_3y2xDqDbhkjaPTnLM2Atb2wEJL7WaT1RR4ISzI7B026BK2GnJ22mtgWvRCivXhwLUquY0YdDKnKvEUnoGQHYk7CjlGz4Ni2hjepJ8=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMR0wbodedbgMfx8Z0BtVLqQ9i7VkVk1yGxXNvaT9DnM3jovcb6dgHX8LUHa0oZZpTNGrGeLVsBIlMpKupope99DtZl7qlgqeFwfuF0kXEe1fee46Q=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO2y-fDTeBVVoddT5QknzwioxlBmnt_HcGOK0VFOkhcSpPpfxRx4lpjoSWZhfeA1i9r0tbiB7ov3UxHiNeHE3h4XccumkyLCl05YBMQdCxN9OGjA9U=w1920-h1080"></object>
+        </div>
+      </div>
+    </section>
+
+    <!-- Administrasi -->
+    <section class="administrasi" id="administras">
+      <div class="cards-container">
+        <h1>Aministrasi</h1>
+        <ul class="cards">
+          <li class="card">
+            <div>
+              <h3 class="card-title">SAKERNAS Februari 2025</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_PotensiDesa-BPS.png" style="width: 60px; height: 60px" alt="SK" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">SUSENAS Maret 2025</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_PolitikKeamanan-BPS.png" style="width: 60px; height: 60px" alt="Srikandi" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">SUPAS 2025</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_DTSEN-BPS.png" style="width: 60px; height: 60px" alt="SIMPENSU" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">SERUTI TW 2</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_SekolahRakyat-BPS.png" style="width: 60px; height: 60px" alt="SEKAR" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">SAKERNAS Agustus 2025</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_PendataanPerumahan-BPS.png" style="width: 60px; height: 60px" alt="MOU" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+
+          <li class="card">
+            <div>
+              <h3 class="card-title">SUSENAS September 2025</h3>
+              <div class="card-content">
+                <img src="../assets/img/Ilustrasi_PendataanPerumahan-BPS.png" style="width: 60px; height: 60px" alt="MOU" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Susunan Organisas Section -->
+    <section class="struktur" id="struktur">
       <div class="container">
         <div class="welcome-content">
           <div class="welcome-text fade-in">
-            <h2>Tentang Tim Sosial</h2>
-            <p>Kelompok kerja di dalam BPS kota yang khusus menangani aspek sosial dari data statistik — seperti kesejahteraan rakyat, kemiskinan, tenaga kerja, demografi sosial, ketenagakerjaan, dan lain-lain.</p>
-          </div>
-          <div class="welcome-illustration fade-in">
-            <img src="../assets/img/Ilustrasi_Sosial-BPS.png" alt="Sosial" style="width: 250px; height:auto" />
-          </div>
-        </div>
-        <!-- Susunan Organisas Section -->
-         <section class="struktur" id="struktur">
-          <div class="container">
-            <div class="welcome-content">
-              <div class="welcome-text fade-in" >
             <h2>Struktur Tim</h2>
-              <div class="stats">
+            <div class="stats">
               <div class="flip-card">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <img src="../assets/img/Sosial_Wulan.png" alt="Ketua Tim Sosial">
-          </div>
-          <div class="flip-card-back">
-            <p class="title">Ketua Tim</p>
-            <p>"Jalani profesimu dengan sepenuh hati"</p>
-          </div>
-           </div>
-</div>
-        <div class="flip-card">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <img src="../assets/img/Sosial_Wulan.png" alt="Ketua Tim Sosial">
-          </div>
-          <div class="flip-card-back">
-            <p class="title">Anngota Tim</p>
-            <p>"My Trip My Adventure"</p>
-          </div>
-           </div>
-</div>
-            </div>
-            </div>
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="../assets/img/Sosial_Wulan.png" alt="Ketua Tim Sosial" />
+                  </div>
+                  <div class="flip-card-back">
+                    <p class="title">Ketua Tim</p>
+                    <p>"Jalani profesimu dengan sepenuh hati"</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="../assets/img/Sosial_Wulan.png" alt="Ketua Tim Sosial" />
+                  </div>
+                  <div class="flip-card-back">
+                    <p class="title">Anngota Tim</p>
+                    <p>"My Trip My Adventure"</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-         </section>
-         <section class="kegiatanSosial" id="kegiatanSosial">
-<div class="interior-header bobble-header">
-  <div class="container">
-    <div class="col-xs-12">
-      <div class="row">
-        <div class="banner-wrap">
-          <h1>
-            Kegiatan Tim Sosial
-          </h1>
-<div class="bobble-wrap">
-              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 392.086 419.117"><defs><style>.cls-1{fill:#f8decc;}.cls-2{fill:#e8c8a1;}.cls-3{fill:#fff;}.cls-4{fill:#193f3c;}.cls-5{fill:none;}.cls-6{fill:#e6e6e6;}.cls-7{fill:#fadfbe;}.cls-8{opacity:0.6;}.cls-9{fill:#695543;}.cls-10{fill:#4b3d2f;}.cls-11{fill:#e6c6b0;}.cls-12{fill:#727372;}.cls-13{fill:#3b3a39;}.cls-14{fill:#202020;}.cls-15{fill:#e1f8ff;}.cls-16{fill:#b52103;}</style></defs><title>bobbleheads-02</title><g id="yeosh-body"><path d="M338.013,380.91c-1.686-2.562-4.334-5.918-7.4-9.8-1.784-2.261-3.788-4.8-5.811-7.452l-1.854-12.414c-.365-2.447-.865-5.8-3.266-8.273-2.7-2.782-6.6-3.18-9.186-3.443l-1.144-.117c-3.148-6.855-4.479-12.817-3.959-17.741a3.047,3.047,0,0,0-.758-2.354,3,3,0,0,0-2.032-.993c-.071,0-.142-.007-.214-.006l-14.081.064a3.009,3.009,0,0,0-2.765,1.9,3.076,3.076,0,0,0,.684,3.32,6.756,6.756,0,0,1,1.294,7.518,47.641,47.641,0,0,1-3.224,5.9,12.885,12.885,0,0,0-8.749,2.756c-3,2.593-3.856,6.322-4.609,9.611l-.216.936a35.842,35.842,0,0,1-3.359,8.027c-.228.442-.455.885-.68,1.327-3.509,4.03-7.474,8.443-12.45,13.856a5.483,5.483,0,0,0-1.149,5.5,5.383,5.383,0,0,0,4.265,3.582l13.524,2.108-4.935,23.4c-.235.818-1.459,5.153-2.667,10.987h59.5c-.363-3.868-.75-6.586-.844-7.225L320.2,388.48l12.943.87a5.369,5.369,0,0,0,5.039-2.7A5.443,5.443,0,0,0,338.013,380.91ZM294.9,373.621l-.147-12.028,4.239-.121.852,12.231L300,375.99l-5.072.129ZM304.714,346l2.59,2.562-7.537,6.458-1.085-1.466Zm-5.321,9.473-.317,4.719-4.252.324-.564-5.591,1.409-.582,2.469-.173Zm-5.835-8.432,2.15,6.711-1.834.872-4.208-7.844Z" transform="translate(-14.744)"></path><path class="cls-1" d="M275.683,380.924l3.088.208-6.587,37.985h-4.665c1.181-5.421,2.274-9.17,2.274-9.17l5.9-27.976c-.01-.04-.023-.08-.03-.121l0-.008h0a1.819,1.819,0,0,1,.007-.631C275.669,381.115,275.678,381.02,275.683,380.924Zm42.178,32.253-2.1-28.513c.015-.039.034-.077.046-.116l0-.008h0a1.819,1.819,0,0,0,.078-.626c.012-.1.015-.191.023-.287l-3.088-.208,1.34,35.7h4.416C318.211,415.5,317.861,413.177,317.861,413.177Z" transform="translate(-14.744)"></path><path class="cls-2" d="M275.662,381.85c.007.04.021.08.03.121l-5.9,27.976s-1.093,3.749-2.274,9.17h-1.164c1.266-6,2.505-10.247,2.505-10.247l5.621-26.654.285-1.353.918.062c0,.1-.014.191-.015.287a1.819,1.819,0,0,0-.007.631h0Zm43.269,30.384-1.993-27.016-.113-1.529-.918-.062h0c-.008.1-.011.192-.023.287a1.819,1.819,0,0,1-.078.626h0l0,.008c-.013.039-.031.077-.046.116l2.1,28.513s.35,2.323.714,5.94h1.162C319.342,414.964,318.931,412.234,318.931,412.234Z" transform="translate(-14.744)"></path><path class="cls-3" d="M295.709,353.751l-1.834.872-4.208-7.844,3.893.262Zm3.368,6.44.317-4.719-1.255-1.3-2.469.173-1.409.582.564,5.591Zm-.086,1.281-4.239.121.147,12.028.5,41.243,7.279-.391-2.839-40.77Zm8.314-12.911L304.714,346l-6.033,7.554,1.085,1.466Z" transform="translate(-14.744)"></path></g><g id="jon-body"><path d="M188.2,365.173a4.581,4.581,0,0,0-5.647-4.156l-2.891.7a4.587,4.587,0,0,0-3.5,4.8l.414,5.844a5.171,5.171,0,0,0-1.061,1.554q-.135.016-.266.038l-.125.021-.1.025a6.172,6.172,0,0,0-.9.252c-.074.027-.148.057-.222.09a6.647,6.647,0,0,0-.633.3,37.328,37.328,0,0,0-10.575-13.878c-.327-13.745-4.9-29.715-5.386-31.365l-4.947-22.987,13-.922a5.453,5.453,0,0,0,3.685-9.044c-5.673-6.448-16.255-19.237-23.973-33.047-.456-8.332-1.876-11.046-2.477-11.834l-.419-.549-.613-.313a13.128,13.128,0,0,0-2.863-1.078,41.186,41.186,0,0,1-2.526-12.069l-.129-3.962-3.774,1.148-21.777,6.625-1.751.533-.343,1.807c-.006.034-.6,3.13-1.934,8.085a12.781,12.781,0,0,0-3.085,1.617l-.563.4-.337.6c-.494.881-1.532,3.829-.757,12.371A148.124,148.124,0,0,1,84.63,300.681a5.476,5.476,0,0,0-.385,5.616,5.409,5.409,0,0,0,4.739,2.965l13.753.225-1.686,23.9c-.246,1.7-2.523,18.158-.907,31.811a37.329,37.329,0,0,0-8.512,15.231,6.621,6.621,0,0,0-.668-.2c-.08-.022-.157-.042-.237-.059a6.146,6.146,0,0,0-.927-.122c-.076-.007-.152-.012-.23-.013s-.176,0-.266,0a5.172,5.172,0,0,0-1.27-1.389l-.414-5.844a4.587,4.587,0,0,0-4.143-4.263l-2.962-.283a4.581,4.581,0,0,0-5,4.911l.933,13.155a4.624,4.624,0,0,0,3.63,4.184l4.078.864.7,3.559a4.636,4.636,0,0,0,.438,1.241,3.432,3.432,0,0,0,.2.341,4.451,4.451,0,0,0,.562.721l.107.111.093.079a4.53,4.53,0,0,0,.833.61l.068.039.037.018a4.57,4.57,0,0,0,2.5.54,4.522,4.522,0,0,0,2.463-.947l1.607-1.25,2.549,2.666a4.6,4.6,0,0,0,5.129,1.038l-.383,18.986h24.345c-3.878-41.213-.117-53.631,2.7-57.335a3.2,3.2,0,0,1,2.389-1.528,3.312,3.312,0,0,1,.376,0l.349.016.343-.065a3.247,3.247,0,0,1,.369-.048,3.2,3.2,0,0,1,2.581,1.176c3.354,3.306,8.92,15.282,10.837,57.789H170.18l-3.848-23.586a4.527,4.527,0,0,0,1.52.148,4.6,4.6,0,0,0,2.266-.791,4.514,4.514,0,0,0,1.147-1.109l2.147-3,1.767,1.01a4.522,4.522,0,0,0,2.572.591,4.589,4.589,0,0,0,2.393-.882l.02-.014.06-.045a4.66,4.66,0,0,0,.759-.737c.052-.061.1-.124.151-.189a4.578,4.578,0,0,0,.473-.816,3.306,3.306,0,0,0,.153-.359,4.664,4.664,0,0,0,.263-1.305l.192-3.622,3.915-1.431a4.624,4.624,0,0,0,3-4.654Z" transform="translate(-14.744)"></path><path class="cls-4" d="M162.289,389.545l-6.557-40.184L129.5,335.977l-24.079,16.951-1.336,66.189h18.275c-.019-.2-.036-.4-.055-.6l-.016-.176-.027-.29-.042-.456q-.108-1.189-.209-2.369l-.015-.182q-.027-.316-.054-.632c-.009-.109-.019-.218-.028-.327q-.088-1.053-.17-2.1c-.006-.079-.012-.157-.018-.235q-.112-1.431-.213-2.844l-.013-.188-.011-.157c0-.054-.007-.108-.011-.162q-.1-1.395-.185-2.771l-.013-.2c-.011-.17-.021-.338-.031-.507q-.073-1.2-.138-2.389-.009-.161-.017-.321-.016-.3-.032-.608-.055-1.066-.1-2.116c-.006-.132-.011-.263-.017-.395v-.009c-.01-.235-.021-.471-.03-.7q-.031-.761-.058-1.513c0-.127-.008-.252-.012-.378s-.009-.271-.013-.406q-.037-1.147-.064-2.275c0-.117-.006-.235-.008-.352,0-.077,0-.152,0-.229s0-.177-.005-.265q-.021-1.07-.033-2.12c0-.067,0-.135,0-.2,0-.05,0-.1,0-.15,0-.178,0-.353,0-.529q-.006-.979,0-1.938v-.057c0-.111,0-.223,0-.334q0-.289,0-.576.007-.767.02-1.519c0-.088,0-.174.005-.262,0-.135.005-.27.008-.4,0-.206.008-.412.014-.616q.014-.57.033-1.132c.006-.172.012-.342.018-.513,0-.123.01-.245.014-.367.009-.228.017-.458.027-.684.015-.35.033-.7.051-1.04.009-.165.017-.33.026-.494,0-.086.01-.171.015-.256.007-.123.015-.244.022-.366q.042-.684.091-1.352c.013-.173.024-.348.038-.519v-.006c.014-.174.029-.344.044-.516q.051-.614.109-1.214.02-.2.04-.4c.008-.078.015-.159.023-.237.017-.167.036-.331.054-.5.03-.277.061-.553.094-.825.025-.207.052-.408.078-.612.013-.1.027-.209.04-.312.022-.165.044-.33.067-.493q.053-.379.11-.749c.029-.187.058-.372.088-.556.016-.1.033-.2.049-.3.029-.174.057-.349.087-.52.039-.218.079-.431.12-.645.034-.182.069-.364.1-.542.016-.079.032-.155.049-.234.026-.125.051-.25.078-.373.05-.234.1-.463.154-.691.046-.2.091-.4.139-.592.007-.027.014-.053.021-.079.031-.125.064-.246.1-.368.046-.177.091-.355.139-.528.06-.217.122-.429.185-.64.013-.042.025-.087.037-.129.039-.129.08-.254.12-.38.049-.152.1-.305.147-.454.063-.188.129-.369.195-.55.025-.068.049-.137.074-.2q.065-.174.131-.343c.052-.133.106-.264.159-.394.068-.164.138-.324.208-.482q.046-.1.092-.2c.051-.11.1-.221.152-.328s.1-.2.154-.3c.08-.156.161-.31.243-.459.03-.054.061-.105.091-.158.053-.093.106-.189.161-.279s.093-.148.14-.221c.1-.165.21-.327.319-.481.019-.027.039-.052.059-.078.05-.07.1-.137.153-.2s.091-.126.138-.185c.128-.161.26-.314.394-.46.012-.014.024-.029.037-.042.066-.071.134-.135.2-.2s.112-.114.169-.168c.122-.115.246-.223.372-.327.035-.029.069-.06.1-.088.068-.054.136-.1.205-.154s.115-.081.172-.12q.193-.132.393-.246c.046-.026.092-.053.138-.078.074-.04.148-.081.223-.117.047-.023.095-.041.142-.062.15-.067.3-.129.456-.183.048-.016.1-.031.144-.046.087-.027.172-.06.26-.083l.036-.007a5.579,5.579,0,0,1,.6-.117c.036-.005.074-.007.111-.011q.106-.013.213-.022c.026,0,.05-.011.077-.012h.051a6.226,6.226,0,0,1,.669-.008,6.226,6.226,0,0,1,.663-.086c.017,0,.034-.005.051-.007s.051,0,.077,0q.108-.006.215-.008c.037,0,.075,0,.111,0a5.583,5.583,0,0,1,.628.032h.014c.093.011.183.03.275.046.049.008.1.015.148.025.169.033.335.075.5.123.038.011.076.02.114.032.084.027.167.058.251.088.049.018.1.038.147.057q.226.09.448.2c.047.023.094.046.141.071.083.044.165.087.247.135.039.023.077.049.116.072.148.09.295.186.44.29.043.031.086.064.129.1.088.066.177.129.264.2l.042.036q.243.2.481.427c.026.024.05.051.076.076.081.079.161.159.241.242.023.024.047.045.07.07q.236.25.466.525l.023.026c.088.106.175.221.262.333.037.048.075.094.112.143.125.164.248.336.37.511.031.044.062.086.092.131.079.117.158.238.236.359l.119.187q.165.263.327.54l.11.189c.077.135.154.271.23.41.034.062.067.127.1.19.107.2.213.4.317.612.031.063.062.127.093.191.081.166.162.33.242.5.02.042.039.087.058.129.113.244.224.492.334.747.015.036.03.073.045.109.084.2.168.4.25.6l.032.077c.113.281.225.569.336.862l.026.067c.081.216.16.438.24.66.026.073.053.145.079.219.089.253.177.513.265.773.024.072.048.142.072.215.071.216.142.437.212.658.031.1.062.194.092.292q.117.375.231.76l.081.273q.1.35.2.707c.028.1.056.2.084.3.074.266.147.534.219.806.022.082.043.166.065.249.071.273.143.547.213.826.019.076.038.154.056.231.076.308.152.616.226.93l.023.1c.082.348.163.7.243,1.055l0,.008c.078.35.155.707.231,1.065l.025.115c.071.334.14.674.209,1.015.017.083.034.165.051.248.061.306.121.616.181.927.018.094.036.187.054.281.061.323.122.65.182.978.022.119.044.237.065.357q.079.439.156.885l.057.328q.087.508.172,1.023c.021.128.042.258.063.387.048.3.1.6.144.9.015.094.029.189.044.283.059.38.117.762.174,1.148.016.111.032.223.049.335.049.333.1.666.145,1l.005.038q.1.724.2,1.459c.006.046.012.093.018.138q.068.515.135,1.037c.006.048.013.1.019.144q.088.687.172,1.385c.01.08.02.159.029.24.039.326.077.655.115.984.013.109.026.218.038.327q.074.641.144,1.29c.015.136.03.271.045.408q.049.453.1.911l.038.369q.068.655.133,1.317.023.228.045.457.044.456.088.914c.009.094.017.189.026.283q.068.727.133,1.461c.013.141.025.283.037.424q.12,1.378.232,2.778c.007.089.014.179.021.269q.035.45.07.9l.015.2q.066.874.129,1.755l.012.166c.023.323.045.648.067.972.008.12.017.241.025.361q.053.784.1,1.574c.009.142.018.284.027.426q.027.436.054.874.012.19.023.381.048.8.093,1.6.014.243.027.485.024.43.047.86c0,.09.009.181.014.271q.046.861.089,1.726.013.251.025.5.054,1.1.1,2.214h18.729Z" transform="translate(-14.744)"></path> <polygon class="cls-5" points="80.855 393.957 80.855 393.957 80.855 393.957 80.855 393.957"></polygon><path class="cls-5" d="M94.609,393.061c-.028-.014-.054-.03-.083-.042C94.554,393.031,94.581,393.047,94.609,393.061Z" transform="translate(-14.744)"></path><path class="cls-5" d="M93.58,392.935a1.483,1.483,0,0,0-.156.034A1.531,1.531,0,0,1,93.58,392.935Z" transform="translate(-14.744)"></path><path class="cls-5" d="M100.229,397.34a1.476,1.476,0,0,1-.151.041A1.471,1.471,0,0,0,100.229,397.34Z" transform="translate(-14.744)"></path><path class="cls-5" d="M99.351,397.433a1.582,1.582,0,0,1-.413-.135A1.58,1.58,0,0,0,99.351,397.433Z" transform="translate(-14.744)"></path><path class="cls-5" d="M99.745,397.458c.011,0,.021-.006.031-.007a1.554,1.554,0,0,1-.284-.008A1.557,1.557,0,0,0,99.745,397.458Z" transform="translate(-14.744)"></path><path class="cls-5" d="M89.48,395.59a1.524,1.524,0,0,0,.268-.059,1.516,1.516,0,0,1-.284.058Z" transform="translate(-14.744)"></path><path class="cls-5" d="M185,364.753a1.565,1.565,0,0,1,.085.2A1.561,1.561,0,0,0,185,364.753Z" transform="translate(-14.744)"></path><path class="cls-5" d="M177.987,389.245c-.045.018-.095.021-.142.034C177.892,389.265,177.942,389.262,177.987,389.245Z" transform="translate(-14.744)"></path><path class="cls-5" d="M185.121,365.054a1.582,1.582,0,0,1,.061.333A1.577,1.577,0,0,0,185.121,365.054Z" transform="translate(-14.744)"></path><path class="cls-5" d="M177.535,389.348l.016,0a1.519,1.519,0,0,1-.289-.017A1.52,1.52,0,0,0,177.535,389.348Z" transform="translate(-14.744)"></path><path class="cls-5" d="M172.713,387.311c-.031.006-.06.009-.09.016C172.653,387.32,172.683,387.316,172.713,387.311Z" transform="translate(-14.744)"></path><path class="cls-5" d="M183.706,363.939a1.536,1.536,0,0,1,.187.019A1.524,1.524,0,0,0,183.706,363.939Z" transform="translate(-14.744)"></path><path class="cls-5" d="M89.165,395.566c-.049-.007-.1,0-.148-.014C89.066,395.563,89.116,395.559,89.165,395.566Z" transform="translate(-14.744)"></path><path class="cls-5" d="M184.816,364.49a1.557,1.557,0,0,1,.112.157A1.551,1.551,0,0,0,184.816,364.49Z" transform="translate(-14.744)"></path><path class="cls-5" d="M184.589,364.271a1.568,1.568,0,0,1,.137.125A1.559,1.559,0,0,0,184.589,364.271Z" transform="translate(-14.744)"></path><path class="cls-5" d="M184.026,363.989a1.55,1.55,0,0,1,.173.057A1.542,1.542,0,0,0,184.026,363.989Z" transform="translate(-14.744)"></path><path class="cls-5" d="M93.967,392.894c.031,0,.061,0,.092,0C94.028,392.894,94,392.895,93.967,392.894Z" transform="translate(-14.744)"></path><path class="cls-5" d="M172.177,387.514c-.027.016-.05.036-.076.054C172.126,387.549,172.151,387.53,172.177,387.514Z" transform="translate(-14.744)"></path><path class="cls-5" d="M173.76,387.482l2.913,1.666a1.538,1.538,0,0,0,.437.168,1.536,1.536,0,0,1-.437-.168Z" transform="translate(-14.744)"></path><path class="cls-5" d="M173.1,387.3a1.513,1.513,0,0,1,.16.012A1.48,1.48,0,0,0,173.1,387.3Z" transform="translate(-14.744)"></path><path class="cls-5" d="M89.031,306.222a2.351,2.351,0,0,1-1.746-.8,2.351,2.351,0,0,0,1.745.8l16.951.278-1.92,27.216,1.92-27.216Z" transform="translate(-14.744)"></path><path class="cls-5" d="M88.431,395.27a1.52,1.52,0,0,0,.151.113l.009,0-.009,0A1.521,1.521,0,0,1,88.431,395.27Z" transform="translate(-14.744)"></path><path class="cls-5" d="M90.305,395.271a1.536,1.536,0,0,1-.409.228,1.536,1.536,0,0,0,.409-.228l2.649-2.06h0Z" transform="translate(-14.744)"></path><path class="cls-5" d="M184.323,364.1a1.577,1.577,0,0,1,.156.092A1.559,1.559,0,0,0,184.323,364.1Z" transform="translate(-14.744)"></path><path class="cls-5" d="M88.881,383.114h0l-.024,0c.016,0,.032,0,.048,0Z" transform="translate(-14.744)"></path><path class="cls-5" d="M79.97,371.274c-.017,0-.032.007-.049.008a1.551,1.551,0,0,1,.309-.005A1.569,1.569,0,0,0,79.97,371.274Z" transform="translate(-14.744)"></path><path class="cls-5" d="M79.6,371.351a1.54,1.54,0,0,1,.184-.045A1.517,1.517,0,0,0,79.6,371.351Z" transform="translate(-14.744)"></path><path class="cls-5" d="M79.313,371.482a1.549,1.549,0,0,1,.164-.081A1.532,1.532,0,0,0,79.313,371.482Z" transform="translate(-14.744)"></path><path class="cls-5" d="M167.17,299.053a2.362,2.362,0,0,1,.2,1.29A2.362,2.362,0,0,0,167.17,299.053Z" transform="translate(-14.744)"></path><path class="cls-5" d="M89.213,383.076q-.153.011-.31.036a3.354,3.354,0,0,1,.6-.043Q89.359,383.066,89.213,383.076Z" transform="translate(-14.744)"></path><path class="cls-5" d="M78.568,372.5a1.564,1.564,0,0,1,.056-.208A1.561,1.561,0,0,0,78.568,372.5Z" transform="translate(-14.744)"></path><path class="cls-5" d="M78.529,372.948a1.582,1.582,0,0,1,.013-.338A1.582,1.582,0,0,0,78.529,372.948Z" transform="translate(-14.744)"></path><path class="cls-5" d="M176.035,376.921q-.146.01-.286.034a3.353,3.353,0,0,1,.6-.042Q176.187,376.911,176.035,376.921Z" transform="translate(-14.744)"></path><path class="cls-5" d="M78.842,371.9a1.573,1.573,0,0,1,.117-.141A1.564,1.564,0,0,0,78.842,371.9Z" transform="translate(-14.744)"></path><path class="cls-5" d="M79.057,371.667a1.577,1.577,0,0,1,.141-.112A1.558,1.558,0,0,0,79.057,371.667Z" transform="translate(-14.744)"></path><path class="cls-5" d="M78.677,372.179a1.584,1.584,0,0,1,.088-.17A1.578,1.578,0,0,0,78.677,372.179Z" transform="translate(-14.744)"></path><path class="cls-5" d="M183.52,363.934a1.571,1.571,0,0,0-.257.04,1.548,1.548,0,0,1,.306-.038C183.552,363.936,183.536,363.932,183.52,363.934Z" transform="translate(-14.744)"></path><path class="cls-5" d="M176.395,376.911h0a3.818,3.818,0,0,1,.707.087A3.818,3.818,0,0,0,176.395,376.911Z" transform="translate(-14.744)"></path><path class="cls-5" d="M176.37,376.912h0Z" transform="translate(-14.744)"></path><path class="cls-3" d="M106.991,263.589a62.221,62.221,0,0,0,10.364,2.9,87.952,87.952,0,0,0,13.53,1.816,79.2,79.2,0,0,0,13.471-.116c-.777-1.3-1.54-2.611-2.269-3.933-.412-8.906-1.892-10.845-1.892-10.845q-.5-.254-.979-.443a8.957,8.957,0,0,0-1.858-.519,7.689,7.689,0,0,0-.879-.091q-.726-1.906-1.316-3.792a46.7,46.7,0,0,1-1.7-7.379,33.354,33.354,0,0,1-.311-3.536l-21.777,6.625s-.14.741-.442,2.089c-.388,1.734-1.044,4.471-2.012,7.929a7.937,7.937,0,0,0-1.861.523,10.047,10.047,0,0,0-1.939,1.081s-.771,1.394-.627,6.577C105.306,262.856,106.13,263.237,106.991,263.589Z" transform="translate(-14.744)"></path><path d="M103.395,353.4l.2-.093Zm45.282-78.361q-.971-1.455-1.925-2.944l0,.005-44.8,2.5q-.632,1.544-1.315,3.121v0Zm-25.244,71.329c.347-.084.694-.167,1.045-.247C124.127,346.2,123.78,346.28,123.433,346.364Zm-19.563,6.81h0l-.064.029Zm46.806-75.205L99.247,280.84q-.71,1.556-1.469,3.128l54.974-3.069Q151.715,279.462,150.676,277.969Zm-40.9,72.717.582-.224Zm15.826-4.816h-.016l-.3.066Zm-18.7-31.444h0l.052-.511,40.271-2.248-.5-3.018-39.465,2.2Zm-19.651-9.056c.012.015.028.026.041.04-.012-.014-.025-.026-.036-.04Zm-.513-2h0c0-.011,0-.021,0-.032C86.742,303.346,86.737,303.356,86.736,303.367ZM165.85,302.3c.037-.014.066-.041.1-.057a2.335,2.335,0,0,0,.491-.28c.013-.01.022-.025.035-.035a2.391,2.391,0,0,0,.457-.5l-79.128,4.418c.028.018.054.036.083.053a2.31,2.31,0,0,0,.325.153c.067.026.132.054.2.074a2.411,2.411,0,0,0,.613.1h0l18.665.306-.16,1.587.033-.326,38.66-2.158.083.5h0l-.381-2.315,19.216-1.362A2.42,2.42,0,0,0,165.85,302.3Zm-78.992.624c-.025.07-.039.141-.058.212a2.406,2.406,0,0,1,.095-.283C86.884,302.875,86.868,302.9,86.858,302.923Zm58.893,41.889c.441.074.877.159,1.312.25C146.629,344.971,146.192,344.886,145.752,344.812Zm-42.694,8.744.194-.093Zm41.868-84.4c-.691-1.137-1.37-2.283-2.027-3.438v0l-38.339,2.141h0c-.2.56-.418,1.132-.632,1.7-.044.118-.086.233-.131.352-.2.52-.4,1.048-.606,1.576v0ZM167.218,300.9h-.012c-.01.026-.019.051-.03.077C167.187,300.954,167.207,300.931,167.218,300.9Zm-63.183,41.9-.175,1.737,48.328-2.7-.5-3.018-47.523,2.653ZM154.9,283.825,96.226,287.1q-.8,1.567-1.653,3.138l62.553-3.492Q156.029,285.329,154.9,283.825Zm4.515,5.84-66.6,3.719q-.909,1.58-1.87,3.15l70.836-3.955C161.022,291.659,160.232,290.685,159.417,289.664Zm-54.91,48.458-.03.3,46.717-2.608-.08-.483-.417-2.535-45.911,2.563Zm61.51-40.536-.364-.42-.45-.521-.479-.558-.383-.449-.127-.149-75.265,4.2q-.9,1.375-1.839,2.733a2.419,2.419,0,0,0-.217.427l79.83-4.457Q166.385,298.008,166.018,297.585Zm-60.864,34.132-.058.575,45.105-2.518-.5-3.018-44.3,2.473Zm1.329-13.172-.151,1.495,41.882-2.338-.5-3.018-41.077,2.293Zm-2.933,29.062-.309,3.063,7.7-.43.363-.134c.429-.16.867-.32,1.321-.483l.4-.143q.724-.257,1.485-.515l.306-.1q.892-.3,1.827-.6l.065-.021c1.893-.6,3.907-1.182,6.01-1.709h0ZM103,353.585l-.053.026Zm2.729-27.541-.012.122,43.494-2.428.083.5h0l-.579-3.521L106.023,323.1Zm41.791,19.109q.894.2,1.767.455l.084.022c.535.157,1.06.339,1.58.527.095.034.193.061.288.1q.918.345,1.8.758l-.436-2.65h0l.083.5Z" transform="translate(-14.744)"></path><path class="cls-6" d="M105.1,332.292l45.105-2.518.5,3.018-45.911,2.563h0l.309-3.063Zm-1.237,12.252-.309,3.063,19.164-1.07h0c.237-.059.478-.115.717-.173.347-.084.694-.167,1.045-.247.269-.062.539-.121.81-.181l.3-.066c.245-.053.491-.1.737-.153s.519-.108.78-.159q.808-.159,1.624-.3c.227-.04.456-.075.684-.113.415-.069.831-.135,1.249-.2.259-.038.517-.073.777-.108q.566-.077,1.134-.143c.254-.03.507-.061.761-.088q.781-.083,1.563-.145c.229-.018.458-.033.686-.049.464-.031.927-.058,1.39-.078.251-.011.5-.017.753-.024q.579-.016,1.155-.019c.249,0,.5,0,.745,0,.481.005.961.02,1.439.04.215.009.43.019.645.032q.755.044,1.5.115c.234.022.467.05.7.077q.572.065,1.138.148c.236.035.471.069.705.108.441.074.877.159,1.312.25.151.032.3.057.454.091l5.167-.288-.083-.5-.267-1.624-.147-.891-48.328,2.7Zm63.078-43.117a2.452,2.452,0,0,0,.2-.356c.014-.029.023-.061.035-.09s.02-.051.03-.077.025-.061.036-.092a2.457,2.457,0,0,0,.083-.315,2.419,2.419,0,0,0,.04-.28,2.383,2.383,0,0,0,0-.417c-.005-.055-.009-.109-.018-.164a2.335,2.335,0,0,0-.158-.532c-.016-.038-.037-.075-.056-.113a2.436,2.436,0,0,0-.349-.534l-.056-.064h0l-79.83,4.457h0a2.406,2.406,0,0,0-.095.283c-.014.046-.035.091-.046.137l0,.011c0,.018,0,.035-.008.053s0,.021,0,.032a2.407,2.407,0,0,0-.035.688c0,.031,0,.063.008.095a2.476,2.476,0,0,0,.52,1.2l.021.023c.011.014.024.027.036.04s.048.055.073.082a2.363,2.363,0,0,0,.335.291c.029.021.054.046.084.065h.026l79.128-4.418Zm-59.368,6.36-.033.326-.276,2.736h0l39.465-2.2-.339-2.059-.075-.456-.083-.5ZM152.752,280.9l-54.974,3.069c-.5,1.041-1.017,2.085-1.552,3.132l58.676-3.276Q153.835,282.4,152.752,280.9Zm-46.729,42.2h0l42.688-2.383-.5-3.018-41.882,2.338Zm-.309,3.063-.309,3.063,44.3-2.473-.2-1.216-.214-1.3-.083-.5Zm-1.546,15.315,47.523-2.653-.5-3.018h0l-46.717,2.608ZM163.041,294.1l-.009-.011c-.406-.486-.823-.986-1.252-1.507l-70.836,3.955c-.648,1.057-1.309,2.111-1.993,3.157l75.265-4.2Q163.646,294.819,163.041,294.1Zm-60.1,59.515.053-.026.06-.029.194-.093.143-.067.2-.093.215-.1.064-.029.328-.15.332-.15.222-.1q.323-.144.7-.308l.262-.115.483-.208.315-.134c.281-.119.576-.243.886-.371l.365-.15.594-.242.683-.272q.359-.142.734-.287l.582-.224.578-.22h0l-7.7.43Zm55.375-65.334-.046-.059q-.568-.722-1.147-1.472l-62.553,3.492q-.852,1.574-1.759,3.144l66.6-3.719C159.056,289.212,158.689,288.748,158.319,288.277ZM106.9,314.425l-.258,2.552h0l41.077-2.293-.5-3.018-40.271,2.248Zm41.778-39.39-48.039,2.682h0q-.67,1.549-1.39,3.122l51.429-2.871Q149.672,276.525,148.677,275.035Zm-1.925-2.944q-.928-1.454-1.826-2.938l-41.736,2.33v0c-.4,1.025-.807,2.061-1.238,3.113l44.8-2.5Z" transform="translate(-14.744)"></path><path d="M144.072,263.3c-.456-8.1-1.829-10.541-2.282-11.128l-.278-.36-.4-.206a10.62,10.62,0,0,0-5.609-1.261c-7.258.515-11.105,9.451-12.251,12.64-1.585-3-6.654-11.3-13.912-10.785a10.62,10.62,0,0,0-5.375,2.039l-.372.262-.224.4c-.365.645-1.38,3.255-.689,11.339l1.522-.108c.558,6.526,2.258,16.89,6.534,33.167l.707,2.692.283-2.769C113,286.7,116.1,267.94,119.643,265.032l1.578-.112a2.72,2.72,0,0,1,.355.305l1.96,1.994-.015.051.028-.038.033.034-.022-.048,1.659-2.251a2.715,2.715,0,0,1,.309-.352l1.577-.112c3.913,2.38,9.635,20.512,12.665,32.725l.67,2.7.32-2.765c1.936-16.717,2.157-27.217,1.789-33.757Zm-33.054,33.076c-3.761-14.724-5.279-24.253-5.8-30.322l13.026-.923C114.36,270.492,111.873,289.012,111.018,296.376Zm12.527-29.189-1.074-2.356.151-.011.72-.5.783.393.151-.011Zm16.52,27.131c-1.886-7.17-6.96-25.155-11.566-29.914l13.054-.925C141.89,269.54,141.718,279.172,140.066,294.318Z" transform="translate(-14.744)"></path><path d="M111.219,299.164c-9.7-36.913-6.1-43.265-6.1-43.265,9.632-6.78,16.815,8.97,16.815,8.97C115.395,258.219,111.219,299.164,111.219,299.164Zm29.04-2.059c4.391-37.912-.064-43.693-.064-43.693-10.492-5.354-15.382,11.253-15.382,11.253C130.349,257.159,140.259,297.106,140.259,297.106Z" transform="translate(-14.744)"></path><path class="cls-6" d="M111.02,296.4c-8.063-31.557-5.834-39.283-5.5-40.172a7.871,7.871,0,0,1,4.459-1.524c5.155,0,9.17,6.107,10.759,8.949a1.923,1.923,0,0,0-.237-.015C115.291,263.639,112.024,287.745,111.02,296.4Zm29.045-2.037c-.833-3.135-2.36-8.644-4.178-14.106-5.667-17.032-8.6-17.032-9.56-17.032a1.921,1.921,0,0,0-.5.066c1.243-3.218,4.663-10.443,10.322-10.443a8.357,8.357,0,0,1,3.7.947C140.287,254.6,143.606,261.893,140.064,294.364Z" transform="translate(-14.744)"></path><path class="cls-3" d="M96.11,394.3a1.541,1.541,0,0,0-.511-.347l2.9,3.029a1.545,1.545,0,0,0,.516.352Z" transform="translate(-14.744)"></path><path class="cls-7" d="M106.079,305.118l4.025-.285-2.915,85.2a3.2,3.2,0,0,1-1.095,2.3l-5.453,4.751a1.554,1.554,0,0,1-2.145-.1l-3.463-3.621a1.554,1.554,0,0,0-2.078-.154l-2.649,2.06a1.558,1.558,0,0,1-2.484-.936l-.89-4.515a1.564,1.564,0,0,0-1.209-1.23L80.7,387.525a1.566,1.566,0,0,1-1.234-1.423l-.933-13.155a1.561,1.561,0,0,1,1.7-1.67l2.962.283A1.564,1.564,0,0,1,84.6,373.01l.551,7.776c2.012-.143,2.227,2.891,2.227,2.891,3.881-2.308,6.252,2.605,6.252,2.605a33.4,33.4,0,0,1,9.706-20c-2.01-14.085.725-32.571.725-32.571Zm79.1,60.269a1.561,1.561,0,0,0-1.92-1.413l-2.892.7a1.565,1.565,0,0,0-1.19,1.634l.551,7.776c-2.012.143-1.8,3.176-1.8,3.176-4.168-1.737-5.822,3.461-5.822,3.461a33.4,33.4,0,0,0-12.43-18.427c0-14.227-5.312-32.143-5.312-32.143l-6.032-28.027-4.025.285,14.905,83.934a3.2,3.2,0,0,0,1.409,2.127L166.7,392.4a1.554,1.554,0,0,0,2.11-.4l2.918-4.074a1.554,1.554,0,0,1,2.036-.446l2.913,1.666A1.558,1.558,0,0,0,179,387.871l.244-4.6a1.565,1.565,0,0,1,1.023-1.388l4.827-1.764a1.566,1.566,0,0,0,1.021-1.583Z" transform="translate(-14.744)"></path><path class="cls-2" d="M97.638,391.835c1.889.939,2.924,1.713,4.9,1.987l-2.817,2.455-3.161-3.306a3.59,3.59,0,0,0-1.281-.86l.11-1.171A15.911,15.911,0,0,1,97.638,391.835Zm-16.255-7.159.138,1.948,4.146.879-.057-.666C84.208,386.106,82.8,385.391,81.383,384.676Zm7.6,3.991q-1.1-.631-2.214-1.226l-.374.22a3.585,3.585,0,0,1,2.591,2.777l.746,3.784,2.061-1.6a3.557,3.557,0,0,1,1.885-.739l-.806-1.671A16.729,16.729,0,0,1,88.98,388.668Zm79.949-1.886c-1.737,1.2-2.653,2.109-4.57,2.659l3.135,2.033,2.663-3.719a3.589,3.589,0,0,1,1.147-1.032l-.274-1.144A15.9,15.9,0,0,0,168.929,386.781Zm15.082-9.381c-1.3.907-2.6,1.814-3.88,2.736l.037.667,3.981-1.455Zm-6.958,5.023a16.73,16.73,0,0,1-3.632,2.075l-.563,1.768a3.557,3.557,0,0,1,1.971.466l2.267,1.3.2-3.851a3.584,3.584,0,0,1,2.173-3.114l-.4-.165Q178.054,381.646,177.054,382.424Z" transform="translate(-14.744)"></path><g class="cls-8"><path class="cls-3" d="M92.492,384.644a3.545,3.545,0,0,0-4.035-.027,5.612,5.612,0,0,0-.29-1.314A3.851,3.851,0,0,1,92.492,384.644ZM88.01,390.76a1.562,1.562,0,0,0-1.177-1.218,1.546,1.546,0,0,1,.1.278l.89,4.515a1.545,1.545,0,0,0,1.168,1.209,1.56,1.56,0,0,1-.091-.269ZM107.1,305.967h0a1.816,1.816,0,0,1-.081-.627c-.012-.1-.016-.192-.024-.287l-.922.065-2.018,28.6s-2.734,18.486-.725,32.571A33.543,33.543,0,0,0,93.7,385.734a7.869,7.869,0,0,1,1,1.489,33.4,33.4,0,0,1,9.706-20c-2.01-14.085.725-32.571.725-32.571l2.015-28.565c-.015-.039-.034-.077-.047-.116Zm-20.922,75.09.047.67a1.666,1.666,0,0,1,.6.066A2.153,2.153,0,0,0,86.182,381.057Zm73.5-18.765c0-14.227-5.312-32.143-5.312-32.143l-6.032-28.027-.922.065c.005.1.015.192.016.288a1.816,1.816,0,0,1,.009.632h0l0,.008c-.007.04-.021.081-.03.121l6.025,28s5.315,17.915,5.312,32.143a33.4,33.4,0,0,1,12.43,18.427,7.869,7.869,0,0,1,.785-1.615A33.543,33.543,0,0,0,159.682,362.292Zm18.627,22.067-.244,4.6a1.561,1.561,0,0,1-.052.279,1.545,1.545,0,0,0,.986-1.362l.244-4.6a1.545,1.545,0,0,1,.059-.289A1.562,1.562,0,0,0,178.309,384.358Zm.44-9.864a2.154,2.154,0,0,0-.537.82,1.668,1.668,0,0,1,.585-.15Zm-5.74,4.442a3.545,3.545,0,0,1,3.99-.6,5.612,5.612,0,0,1,.1-1.342A3.851,3.851,0,0,0,173.009,378.936Z" transform="translate(-14.744)"></path></g></g><g id="jon-head"><path d="M190.73,153.76a48.371,48.371,0,0,1-9.573,15.733,15.831,15.831,0,0,1-6.573,4.734c-.019.419-.032.838-.054,1.257-1,18.4-5.643,37.142-16.825,51.737s-29.757,24.285-47.869,21.4c-11.981-1.907-22.686-8.994-30.992-17.883S64.367,211.2,58.53,200.51q-3.394-6.215-6.232-12.57a10.744,10.744,0,0,1-2.327.755l-.014,0a10.383,10.383,0,0,1-3.323,1.333,14.383,14.383,0,0,1-10.107-2.067c-5.956-3.576-9.493-10.029-12.754-16.183-2.465-4.652-4.969-9.417-5.768-14.625s.412-11.035,4.372-14.487c3.155-2.75,6.162-3.443,8.979-2.727-9.838-12.933-13.147-30.5-13.286-47.073C17.952,79,19.689,64.985,24.631,52.039c.428-1.122.891-2.233,1.37-3.337.1-.222.193-.444.291-.665.5-1.115,1.011-2.222,1.557-3.314h0A67.338,67.338,0,0,1,49.217,19.352c11.7-8.129,25.931-11.667,39.972-13.978,11.549-1.9,23.32-3.079,34.954-1.79s23.194,5.178,32.32,12.548a51.082,51.082,0,0,1,6.885,6.779l.186.22q.668.8,1.308,1.622l.144.189a60.3,60.3,0,0,1,4.8,7.312c.067.119.135.236.2.356.294.534.579,1.074.859,1.617q.163.316.323.634.384.765.75,1.539c.119.253.234.507.35.761.228.5.455,1,.672,1.5.118.275.228.553.342.829q.5,1.219.966,2.455c.156.418.315.834.463,1.255.133.378.258.759.385,1.139.151.451.3.9.445,1.355.115.363.224.727.334,1.092q.218.728.423,1.459c.095.339.189.678.279,1.019.146.549.283,1.1.417,1.65.069.283.141.565.207.849.194.836.378,1.674.546,2.513,2.918,14.584,2.265,29.634,1.088,44.459-.733,9.23-1.763,18.714-4.472,27.5a11.938,11.938,0,0,1,8.688-.231c4.98,1.871,8.412,6.808,9.48,12.041S192.583,148.755,190.73,153.76Z" transform="translate(-14.744)"></path><path d="M105.677,3.347a102.056,102.056,0,0,1,18.467.236c11.634,1.288,23.194,5.178,32.32,12.548a51.082,51.082,0,0,1,6.885,6.779l.186.22q.668.8,1.308,1.622l.144.189a60.3,60.3,0,0,1,4.8,7.312c.067.119.135.236.2.356.294.534.579,1.074.859,1.617q.163.316.323.634.384.765.75,1.539c.119.253.234.507.35.761.228.5.455,1,.672,1.5.118.275.228.553.342.829q.5,1.219.966,2.455c.156.418.315.834.463,1.255.133.378.258.759.385,1.139.151.451.3.9.445,1.355.115.363.224.727.334,1.092q.218.728.423,1.459c.095.339.189.678.279,1.019.146.549.283,1.1.417,1.65.069.283.141.565.207.849.194.836.378,1.674.546,2.513,2.918,14.584,2.265,29.634,1.088,44.459-.733,9.23-1.763,18.714-4.472,27.5a12.108,12.108,0,0,1,3.83-.909,11.534,11.534,0,0,1,4.857.678c4.98,1.871,8.412,6.808,9.48,12.041s.051,10.7-1.8,15.71a48.372,48.372,0,0,1-9.573,15.733,15.831,15.831,0,0,1-6.573,4.734c-.019.419-.032.838-.054,1.257-1,18.4-5.643,37.142-16.825,51.737-9.227,12.044-23.49,20.748-38.371,21.8a41.623,41.623,0,0,1-9.5-.4c-11.981-1.907-22.686-8.994-30.992-17.883S64.367,211.2,58.53,200.51q-3.394-6.215-6.232-12.57a10.742,10.742,0,0,1-2.327.755l-.014,0a10.384,10.384,0,0,1-3.323,1.333,11.455,11.455,0,0,1-1.481.2,14.985,14.985,0,0,1-8.626-2.269c-5.956-3.576-9.493-10.029-12.754-16.183-2.465-4.652-4.969-9.417-5.768-14.625s.412-11.035,4.372-14.487a10.868,10.868,0,0,1,6.339-2.97,8.272,8.272,0,0,1,2.639.243c-9.838-12.933-13.147-30.5-13.286-47.073C17.952,79,19.689,64.985,24.631,52.039c.428-1.122.891-2.233,1.37-3.337.1-.222.193-.444.291-.665.5-1.115,1.011-2.222,1.557-3.314h0A67.338,67.338,0,0,1,49.217,19.352c11.7-8.129,25.931-11.667,39.972-13.978,5.459-.9,10.968-1.635,16.488-2.027M105.462.314C100.435.67,94.952,1.344,88.7,2.373,75.5,4.545,60.287,7.963,47.5,16.85A70.5,70.5,0,0,0,25.146,43.355c-.529,1.056-1.058,2.181-1.617,3.441-.1.228-.2.458-.3.688-.568,1.311-1.02,2.411-1.422,3.464-4.62,12.1-6.9,26.215-6.763,41.945.149,17.739,3.858,32.913,10.777,44.293a15.47,15.47,0,0,0-5.427,3.186c-4.367,3.806-6.428,10.414-5.379,17.246.887,5.775,3.65,10.99,6.088,15.591,3.128,5.9,7.022,13.251,13.874,17.366a18.039,18.039,0,0,0,10.392,2.692,14.523,14.523,0,0,0,1.87-.255,13.1,13.1,0,0,0,3.478-1.252c1.634,3.5,3.365,6.923,5.161,10.213,5.74,10.51,12.07,21.549,20.761,30.85,6.809,7.287,18.013,16.464,32.726,18.805a44.755,44.755,0,0,0,10.184.43c15.195-1.077,30.355-9.668,40.554-22.98,10.286-13.426,16.143-31.179,17.412-52.777a21.013,21.013,0,0,0,5.874-4.753,51.747,51.747,0,0,0,10.177-16.725c2.344-6.329,2.994-12.177,1.931-17.382-1.364-6.682-5.727-12.154-11.386-14.28a14.536,14.536,0,0,0-5.526-.894,152.152,152.152,0,0,0,3.269-23.286c1.089-13.723,1.99-29.672-1.138-45.3-.163-.813-.348-1.665-.566-2.6-.046-.2-.095-.4-.144-.594l-.07-.285c-.139-.572-.282-1.143-.433-1.712-.093-.352-.191-.7-.289-1.056q-.213-.761-.439-1.516c-.113-.378-.227-.756-.346-1.133-.149-.472-.305-.941-.463-1.409l-.092-.277c-.1-.3-.2-.6-.308-.905-.122-.345-.249-.685-.377-1.026l-.105-.281c-.315-.845-.653-1.7-1.005-2.555l-.118-.289c-.079-.193-.157-.385-.239-.576-.225-.524-.461-1.043-.7-1.562l-.083-.182c-.094-.206-.188-.413-.285-.617q-.38-.807-.783-1.606c-.112-.223-.225-.443-.338-.664q-.438-.851-.9-1.691l-.135-.24-.075-.133a63.577,63.577,0,0,0-5.044-7.681l-.053-.07-.1-.129c-.436-.563-.9-1.138-1.38-1.711L165.7,21l-.05-.059a54.346,54.346,0,0,0-7.294-7.178C149.489,6.6,137.772,2.034,124.473.561A104.4,104.4,0,0,0,105.462.314Z" transform="translate(-14.744)"></path><path class="cls-9" d="M37.043,146.2c-14.3-13.089-18.811-33.9-18.975-53.328C17.952,79,19.689,64.985,24.631,52.039s13.237-24.8,24.586-32.687c11.7-8.129,25.931-11.667,39.972-13.978,11.549-1.9,23.32-3.079,34.954-1.79s23.194,5.178,32.32,12.548C168,25.453,174.832,39.694,177.75,54.278s2.265,29.634,1.088,44.46c-1.179,14.846-3.12,30.349-11.594,42.562-8.177,11.785-21.674,19.066-35.648,22.111s-28.5,2.233-42.693.479Z" transform="translate(-14.744)"></path><path class="cls-10" d="M177.75,54.278c-2.421-12.1-7.545-23.955-15.807-32.969-.251.655-.5,1.306-.738,1.95-4.912,13.314-11.52,26.1-20.533,37.092-12.059,14.7-28.746,26.078-47.431,29.338-11.993,2.093-25.017.61-35.062-6.309C50.7,78.23,45.411,70.532,40.294,63.013L27.85,44.723c-1.194,2.385-2.269,4.829-3.218,7.315C19.689,64.985,17.952,79,18.069,92.869c.163,19.429,4.676,40.24,18.975,53.328L88.9,163.89c14.2,1.754,28.719,2.566,42.693-.479s27.471-10.327,35.648-22.111c8.474-12.213,10.415-27.717,11.594-42.562C180.015,83.911,180.668,68.862,177.75,54.278Z" transform="translate(-14.744)"></path><path class="cls-7" d="M169.306,130.817c2.38-4.775,8.767-6.679,13.747-4.808s8.412,6.808,9.48,12.041.05,10.7-1.8,15.71a48.371,48.371,0,0,1-9.573,15.733c-2.243,2.461-4.991,4.8-8.3,5.1s-7-2.416-6.537-5.722Z" transform="translate(-14.744)"></path><path class="cls-2" d="M166.056,132.71c2.4-4.534,8.789-6.363,13.761-4.608s8.384,6.421,9.433,11.377.011,10.145-1.861,14.9a45.949,45.949,0,0,1-9.629,14.946c-2.251,2.341-5.008,4.571-8.316,4.868s-6.989-2.264-6.514-5.4Z" transform="translate(-14.744)"></path><path class="cls-7" d="M22.376,142.669c-3.96,3.451-5.171,9.278-4.372,14.487s3.3,9.973,5.768,14.625c3.261,6.154,6.8,12.607,12.754,16.183a14.383,14.383,0,0,0,10.107,2.067,9.687,9.687,0,0,0,7.484-6.679c.755-2.915-.141-5.982-1.12-8.83C49.9,165.516,37.928,129.114,22.376,142.669Z" transform="translate(-14.744)"></path><path class="cls-2" d="M25.889,143.807c-3.971,3.292-5.2,8.829-4.422,13.772s3.267,9.459,5.715,13.868c3.238,5.832,6.751,11.948,12.693,15.322a14.945,14.945,0,0,0,10.1,1.927c3.448-.68,6.608-3.119,7.506-6.37.765-2.77-.119-5.681-1.089-8.381C53.323,165.4,41.486,130.879,25.889,143.807Z" transform="translate(-14.744)"></path><path d="M183.188,152.161c-.538,3.553-2.513,6.2-4.41,5.905s-3-3.408-2.461-6.961,2.513-6.2,4.41-5.905S183.726,148.608,183.188,152.161ZM36.862,163.606c-1.84.548-2.506,3.785-1.488,7.231s3.334,5.8,5.174,5.249,2.506-3.785,1.488-7.231S38.7,163.059,36.862,163.606Zm3.622-3.924a.857.857,0,0,0-.53.036.694.694,0,0,0-.366.313.323.323,0,0,0-.012.305.433.433,0,0,0,.333.157.588.588,0,0,1,.344.117.24.24,0,0,1,.029.249.577.577,0,0,1-.256.274.585.585,0,0,1-.359.077.524.524,0,0,1-.259-.115.781.781,0,0,1-.272-.494.981.981,0,0,1,.077-.573,1.01,1.01,0,0,1,.327-.387.906.906,0,0,1,.81-.146,1.526,1.526,0,0,1,.548.327c.07.061.036-.1.011-.234a6.4,6.4,0,0,0-.252-.942A10.693,10.693,0,0,0,39.191,156a15.494,15.494,0,0,0-9.564-5.965,8.788,8.788,0,0,0-2.619-.134,3.9,3.9,0,0,0-2.38,1.076,3.24,3.24,0,0,0-.864,1.944,5.912,5.912,0,0,0,.056,1.549c.372-.769.84-1.956,1.714-2.349.827-.392,2.045-.125,3.417.436a17.083,17.083,0,0,1,7.343,5.626c.606.822,1.023,1.478,1.382,1.969a7.319,7.319,0,0,0,.475.63,2.245,2.245,0,0,1,.285.368,1.883,1.883,0,0,0,.913.713,1.408,1.408,0,0,0,1.228-.155,1.316,1.316,0,0,0,.46-.5,1.228,1.228,0,0,0,.121-.721,1.006,1.006,0,0,0-.324-.616A.847.847,0,0,0,40.484,159.683Zm147.59-17.362a11.328,11.328,0,0,0-1.547-3.075,8.506,8.506,0,0,0-3.134-2.7,3.436,3.436,0,0,0-1.818-.453,4.447,4.447,0,0,0-1.835.628,10.536,10.536,0,0,0-1.91,1.452,14.234,14.234,0,0,0-1.683,1.865c-.651.863-1.088,1.566-1.451,2.1a7.87,7.87,0,0,1-.486.664,1.077,1.077,0,0,1-.332.275c-.191.085-.4.113-.614.221s-.448.221-.7.315a1.055,1.055,0,0,1-.777.076,1.26,1.26,0,0,1-.648-1.073,3.4,3.4,0,0,1,.026-.979,6.434,6.434,0,0,1,.26-1.06,10.316,10.316,0,0,1,1.593-2.929,14.529,14.529,0,0,1,2.28-2.4,12,12,0,0,1,2.851-1.817,7.159,7.159,0,0,1,3.6-.642,5.5,5.5,0,0,1,1.8.507,7.192,7.192,0,0,1,1.373.86,8.761,8.761,0,0,1,3.034,4.4A6.862,6.862,0,0,1,188.075,142.32Z" transform="translate(-14.744)"></path><path class="cls-7" d="M35.852,132.314c4.362,24.068,10.963,46.746,22.678,68.2,5.837,10.689,12.008,21.342,20.314,30.231s19.011,15.976,30.992,17.883c18.112,2.882,36.687-6.808,47.869-21.4s15.826-33.339,16.825-51.737-1.358-36.789-2.766-55.162c-1-13.008-1.528-26.122-4.356-38.857s-8.159-25.262-17.421-34.41c-1.569-1.55-3.632-3.1-5.765-2.562-1.905.48-3.007,2.412-4.023,4.1-6.277,10.433-17.063,17.572-28.6,21.359s-23.843,4.5-35.978,4.355c-6.237-.075-12.567-.387-18.489-2.361a28.6,28.6,0,0,1-7.079-3.465c-1.649-1.126-4.219-4.768-6.228-4.7-3.874.132-2.947,10.654-4.064,13.617a96.567,96.567,0,0,0-5.831,34.85A118.386,118.386,0,0,0,35.852,132.314Z" transform="translate(-14.744)"></path><path d="M144.845,44.394c1.909-.135,3.726,1.263,5.142,2.662,9.262,9.148,14.594,21.675,17.421,34.41s3.359,25.849,4.356,38.857c1.408,18.373,3.765,36.764,2.766,55.162s-5.643,37.142-16.825,51.737c-9.228,12.045-23.489,20.748-38.371,21.8a41.637,41.637,0,0,1-9.5-.4c-11.981-1.907-22.686-8.994-30.992-17.883S64.367,211.2,58.53,200.51c-11.714-21.451-18.316-44.129-22.678-68.2a118.385,118.385,0,0,1-1.918-20.064A96.567,96.567,0,0,1,39.765,77.4c1.109-2.944.2-13.344,3.986-13.613l.077,0c2.009-.068,4.579,3.574,6.228,4.7a28.6,28.6,0,0,0,7.079,3.465c5.922,1.974,12.252,2.286,18.489,2.361,4.726.057,9.477-.016,14.2-.351a89.985,89.985,0,0,0,21.778-4c11.533-3.787,22.32-10.926,28.6-21.359,1.016-1.689,2.117-3.621,4.023-4.1a3.577,3.577,0,0,1,.623-.1m-.215-3.033h0a6.609,6.609,0,0,0-1.146.184c-3.048.768-4.621,3.388-5.769,5.3l-.106.176c-5.412,9-14.983,16.114-26.948,20.043A86.6,86.6,0,0,1,89.61,70.924c-4.157.295-8.72.407-13.951.344-5.5-.066-11.844-.3-17.573-2.207a25.525,25.525,0,0,1-6.331-3.093,15.8,15.8,0,0,1-1.475-1.382c-1.832-1.843-3.907-3.932-6.557-3.842-.063,0-.126.005-.188.01-5.141.364-5.7,6.967-6.117,11.787a24.279,24.279,0,0,1-.485,3.78,99.148,99.148,0,0,0-6.027,35.953,121.719,121.719,0,0,0,1.967,20.582c5,27.566,12.305,49.527,23,69.115,5.74,10.51,12.07,21.549,20.761,30.85,6.809,7.287,18.013,16.464,32.726,18.805a44.757,44.757,0,0,0,10.184.43c15.195-1.077,30.355-9.668,40.555-22.98,10.389-13.56,16.259-31.535,17.448-53.425.791-14.565-.5-29.253-1.751-43.459-.349-3.97-.71-8.075-1.019-12.1-.168-2.194-.323-4.39-.478-6.587-.759-10.765-1.543-21.9-3.942-32.7-3.376-15.2-9.518-27.289-18.254-35.918-.948-.936-3.833-3.785-7.477-3.527Z" transform="translate(-14.744)"></path><path class="cls-2" d="M105.193,206.3s3.452,13.566,14.344,11.072S135,200.609,135,200.609l-4.413,5.281c-3.743,1.543-12.99,4.5-22.139,2.937Z" transform="translate(-14.744)"></path><path d="M135.311,201.706a6.578,6.578,0,0,1-.694,1.183,11.043,11.043,0,0,1-2.73,2.576,33.011,33.011,0,0,1-11.134,4.582,31.052,31.052,0,0,1-6.617.694,12.457,12.457,0,0,1-5.486-1.214,8.114,8.114,0,0,1-2.927-2.436,6.332,6.332,0,0,1-.537-.876l-.151-.322.242.251a7.236,7.236,0,0,0,.738.642,8.4,8.4,0,0,0,3.088,1.445,13.761,13.761,0,0,0,4.925.18c1.877-.225,4-.619,6.181-1.073a80.774,80.774,0,0,0,11.058-3.1,12.759,12.759,0,0,0,3.054-1.655A8.417,8.417,0,0,0,135.311,201.706Z" transform="translate(-14.744)"></path><path d="M122.57,88.081a29.568,29.568,0,0,1,16.187,3.4,22.406,22.406,0,0,1,8.773,7.971,62.825,62.825,0,0,0-10.274-4.371A38.827,38.827,0,0,0,123.012,93.5c-3.353.257-4.155.493-4.8.416a4.425,4.425,0,0,1-1.956-.589,1.812,1.812,0,0,1-.8-.713,1.625,1.625,0,0,1,.171-1.536,5.035,5.035,0,0,1,2.414-2.008,10.074,10.074,0,0,1,2.059-.647A24.656,24.656,0,0,1,122.57,88.081Z" transform="translate(-14.744)"></path><path d="M73.7,101.966c-1.895,1-3.886,2.423-5.852,3.739a14.031,14.031,0,0,0-4.381,4.093,17.449,17.449,0,0,0-2.018,5.117c-.422,1.688-.693,3.22-1,4.406a18.214,18.214,0,0,1-.993-4.551,14.8,14.8,0,0,1,.795-6.534,12.212,12.212,0,0,1,2-3.447,21.087,21.087,0,0,1,2.807-2.766,38.692,38.692,0,0,1,6.308-4.472,12.092,12.092,0,0,1,4.04-1.4,5.214,5.214,0,0,1,2.428.154,1.511,1.511,0,0,1,1.09,1.743,1.978,1.978,0,0,1-.866,1.782C77.354,100.361,76.162,100.666,73.7,101.966Z" transform="translate(-14.744)"></path>
-              <ellipse class="jon-eye-open jon-eyes" cx="130.26" cy="125.564" rx="9.078" ry="11.657" transform="translate(-23.297 9.526) rotate(-4.055)"></ellipse>
-              <ellipse class="jon-eye-open jon-eyes" cx="83.329" cy="133.972" rx="9.078" ry="11.657" transform="translate(-24.009 6.228) rotate(-4.055)"></ellipse>
-              <ellipse class="jon-eye-closed" cx="130.26" cy="125.564" rx="9.078" ry="1" transform="translate(-23.297 9.526) rotate(-4.055)"></ellipse>
-              <ellipse class="jon-eye-closed" cx="83.329" cy="133.972" rx="9.078" ry="1" transform="translate(-24.009 6.228) rotate(-4.055)"></ellipse>
-              <path class="cls-2" d="M158.524,213.69c-10.149,10.183-22.6,19.3-36.912,20.358-12.712.941-25.274-4.773-34.806-13.284S70.422,201.14,64.571,189.756a252.69,252.69,0,0,1-15.054-35.876,257.682,257.682,0,0,1-12.2-59.525,102.534,102.534,0,0,0-1.365,17.877,116.6,116.6,0,0,0,1.886,19.719c4.9,27.012,12.033,48.488,22.461,67.584,5.584,10.226,11.729,20.951,20.015,29.818,6.269,6.709,16.534,15.151,29.836,17.268a39.816,39.816,0,0,0,9.041.38h0c13.779-.977,27.579-8.835,36.914-21.018a73.593,73.593,0,0,0,11.405-22.167Q163.234,208.945,158.524,213.69Z" transform="translate(-14.744)"></path><path class="cls-2" d="M154.984,190.163a9.421,9.421,0,0,1-3.63,2.6,20.567,20.567,0,0,1-11.064,1.94,25.367,25.367,0,0,1-4.935.462c-2.192,0-4.388-.17-6.688-.212a70.882,70.882,0,0,1-7.2-.658,19.612,19.612,0,0,0-7.24.392,22.946,22.946,0,0,0-6.364,2.915,37.575,37.575,0,0,1-5.635,2.913,29.782,29.782,0,0,1-5.3,1.564,18.632,18.632,0,0,1-7.678.952,5.161,5.161,0,0,1-3.549-1.465,4.645,4.645,0,0,1-.867-4.637,2.4,2.4,0,0,1,1.8-1.378,5.476,5.476,0,0,1,2.127.221,40.47,40.47,0,0,0,7.5,1.281l.245.009a8.174,8.174,0,0,0,4.37-1.235l.11-.064a17.725,17.725,0,0,1,6.058-2.091,60.816,60.816,0,0,0,6.831-1.3,57.911,57.911,0,0,0,7.169-2.54,24.184,24.184,0,0,1,7.361-1.947,41.1,41.1,0,0,1,6.936-.027c2.16.173,4.149.515,6,.745a24.01,24.01,0,0,0,5.141.189,15.63,15.63,0,0,0,2.183-.367,4.535,4.535,0,0,0,1.012-1.2c.631-1.061,1.04-2.351,1.607-3.482s1.372-2.151,2.363-2.27c1.376-.165,2.661,1.614,2.86,3.553A7.29,7.29,0,0,1,154.984,190.163Z" transform="translate(-14.744)"></path><path d="M117.909,193.739c11.385-1.65,23.02-.266,34.272-2.552a6.478,6.478,0,0,0,.959-.764,4.806,4.806,0,0,0,1.481-3.858c-.171-1.45-1.371-2.771-2.674-2.636a3.351,3.351,0,0,0-2.255,1.72c-.546.852-.944,1.822-1.55,2.621a3.861,3.861,0,0,1-.968.91,18.516,18.516,0,0,1-2.068.294,28.6,28.6,0,0,1-4.861-.1c-1.752-.157-3.63-.4-5.672-.506a49.1,49.1,0,0,0-6.561.08,28.146,28.146,0,0,0-6.98,1.521c-2.16.722-4.244,1.366-6.289,1.841-6.406,2.785-13.648,5.094-20.161,3.539-1.386-.172-2.766-.406-4.142-.653a6.451,6.451,0,0,0-2.01-.147,2.337,2.337,0,0,0-1.711,1.047,2.906,2.906,0,0,0,.78,3.464,5.517,5.517,0,0,0,3.344,1.066,22.127,22.127,0,0,0,7.271-.78,34.465,34.465,0,0,0,5.031-1.217A40.574,40.574,0,0,0,108.5,196.4a25.254,25.254,0,0,1,6.045-2.237A20.547,20.547,0,0,1,117.909,193.739Z" transform="translate(-14.744)"></path><path class="cls-2" d="M120.685,169.169a14.364,14.364,0,0,1,4.979-.764,4.251,4.251,0,0,1,3.824,2.838,5.07,5.07,0,0,1-1.156,4.029A16.145,16.145,0,0,1,116.79,181.5a27.386,27.386,0,0,1-13.159-2.367c-2.325-.973-3.637-2.482-2.915-5.111a3.5,3.5,0,0,1,3.123-2.851c2.632-.4,5.422-.117,8.087-.4A59.546,59.546,0,0,0,120.685,169.169Z" transform="translate(-14.744)"></path><path d="M93.892,110.822c-.131-.268-.207-.418-.207-.418S93.758,110.556,93.892,110.822Z" transform="translate(-14.744)"></path><path d="M126.675,170.975c-2.336.166-7.638,6.308-14.991,6.829-5.1.361-8.036-.689-9.36-1.368.274-.892.55-1.786.814-2.711l.57-2.328c.178-.787.409-1.573.541-2.385l.453-2.449c.162-.822.3-1.655.391-2.5l.322-2.549c.124-.854.145-1.724.221-2.593.059-.881.131-1.756.171-2.627l.043-2.6c.06-1.719-.054-3.412-.111-5.073s-.272-3.286-.406-4.877c-.18-1.588-.445-3.132-.663-4.64-.277-1.5-.591-2.954-.88-4.366-.341-1.4-.709-2.754-1.051-4.061-.776-2.592-1.553-4.983-2.412-7.111L99.747,122c-.227-.5-.487-.966-.719-1.428l-1.31-2.6c-.885-1.589-1.583-2.975-2.184-4.092-.832-1.477-1.372-2.517-1.642-3.053.264.54.768,1.6,1.44,3.149.483,1.169.969,2.646,1.536,4.346.5,1.731.943,3.729,1.565,5.878.607,2.157,1.125,4.554,1.655,7.122l.694,4,.557,4.262c.118,1.466.291,2.961.39,4.493.052,1.536.2,3.1.2,4.693s.071,3.216-.018,4.86q-.036,1.233-.073,2.484l-.176,2.511c-.072.831-.086,1.664-.2,2.48l-.277,2.441c-.076.81-.187,1.609-.323,2.4L100.5,168.3c-.1.783-.294,1.539-.434,2.3l-.446,2.254c-.346,1.475-.714,2.913-1.049,4.325l-.274,1.156.8.635a19.527,19.527,0,0,0,17.832,3.492,20.494,20.494,0,0,0,4.146-2.092,22.95,22.95,0,0,0,2.359-1.762l0,0,.016-.015c.188-.161.371-.32.542-.477a23.248,23.248,0,0,0,1.9-1.934c.484-.554.84-.995,1.065-1.3l.351-.461-.355.458a13.2,13.2,0,0,1-1.117,1.253c-.075.077-.162.159-.245.239.5-.548,1.071-1.192,1.717-1.95C129.729,171.574,129.01,170.809,126.675,170.975Z" transform="translate(-14.744)"></path></g><g id="yeosh-head"><path d="M293.742,335.63a38.2,38.2,0,0,1-13.844-3.549c-11.078-5.241-18.076-15.109-22-22.464-4.894-9.182-7.753-19.2-10.517-28.884l-15.522-54.39c-4.523-15.847-9.2-32.234-8.98-49.3.251-19.456,7.445-36.353,19.738-46.359a40.879,40.879,0,0,1,27.884-8.792,31.79,31.79,0,0,1,20.884,9.122c1.436,1.452,1.578,3.454,1,5.886a28.675,28.675,0,0,0,6.288-10.8,3.018,3.018,0,0,1,2.9-2.15c.063,0,.125,0,.187.007a3.012,3.012,0,0,1,2.684,2.171,32.577,32.577,0,0,1,1.284,8.823,23.519,23.519,0,0,0,1.246-5.406,3.033,3.033,0,0,1,2.335-2.64,3,3,0,0,1,3.228,1.377,23.362,23.362,0,0,1,2.893,7.437,42.773,42.773,0,0,1,20.9-8.424,32.671,32.671,0,0,1,5.33-.077c8.648.581,16.38,4.452,21.214,10.62,7.165,9.139,7.219,21.487,6.66,33.351-1.652,35.122-3.64,66.734-11.262,97.938-3.556,14.562-9.995,35.64-24.776,50.486C322.732,330.415,307.5,336.554,293.742,335.63Z" transform="translate(-14.744)"></path><path d="M295.589,92.408s2.317-3.7-1.182-10.833a11.564,11.564,0,0,1,6.137,5.789l1.491-9.771,4.286,12.626s1.554-7.739,8.287-10.818a7.344,7.344,0,0,0-1.967,7.961c1.742,4.864,5.578,2.715,5.578,2.715L305.523,97.57Z" transform="translate(-14.744)"></path><path d="M293.945,332.6a38.2,38.2,0,0,1-13.844-3.549c-11.077-5.241-18.076-15.109-22-22.464-4.894-9.182-7.753-19.2-10.517-28.884l-10.51-36.826a6.858,6.858,0,0,1-5.564,1.99,12.873,12.873,0,0,1-5.31-1.722c-7.767-4.305-14.207-11.618-19.691-22.357-1.805-3.536-3.713-7.786-4.173-12.5-.523-5.36,1.027-10.339,4.255-13.661a15.161,15.161,0,0,1,7.816-4.155l.106-10.921,2.686.023c-1.755-10.027-.019-21.59.9-26.5,2.965-15.8,8.287-29.144,15.818-39.65C243.082,98.637,255.572,90,269.091,87.089c7.6-1.635,15.231-1.418,22.345-.94,1.79.12,3.582.261,5.376.4,1.772.139,3.546.278,5.319.4,3.3.222,5.962.328,8.382.334,4.246.01,8.651-.289,12.912-.579a137.075,137.075,0,0,1,18.38-.423,51.75,51.75,0,0,1,11.9,2.1c15.877,4.895,29.041,19.83,33.536,38.05,4.777,19.363-.146,38.383-5.118,50.928-.719,1.817-1.436,3.453-2.18,4.975l-.091,9.451-2.417,4.878.107.007a13.691,13.691,0,0,1,7.928,3.056c4.835,4.031,6.348,11.1,4.374,20.453-2.214,10.492-6.29,18.87-12.114,24.9-2.462,2.548-9.779,8.657-16.713,9.515-.813,4.061-1.65,7.841-2.542,11.493-3.556,14.561-9.995,35.639-24.776,50.485C322.936,327.383,307.7,333.522,293.945,332.6Z" transform="translate(-14.744)"></path><path class="cls-1" d="M375.571,242.964c6.089-6.306,9.509-14.808,11.325-23.413,1.291-6.117,1.427-13.5-3.349-17.483a11.606,11.606,0,0,0-9.8-2.1,19.118,19.118,0,0,0-8.927,5.069c-5.612,5.33-8.849,12.806-10.39,20.42-1.085,5.362-4.349,19.98.461,24.523C360.4,255.18,371.622,247.053,375.571,242.964Z" transform="translate(-14.744)"></path><path class="cls-11" d="M371.367,243.8c6.315-5.478,10.062-13.127,12.217-20.959,1.532-5.567,1.966-12.366-2.627-16.3a12.376,12.376,0,0,0-9.668-2.478,19.227,19.227,0,0,0-9.09,4.183c-5.8,4.605-9.324,11.318-11.166,18.252-1.3,4.883-5.136,18.177-.532,22.629C355.776,254.229,367.271,247.353,371.367,243.8Z" transform="translate(-14.744)"></path><path class="cls-1" d="M218.975,191.156a13.118,13.118,0,0,0-10.231,3.592c-2.808,2.89-3.8,7.213-3.408,11.237a32.425,32.425,0,0,0,3.854,11.41c4.321,8.463,10.194,16.5,18.466,21.087,2.174,1.205,5.05,2.094,6.986.525,1.783-1.445,1.748-4.146,1.511-6.439C234.883,220.281,234.86,192.19,218.975,191.156Z" transform="translate(-14.744)"></path><path class="cls-11" d="M223.251,192.315c-4.005-.683-8.321-.179-11.343,1.824a10.516,10.516,0,0,0-4.523,9.341c.127,3.55,1.607,7.056,3.328,10.415,4.052,7.911,9.815,15.651,18.431,20.691,2.265,1.325,5.312,2.463,7.525,1.345,2.037-1.03,2.2-3.384,2.113-5.409C238.317,219.674,240.373,195.234,223.251,192.315Z" transform="translate(-14.744)"></path><path d="M360.234,220.984a40.75,40.75,0,0,1,2.686-4.943,35.289,35.289,0,0,1,3.337-4.537,12.317,12.317,0,0,1,4.8-3.46,9.228,9.228,0,0,1,10.113,2.713,8.341,8.341,0,0,1,1.81,4.24,7.987,7.987,0,0,1-1.878,6.424,8.554,8.554,0,0,0,.455-6.121,7.051,7.051,0,0,0-1.9-3.119,7.14,7.14,0,0,0-3.485-1.734c-5.752-1.479-9.7,6.182-12.635,12.052-1.793,4.032-2.3,6.289-2.849,7.45-.5,1.172-.956,1.276-1.458,1.221s-.946-.231-1.071-1.629C358.071,228.171,358.246,225.448,360.234,220.984Zm-125.869,1.53c.765,1.231,1.285,1.243,1.819,1.082s.975-.447.883-1.961c-.124-1.5-.708-4.288-2.979-9.073a59.286,59.286,0,0,0-2.947-5.4,47.277,47.277,0,0,0-3.54-5.076,13.665,13.665,0,0,0-5.137-4.06,8.923,8.923,0,0,0-3.3-.674,11.689,11.689,0,0,0-3.068.393,10.943,10.943,0,0,0-4.971,2.835,8.47,8.47,0,0,0-2.392,4.549,7.041,7.041,0,0,0,2.466,6.923,7.072,7.072,0,0,1-.9-6.53,7.929,7.929,0,0,1,6.41-4.938,9.263,9.263,0,0,1,2.3-.075,5.906,5.906,0,0,1,2.089.613,10.929,10.929,0,0,1,3.6,3.309,54.532,54.532,0,0,1,3.065,4.781c.973,1.669,1.873,3.386,2.708,5.119C232.609,218.827,233.567,221.3,234.364,222.514Z" transform="translate(-14.744)"></path><path class="cls-12" d="M221.064,151.627c2.565-13.672,7.213-27.153,15.3-38.434s19.858-20.231,33.354-23.134c13.341-2.87,27.148.225,40.786.258,14.183.035,28.758-3.213,42.318.967,15.844,4.885,27.5,19.669,31.5,35.882s1.16,33.543-4.992,49.068c-2.731,6.892-6.492,13.941-13,17.413-6.45,3.443-14.241,2.662-21.43,1.424-19.065-3.282-37.925-9.161-57.262-8.611-18.492.526-36.547,6.87-55.141,5.182C216.369,190.179,218.888,163.226,221.064,151.627Z" transform="translate(-14.744)"></path><path class="cls-13" d="M384.316,127.167a54.909,54.909,0,0,0-10.038-20.631,26.875,26.875,0,0,1,.077,4.569c-.614,8.671-6.143,17.153-14.309,19.948-4.762,1.63-10.025,1.322-14.745,3.071-4.617,1.711-8.3,5.223-12.089,8.392a105.23,105.23,0,0,1-27.32,16.548c-8.369,3.458-18.468,5.652-26.036.672-9.17-6.034-10.015-19.276-16.625-28.078-4.185-5.573-10.781-9.485-13.12-16.066-2.229-6.274.194-13.489,4.538-18.52a24.578,24.578,0,0,1,2.185-2.2,61.431,61.431,0,0,0-20.473,18.319c-8.086,11.281-12.734,24.762-15.3,38.434-2.176,11.6-4.695,38.552,11.431,40.016,18.594,1.689,36.649-4.656,55.141-5.182,19.338-.55,38.2,5.328,57.262,8.611,7.189,1.238,14.98,2.019,21.43-1.424,6.505-3.473,10.266-10.522,13-17.413C385.477,160.71,388.317,143.38,384.316,127.167Z" transform="translate(-14.744)"></path><path class="cls-1" d="M296.768,331.167a37.172,37.172,0,0,1-16.032-3.5c-10.708-5.065-17.5-14.656-21.312-21.811-4.819-9.04-7.654-18.975-10.4-28.582l-15.522-54.391c-4.493-15.743-9.138-32.021-8.921-48.855.245-19,7.234-35.466,19.174-45.186a39.2,39.2,0,0,1,24.37-8.544c8.855,0,16.813,3.113,22.405,8.765,1.733,1.752.606,5.285-1.224,9.5,5.236-3.3,9.348-9.6,11-15.052l1.476-4.863,1.422,4.879a31.612,31.612,0,0,1,.419,15.811,25.983,25.983,0,0,0,5.039-12.669l.476-4.452,2.32,3.829a21.937,21.937,0,0,1,3.059,9.394c5.328-4.285,12.94-8.771,22.146-9.666.985-.1,1.99-.144,2.988-.144,8.961,0,17.276,3.784,22.244,10.121,6.84,8.725,6.88,20.755,6.335,32.33-1.649,35.043-3.632,66.579-11.219,97.644-3.513,14.383-9.862,35.19-24.374,49.765C322.872,325.306,309.46,331.166,296.768,331.167Z" transform="translate(-14.744)"></path><path d="M268.128,121.81c7.947,0,15.7,2.63,21.331,8.317,1.8,1.817-2.567,9.743-3.137,11.523,7.321-2.4,13.247-10.487,15.436-17.7a30.078,30.078,0,0,1-1.788,21.289,27.338,27.338,0,0,0,10.2-18.409,20.394,20.394,0,0,1,2.879,11.855c6.641-6.013,14.885-10.543,23.765-11.405.942-.092,1.892-.137,2.842-.137,8.007,0,16.113,3.238,21.054,9.542,6.689,8.534,6.527,20.454,6.015,31.326-1.538,32.684-3.416,65.578-11.178,97.356-4.378,17.926-11,36.025-23.976,49.058-9.157,9.2-22.138,15.231-34.805,15.231a35.751,35.751,0,0,1-15.385-3.355c-9.033-4.274-15.9-12.293-20.625-21.155s-7.516-18.616-10.276-28.286l-15.523-54.391c-4.518-15.832-9.076-31.943-8.863-48.421s5.894-33.676,18.617-44.033a37.624,37.624,0,0,1,23.415-8.2m33.69-8.465-2.953,9.726a28.713,28.713,0,0,1-6.258,10.776c.572-2.416.428-4.4-1-5.847-5.879-5.942-14.218-9.214-23.48-9.214A40.732,40.732,0,0,0,242.8,127.67c-12.289,10-19.481,26.893-19.732,46.339-.22,17.057,4.457,33.443,8.979,49.289l10.861,38.056,4.662,16.334c2.763,9.683,5.621,19.695,10.515,28.879,3.92,7.355,10.919,17.223,22,22.466a38.675,38.675,0,0,0,16.678,3.646c13.085,0,26.9-6.027,36.948-16.121,14.778-14.844,21.215-35.915,24.771-50.474,7.62-31.2,9.608-62.809,11.261-97.931.558-11.858.5-24.2-6.656-33.333-5.252-6.7-14.012-10.7-23.434-10.7-1.046,0-2.1.051-3.134.151a42.775,42.775,0,0,0-20.878,8.406,23.326,23.326,0,0,0-2.887-7.414l-4.641-7.657-.951,8.9a23.542,23.542,0,0,1-1.222,5.34,32.53,32.53,0,0,0-1.282-8.745l-2.844-9.759Z" transform="translate(-14.744)"></path><path class="cls-11" d="M288.9,135.466l.043-.017q.131-.355.25-.7C289.068,135.035,288.962,135.288,288.9,135.466Z" transform="translate(-14.744)"></path><path class="cls-11" d="M310.345,127.143c-.06-.1-.111-.211-.173-.313-.041.38-.094.757-.151,1.134C310.132,127.692,310.242,127.419,310.345,127.143Z" transform="translate(-14.744)"></path><path class="cls-11" d="M302.248,138.574q.091-.423.169-.848-.254.581-.532,1.152C302.008,138.779,302.126,138.674,302.248,138.574Z" transform="translate(-14.744)"></path><path class="cls-11" d="M366.727,168.01c.418-8.888.6-18.473-3-26.339,1.168,5.972,1,12.487.7,18.675-1.524,31.782-3.391,64.252-10.875,96.293-4.28,18.324-10.768,37.11-23.46,51.164-12.848,14.227-33.373,22.35-49.751,14.97-8.965-4.04-15.679-12.155-20.208-21.259s-7.068-19.181-9.575-29.156l-13.968-55.571c-4.023-16.006-8.057-32.218-7.311-48.785.5-11.043,3.447-22.355,9.188-31.7-8.354,10.3-12.194,24.26-12.368,37.739-.212,16.478,4.345,32.589,8.863,48.421l15.523,54.391c2.76,9.67,5.553,19.424,10.276,28.286s11.592,16.881,20.625,21.155c16.564,7.837,37.214,1.157,50.19-11.876s19.6-31.132,23.976-49.058C363.31,233.589,365.189,200.694,366.727,168.01Z" transform="translate(-14.744)"></path><path class="cls-11" d="M290.533,297.054a14.831,14.831,0,0,0,13.772.081,14.07,14.07,0,0,0,7.316-11.67c-.015.47-3.456,1.647-3.914,1.819a30.085,30.085,0,0,1-4.23,1.249,31.152,31.152,0,0,1-8.879.624,30.324,30.324,0,0,1-8.587-1.894c-.706-.269-2.706-1.6-3.259-.531-.394.759.957,3.031,1.315,3.71A15.9,15.9,0,0,0,290.533,297.054Z" transform="translate(-14.744)"></path><path class="cls-11" d="M289.885,273.417a22.721,22.721,0,0,1-12.185-.557c-2.6-.858-5.286-2.208-7.931-1.507a5.735,5.735,0,0,0-3.738,7.184c1.169,3.249,5.153,4.65,8.552,4.187s6.435-2.294,9.565-3.71a35.506,35.506,0,0,1,21.056-2.844c5.022.952,9.764,3.152,14.823,3.882a13.362,13.362,0,0,0,6.01-.285,6.908,6.908,0,0,0,4.411-3.906,4.731,4.731,0,0,0-1.481-5.47c-2.118-1.447-4.953-.5-7.391.286-9.547,3.087-19.773,3.006-29.794,2.9Z" transform="translate(-14.744)"></path><path d="M273.3,281.453c3.512.324,6.857-1.351,10.119-2.708,10.248-4.262,22.079-5.618,32.407-1.583,2.219.867,4.4,1.985,6.772,2.189s5.065-.8,5.951-3.031-1.244-5.281-3.507-4.533a10.222,10.222,0,0,0-2.59,1.909c-2.685,2-6.416,1.059-9.669.319a57.144,57.144,0,0,0-33.559,2.6A15.016,15.016,0,0,1,274.441,278a4.36,4.36,0,0,1-4.2-2.158c-.323-.689-.39-1.474-.683-2.176a1.779,1.779,0,0,0-1.7-1.25c-1.556.225-.568,4.45-.174,5.286A7.133,7.133,0,0,0,273.3,281.453Z" transform="translate(-14.744)"></path><path d="M294,292.371c5.154.222,10.177-1.492,15.058-3.184a7.377,7.377,0,0,0,2.87-1.5,2.563,2.563,0,0,0,.623-2.983c-.892-1.52-3.161-1.032-4.785-.368-4.246,1.735-8.619,3.372-13.19,3.655-5.24.324-8.779-1.631-12.908-4.335C280.881,289.25,289.865,292.193,294,292.371Z" transform="translate(-14.744)"></path><path class="cls-11" d="M296.947,257.219a8.159,8.159,0,0,1-.889-.1,9.631,9.631,0,0,1-3.467-1.282,13.223,13.223,0,0,1-4.244-4.427c-.724-1.165-1.291-2.231-1.847-3.277l-.456-.854c-1.443-2.728-2.611-5.079-3.457-6.964a1.923,1.923,0,0,1,.658-2.444,1.775,1.775,0,0,1,1.069-.26,2.05,2.05,0,0,1,1.428.758c1.33,1.62,2.934,3.739,4.744,6.263.327.449.663.929,1,1.414.528.751,1.068,1.521,1.617,2.236a8.058,8.058,0,0,0,2.57,2.377,3.3,3.3,0,0,0,1.289.372,1.328,1.328,0,0,0,.7-.1,3.992,3.992,0,0,0,1.467-2.312c.177-.534.326-1.084.485-1.67.086-.313.174-.637.268-.969a21.646,21.646,0,0,1,1.265-3.431A22.042,22.042,0,0,1,305.7,236.2c-.223-.215-.433-.394-.626-.56-.143-.124-.274-.237-.39-.343a3.715,3.715,0,0,1-1.344-3.539,3.425,3.425,0,0,1,3.626-3.093c.177,0,.3.008.436.019a7.15,7.15,0,0,1,3.388,1.271,9.683,9.683,0,0,1,3.881,5.759l.391,1.531a2.22,2.22,0,0,1-.929,2.339l-1.436.96a16.657,16.657,0,0,0-2,1.578,14.6,14.6,0,0,0-2.905,3.7,14.879,14.879,0,0,0-.955,2.147l-.265.73c-.233.649-.495,1.38-.813,2.121a12.966,12.966,0,0,1-1.912,3.221,8.82,8.82,0,0,1-3.448,2.606,8.106,8.106,0,0,1-3.454.574Zm-16.417-18.392a2.222,2.222,0,0,1-1.882-1.491,7.684,7.684,0,0,1,.493-5.825,7.512,7.512,0,0,1,2.5-2.887,7.465,7.465,0,0,1,4.831-1.295,4.711,4.711,0,0,1,2.717,1.026c.028.023.056.048.083.073a3.05,3.05,0,0,1,.88,3.137,2.561,2.561,0,0,1-1.792,1.949,4.518,4.518,0,0,1-1.3.137c-.242,0-.539.006-.906.028a3.728,3.728,0,0,0-2.573,1.3,6.469,6.469,0,0,0-1.208,2.511,1.752,1.752,0,0,1-1.787,1.336Z" transform="translate(-14.744)"></path><path class="cls-14" d="M285.5,230.259a6.194,6.194,0,0,0-4.057,1.906,8.676,8.676,0,0,0-1.86,3.174,5.352,5.352,0,0,1,.822-3.985,6.221,6.221,0,0,1,2.052-2.012,6.633,6.633,0,0,1,2.91-.924,3.384,3.384,0,0,1,2.32.479.585.585,0,0,1,.178.734.675.675,0,0,1-.512.527A14.434,14.434,0,0,1,285.5,230.259Zm28.019,4.628a8.631,8.631,0,0,0-3.72-4.5,6.032,6.032,0,0,0-2.958-.9c-1.395.033-1.556.614-1.612,1.122-.066.557.065,1.007.831,1.609.376.31.911.68,1.56,1.289a7.432,7.432,0,0,1,1.13,1.365,18.5,18.5,0,0,0-1.45,1.257,19.407,19.407,0,0,0-4.2,5.953,20.7,20.7,0,0,0-1.185,3.4c-.29,1.1-.52,2.116-.8,3.027a6.3,6.3,0,0,1-2.581,3.865,4.555,4.555,0,0,1-4.156-.3,11.126,11.126,0,0,1-3.558-3.354c-1-1.366-1.921-2.825-2.818-4.119-1.781-2.61-3.365-4.807-4.658-6.445.74,1.957,1.809,4.45,3.13,7.325.674,1.436,1.34,2.965,2.241,4.612a13.134,13.134,0,0,0,4.046,4.705,8.854,8.854,0,0,0,3.321,1.355,6.946,6.946,0,0,0,3.978-.42,7.866,7.866,0,0,0,3.145-2.567,12.725,12.725,0,0,0,1.745-3.333c.409-1.121.7-2.2,1-3.191a17.643,17.643,0,0,1,1.04-2.722,16.242,16.242,0,0,1,3.34-4.607,17.872,17.872,0,0,1,2.308-1.883l1.467-1Z" transform="translate(-14.744)"></path><path class="cls-11" d="M292.727,235.216a1.238,1.238,0,0,1-.129-.016,1.2,1.2,0,0,1-.963-1.326l.28-2.477.127-1.77c.195-2.93.271-7.024.192-11.358-.121-8.169-.761-18.044-1.114-23.483-.1-1.586-.175-2.716-.2-3.223-.227-5.385.575-12.5,3.68-13.08a1.692,1.692,0,0,1,.433-.027c2.815.189,3.937,6.523,3.812,12.173-.044,2.182-.808,16.7-2.115,27.746-.51,4.444-1.154,8.639-1.767,11.648l-.378,1.8-.624,2.471A1.205,1.205,0,0,1,292.727,235.216Z" transform="translate(-14.744)"></path><path d="M293.223,233.22l.428-1.824.49-2.108.522-2.768c.741-4.073,1.467-9.6,1.932-15.251.976-11.31.971-23.107.883-24.806-.166-3.4-1.418-6.092-2.714-5.985s-2.142,2.881-1.978,6.229c.086,1.669,1.258,13.256,1.461,24.489.124,5.613-.011,11.128-.312,15.231l-.222,2.8-.26,2.138Z" transform="translate(-14.744)"></path><path d="M274.8,161.395a30.482,30.482,0,0,0-11.488,7.661,37.4,37.4,0,0,0-3.823,4.79c-1.046,1.539-1.818,2.973-2.513,4.092a16.617,16.617,0,0,1,.572-4.967,23.21,23.21,0,0,1,2.751-6.255,25.586,25.586,0,0,1,12.724-10.354,8.126,8.126,0,0,1,5.333-.348A4.393,4.393,0,0,1,281,158.163a1.6,1.6,0,0,1,.05,1.581,1.677,1.677,0,0,1-.871.589,7.39,7.39,0,0,1-1.927.4c-.29.042-.6.038-1.034.067A8.942,8.942,0,0,0,274.8,161.395Zm29.771-6.258a5.685,5.685,0,0,0-2.133.879,1.672,1.672,0,0,0-.674,2,1.867,1.867,0,0,0,1.326,1.624,8.277,8.277,0,0,0,1.99.27l3.537.048A36.5,36.5,0,0,1,322,162.826a41.686,41.686,0,0,1,5.32,2.739c.793.449,1.471.946,2.113,1.387s1.257.822,1.817,1.145c-.27-.564-.617-1.2-1.035-1.9a14.178,14.178,0,0,0-1.536-2.211,23.977,23.977,0,0,0-4.893-4.437,27.958,27.958,0,0,0-15.05-4.8A16.472,16.472,0,0,0,304.572,155.137Z" transform="translate(-14.744)"></path><rect x="207.175" y="177.948" width="177.406" height="9.264" transform="translate(-13.147 -2.563) rotate(0.498)"></rect><path class="cls-15" d="M289.1,190.5l-14.62,19.078-47.972-.417-9.1-19.284.089-9.264,71.7.623Zm8.455.12,14.25,19.329,55.561.235,9.475-19.123.089-9.264-79.285-.441Z" transform="translate(-14.744)"></path>
-              <ellipse class="yeosh-eye-open yeosh-eyes" cx="315.767" cy="193.601" rx="9.109" ry="7.277" transform="translate(86.686 495.677) rotate(-86.155)"></ellipse>
-              <ellipse class="yeosh-eye-open yeosh-eyes" cx="272.426" cy="193.478" rx="9.109" ry="7.277" transform="matrix(0.067, -0.998, 0.998, 0.067, 46.372, 452.319)"></ellipse>
-              <ellipse class="yeosh-eye-closed" cx="315.767" cy="193.601" rx="1" ry="7.277" transform="translate(86.686 495.677) rotate(-86.155)"></ellipse>
-              <ellipse class="yeosh-eye-closed" cx="272.426" cy="193.478" rx="1" ry="7.277" transform="matrix(0.067, -0.998, 0.998, 0.067, 46.372, 452.319)"></ellipse>
-              </g></svg>
-            </div>   
         </div>
       </div>
-    </div>
-  </div>
-</div>
     </section>
-        <!--Statistik Ketahanan Sosial Section -->
-        <section class="ketahanan" id="ketahanan">
-  <div class="container">
-    <h2>Statistik Ketahanan Sosial</h2>
-    <div class="row">
-      <div class="col">
-        <img src="../assets/img/Ilustrasi_KetahananSosial-BPS.png" alt="Statistik Ketahanan" style="width: 250px; height:auto">
-        
-      </div>
-      <div class="col">
-        <div class="content">
-          <div class="text-box">
-      <p>Statistik Ketahanan Sosial melaksanakan kegiatan terkait ketahanan sosial 
-        masyarakat, 
-        seperti statistik mengenai kemiskinan, kriminalitas, lingkungan hidup, dan aspek aspek lain yang memengaruhi 
-        ketahanan sosial suatu wilayah</p>
-      </div></div></div>
-    </div>
-    <ul class="cards">
-      <li class="card">
-        <div>
-          <h3 class="card-title">Potensi Desa</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_PotensiDesa-BPS.png" style="width: 60px; height:60px" alt="SK">
-            
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">Politik dan Keamanan</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_PolitikKeamanan-BPS.png" style="width: 60px; height:60px" alt="Srikandi">
-            </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">DTSEN</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_DTSEN-BPS.png" style="width: 60px; height:60px" alt="SIMPENSU">
-            </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">Sekolah Rakyat</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_SekolahRakyat-BPS.png" style="width: 60px; height:60px" alt="SEKAR">
-            </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">Pendataan Perumahan</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_PendataanPerumahan-BPS.png" style="width: 60px; height:60px" alt="MOU">
-            </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-<!-- Statistik Kependudukan dan Ketenagakerjaan -->
-<section class="kependudukan" id="kependudukan">
-  <div class="container">
-    <h2>Statistik Kependudukan dan Ketenagakerjaan</h2>
-    <div class="row">
-      <div class="col">
-        <img src="../assets/img/Ilustrasi_KependudukanKetenagakerjaan-BPS.png" alt="Statistik Kependudukan dan Ketenagakerjaan" style="width: 250px; height:auto">
-        
-      </div>
-      <div class="col">
-        <div class="content">
-          <div class="text-box">
-      <p>Statistik Kependudukan dan Ketenagakerjaan memiliki tujuan untuk menyediakan data statistik kependudukan dan ketenagakerjaan yang berkualitas, meningkatkan kolaborasi, integrasi, sinkronisasi, dan standarisasi dalam penyelenggaraan SSN.</p>
-      </div></div></div>
-    </div>
-    <div class="main-grid">
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/SPM-BPS.png" alt="SPM"/>
-                                <div class="card-title">
-                                    <h3>SAKERNAS</h3>
-                                    <p class="p-Kepegawaian">Survei Angkatan Kerja Nasional</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">SAKERNAS Februari</a>
-                                        <a href="#">SAKERNAS Agustus</a>
-                                        <a href="#">SAKERNAS November</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/RPD-BPS.png" alt="RPD"/>
-                                <div class="card-title">
-                                    <h3>SUPAS</h3>
-                                    <p class="p-Kepegawaian">Survei Penduduk Antar Sensus</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">SUPAS</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>
-  </div>
-</section>
-<!-- Statistik Kesejahteraan Rakyat -->
-<section class="kesejahteraan" id="kesejahteraan">
-  <div class="container">
-    <h2>Statistik Kesejahteraan Rakyat</h2>
-    <div class="row">
-      <div class="col">
-        <img src="../assets/img/Ilustrasi_KesejahteraanRakyat-BPS.png" alt="Statistik Kesejahteraan Rakyat" style="width: 250px; height:auto">
-      </div>
-      <div class="col">
-        <div class="content">
-          <div class="text-box">
-      <p>Kegiatan pada Statistik Kesejahteraan Rakyat berfokus pada pengumpulan, pengolahan, dan penyajian data statistik yang berkaitan dengan kesejahteraan rakyat.</p>
-      </div></div></div>
-    </div>
-    <div class="main-grid">
-      <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/Ilustrasi_Seruti-BPS.png" alt="SERUTI"/>
-                                <div class="card-title">
-                                    <h3>SERUTI</h3>
-                                    <p class="p-Kepegawaian">Survei Ekonomi Rumah Tangga Triwulan</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Triwulan 1</a>
-                                        <a href="#">Triwulan 2</a>
-                                        <a href="#">Triwulan 3</a>
-                                        <a href="#">Triwulan 4</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/SPM-BPS.png" alt="SPM"/>
-                                <div class="card-title">
-                                    <h3>SUSENAS</h3>
-                                    <p class="p-Kepegawaian">Survei Sosial Ekonomi Nasional</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">SUSENAS Maret</a>
-                                        <a href="#">SUSENAS September</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                    
-                    </div>
-  </div>
-</section>
 
-<!-- Kelurahan Cantik -->
-<section class="kelurahan" id="kelurahan">
-  <div class="container">
-    <h2>Kelurahan CANTIK</h2>
-    <div class="row">
-      <div class="col">
-        <img src="../assets/img/Ilustrasi_kelurahancantik-BPS.png" alt="Kelurahan CANTIK" style="width: 250px; height:auto">
-      </div>
-      <div class="col">
-        <div class="content">
-          <div class="text-box">
-      <p>Kelurahan CANTIK adalah konsep pembangunan dengan penguatan capacity building aparatur kelurahan dan partisipasi masyarakat dalam pemutakhiran  data statistik sektoral. Data ini digunakan untuk perencanaan pembangunan yang lebih tepat sasaran.</p>
-      </div>
-      <button class="custom-btn btn-6"><span>Selanjutnya</span></button>
-    </div></div>
-    </div>
-  </div>
-</section>
-<!-- Laporan Kegiatan-->
- <section class="laporan" id="laporan">
-  <div class="container">
-    <h2>Laporan Kegiatan</h2>
-    <div class="row">
-      <div class="col">
-        <img src="../assets/img/Ilustrasi_LaporanKegiatan-BPS" alt="Statistik Ketahanan" style="width: 250px; height:auto">
-      </div>
-      <div class="col">
-        <div class="content">
-          <div class="text-box">
-      <p>Kumpulan laporan dokumen kegiatan Tim Sosial </p>
-      </div></div></div>
-    </div>
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0AfBX5G_rsoYukklJHGfl5m1VsJX3PQrjJSoEXl4HD96_bpUOk6dqGXwyMQ96ow/pubhtml?widget=true&amp;headers=false" style="width: 100%; min-height: 500px; border: none; display: block;"
-  allowfullscreen
-  loading="lazy"></iframe>
-                    
-  </div>
-</section>
-<!-- Publikasi Kegiatan -->
- <section class="publikasi" id="publikasi">
-  <div class="container">
-    <h2>Publikasi Kegiatan</h2>
-    <div class="row">
-      <div class="col">
-        <img src="../assets/img/Ilustrasi_LaporanPublikasi-BPS.png" alt="Statistik Ketahanan" style="width: 250px; height:auto">
-      </div>
-      <div class="col">
-        <div class="content">
-          <div class="text-box">
-      <p>Kumpulan publikasi kegiatan</p>
-      </div></div></div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
-<div class="pa-gallery-player-widget" style="width:100%; height:480px; display:none;"
-  data-link="https://photos.google.com/share/AF1QipNM29xnjJSCdiY-5OLcjqbPkRJg5Eu3FY8V_mlkGLUKgeiLEsO4eiJLqR2PDNQ1Qg?key=d09FLWQ4RlJWX0tHTnl0RjFYczhZUGo2dUlxNDF3"
-  data-background-color="#003366"
-  data-title="GDG Bandung x ISTTS x SurabayaDev · Saturday, Mar 22 📸"
-  data-description="Shared album · Tap to view!">
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOVB4GxgCq1XiYSMjs7iUCA2TjlQYSLDnwQIU7RDjopREBfzv72nL8tUrjdH9iZea6rnAh6Ed5IDJu1qF6jcRSee3BnldOmgVZhSNoHqOS7nsgUhD0=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczP2FTJXIOuwcN0-OW3RLbF-XbgazzHjJHPEgBYD39flpKjPVKRM2rVSU9A3fFZaTwkmAyVDY-Iyk4JzI2QDb9OD4SCDqdUOANtPzb1pnRllB_zpIDk=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNQKzr08q9oU3AUTsLnq_xXB4yJ__tnE1XJW4RKBSZqoY4N3Y8j0giTiKReK5anPANVljPcyfV1awSmsSUCHrmtXRaw-cpGRMtQOYbO5PlL2OCnm9Y=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPFoG5hRmpf6eNiQSv-0p5Hnm1l0p3t-s5OE0L5JdK4WWWZZlFhlZA27_17z0Q0cQxAk2uhpBG0RaoEpu-lmDNO-ID8fAKal-v283Ubts7pP8CqF_U=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNNjUX84k7pE1-TDffXHoCuOjl3d9nUuOLgMNokXL-WE9mIEVo14RamUAa3x1NIzX1zYTCcgKfl5XKKTsXD7MsSRTKVkN_VDAffnB4p6IiOTKqL_g=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMEIjwRL7TlhTd_XqP7tzzUMcOBERuM_H0zOcdzvZIQLRRsjlXcCx7jXYEkgzz1i-AONkyZKFxLx_64NogEnF1I7NGN3kz9EcOTzom4IdMyRHQMPQ=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOIjWMZR75DKtYWUWHG9cgYMKtkRlKXnILynKCClq9OUrjhz7TYwIz60jORpsVoLNIuVDLhFLDiUW-r9_HjeiexBNg1LSGZZbndJ9hDA-m73b0JFwE=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNRDtOSspcmRoqjLIBZsSYQ54nJrF0kffLpUrnq2GjxuQMnkUagnNgW39t_3Is1UwooTQgLh5vtdlZXaQxeL1DT_BRXi0ahpcrctYJrRz9x5BxtLXo=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNzWy1q97IQYZJMKYs3H8BzPKikFYq7bB7cwKCshbYxvdfNIFlEfKbIe31CqHh7q7fMNhhCiaPmhS0qcUA00vucst8hz8RosYomM7BRE7jYPlEgn84=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczN5gL8FkDRcUCUYKFOZp1HbB4fSEFhVwJjk9JuwMkl4pDHpno51HFCGGiSAZ40vlzDYkef-ndTjDtfVY-YsoOCJSdT-uruj16DGaqbDBty_YEQ649Y=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOKNJkvw8toOLzemkVcVVh4jOpuxzVB0xD5bESpLkpys9tv7Nr2OgKHZe8ChXy2vd8FoWUXgPOOo1pNUoEQCwQhtPuooalsocnpQYf-gcsWY9_2K2c=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczM0mclr77vEybxfnrOr9HnoucEKpt6r4N57ecTsRWgybA6d9hUMf0LBUnzRmYChV8VHtAFEnKXKjLL8tluJd2JzoIuG-iZSkUqOJhgENpnGYRVmkog=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMrw3hd2inKofETesez2GBaGBtUg0R2tKFKm4oy4uP_3O_RmAePC_A94deeWMAEFJOYB7erpdhHUW2n9dq5-oktjzW6gSqmAB9HhV_JpGvkZJQgb_E=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPgSYMiJ8ETYX-XYcplil9UEQZWBBRrgluFXG8qZlh6Cq7cPD1OT65PjInIPR86MHeqqLSpKX7OJELPIeJ1YbvxZQE1jNhZrEPWzIWuMEon3MLOiaY=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNGX_5kL14ob1h2RmFx3EHhY6M5nWPoQ11c08aSWD9H6sW2spEe-xnNQYS8zGW1SldmreGBkDsQxUsVr32oTf58j6ooFLl3jYESzij5QBODOd4ajWg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOGuMpmd_uaAjXnflCPEcfrXu9nbIdSQlP7TX-vt_P4hSBZC7UCV4TXS43yRS4idvHrUU0Oooi7AfPl_Zas6EhJ9fczq2hnvfl98sfadsFFxp_xVaw=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPBkwG2QLX9Xb7mF2MSXDICu-hNJqqA0DmVnWogy6vf8MsSotU5sgFCvP26FxVhrWeEm5DIg7W7-QEdrx9IX_V2RsujGrSWqiGKO59SUsTUgumE1d4=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczP8j1XKPEh1VhMFkfwj2Jr9D3O6d0xk8841HG8uLblAD7N29PyF6LsnTNDSg5ITKRWC2q3Mk5JQjbTmSfp8Via2FCjzWiwHuxMwvHfnqMdIq5wyToo=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczN5gSWQH5tUPqNB1ulemf0ifZhPVQkYWwVMFN9f3C1ObMpWM4kwxiynl4Q6rnTw21p6TLGZXZrQEZwr6q91MOOlxRhZ8nbJEWF2zjRTpjGh5BJ2w-A=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPJAC803M5Rkbj4Qksulg43ZDcW_eUssnUTQi2QpVisfszJ2MG_EiovXjusRPtOZdyAFfLIOL1W2zMPsiI61UgurBbDNaVf9u89-bqAkp2MVPdv9BU=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOX9uLnYu6ZbNSLo9BVZqpeWFdxj1dpbobgMnCYi7mH5vs5xaaPgX9D6lTdrd-t5C4PGhYh2_Kise729lo4x9XdOO5fgRN5Yx4CH_7xWy4VUdUcmtU=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMTqI_NbQNBHv5xvxzW-WQeVxmUJHC_qrwIuIZhriNw_1Z12U52YyZPHvuUbFOwdlywbZXn3Ifi7AnPzqp9p3GWKPTsIjnfwP9MmavvklwUMPku_TY=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPzj_KiwEGAU5ekWeJC1pY1Hz63_2oftE4YlfX_rHfTjEKi2zgcYB1Ql_czhYx7SYyOl-u81XHvCUTkH56sb0Np0QxTcTtmyQIu-DfATMO3NuJT-ug=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMccmPC5e-0p3IWYnwlJWrBHotavLygb9lPJWfFi7nl1Gx7GnRsF3KNi3pEmXOBOPWLOTcJ5PeTb6x2MJbtn9rlJlIzkhaf8aSCgZYe-cU4jZwfHPE=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNh32lVgsHLlvU0kklngeOdmOs0DOc8gk-NZ56h8TY2m6zECLuI7G6xgt9s_TXj9PxroQiTrsv6P7owKMlV8wxannfm0sKL3yimGP5rd0iQ3N-VnEU=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOBLQyxxF8YC0NCUPpn4RNBXnpOnhiTVEElEx7fxtO8Xr_lCyjXceb1j5IE2sjSTcSPZ6r5CRCPlZcl9sjIf1l-qctqtSmGNJOPrhATECU9YJBVYcA=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPG1H6P6mOdZaovpQLpjQW_g9SgR9F4IMHLz8Q53gM4ZzfwZjruD_u4fYLDL2AVJ8v3HVe06smmYcgDdGLMckPlP2c_vFOh6lwZcKIROaI2Cem1nuw=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOILlRJNJ4fntsS2bd7IPwuCDHQuK51YaAjPO_u1fhSXkPo_9rPb5IZSZCxEDD7z-APa3BTzI-aBvh0V3xqR-wo7s8WD-3ilkYHwYZiRBxqBKqmpOM=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPMcTmh06Ptk2inByRUMHg3Xan9k-UZePUO942t25Etma2rUJIBl6dy83UXHjzN8r50hAI08JTw09vtOE9lzFTADi9G8zLGOyGnxBwl1HYiFKTBVLs=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczN5h6vC3zuYtQ2zm-_OwnxMhKf6rQ2hBdrtTRnmpbyPUtiraVkQ0F3SaF9TrcPgjVnEJsyKKjV8jQMEUAPuY_27LkAR3i0zN108lzxzshzrOqBypYE=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOn4zDiohrTjkAI3FnHlbK7d2NcM4AQvC1uKwD6r0SoIwOfZg_O53pGpkxeAr_3-5yIU_d-ukm82FeHqIUhdHKl88rWhVwrgD4n90V-E9VdCRspoeg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPFm_RqjFoeas8h5_jVb7e7GkE21WlhW-5gDU8pAhv_jNwnQlbbDXUEd3dUrlFbxFY5tOs0gdxudn_09wa4Jd0WoFKsX8ZN64K_uWiLEl8r5IksbSk=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO7Yzt6aYAVlDFXNXjJmsPw-wgco1UcKGR4BVGiH7rvbqQsoOdL1Ocf9JvCoafBmnPVHxsRc_GXAcG-ccnhLB7ZxT--1OzdvThYnwQE7WleLigBClI=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOD6ad2Eju8j1OM0dKxFtVsAq5wEmovcm89X5qjE0jXeLLn6hqvpapPb7EgRvKD-9_dbzJkv60nm79Yuei_hV1zUre5gJ613KMp6sEqto_4xQut2Wc=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPoeB1pBcEtAqgPwnLyPvPDIgCtz7tPzSBzvUxZqFdSW5VXK-jIHUNIwGpn2561GLS1KGDdoQiPO3tP11eD3vm9HNWw9K2XQ-6pHnAL1ldgI_Q-i74=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPdNgrm1Awyh1n_GBY8YkSIgrjaO6m0f-xUORuSPijwquxRb8Auq6mYmgkvmRB5JR4SzSYwoOOL0KH1An7LW3oglIGFc8akMbs7GRzmXLrJWbtw4CA=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPtmMihBNCzTo5LqBGrd_sj4RKM3NRR8R9maBYhiaR9ZowYsUNBgdw3qCm8SC36QoNwwSk0nwXQ-UNshd2VKzAoNSU91cKqZ5skn2kgsBtDu3hS2-k=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNUUuPds8_CGqe-ReYi7zvvh9BmGupMr2f-QgMpWOYXR1HdEn6I0OwbsdijTGd2a2Z6FmUCS4Aby1Kse9J3moJ2iPLAbwEYREGcKGzFLN3LHyQ_3iU=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMa8GWLmYOSdCljwId7qYcRfA2hJjGvlcomQW2uJ0vBLMe7xSdk8QaClSaUhgaLGr2koKc0XkwMSWgfdwooEGBUXxMe5Fjwp8TyYj7e3mlLk5yfdTg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPybfjwr4TlsJOpZYBiKholqfB2AfiVKFqDvXbrlmtmR0bi_EinbViHpLXdoAtLSglg5Po0qWg1tvRmPYTuNsl074pDNdo-Tyhr3Wuj7VlpYPvvGvQ=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczP4kn11kVEAP5X0Hirks_nHEv883PLOmM4x9XWDDW1gmsqTkaUaz4bqdudCyWPzWEVVWlRcvfO6po7D_sX8cNFpbC9uM2Y9SkA0aJAWWRPncwTdNT0=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOl9q_s82YOImHdtdeCY1RKxIR-pqjR01AlbClWWdx1xRR14uRyMxER7_u8eQ4zGg3CZSp6vsZItjAYlJ7l8zttPVH9JPUiu5aPce4OzPjGxHSYfTk=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPMECsfEQoywnuW2Vr0K8Onga_Hh24MWAPL7N_t1UJsZ9VGlTRrkMszj-43kgsDjVA0uyBCuQmYP-kEo8_L6cyenFImJpDAeacWZQEkkLnO6Yd-a8M=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOEhek8Zf76kWr9iZbZcENOkGOMaoeRadRiwNmIoRqbw-2oMp2GibSkSLtU2nPG8akNkTgDJmzU4HHJQDyJ_YUdreeM5-QG8VCcmEq3CUcjG77FRXU=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNGiWstIuyh6Qm0RKjlE_ffmngloNgaqnX481IK1ADVVDMI-Pi-x0b1UREXX-cz9jsBmQLAhUbCGTgTFX07lnhRyWfLf2idBTHGZGgPcpjvq3hAJp0=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMl7elUkTNPtafKrLKRv76uoO9pS0RhAk-jndma_TMG1NBUoYg9cy4zEjLr5LTvm6MoCzR0Ztu60YteCFn5WIRoIDjJ5mkpD7NRUgLsne2dH-Y0EnI=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPAm7nQayTJ97ygyf59K1fLYuzpfJZR3qdEEC2DmNDoQpsGFDq5DecrU3dQRd8gNBnFopEhYwq1kxQ0VVsvtgXF1qG-nRuNsC8YtlP2nQEQ3alptu0=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPys6p9t6TDnEay7qEqyjziGge9po0uGHm47H7jMrUzBzDrqrjbY1YwRE1biCfkaWXL6jyqqCwrQ-RzOPBjR1lxF5rTnbmIUXfEVoqFKRI2MwfTl_o=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO7OTIW_GqIupwiaIxiPeMb5h6MwUITtlVFj_NoyGorrMYCKkD8coSuanr_lWTW5Ntt1SkpDjzhaE38ujmU35AcwZ-VToXg_7JuyETXDk846ub1D54=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOzHR1grMwQk4FfU1POSOgQxxPaH0eNEbbjKlySdBSRNEesByH5rpIJBh8zUvNfMhMY2dDhOZX3pXlIkwEOR82Ym9ry1ecW018xkqqPclI6MXP4gSI=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPnJOxKOT8nFUV6A2Qj-9Bf-sQLzbnlJMb_2az-a0KijYSYoPQ6CTzYG7eFtX7gDp8Of92m9PGqmiZJTNpoiL1_7eFzmk2qr20ZJsildgN4OoROnF8=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNMKlkJKyRkVDHzQh0PjfKyWDi6WIckJ04zftxRjN7iSha4mcFVuFzrxF_rmrqeu3qZLYEhqKuzS25U1z2CI66V-3ndzwKiQt8jakN_UEyyNCpvR0E=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMeBvPi-760mMbqIeZ-Ch33ZN9elZG1TnDlb3VVpU-rxhaCLTjHLAXJYpWoX_QmgOGKdHIC7s0eJy0RWW_BjP1mmeSIr5JU44fHA5M7mgfShoHmiKs=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOZljlx1rFHzPK0XnD4Yg7JBUs5AGJS7o51aebooYFUYd4UyEBqaIE2CEAc8_bSN3RBqNsobKuhVyJ60VVkVGk9u4SX1XL-FWfz5P1lN9DirSSmsuc=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczM5gqB6LPYUzMFIaDZtWm5BJcS103Th-de9CPs6BKF2KIzLZ0loaa6bfYFdAk62mkVMFHvwxywavBUXAIFdS6ChG7uEh0UT5g0AIYhjJWQTms4tYjg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO9WUWmam6W8Msov9IT9dMWivcy1ka4JkB6l5YVem_oEktihqgxg-5AqsBAJmp8jfd87zi01G8koXk_zpSYJXPpyYvN_uEY88ES_HntLtVLIEkw2Do=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPfBsxOYeh4bioKEOG5zbCwHtjtoi4R5A-lkOCuJwNNUhzPHIT7OBytNl5dHBooeNywECb9wrDVi8poNU1lV15m0sI72eMGof9CmyFzaawD693GXaE=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPYqrYtkTE6D4L-pqm7l3C-goiZZ6HJwvS4D_CPNf9YPuNRiINGJDye76YUDT1gKDwICqk0f69kP8eh1F7HofOWFH4kgVB3v3-BacU97kAth5PI0Rc=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPUL94UCncW4ct4njv7qpPQXUG47XNA7g5hH0Gx7SfyI8YKmCZe4HrYEgt57LRuHPlKQo520_8MuvjvryWy9YhZPYCvl_JjC0KLF8EIX5Fwejwhs6k=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMfdryfgqeaXIigNM06jpMaOMfoYzsg8KHfNqrd4FqMu781QL5ONYa7lOvFUSE1FrUSe0GIK5Nt41X8nl5r3vTzzEH8oSMBuwO49gBLhu4_40fWO0w=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczObwSVS-TaJtfSmXRpgmb50qGtctlEUB0cXslfVHw5ua6KEA0dreYFmHWEcaePfu9Fg3lVmGsxotMo4XKmT65ve694j3JHrehtsNmRKxU2H4LMNd2Q=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPbMPeBHBArk8pBSPdcTRL35AGTab6Ua1cBwTzMLCw3heKK0omXdsOj2LovIFyIvxL3WP3wNn9_KaQf8kEhTNNJUv9ZEFrZJStER8IiFTRGd-s8Uos=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO4Vs53CkHWl4b6zAcl9YUV_LkRB5yByc9Qhz2CkCt164HRZMtJwD03etfxDUn_NzdxgiH3xljN97mzDJY38YqKHth64cYKyTBPIFbKnNv8fpGR2Cs=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNWNYGsUNoHwCWzI7VIQ-cZwICBBLo-e5Bh443elYKaJX_cUlW7KNpDfILblsS5WTfI3VWNH17rG7pRA_Lj9Vj-tAeRdebOFUv0r3XJTdsHqY3Ufpc=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPGcnGNCyP59sURsrUAFNqR_uGtX43h5cWMl0XNtEA_Om8GIWsnqqa0MDWuvC1OjzSVFXts_Wnuqb7q9CJxevv1m7Vv55irkVBfdx5jcyNxRJZr0_M=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMcQO6v-gj5tVUlYUQ2zR3O7-eBr91JcULr2PMKfH9leEvyYnGMuXz1bAAZrqXrwno1tqtb-YNBOflpfIfbIhwHnf5nJSqHeorxCGMKpYcE29s9YQM=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczP3vmjCBu9CTzCkS7nMpjCCnlfea9R5xIRlGnqHbBEAZORb1LhCA_9JpAJ9Z0dBuIYr2jzuNLJAdyNS9XYwTNtHbwVWJPLmawTMxvdseCjyDHGHbOg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO34OwAMqFUeYv8eKtIvQV9PP0bVdJJzzT7058kMScVQUh2W3iBMb00LeP3q7kFKBeQQ6qUbX1ngzu8D0JzfcebyYxdw3E3UX5I6V03OmKwXh3UyBg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMiyKuuTCxQCAYXMac-oCOvF8bKz8pIPiaKQZd9TRyeBROzpG6hiETf2beDHq5D-DO9LSnUyJYU3RVVtHXVEYRFt0DlB16EpMf3aoO1laa17sdhO44=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOiUTCqSwGd7HwMn-IXuTY3BAfRk1Ufy00RBNKcPENlibVVvMUbzOWJVubxxxOol2gcuHbL6QCKbFh6N5hamh0wvt1ypNR8E4Mkc33J16qSBuvEwYQ=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPQGkeTFK2Ai4ORfDmdhtITsSyC7jqOqpj9iNRKUOeeZJGandVKNbEsqlQAv2aHJKMyDi1CT_M7qp2qIcC61Oqw3mDA650DqfixFlY6x1rEBdeDbec=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMp2tYSm-DXs_3y2xDqDbhkjaPTnLM2Atb2wEJL7WaT1RR4ISzI7B026BK2GnJ22mtgWvRCivXhwLUquY0YdDKnKvEUnoGQHYk7CjlGz4Ni2hjepJ8=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMR0wbodedbgMfx8Z0BtVLqQ9i7VkVk1yGxXNvaT9DnM3jovcb6dgHX8LUHa0oZZpTNGrGeLVsBIlMpKupope99DtZl7qlgqeFwfuF0kXEe1fee46Q=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO2y-fDTeBVVoddT5QknzwioxlBmnt_HcGOK0VFOkhcSpPpfxRx4lpjoSWZhfeA1i9r0tbiB7ov3UxHiNeHE3h4XccumkyLCl05YBMQdCxN9OGjA9U=w1920-h1080"></object>
-</div>
-  </div>
-</section>
- <!-- Administrasi -->
-        <section class="administrasi" id="administras">
-  <div class="container">
-    <h2>Aministrasi</h2>
-    <ul class="cards">
-      <li class="card">
-        <div>
-          <h3 class="card-title">SAKERNAS Februari 2025</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_PotensiDesa-BPS.png" style="width: 60px; height:60px" alt="SK">
-            
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">SUSENAS Maret 2025</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_PolitikKeamanan-BPS.png" style="width: 60px; height:60px" alt="Srikandi">
-            </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">SUPAS 2025</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_DTSEN-BPS.png" style="width: 60px; height:60px" alt="SIMPENSU">
-            </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">SERUTI TW 2</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_SekolahRakyat-BPS.png" style="width: 60px; height:60px" alt="SEKAR">
-            </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">SAKERNAS Agustus 2025</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_PendataanPerumahan-BPS.png" style="width: 60px; height:60px" alt="MOU">
-            </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      
-      <li class="card">
-        <div>
-          <h3 class="card-title">SUSENAS September 2025</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_PendataanPerumahan-BPS.png" style="width: 60px; height:60px" alt="MOU">
-            </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -539,7 +514,7 @@
           <div class="footer-section">
             <h3>BPS Kota Surabaya</h3>
             <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>Jl. Ahmad Yani No.152E, Gayungan, Kec. Gayungan, Surabaya, Jawa Timur 60235</p>
             <p>Email: bps3578@bps.go.id</p>
             <p>Telepon: (031) 8296692</p>
           </div>
@@ -555,23 +530,11 @@
             <h3>Hubungi Kami</h3>
             <p>Ikuti media sosial kami untuk update terbaru</p>
             <div class="social-links">
-              <a href="https://www.facebook.com/surabayakota.bps.go.id/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a
-                href="https://r.search.yahoo.com/_ylt=AwrPo5btTNZoTAIAKPbLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084462/RO=10/RU=https%3a%2f%2ftwitter.com%2fbps_surabaya/RK=2/RS=lOK88kby79v.CKODxjVvgx4R7GI-"
-                title="Twitter"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a
-                href="https://r.search.yahoo.com/_ylt=AwrPrqQ9TdZoGQIACCvLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084542/RO=10/RU=https%3a%2f%2fwww.instagram.com%2fbpskotasurabaya%2f/RK=2/RS=A.x9yjFwkHyFoZw.jW97bxuM0eM-"
-                title="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a
-                href="https://r.search.yahoo.com/_ylt=AwrKAX7GTdZoEAIAnZDLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084678/RO=10/RU=https%3a%2f%2fwww.youtube.com%2f%40bpskotasurabaya3578/RK=2/RS=3.S5VICmokrlo9U3LBzg3k4TV5I-"
-                title="YouTube"
-                ><i class="fab fa-youtube"></i
-              ></a>
-              <a href="#" title="Website"><i class="fab fa-globe"></i></a>
+              <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
@@ -582,6 +545,69 @@
     </footer>
     <!-- Custom JavaScript -->
     <script src="../script2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const sidebarToggle = document.getElementById("sidebarToggle");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Toggle submenu
+      document.querySelectorAll(".toggle-submenu").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const parent = btn.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+
+      // Scroll effect untuk navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+    <script>
+      function toggleDropdown(toggleElement) {
+        // Menutup semua dropdown yang sedang terbuka kecuali yang sedang diklik
+        document.querySelectorAll(".sh-dropdown-toggle.active").forEach((otherToggle) => {
+          if (otherToggle !== toggleElement) {
+            otherToggle.classList.remove("active");
+            otherToggle.nextElementSibling.classList.remove("show");
+          }
+        });
+
+        // Toggle state untuk elemen yang diklik
+        const dropdownContent = toggleElement.nextElementSibling;
+        toggleElement.classList.toggle("active");
+        dropdownContent.classList.toggle("show");
+      }
+
+      // Menutup dropdown saat klik di luar area dropdown
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".sh-dropdown")) {
+          document.querySelectorAll(".sh-dropdown-toggle.active").forEach((toggle) => {
+            toggle.classList.remove("active");
+            toggle.nextElementSibling.classList.remove("show");
+          });
+        }
+      });
+    </script>
   </body>
 </html>
-  

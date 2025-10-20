@@ -1,0 +1,698 @@
+/* Responsive */
+@media (max-width: 992px) {
+  .welcome {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 50px 5%;
+  }
+
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.95rem;
+  }
+
+  .welcome-img img {
+    max-width: 400px;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .welcome {
+    padding: 40px 5%;
+  }
+
+  .welcome-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.9rem;
+  }
+
+  .welcome-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .welcome .btn {
+    width: 90%;
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .welcome-img img {
+    max-width: 320px;
+  }
+}
+
+/* =================================
+   KOLEKSI
+================================= */
+
+.laporan {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 8%;
+  background: #fff;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.laporan-img {
+  flex: 0.35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.laporan-img img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.laporan-text {
+  flex: 0.65;
+}
+
+.laporan-text h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.laporan-text p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+.laporan-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.btn.lihat {
+  background: linear-gradient(90deg, #056ad0, #014589);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50%;
+}
+
+.btn.lihat:hover {
+  background: linear-gradient(90deg, #023a72, #197bdc);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
+}
+
+.btn.tambah {
+  background: linear-gradient(90deg, #ff7a00, #ffae42);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50%;
+}
+
+.btn.tambah:hover {
+  background: linear-gradient(90deg, #ffae42, #ffd580);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .laporan {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .laporan-img img {
+    max-width: 60%;
+  }
+
+  .laporan-buttons {
+    justify-content: center;
+  }
+}
+
+/* ===================
+  Dropdown
+====================== */
+/* Main Grid Container */
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+  overflow: visible;
+  padding-inline: 40px;
+}
+
+/* Card Styles */
+.system-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 102, 0, 0.1);
+  position: relative;
+  overflow: visible;
+}
+
+.system-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: all 0.3s ease;
+}
+
+.system-card:hover::before {
+  background: linear-gradient(90deg, #ff6600, #ff8533);
+}
+
+.system-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Header */
+.card-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f1f3f4;
+  overflow: visible;
+}
+
+.card-header img {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 15px;
+  padding: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.card-title {
+  flex: 1;
+}
+
+.card-title h3 {
+  font-size: 1.4rem;
+  color: #003366;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.dropdown {
+  position: relative;
+  overflow: visible;
+}
+
+.dropdown-toggle {
+  background: rgba(255, 102, 0, 0.1);
+  border: 2px solid rgba(255, 102, 0, 0.2);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  background: rgba(255, 102, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.dropdown-toggle i {
+  color: #ff6600;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  position: fixed;
+  top: 55px;
+  right: 0;
+  background: white;
+  min-width: 220px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.dropdown-content.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 15px 20px;
+  color: #495057;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background: linear-gradient(135deg, rgba(255, 102, 0, 0.1), rgba(255, 133, 51, 0.1));
+  color: #ff6600;
+  padding-left: 25px;
+}
+
+/* laporan brs */
+.laporan-brs {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 8%;
+  background: #fff;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.laporan-brs-img {
+  flex: 0.45;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.laporan-brs-img img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.laporan-brs-text {
+  flex: 0.55;
+}
+
+.laporan-brs-text h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.laporan-brs-text p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+.laporan-brs-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.laporan-brs.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.laporan-brs.btn.lihat {
+  background: linear-gradient(90deg, #056ad0, #014589);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50%;
+}
+
+.laporan-brs.btn.lihat:hover {
+  background: linear-gradient(90deg, #023a72, #197bdc);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .laporan-brs {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .laporan-brs-img img {
+    max-width: 60%;
+  }
+
+  .laporan-brs-buttons {
+    justify-content: center;
+  }
+}
+
+/* ===================
+  Card Slider
+====================== */
+/* Kontainer utama */
+.cards-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 8%;
+}
+
+.cards-container h1 {
+  font-size: 1.7rem;
+  color: #003366;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cards-scroll {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 15px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.cards-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb,
+.cards-scroll::-webkit-scrollbar-track {
+  border-radius: 92px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb {
+  background: var(--darkorange);
+}
+
+.cards-scroll::-webkit-scrollbar-track {
+  background: var(--thumb);
+}
+.card {
+  flex: 0 0 264px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 30px 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  scroll-snap-align: start;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #ff7a00, #ffb347);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Konten kartu */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Gambar besar */
+.card-content img {
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  max-width: 40%;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Tombol */
+.card-link {
+  display: inline-block;
+  background: var(--orange);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.card:hover .card-link {
+  background: var(--darkorange);
+}
+
+.scroll-btn {
+  background: linear-gradient(90deg, #ff7a00, #ffae42);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background: linear-gradient(90deg, #ffae42, #ffd580);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .card-content img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-content img {
+    width: 150px;
+  }
+}
+/* Responsif */
+@media (max-width: 699px) {
+  .cards {
+    grid-auto-columns: calc(100% / 2 - 15px); /* tablet: 2 card */
+  }
+
+  .card .card-content img {
+    width: 80px; /* lebih kecil di tablet */
+  }
+}
+
+@media (max-width: 499px) {
+  .cards {
+    grid-auto-columns: 100%; /* HP kecil: 1 card */
+  }
+
+  .card .card-content img {
+    width: 70px; /* lebih kecil di HP */
+  }
+}
+
+/* publikasi */
+.publikasi-section {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px 8%;
+  text-align: center;
+  max-height: fit-content;
+}
+
+.publikasi-title {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.publikasi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.publikasi-item {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.publikasi-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.publikasi-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.publikasi-item:hover img {
+  filter: brightness(80%);
+}
+
+.publikasi-item h3 {
+  /* padding: 10px 0 10px 0; */
+  font-size: 1.15rem;
+}
+
+.publikasi-item p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+  /* text-align: justify; */
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10%, -10%);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .laporan {
+    display: flex;
+  }
+
+  .diseminasi-grid,
+  .pengolahan-grid,
+  .jaringan-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .laporan {
+    display: flex;
+  }
+
+  .laporan-img {
+    flex: 0.65;
+  }
+
+  .laporan-text {
+    flex: 0.35;
+  }
+}

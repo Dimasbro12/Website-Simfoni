@@ -1,0 +1,632 @@
+/* =================================
+  Welcome Section
+================================= */
+.welcome-img img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* =================================
+  Pilar
+================================= */
+.card-section {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 30px 8%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.card-item {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.card-item:hover img {
+  filter: brightness(80%);
+}
+
+.card-item p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+}
+
+.card-btn {
+  background: linear-gradient(90deg, #0056b3, #0073e6);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.card-btn:hover {
+  background: linear-gradient(90deg, #0073e6, #00aaff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 115, 230, 0.3);
+}
+
+/* =================================
+      Pilar section (CSS utama)
+    ================================== */
+:root {
+  --orange: #f78b1f;
+  --darkorange: #e27610;
+  --white: #fff;
+  --thumb: #eee;
+}
+
+.cards-container {
+  max-width: 1215px;
+  margin: 0 auto;
+  padding: 30px 8%;
+}
+
+.cards-container h1 {
+  font-size: 1.6rem;
+  color: #0b3b5a;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+/* wrapper scroll horizontal */
+.cards-scroll {
+  display: flex;
+  gap: 10px; /* gunakan gap yang konsisten */
+  overflow-x: auto;
+  padding: 14px 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  align-items: flex-start; /* agar isi rata atas */
+}
+
+.cards-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+.cards-scroll::-webkit-scrollbar-thumb {
+  background: var(--darkorange);
+  border-radius: 999px;
+}
+.cards-scroll::-webkit-scrollbar-track {
+  background: var(--thumb);
+  border-radius: 999px;
+}
+
+/* Card dasar (desktop) */
+.card {
+  flex: 0 0 320px; /* fallback desktop */
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(4, 20, 30, 0.08);
+  padding: 20px;
+  scroll-snap-align: start;
+  text-align: center;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #ff7a00, #ffb347);
+  transition: all 0.3s ease;
+}
+
+.card:hover h2 {
+  color: #fff;
+}
+
+/* Konten kartu */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #073049;
+}
+
+.card img {
+  width: 100px;
+  height: auto;
+  margin: 6px auto 14px;
+  display: block;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card .card-link {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--orange);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.card:hover .card-link {
+  background: var(--darkorange);
+}
+
+.scroll-btn {
+  background: linear-gradient(90deg, #ff7a00, #ffae42);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.scroll-btn:hover {
+  background: linear-gradient(90deg, #ffae42, #ffd580);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
+}
+
+/* =============================
+  RESPONSIVE: pastikan 2 card pas
+============================= */
+
+/* Untuk tablet / mobile besar: paksa 2 kartu penuh */
+@media (max-width: 768px) {
+  .cards-scroll {
+    gap: 14px;
+    padding: 12px 0;
+  }
+  .card {
+    flex: 0 0 calc((100% - 14px) / 2);
+    min-height: 220px;
+    padding: 18px;
+  }
+  .card img {
+    width: 84px;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+}
+
+/* Untuk layar sangat kecil: tetap 2 kartu utuh, kecilkan gap & padding container */
+@media (max-width: 420px) {
+  .cards-container {
+    padding: 20px 8%;
+  } /* kurangi padding luar agar ruang lebih lebar */
+  .cards-scroll {
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .card {
+    flex: 0 0 calc((100% - 10px) / 2);
+    min-height: 200px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+  .card img {
+    width: 72px;
+  }
+  .card-title {
+    font-size: 0.98rem;
+  }
+}
+
+/* =================================
+  Laporan
+================================= */
+.laporan-section {
+  max-width: 1230px;
+  margin-bottom: 30px;
+  padding: 30px 4%;
+  background-color: #003366;
+  border-radius: 15px;
+}
+
+.laporan-kegiatan iframe {
+  width: 100%;
+  min-height: 500px;
+  border: none;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* =================================
+  Dokumentasi Kegiatan
+================================= */
+.dokumentasi-kegiatan {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 30px 8%;
+}
+
+.dokumentasi-kegiatan h1 {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* archive-activity (arsip-section) */
+.archive-activity {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.7), rgba(255, 102, 0, 0.5)), url("https://picsum.photos/1920/1080?blur=3");
+  padding: 20px 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* archive-activity__header (header-container) */
+.archive-activity__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* archive-activity__title (main-title) */
+.archive-activity__title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin: 15px;
+  letter-spacing: 1px;
+}
+
+/* archive-activity__subtitle (subtitle) */
+.archive-activity__subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* archive-activity__content (content-container) */
+.archive-activity__content {
+  background: #dbeafe, 0.6; /* Pastikan ini adalah warna dengan opacity yang valid, mungkin: background: rgba(219, 234, 254, 0.9); */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* archive-activity__grid (grid-container) */
+.archive-activity__grid {
+  display: grid;
+  /* MODIFIKASI: Lebar minimum kolom dinaikkan menjadi 320px */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  justify-items: center; /* biar isi rata tengah */
+}
+
+/* archive-card (arsip-card) */
+.archive-card {
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  /* MODIFIKASI: Lebar maksimum kartu dinaikkan menjadi 400px */
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.archive-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* archive-card__year (year-title) */
+.archive-card__year {
+  background: #0a2a66;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 12px 12px 0 0;
+}
+
+/* archive-card__body (album-body) */
+.archive-card__body {
+  padding: 10px;
+  background: #f2f3f7;
+  border-radius: 0 0 12px 12px;
+  position: relative;
+}
+
+/* Gaya untuk widget Google Photos (tidak diubah karena ini class eksternal) */
+.pa-gallery-player-widget {
+  width: 100%;
+  height: 220px;
+  display: block !important;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* archive-card__action (button-container) */
+.archive-card__action {
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* archive-card__button (view-button) */
+.archive-card__button {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.archive-card__button:hover {
+  background: #ff5e00;
+  transform: scale(1.05);
+}
+.archive-card__button:active {
+  transform: scale(0.98);
+}
+
+/* =================================
+  Arsip Section
+================================= */
+.arsip-section {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 30px 8%;
+}
+
+.arsip-section h1 {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.arsip-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.arsip-title {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+.arsip-subtitle {
+  color: #555;
+  font-size: 1rem;
+} /* ============================== KARTU KHUSUS ============================== */
+.arsip-cards {
+  margin-top: 20px;
+  padding: 5px 0;
+}
+
+.arsip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+.arsip-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-left-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 5px solid #003366;
+  position: relative;
+  overflow: visible; /* ✅ agar dropdown terlihat */
+  will-change: transform;
+  z-index: 1;
+}
+.arsip-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+  border-left-color: #ff6600;
+}
+
+.arsip-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  padding: 12px;
+  flex-shrink: 0;
+}
+.arsip-card-info {
+  flex: 1;
+}
+.arsip-card-info a {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #003366;
+  text-decoration: none;
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+  pointer-events: none;
+  padding-right: 50px;
+}
+
+.arsip-desc {
+  font-size: 0.7rem;
+  color: #555;
+  margin: 0;
+  padding-right: 50px;
+} /* ============================== DROPDOWN ============================== */
+.arsip-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.arsip-toggle {
+  background: rgba(0, 102, 255, 0.1);
+  border: 2px solid rgba(0, 102, 255, 0.2);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arsip-toggle:hover {
+  background: rgba(255, 102, 0, 0.1);
+  border: 2px solid rgba(255, 102, 0, 0.2);
+}
+
+/* menu tersembunyi default */
+.arsip-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 9999; /* ✅ di atas semua elemen */
+}
+
+.arsip-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-align: left;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.arsip-menu a:hover {
+  background: #f0f0f0;
+}
+
+.arsip-dropdown:hover .arsip-toggle {
+  background: rgba(255, 102, 0, 0.1);
+  border: 2px solid rgba(255, 102, 0, 0.2);
+}
+
+.arsip-dropdown:hover .arsip-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.arsip-dropdown:hover .arsip-toggle i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* ------------------------------------------- */
+/* MEDIA QUERY untuk Responsif (Layar Kecil/Mobile) */
+/* ------------------------------------------- */
+
+@media (max-width: 650px) {
+  .arsip-section {
+    padding: 20px 5%; /* Padding yang lebih kecil untuk layar sempit */
+  }
+
+  .arsip-grid {
+    /* Perubahan Kunci: Di layar < 650px, setiap kartu mengambil lebar penuh. */
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .arsip-card {
+    /* Memastikan arsip-card mengambil lebar penuh dari grid 1fr */
+    width: 100%;
+    padding: 20px; /* Padding sedikit lebih kecil */
+  }
+
+  .arsip-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .arsip-card-info a,
+  .arsip-desc {
+    padding-right: 40px; /* Jaga jarak dengan tombol dropdown */
+  }
+
+  .arsip-dropdown {
+    /* Posisi dropdown bisa disesuaikan lagi untuk layar kecil */
+    top: 50px;
+    right: 5px;
+  }
+
+  .arsip-toggle {
+    width: 38px;
+    height: 38px;
+  }
+}

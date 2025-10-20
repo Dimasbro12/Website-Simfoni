@@ -5,32 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simfoni BPS Kota Surabaya - Pusat Informasi Statistik dan Kearsipan</title>
     <meta name="description" content="Simfoni, pusat informasi kegiatan statistik dan kearsipan BPS Kota Surabaya. Menyajikan berbagai data, dokumentasi, dan layanan terintegrasi untuk transparansi dan kemudahan akses informasi." />
+    <link rel="icon" type="image/png" href="../assets/bps.png" />
 
     <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles/disjas.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header Start -->
     <header class="header" id="header">
-      <nav class="navbar container">
-        <a href="#" class="logo">
-          <i class="fas fa-chart-bar"></i>
-          BPS KOTA Surabaya
-        </a>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="../home.html">Home</a></li>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <!-- Hamburger di kiri -->
+          <button class="navbar-toggler text-white border-0" type="button" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="#"><img src="../assets/bps.png" alt="logo BPS" />BPS Kota Surabaya</a>
+
+          <!-- Menu untuk desktop -->
+          <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto text-center text-md-start">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="subbag.html">Subbag Umum</a></li>
+              <li class="nav-item"><a class="nav-link" href="pss.html">PSS</a></li>
+              <li class="nav-item"><a class="nav-link" href="pojok-statistik.html">Pojok Statistik</a></li>
+              <li class="nav-item"><a class="nav-link" href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button">Tim</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="ipds.html">IPDS</a></li>
+                  <li><a class="dropdown-item" href="humas.html">Humas</a></li>
+                  <li><a class="dropdown-item" href="sosial.html">Sosial</a></li>
+                  <li><a class="dropdown-item" href="produksi.html">Produksi</a></li>
+                  <li><a class="dropdown-item" href="nerwilis.html">Nerwilis</a></li>
+                  <li><a class="dropdown-item" href="sakip.html">Sakip-ZI</a></li>
+                  <li><a class="dropdown-item" href="harga.html">Harga</a></li>
+                  <li><a class="dropdown-item" href="disjas.html">Disjas</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar (Mobile) -->
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="subbag.html">Subbag Umum</a></li>
-          <li><a href="#rbzi">RB/ZI</a></li>
+          <li><a href="pss.html">PSS</a></li>
           <li><a href="pojok-statistik.html">Pojok Statistik</a></li>
           <li><a href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
-          <li class="dropdown">
-            <a href="#tim" class="dropdown-toggle">Tim <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#umum">Umum</a></li>
+          <li class="has-submenu">
+            <a href="#" class="toggle-submenu"> Lainnya <i class="fa-solid fa-chevron-down"></i> </a>
+            <ul class="submenu">
               <li><a href="ipds.html">IPDS</a></li>
               <li><a href="humas.html">Humas</a></li>
               <li><a href="sosial.html">Sosial</a></li>
@@ -42,183 +81,360 @@
             </ul>
           </li>
         </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
     </header>
+    <!-- Header End -->
 
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="hero-content">
         <h1>Distribusi Dan Jasa</h1>
         <p>Mengenal Struktur Organisasi, Profil, dan Tugas Tim Distribusi Dan Jasa BPS Kota Surabaya</p>
-        <a href="#welcome" class="cta-button">Kunjungi Lebih Lanjut</a>
       </div>
     </section>
 
-    <!-- Welcome Section -->
+    <!-- Welcome Start -->
     <section class="welcome" id="welcome">
-      <div class="container">
-        <div class="welcome-content">
-          <div class="welcome-text fade-in">
-            <h2>Tentang Tim Kerja Distribusi Dan Jasa</h2>
-            <p>
-              Tim kerja Distribusi dan Jasa bertugas mengelola statistik perdagangan, transportasi, pariwisata, serta sektor jasa lainnya, guna menyajikan data yang akurat dan bermanfaat bagi perumusan kebijakan dan pengambilan keputusan.
-            </p>
-          </div>
-          <div class="welcome-img fade-in">
-            <img src="../assets/welcome-distribusi.png" alt="" width="700" height="600" style="border-radius: 15px;" >
-          </div>
-        </div>
-    </section> 
-    
-    <!-- Susunan Organisas Section -->
-    <section class="struktur" id="struktur">
-      <div class="container">
-        <div class="welcome-content">
-          <div class="welcome-text fade-in" >
-            <h2>Struktur Tim</h2>
-            <div class="stats">
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="../assets/ketua-distribusi.png" alt="Ketua Tim Sosial">
-                    </div>
-                    <div class="flip-card-back">
-                      <p class="title">Ketua Tim</p>
-                      <p>"Jalani profesimu dengan sepenuh hati"</p>
-                    </div>
-                    </div>
-              </div>
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../assets/ketua-distribusi.png" alt="Ketua Tim Sosial">
-                      </div>
-                      <div class="flip-card-back">
-                        <p class="title">Anngota Tim</p>
-                        <p>"My Trip My Adventure"</p>
-                      </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="welcome-text">
+        <h1>Tentang Distribusi dan Jasa</h1>
+        <p>
+          Distribusi dan Jasa merupakan bidang yang berfokus pada pengumpulan, pengolahan, serta penyajian data terkait pergerakan barang, perdagangan, dan layanan masyarakat. Melalui statistik distribusi dan jasa, BPS Kota Surabaya
+          menyediakan informasi penting untuk mendukung analisis ekonomi, membantu pengambilan kebijakan, serta memahami dinamika aktivitas ekonomi di wilayah Surabaya.
+        </p>
+      </div>
+      <div class="welcome-img">
+        <img src="../assets/distribusi-welcome.png" alt="Selamat Datang" />
       </div>
     </section>
+    <!-- Welcome End -->
 
-    <!-- Statistik Kependudukan dan Ketenagakerjaan -->
-    <section class="produksi" id="produksi">
-      <div class="container">
-        <h2>Statistik Distribusi</h2>
+    <!-- Statistik Distribusi Start -->
+    <section class="disjas" id="disjas">
+      <div class="activity-container">
         <div class="row">
-          <div class="col">
-            <img src="../assets/distribusi2.png" alt="Statistik Kependudukan dan Ketenagakerjaan" style="width: 250px; height:auto">
+          <div class="col image-col">
+            <img src="../assets/statistik-distribusi.png" alt="statistik-distribusi" />
           </div>
-          <div class="col">
+          <div class="col content-col">
             <div class="content">
               <div class="text-box">
-              <p>Tim kami menangani statistik pertanian dan industri secara profesional.</p>
+                <h2>Statistik Distribusi</h2>
+                <p>
+                  Statistik Distribusi berperan dalam mengumpulkan, mengolah, dan menyajikan data mengenai pergerakan barang dan jasa, perdagangan, serta perkembangan harga di berbagai sektor. Data yang dihasilkan menjadi dasar penting
+                  dalam penyusunan kebijakan ekonomi, analisis pasar, serta pemantauan inflasi di wilayah Kota Surabaya.
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <div class="main-grid">
-          <div class="system-card">
-              <div class="card-header">
-                  <img src="../beta_project/assets/img/SPM-BPS.png" alt="SPM"/>
-                  <div class="card-title">
-                      <h3>VPEK</h3>
-                      <p class="p-Kepegawaian">Statistik Jasa Penunjang Angkutan</p>
-                  </div>
-                  <div class="dropdown">
-                      <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                          <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                      <div class="dropdown-content">
-                          <a href="#">IBS Bulanan</a>
-                          <a href="#">IBS Tahunan</a>
-                          <a href="#">IMK Tahunan</a>
-                          <a href="#">IMK Triwulan</a>
-                      </div>
-                  </div>
-              </div>
+      </div>
+
+      <div class="cards-container">
+        <div class="cards-scroll">
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei Pola Distribusi Barang (SPDBP)</h2>
+              <img src="../assets/apel-pagi.png" alt="Pespa" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
           </div>
-          <div class="system-card">
-              <div class="card-header">
-                  <img src="../beta_project/assets/img/RPD-BPS.png" alt="RPD"/>
-                  <div class="card-title">
-                      <h3>VPBD</h3>
-                      <p class="p-Kepegawaian">Survei Perdagangan Barang Kosmetik</p>
-                  </div>
-                  <div class="dropdown">
-                      <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                          <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                      <div class="dropdown-content">
-                          <a href="#">Survei Kontruksi Triwulan</a>
-                          <a href="#">Survei Kontruksi Tahunan</a>
-                          <a href="#">Survei Captive Power</a>
-                          <a href="#">UDP</a>
-                      </div>
-                  </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Statistik Pola Usaha Non Pertanian (SPUNP)</h2>
+              <img src="../assets/senam-pagi.png" alt="Sejuta Rasa" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Statistik Jasa Penunjang Angkutan (VPEK)</h2>
+              <img src="../assets/Dharma.png" alt="Dharma" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei Perdagangan Barang Kosmetik (VPBD)</h2>
+              <img src="../assets/khotmil.png" alt="Khotmil" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">survei transportasi laut (VAKSAL)</h2>
+              <img src="../assets/khotmil.png" alt="Khotmil" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei angkutan penumpang dan barang (SAPB) terminal</h2>
+              <img src="../assets/khotmil.png" alt="Khotmil" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei Konsumsi bahan pokok non rumah tangga (PBPNRT)</h2>
+              <img src="../assets/khotmil.png" alt="Khotmil" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Statistik Distribusi End -->
+
+    <!-- Statistik Distribusi Start -->
+    <section class="disjas" id="disjas">
+      <div class="activity-container">
+        <div class="row">
+          <div class="col image-col">
+            <img src="../assets/statistik-keuangan.png" alt="statistik-keuangan" />
+          </div>
+          <div class="col content-col">
+            <div class="content">
+              <div class="text-box">
+                <h2>Statistik Keuangan, Teknologi Informasi dan Pariwisata</h2>
+                <p>Statistik ini menyajikan data tentang perkembangan sektor keuangan, pemanfaatan teknologi informasi, dan aktivitas pariwisata di Kota Surabaya sebagai dasar perumusan kebijakan dan evaluasi pembangunan daerah.</p>
               </div>
-          </div>                         
-          <div class="system-card">
-              <div class="card-header">
-                  <img src="../beta_project/assets/img/RPD-BPS.png" alt="RPD"/>
-                  <div class="card-title">
-                      <h3>SPDB</h3>
-                      <p class="p-Kepegawaian">Survei Pola Distribusi Barang</p>
-                  </div>
-                  <div class="dropdown">
-                      <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                          <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                      <div class="dropdown-content">
-                          <a href="#">Survei Kontruksi Triwulan</a>
-                          <a href="#">Survei Kontruksi Tahunan</a>
-                          <a href="#">Survei Captive Power</a>
-                          <a href="#">UDP</a>
-                      </div>
-                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-container">
+        <div class="cards-scroll">
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei Lembaga Keuangan (SLK)</h2>
+              <img src="../assets/apel-pagi.png" alt="Pespa" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei Perusahaan/Usaha Penyedia Makan Minum (VREST)</h2>
+              <img src="../assets/senam-pagi.png" alt="Sejuta Rasa" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei Objek Daya Tarik Wisata (VDTW)</h2>
+              <img src="../assets/Dharma.png" alt="Dharma" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei Perusahaan/Usaha Penyedia Jasa Akomodasi Tahunan (VHTL)</h2>
+              <img src="../assets/khotmil.png" alt="Khotmil" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei Perusahaan/Usaha Penyedia Jasa Akomodasi Bulanan (VHTS)</h2>
+              <img src="../assets/khotmil.png" alt="Khotmil" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei E-Commerce</h2>
+              <img src="../assets/khotmil.png" alt="Khotmil" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2 class="card-title">Survei Updating Jasa Pariwisata</h2>
+              <img src="../assets/khotmil.png" alt="Khotmil" />
+              <button class="scroll-btn">Lihat Detail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Statistik Distribusi End -->
+
+    <!-- Susunan Organisas Section -->
+    <!-- <section class="struktur" id="struktur">
+      <div class="container">
+        <h2>Struktur Tim</h2>
+
+        <div class="stats">
+          <div class="card">
+            <img src="assets/ketua-distribusi.png" alt="Ketua Tim Sosial" />
+            <div class="card-info">
+              <h3>Ketua Tim Sosial</h3>
+              <p>"My Trip My Adventure"</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="../assets/ketua-distribusi.png" alt="Anggota Tim" />
+            <div class="card-info">
+              <h3>Anggota Tim</h3>
+              <p>"Selalu Kompak dan Solid"</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="../assets/ketua-distribusi.png" alt="Sekretaris" />
+            <div class="card-info">
+              <h3>Sekretaris</h3>
+              <p>"Tepat Waktu dan Rapi"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Arsip Start -->
+    <section class="arsip-section">
+      <h1 class="arsip-title">Arsip Kegiatan</h1>
+      <div class="laporan">
+        <iframe
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0AfBX5G_rsoYukklJHGfl5m1VsJX3PQrjJSoEXl4HD96_bpUOk6dqGXwyMQ96ow/pubhtml?widget=true&amp;headers=false"
+          style="width: 100%; min-height: 500px; border: none; display: block"
+          allowfullscreen
+          loading="lazy"
+        >
+        </iframe>
+      </div>
+      <div class="arsip-grid">
+        <!-- KARTU 1 -->
+        <div class="arsip-card">
+          <img src="../assets/bukti-dukung.png" alt="Perjadin" />
+          <div class="arsip-card-info">
+            <a href="#">Laporan Kegiatan Statistik Keuangan, Teknologi Informasi dan Pariwisata </a>
+            <p class="arsip-desc">Merangkum hasil survei dan analisis statistik terkait sektor keuangan, TI, dan pariwisata.</p>
+          </div>
+          <div class="arsip-dropdown">
+            <div class="arsip-toggle" onclick="toggleDropdown(this)"><i class="fa-solid fa-chevron-down"></i></div>
+            <div class="arsip-menu">
+              <a href="#">Lihat Dokumen</a>
+              <a href="#">Lihat Dokumen</a>
+              <a href="#">Lihat Dokumen</a>
+              <a href="#">Lihat Dokumen</a>
+              <a href="#">Lihat Dokumen</a>
+              <a href="#">Lihat Dokumen</a>
+            </div>
+          </div>
+        </div>
+        <!-- KARTU 3 -->
+        <div class="arsip-card">
+          <img src="../assets/bukti-sementara.png" alt="Apel Asik" />
+          <div class="arsip-card-info">
+            <a href="#">Laporan Kegiatan Distribusi</a>
+            <p class="arsip-desc">Menyajikan data dan evaluasi kegiatan distribusi barang dan jasa.</p>
+          </div>
+          <div class="arsip-dropdown">
+            <div class="arsip-toggle" onclick="toggleDropdown(this)"><i class="fa-solid fa-chevron-down"></i></div>
+            <div class="arsip-menu"><a href="#">Lihat Dokumen</a></div>
+          </div>
+        </div>
+        <!-- KARTU 3 -->
+        <div class="arsip-card">
+          <img src="../assets/bukti-sementara.png" alt="Apel Asik" />
+          <div class="arsip-card-info">
+            <a href="#">Laporan Kegiatan Distribusi</a>
+            <p class="arsip-desc">Menyajikan data dan evaluasi kegiatan distribusi barang dan jasa.</p>
+          </div>
+          <div class="arsip-dropdown">
+            <div class="arsip-toggle" onclick="toggleDropdown(this)"><i class="fa-solid fa-chevron-down"></i></div>
+            <div class="arsip-menu"><a href="#">Lihat Dokumen</a></div>
+          </div>
+        </div>
+        <!-- KARTU 3 -->
+        <div class="arsip-card">
+          <img src="../assets/bukti-sementara.png" alt="Apel Asik" />
+          <div class="arsip-card-info">
+            <a href="#">Laporan Kegiatan Distribusi</a>
+            <p class="arsip-desc">Menyajikan data dan evaluasi kegiatan distribusi barang dan jasa.</p>
+          </div>
+          <div class="arsip-dropdown">
+            <div class="arsip-toggle" onclick="toggleDropdown(this)"><i class="fa-solid fa-chevron-down"></i></div>
+            <div class="arsip-menu"><a href="#">Lihat Dokumen</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Arsip End -->
+
+    <!-- Susunan Organisas Section -->
+    <section class="team-structure" id="struktur">
+      <div class="container">
+        <h2>Struktur Tim</h2>
+
+        <div class="team-structure__members">
+          <div class="team-structure__row">
+            <div class="member-card">
+              <img src="../assets/ketua-distribusi.png" alt="Ketua Tim" />
+              <div class="member-card__info">
+                <h3>Ketua Tim</h3>
+                <p>"My Trip My Adventure"</p>
               </div>
-          </div>                         
-          <div class="system-card">
-              <div class="card-header">
-                  <img src="../beta_project/assets/img/RPD-BPS.png" alt="RPD"/>
-                  <div class="card-title">
-                      <h3>SPUNP</h3>
-                      <p class="p-Kepegawaian">Survei Pola Usaha Non Pertanian</p>
-                  </div>
-                  <div class="dropdown">
-                      <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                          <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                      <div class="dropdown-content">
-                          <a href="#">Survei Kontruksi Triwulan</a>
-                          <a href="#">Survei Kontruksi Tahunan</a>
-                          <a href="#">Survei Captive Power</a>
-                          <a href="#">UDP</a>
-                      </div>
-                  </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/ketua-distribusi.png" alt="Anggota 1" />
+              <div class="member-card__info">
+                <h3>Anggota 1</h3>
+                <p>"Selalu Kompak dan Solid"</p>
               </div>
-          </div>                         
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/ketua-distribusi.png" alt="Anggota 2" />
+              <div class="member-card__info">
+                <h3>Anggota 2</h3>
+                <p>"Tepat Waktu dan Rapi"</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-structure__row">
+            <div class="member-card">
+              <img src="../assets/ketua-distribusi.png" alt="Anggota 3" />
+              <div class="member-card__info">
+                <h3>Anggota 3</h3>
+                <p>"Siap Sedia Kapan Pun"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/ketua-distribusi.png" alt="Anggota 4" />
+              <div class="member-card__info">
+                <h3>Anggota 4</h3>
+                <p>"Jaga Kesehatan Selalu"</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Start -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
             <h3>BPS Kota Surabaya</h3>
             <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
-            <p>Jl. Ahmad Yani No.152E, Gayungan, Kec. Gayungan, Surabaya, Jawa Timur 60235</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <p>Email: bps3578@bps.go.id</p>
             <p>Telepon: (031) 8296692</p>
           </div>
@@ -227,26 +443,84 @@
             <a href="#">Data Statistik</a>
             <a href="#">Dokumentasi</a>
             <a href="#">Layanan Kearsipan</a>
-            <a href="#">Pojok Statistik</a>
+            <a href="pojok-statistik.html">Pojok Statistik</a>
             <a href="#">Kelurahan Cantik</a>
           </div>
           <div class="footer-section">
             <h3>Hubungi Kami</h3>
             <p>Ikuti media sosial kami untuk update terbaru</p>
             <div class="social-links">
-              <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/surabayakota.bps.go.id/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPo5btTNZoTAIAKPbLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084462/RO=10/RU=https%3a%2f%2ftwitter.com%2fbps_surabaya/RK=2/RS=lOK88kby79v.CKODxjVvgx4R7GI-"
+                title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPrqQ9TdZoGQIACCvLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084542/RO=10/RU=https%3a%2f%2fwww.instagram.com%2fbpskotasurabaya%2f/RK=2/RS=A.x9yjFwkHyFoZw.jW97bxuM0eM-"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrKAX7GTdZoEAIAnZDLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084678/RO=10/RU=https%3a%2f%2fwww.youtube.com%2f%40bpskotasurabaya3578/RK=2/RS=3.S5VICmokrlo9U3LBzg3k4TV5I-"
+                title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" title="Website"><i class="fab fa-globe"></i></a>
             </div>
           </div>
-        </div class="footer-bottom">
-        <p>&copy; 2025 BPS Kota Surabaya. Semua hak dilindungi undang-undang.</p>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 BPS Kota Surabaya. Semua hak dilindungi undang-undang.</p>
+        </div>
       </div>
     </footer>
+    <!-- Footer End -->
 
     <!-- Custom JavaScript -->
-    <script src="../script2.js"></script>
+    <script>
+      function toggleDropdown(el) {
+        const dropdown = el.parentElement;
+        dropdown.classList.toggle("show");
+      }
+
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const sidebarToggle = document.getElementById("sidebarToggle");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Toggle submenu
+      document.querySelectorAll(".toggle-submenu").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const parent = btn.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+
+      // Scroll effect untuk navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+    <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

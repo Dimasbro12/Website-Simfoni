@@ -5,32 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simfoni BPS Kota Surabaya - Pusat Informasi Statistik dan Kearsipan</title>
     <meta name="description" content="Simfoni, pusat informasi kegiatan statistik dan kearsipan BPS Kota Surabaya. Menyajikan berbagai data, dokumentasi, dan layanan terintegrasi untuk transparansi dan kemudahan akses informasi." />
+    <link rel="icon" type="image/png" href="../assets/bps.png" />
 
     <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../style2.css" />
+    <link rel="stylesheet" href="../styles/harga.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body class="subbag">
-    <!-- Header -->
+    <!-- Header Start -->
     <header class="header" id="header">
-      <nav class="navbar container">
-        <a href="#" class="logo">
-          <i class="fas fa-chart-bar"></i>
-          BPS KOTA Surabaya
-        </a>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="../home.html">Home</a></li>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <!-- Hamburger di kiri -->
+          <button class="navbar-toggler text-white border-0" type="button" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="#"><img src="../assets/bps.png" alt="logo BPS" />BPS Kota Surabaya</a>
+
+          <!-- Menu untuk desktop -->
+          <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto text-center text-md-start">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="subbag.html">Subbag Umum</a></li>
+              <li class="nav-item"><a class="nav-link" href="pss.html">PSS</a></li>
+              <li class="nav-item"><a class="nav-link" href="pojok-statistik.html">Pojok Statistik</a></li>
+              <li class="nav-item"><a class="nav-link" href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button">Tim</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="ipds.html">IPDS</a></li>
+                  <li><a class="dropdown-item" href="humas.html">Humas</a></li>
+                  <li><a class="dropdown-item" href="sosial.html">Sosial</a></li>
+                  <li><a class="dropdown-item" href="produksi.html">Produksi</a></li>
+                  <li><a class="dropdown-item" href="nerwilis.html">Nerwilis</a></li>
+                  <li><a class="dropdown-item" href="sakip.html">Sakip-ZI</a></li>
+                  <li><a class="dropdown-item" href="harga.html">Harga</a></li>
+                  <li><a class="dropdown-item" href="disjas.html">Disjas</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar (Mobile) -->
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="subbag.html">Subbag Umum</a></li>
-          <li><a href="#rbzi">RB/ZI</a></li>
+          <li><a href="pss.html">PSS</a></li>
           <li><a href="pojok-statistik.html">Pojok Statistik</a></li>
           <li><a href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
-          <li class="dropdown">
-            <a href="#tim" class="dropdown-toggle">Tim <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#umum">Umum</a></li>
+          <li class="has-submenu">
+            <a href="#" class="toggle-submenu"> Lainnya <i class="fa-solid fa-chevron-down"></i> </a>
+            <ul class="submenu">
               <li><a href="ipds.html">IPDS</a></li>
               <li><a href="humas.html">Humas</a></li>
               <li><a href="sosial.html">Sosial</a></li>
@@ -42,372 +81,958 @@
             </ul>
           </li>
         </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </header>
+      </div>
 
-    <!-- Hero Section -->
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Start -->
     <section class="hero" id="subbag">
       <div class="hero-content">
         <h1>Tim Harga</h1>
         <h3>Simfoni BPS Kota Surabaya</h3>
       </div>
     </section>
-    <!-- Tentang Section -->
+    <!-- Hero End -->
+
+    <!-- Tentang Start -->
     <section class="welcome" id="welcome">
-      <div class="container">
-        <div class="welcome-content">
-          <div class="welcome-text fade-in">
-            <h2>Tentang Tim Harga</h2>
-            <p>Kelompok kerja di dalam BPS Kota Surabaya yang khusus menangani aspek harga dari data statistik — seperti survei harga konsumen, inflasi, indeks harga konsumen, serta pemantauan harga komoditas di pasar tradisional maupun modern.</p>
-          </div>
-          <div class="welcome-illustration fade-in">
-            <img src="../assets/img/Ilustrasi_Harga-BPS.png" alt="Sosial" style="width: 250px; height:auto" />
-          </div>
-        </div>
-        <!-- Susunan Organisasi Section -->
-         
-        <!-- Susunan Organisas Section -->
-         <section class="struktur" id="struktur">
-          <div class="container">
-            <div class="welcome-content">
-              <div class="welcome-text fade-in" >
-            <h2>Struktur Tim</h2>
-              <div class="stats">
-              <div class="flip-card">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <img src="../assets/img/Harga_Fajar.png" alt="Ketua Tim Sosial">
-          </div>
-          <div class="flip-card-back">
-            <p class="title">Ketua Tim</p>
-            <p>"Nilai menentukan masa depanmu"</p>
-          </div>
-           </div>
-</div>
-        <div class="flip-card">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <img src="../assets/img/Harga_Fajar.png" alt="Ketua Tim Sosial">
-          </div>
-          <div class="flip-card-back">
-            <p class="title">Anngota Tim</p>
-            <p>"My Trip My Adventure"</p>
-          </div>
-           </div>
-</div>
-            </div>
-            </div>
-            </div>
-          </div>
-         </section>
-         <section class="kegiatanSosial" id="kegiatanSosial">
-<div class="interior-header bobble-header">
-  <div class="container">
-    <div class="col-xs-12">
-      <div class="row">
-        <div class="banner-wrap">
-          <h1>
-            Kegiatan Tim Harga
-          </h1>
-          <div class="newtonsCradle">
-  <div class="frameCover"></div>
-  <div class="frame">
-    <div class="sphere-wrap left">
-      <div class="string string-left"></div>
-      <div class="sphere"></div>
-    </div>
-    <div class="sphere center"></div>
-    <div class="sphere center"></div>
-    <div class="sphere center"></div>
-    <div class="sphere-wrap right">
-      <div class="string string-right"></div>
-      <div class="sphere"></div>
-    </div>
-  </div>
-  <div class="base"></div>
-</div>
-        </div>
+      <div class="welcome-text">
+        <h1>Tentang Tim Harga</h1>
+        <p>
+          Kelompok kerja di dalam BPS Kota Surabaya yang khusus menangani aspek harga dari data statistik — seperti survei harga konsumen, inflasi, indeks harga konsumen, serta pemantauan harga komoditas di pasar tradisional maupun modern.
+        </p>
       </div>
-    </div>
-  </div>
-</div>
-      
+      <div class="welcome-img">
+        <img src="../assets/img/Ilustrasi_Harga-BPS.png" alt="Sosial" style="width: 250px; height: auto" />
+      </div>
     </section>
-        <!--Layanan Harga Section -->
-        <section class="ketahanan" id="ketahanan">
-  <div class="container">
-    <h2>Statistik Harga</h2>
-    <div class="row">
-      <div class="col">
-        <img src="../assets/img/Ilustrasi_StatistikHarga-BPS.png" alt="Statistik Harga" style="width: 250px; height:auto">
-        
+    <!-- Tentang End -->
+
+    <!-- Statistik Harga Start -->
+    <section class="sh-section" id="statistik-harga">
+      <div class="sh-header">
+        <h1>Statistik Harga</h1>
+        <p class="sh-description">
+          Statistik Harga melaksanakan kegiatan yang berkaitan dengan pemantauan dan pengumpulan data harga berbagai komoditas, seperti bahan makanan, barang kebutuhan pokok, serta jasa, yang menjadi indikator inflasi dan perkembangan
+          ekonomi di suatu wilayah.
+        </p>
       </div>
-      <div class="col">
-        <div class="content">
-          <div class="text-box">
-      <p>Statistik Harga melaksanakan kegiatan yang berkaitan dengan pemantauan dan pengumpulan data harga berbagai komoditas, seperti bahan makanan, barang kebutuhan pokok, serta jasa, yang menjadi indikator inflasi dan perkembangan ekonomi di suatu wilayah.</p>
-      </div></div></div>
-    </div>
-    <div class="main-grid">
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/SOP-BPS.png" alt="SOP"/>
-                                <div class="card-title">
-                                    <h3>SOP</h3>
-                                    <p class="p-Kepegawaian">Dokumentasi untuk Standar Operasional</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Dokumentasi SOP untuk kegiatan harga</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/Ilustrasi_Pendukung-BPS.png" alt="RPD"/>
-                                <div class="card-title">
-                                    <h3>Pendukung</h3>
-                                    <p class="p-Kepegawaian">Bukti untuk mendukung pendataan harga</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Pendukung</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>   
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/Ilustrasi_LaporanHarga.png" alt="RPD"/>
-                                <div class="card-title">
-                                    <h3>Laporan Statistik Harga</h3>
-                                    <p class="p-Kepegawaian">Laporan lengkap mengenai statistik harga</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Laporan Harga</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                         
-                    </div>
-  </div>
-</section>
-    <div class="row" style="justify-content:center; text-align: center; margin-top:20px;">
-<button class="custom-btn-section btn-6" ><span>Survei Harga</span></button>
-    <button class="custom-btn-section btn-6"><span>Publikasi/BRS</span></button>
-    <button class="custom-btn-section btn-6"><span>Laporan</span></button>
-    </div>
-<!--Layanan Harga Section -->
-        <section class="ketahanan" id="ketahanan">
-  <div class="container">
-    <h2>Survei Harga</h2>
-    <div class="row">
-      <div class="col">
-        <img src="../assets/img/Ilustrasi_StatistikHarga-BPS.png" alt="Survei Harga Harga" style="width: 250px; height:auto">
-        
+
+      <ul class="sh-card-list">
+        <li class="sh-card">
+          <div class="sh-card-content">
+            <img src="../assets/img/SOP-BPS.png" alt="Ikon SOP" />
+            <div class="sh-card-text">
+              <h3>SOP</h3>
+              <p class="sh-subtitle">Dokumentasi untuk Standar Operasional</p>
+            </div>
+            <div class="sh-dropdown">
+              <div class="sh-dropdown-toggle" onclick="toggleDropdown(this)">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="sh-dropdown-content">
+                <a href="#">Dokumentasi SOP untuk kegiatan harga</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="sh-card">
+          <div class="sh-card-content">
+            <img src="../assets/img/Ilustrasi_Pendukung-BPS.png" alt="Ikon Pendukung" />
+            <div class="sh-card-text">
+              <h3>Pendukung</h3>
+              <p class="sh-subtitle">Bukti untuk mendukung pendataan harga</p>
+            </div>
+            <div class="sh-dropdown">
+              <div class="sh-dropdown-toggle" onclick="toggleDropdown(this)">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="sh-dropdown-content">
+                <a href="#">Pendukung</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="sh-card">
+          <div class="sh-card-content">
+            <img src="../assets/img/Ilustrasi_LaporanHarga.png" alt="Ikon Laporan Harga" />
+            <div class="sh-card-text">
+              <h3>Laporan Statistik Harga</h3>
+              <p class="sh-subtitle">Laporan lengkap mengenai statistik harga</p>
+            </div>
+            <div class="sh-dropdown">
+              <div class="sh-dropdown-toggle" onclick="toggleDropdown(this)">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="sh-dropdown-content">
+                <a href="#">Laporan Harga</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- Statistik Harga End -->
+
+    <!-- Option Start -->
+    <section class="option">
+      <div class="row" style="justify-content: center; text-align: center; margin-top: 20px">
+        <button class="custom-btn-section btn-6" onclick="showSection('survei')"><span>Survei Harga</span></button>
+        <button class="custom-btn-section btn-6" onclick="showSection('publikasi')"><span>Publikasi/BRS</span></button>
+        <button class="custom-btn-section btn-6" onclick="showSection('laporan')"><span>Laporan</span></button>
       </div>
-      <div class="col">
-        <div class="content">
-          <div class="text-box">
-      <p>Statistik Harga melaksanakan kegiatan yang berkaitan dengan pemantauan dan pengumpulan data harga berbagai komoditas, seperti bahan makanan, barang kebutuhan pokok, serta jasa, yang menjadi indikator inflasi dan perkembangan ekonomi di suatu wilayah.</p>
-      </div></div></div>
-    </div>
-    <div class="main-grid">
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/SOP-BPS.png" alt="SOP"/>
-                                <div class="card-title">
-                                    <h3>SOP</h3>
-                                    <p class="p-Kepegawaian">Dokumentasi untuk Standar Operasional</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Dokumentasi SOP untuk kegiatan harga</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/Ilustrasi_Pendukung-BPS.png" alt="RPD"/>
-                                <div class="card-title">
-                                    <h3>Pendukung</h3>
-                                    <p class="p-Kepegawaian">Bukti untuk mendukung pendataan harga</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Pendukung</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>   
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/Ilustrasi_LaporanHarga.png" alt="RPD"/>
-                                <div class="card-title">
-                                    <h3>Laporan Statistik Harga</h3>
-                                    <p class="p-Kepegawaian">Laporan lengkap mengenai statistik harga</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Laporan Harga</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                         
-                    </div>
-  </div>
-</section>
-<!-- Publikasi Kegiatan -->
- <section class="publikasi" id="publikasi">
-  <div class="container">
-    <h2>Publikasi Kegiatan</h2>
-    <div class="row">
-      <div class="col">
-        <img src="../assets/img/Ilustrasi_LaporanPublikasi-BPS.png" alt="Statistik Ketahanan" style="width: 250px; height:auto">
+    </section>
+    <!-- Option End -->
+
+    <!-- Survei Harga Konsumen -->
+    <section class="welcome" id="welcome">
+      <div id="survei" class="section active">
+        <div class="welcome-text">
+          <h1>Survei Harga Konsumen (SHK)</h1>
+          <p style="margin-right: 24px; text-align: justify">
+            Statistik Harga melaksanakan kegiatan yang berkaitan dengan pemantauan dan pengumpulan data harga berbagai komoditas, seperti bahan makanan, barang kebutuhan pokok, serta jasa, yang menjadi indikator inflasi dan perkembangan
+            ekonomi di suatu wilayah.
+          </p>
+        </div>
+        <div class="welcome-img" style="margin-left: auto">
+          <ul class="cards">
+            <li class="card">
+              <div>
+                <h3 class="card-title">Jadwal</h3>
+                <div class="card-content">
+                  <img src="../assets/img/Jadwal-SHK.png" style="width: 60px; height: 60px" alt="Jadwal" />
+                </div>
+              </div>
+              <div class="card-link-wrapper">
+                <a href="#" class="card-link">Lihat Detail</a>
+              </div>
+            </li>
+            <li class="card">
+              <div>
+                <h3 class="card-title">Alokasi</h3>
+                <div class="card-content">
+                  <img src="../assets/img/Alokasi-SHK.png" style="width: 60px; height: 60px" alt="Jadwal" />
+                </div>
+              </div>
+              <div class="card-link-wrapper">
+                <a href="#" class="card-link">Lihat Detail</a>
+              </div>
+            </li>
+            <li class="card">
+              <div>
+                <h3 class="card-title">Dokumentasi</h3>
+                <div class="card-content">
+                  <img src="../assets/img/Dokumentasi-SHK.png" style="width: 60px; height: 60px" alt="Jadwal" />
+                </div>
+              </div>
+              <div class="card-link-wrapper">
+                <a href="#" class="card-link">Lihat Detail</a>
+              </div>
+            </li>
+            <li class="card">
+              <div>
+                <h3 class="card-title">Pengolahan</h3>
+                <div class="card-content">
+                  <img src="../assets/img/Pengolahan-SHK.png" style="width: 60px; height: 60px" alt="Jadwal" />
+                </div>
+              </div>
+              <div class="card-link-wrapper">
+                <a href="#" class="card-link">Lihat Detail</a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col">
-        <div class="content">
-          <div class="text-box">
-      <p>Kumpulan publikasi kegiatan</p>
-      </div></div></div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
-<div class="pa-gallery-player-widget" style="width:100%; height:480px; display:none;"
-  data-link="https://photos.google.com/share/AF1QipNM29xnjJSCdiY-5OLcjqbPkRJg5Eu3FY8V_mlkGLUKgeiLEsO4eiJLqR2PDNQ1Qg?key=d09FLWQ4RlJWX0tHTnl0RjFYczhZUGo2dUlxNDF3"
-  data-background-color="#003366"
-  data-title="GDG Bandung x ISTTS x SurabayaDev · Saturday, Mar 22 📸"
-  data-description="Shared album · Tap to view!">
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOVB4GxgCq1XiYSMjs7iUCA2TjlQYSLDnwQIU7RDjopREBfzv72nL8tUrjdH9iZea6rnAh6Ed5IDJu1qF6jcRSee3BnldOmgVZhSNoHqOS7nsgUhD0=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczP2FTJXIOuwcN0-OW3RLbF-XbgazzHjJHPEgBYD39flpKjPVKRM2rVSU9A3fFZaTwkmAyVDY-Iyk4JzI2QDb9OD4SCDqdUOANtPzb1pnRllB_zpIDk=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNQKzr08q9oU3AUTsLnq_xXB4yJ__tnE1XJW4RKBSZqoY4N3Y8j0giTiKReK5anPANVljPcyfV1awSmsSUCHrmtXRaw-cpGRMtQOYbO5PlL2OCnm9Y=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPFoG5hRmpf6eNiQSv-0p5Hnm1l0p3t-s5OE0L5JdK4WWWZZlFhlZA27_17z0Q0cQxAk2uhpBG0RaoEpu-lmDNO-ID8fAKal-v283Ubts7pP8CqF_U=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNNjUX84k7pE1-TDffXHoCuOjl3d9nUuOLgMNokXL-WE9mIEVo14RamUAa3x1NIzX1zYTCcgKfl5XKKTsXD7MsSRTKVkN_VDAffnB4p6IiOTKqL_g=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMEIjwRL7TlhTd_XqP7tzzUMcOBERuM_H0zOcdzvZIQLRRsjlXcCx7jXYEkgzz1i-AONkyZKFxLx_64NogEnF1I7NGN3kz9EcOTzom4IdMyRHQMPQ=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOIjWMZR75DKtYWUWHG9cgYMKtkRlKXnILynKCClq9OUrjhz7TYwIz60jORpsVoLNIuVDLhFLDiUW-r9_HjeiexBNg1LSGZZbndJ9hDA-m73b0JFwE=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNRDtOSspcmRoqjLIBZsSYQ54nJrF0kffLpUrnq2GjxuQMnkUagnNgW39t_3Is1UwooTQgLh5vtdlZXaQxeL1DT_BRXi0ahpcrctYJrRz9x5BxtLXo=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNzWy1q97IQYZJMKYs3H8BzPKikFYq7bB7cwKCshbYxvdfNIFlEfKbIe31CqHh7q7fMNhhCiaPmhS0qcUA00vucst8hz8RosYomM7BRE7jYPlEgn84=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczN5gL8FkDRcUCUYKFOZp1HbB4fSEFhVwJjk9JuwMkl4pDHpno51HFCGGiSAZ40vlzDYkef-ndTjDtfVY-YsoOCJSdT-uruj16DGaqbDBty_YEQ649Y=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOKNJkvw8toOLzemkVcVVh4jOpuxzVB0xD5bESpLkpys9tv7Nr2OgKHZe8ChXy2vd8FoWUXgPOOo1pNUoEQCwQhtPuooalsocnpQYf-gcsWY9_2K2c=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczM0mclr77vEybxfnrOr9HnoucEKpt6r4N57ecTsRWgybA6d9hUMf0LBUnzRmYChV8VHtAFEnKXKjLL8tluJd2JzoIuG-iZSkUqOJhgENpnGYRVmkog=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMrw3hd2inKofETesez2GBaGBtUg0R2tKFKm4oy4uP_3O_RmAePC_A94deeWMAEFJOYB7erpdhHUW2n9dq5-oktjzW6gSqmAB9HhV_JpGvkZJQgb_E=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPgSYMiJ8ETYX-XYcplil9UEQZWBBRrgluFXG8qZlh6Cq7cPD1OT65PjInIPR86MHeqqLSpKX7OJELPIeJ1YbvxZQE1jNhZrEPWzIWuMEon3MLOiaY=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNGX_5kL14ob1h2RmFx3EHhY6M5nWPoQ11c08aSWD9H6sW2spEe-xnNQYS8zGW1SldmreGBkDsQxUsVr32oTf58j6ooFLl3jYESzij5QBODOd4ajWg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOGuMpmd_uaAjXnflCPEcfrXu9nbIdSQlP7TX-vt_P4hSBZC7UCV4TXS43yRS4idvHrUU0Oooi7AfPl_Zas6EhJ9fczq2hnvfl98sfadsFFxp_xVaw=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPBkwG2QLX9Xb7mF2MSXDICu-hNJqqA0DmVnWogy6vf8MsSotU5sgFCvP26FxVhrWeEm5DIg7W7-QEdrx9IX_V2RsujGrSWqiGKO59SUsTUgumE1d4=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczP8j1XKPEh1VhMFkfwj2Jr9D3O6d0xk8841HG8uLblAD7N29PyF6LsnTNDSg5ITKRWC2q3Mk5JQjbTmSfp8Via2FCjzWiwHuxMwvHfnqMdIq5wyToo=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczN5gSWQH5tUPqNB1ulemf0ifZhPVQkYWwVMFN9f3C1ObMpWM4kwxiynl4Q6rnTw21p6TLGZXZrQEZwr6q91MOOlxRhZ8nbJEWF2zjRTpjGh5BJ2w-A=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPJAC803M5Rkbj4Qksulg43ZDcW_eUssnUTQi2QpVisfszJ2MG_EiovXjusRPtOZdyAFfLIOL1W2zMPsiI61UgurBbDNaVf9u89-bqAkp2MVPdv9BU=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOX9uLnYu6ZbNSLo9BVZqpeWFdxj1dpbobgMnCYi7mH5vs5xaaPgX9D6lTdrd-t5C4PGhYh2_Kise729lo4x9XdOO5fgRN5Yx4CH_7xWy4VUdUcmtU=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMTqI_NbQNBHv5xvxzW-WQeVxmUJHC_qrwIuIZhriNw_1Z12U52YyZPHvuUbFOwdlywbZXn3Ifi7AnPzqp9p3GWKPTsIjnfwP9MmavvklwUMPku_TY=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPzj_KiwEGAU5ekWeJC1pY1Hz63_2oftE4YlfX_rHfTjEKi2zgcYB1Ql_czhYx7SYyOl-u81XHvCUTkH56sb0Np0QxTcTtmyQIu-DfATMO3NuJT-ug=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMccmPC5e-0p3IWYnwlJWrBHotavLygb9lPJWfFi7nl1Gx7GnRsF3KNi3pEmXOBOPWLOTcJ5PeTb6x2MJbtn9rlJlIzkhaf8aSCgZYe-cU4jZwfHPE=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNh32lVgsHLlvU0kklngeOdmOs0DOc8gk-NZ56h8TY2m6zECLuI7G6xgt9s_TXj9PxroQiTrsv6P7owKMlV8wxannfm0sKL3yimGP5rd0iQ3N-VnEU=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOBLQyxxF8YC0NCUPpn4RNBXnpOnhiTVEElEx7fxtO8Xr_lCyjXceb1j5IE2sjSTcSPZ6r5CRCPlZcl9sjIf1l-qctqtSmGNJOPrhATECU9YJBVYcA=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPG1H6P6mOdZaovpQLpjQW_g9SgR9F4IMHLz8Q53gM4ZzfwZjruD_u4fYLDL2AVJ8v3HVe06smmYcgDdGLMckPlP2c_vFOh6lwZcKIROaI2Cem1nuw=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOILlRJNJ4fntsS2bd7IPwuCDHQuK51YaAjPO_u1fhSXkPo_9rPb5IZSZCxEDD7z-APa3BTzI-aBvh0V3xqR-wo7s8WD-3ilkYHwYZiRBxqBKqmpOM=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPMcTmh06Ptk2inByRUMHg3Xan9k-UZePUO942t25Etma2rUJIBl6dy83UXHjzN8r50hAI08JTw09vtOE9lzFTADi9G8zLGOyGnxBwl1HYiFKTBVLs=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczN5h6vC3zuYtQ2zm-_OwnxMhKf6rQ2hBdrtTRnmpbyPUtiraVkQ0F3SaF9TrcPgjVnEJsyKKjV8jQMEUAPuY_27LkAR3i0zN108lzxzshzrOqBypYE=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOn4zDiohrTjkAI3FnHlbK7d2NcM4AQvC1uKwD6r0SoIwOfZg_O53pGpkxeAr_3-5yIU_d-ukm82FeHqIUhdHKl88rWhVwrgD4n90V-E9VdCRspoeg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPFm_RqjFoeas8h5_jVb7e7GkE21WlhW-5gDU8pAhv_jNwnQlbbDXUEd3dUrlFbxFY5tOs0gdxudn_09wa4Jd0WoFKsX8ZN64K_uWiLEl8r5IksbSk=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO7Yzt6aYAVlDFXNXjJmsPw-wgco1UcKGR4BVGiH7rvbqQsoOdL1Ocf9JvCoafBmnPVHxsRc_GXAcG-ccnhLB7ZxT--1OzdvThYnwQE7WleLigBClI=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOD6ad2Eju8j1OM0dKxFtVsAq5wEmovcm89X5qjE0jXeLLn6hqvpapPb7EgRvKD-9_dbzJkv60nm79Yuei_hV1zUre5gJ613KMp6sEqto_4xQut2Wc=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPoeB1pBcEtAqgPwnLyPvPDIgCtz7tPzSBzvUxZqFdSW5VXK-jIHUNIwGpn2561GLS1KGDdoQiPO3tP11eD3vm9HNWw9K2XQ-6pHnAL1ldgI_Q-i74=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPdNgrm1Awyh1n_GBY8YkSIgrjaO6m0f-xUORuSPijwquxRb8Auq6mYmgkvmRB5JR4SzSYwoOOL0KH1An7LW3oglIGFc8akMbs7GRzmXLrJWbtw4CA=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPtmMihBNCzTo5LqBGrd_sj4RKM3NRR8R9maBYhiaR9ZowYsUNBgdw3qCm8SC36QoNwwSk0nwXQ-UNshd2VKzAoNSU91cKqZ5skn2kgsBtDu3hS2-k=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNUUuPds8_CGqe-ReYi7zvvh9BmGupMr2f-QgMpWOYXR1HdEn6I0OwbsdijTGd2a2Z6FmUCS4Aby1Kse9J3moJ2iPLAbwEYREGcKGzFLN3LHyQ_3iU=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMa8GWLmYOSdCljwId7qYcRfA2hJjGvlcomQW2uJ0vBLMe7xSdk8QaClSaUhgaLGr2koKc0XkwMSWgfdwooEGBUXxMe5Fjwp8TyYj7e3mlLk5yfdTg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPybfjwr4TlsJOpZYBiKholqfB2AfiVKFqDvXbrlmtmR0bi_EinbViHpLXdoAtLSglg5Po0qWg1tvRmPYTuNsl074pDNdo-Tyhr3Wuj7VlpYPvvGvQ=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczP4kn11kVEAP5X0Hirks_nHEv883PLOmM4x9XWDDW1gmsqTkaUaz4bqdudCyWPzWEVVWlRcvfO6po7D_sX8cNFpbC9uM2Y9SkA0aJAWWRPncwTdNT0=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOl9q_s82YOImHdtdeCY1RKxIR-pqjR01AlbClWWdx1xRR14uRyMxER7_u8eQ4zGg3CZSp6vsZItjAYlJ7l8zttPVH9JPUiu5aPce4OzPjGxHSYfTk=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPMECsfEQoywnuW2Vr0K8Onga_Hh24MWAPL7N_t1UJsZ9VGlTRrkMszj-43kgsDjVA0uyBCuQmYP-kEo8_L6cyenFImJpDAeacWZQEkkLnO6Yd-a8M=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOEhek8Zf76kWr9iZbZcENOkGOMaoeRadRiwNmIoRqbw-2oMp2GibSkSLtU2nPG8akNkTgDJmzU4HHJQDyJ_YUdreeM5-QG8VCcmEq3CUcjG77FRXU=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNGiWstIuyh6Qm0RKjlE_ffmngloNgaqnX481IK1ADVVDMI-Pi-x0b1UREXX-cz9jsBmQLAhUbCGTgTFX07lnhRyWfLf2idBTHGZGgPcpjvq3hAJp0=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMl7elUkTNPtafKrLKRv76uoO9pS0RhAk-jndma_TMG1NBUoYg9cy4zEjLr5LTvm6MoCzR0Ztu60YteCFn5WIRoIDjJ5mkpD7NRUgLsne2dH-Y0EnI=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPAm7nQayTJ97ygyf59K1fLYuzpfJZR3qdEEC2DmNDoQpsGFDq5DecrU3dQRd8gNBnFopEhYwq1kxQ0VVsvtgXF1qG-nRuNsC8YtlP2nQEQ3alptu0=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPys6p9t6TDnEay7qEqyjziGge9po0uGHm47H7jMrUzBzDrqrjbY1YwRE1biCfkaWXL6jyqqCwrQ-RzOPBjR1lxF5rTnbmIUXfEVoqFKRI2MwfTl_o=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO7OTIW_GqIupwiaIxiPeMb5h6MwUITtlVFj_NoyGorrMYCKkD8coSuanr_lWTW5Ntt1SkpDjzhaE38ujmU35AcwZ-VToXg_7JuyETXDk846ub1D54=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOzHR1grMwQk4FfU1POSOgQxxPaH0eNEbbjKlySdBSRNEesByH5rpIJBh8zUvNfMhMY2dDhOZX3pXlIkwEOR82Ym9ry1ecW018xkqqPclI6MXP4gSI=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPnJOxKOT8nFUV6A2Qj-9Bf-sQLzbnlJMb_2az-a0KijYSYoPQ6CTzYG7eFtX7gDp8Of92m9PGqmiZJTNpoiL1_7eFzmk2qr20ZJsildgN4OoROnF8=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNMKlkJKyRkVDHzQh0PjfKyWDi6WIckJ04zftxRjN7iSha4mcFVuFzrxF_rmrqeu3qZLYEhqKuzS25U1z2CI66V-3ndzwKiQt8jakN_UEyyNCpvR0E=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMeBvPi-760mMbqIeZ-Ch33ZN9elZG1TnDlb3VVpU-rxhaCLTjHLAXJYpWoX_QmgOGKdHIC7s0eJy0RWW_BjP1mmeSIr5JU44fHA5M7mgfShoHmiKs=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOZljlx1rFHzPK0XnD4Yg7JBUs5AGJS7o51aebooYFUYd4UyEBqaIE2CEAc8_bSN3RBqNsobKuhVyJ60VVkVGk9u4SX1XL-FWfz5P1lN9DirSSmsuc=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczM5gqB6LPYUzMFIaDZtWm5BJcS103Th-de9CPs6BKF2KIzLZ0loaa6bfYFdAk62mkVMFHvwxywavBUXAIFdS6ChG7uEh0UT5g0AIYhjJWQTms4tYjg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO9WUWmam6W8Msov9IT9dMWivcy1ka4JkB6l5YVem_oEktihqgxg-5AqsBAJmp8jfd87zi01G8koXk_zpSYJXPpyYvN_uEY88ES_HntLtVLIEkw2Do=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPfBsxOYeh4bioKEOG5zbCwHtjtoi4R5A-lkOCuJwNNUhzPHIT7OBytNl5dHBooeNywECb9wrDVi8poNU1lV15m0sI72eMGof9CmyFzaawD693GXaE=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPYqrYtkTE6D4L-pqm7l3C-goiZZ6HJwvS4D_CPNf9YPuNRiINGJDye76YUDT1gKDwICqk0f69kP8eh1F7HofOWFH4kgVB3v3-BacU97kAth5PI0Rc=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPUL94UCncW4ct4njv7qpPQXUG47XNA7g5hH0Gx7SfyI8YKmCZe4HrYEgt57LRuHPlKQo520_8MuvjvryWy9YhZPYCvl_JjC0KLF8EIX5Fwejwhs6k=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMfdryfgqeaXIigNM06jpMaOMfoYzsg8KHfNqrd4FqMu781QL5ONYa7lOvFUSE1FrUSe0GIK5Nt41X8nl5r3vTzzEH8oSMBuwO49gBLhu4_40fWO0w=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczObwSVS-TaJtfSmXRpgmb50qGtctlEUB0cXslfVHw5ua6KEA0dreYFmHWEcaePfu9Fg3lVmGsxotMo4XKmT65ve694j3JHrehtsNmRKxU2H4LMNd2Q=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPbMPeBHBArk8pBSPdcTRL35AGTab6Ua1cBwTzMLCw3heKK0omXdsOj2LovIFyIvxL3WP3wNn9_KaQf8kEhTNNJUv9ZEFrZJStER8IiFTRGd-s8Uos=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO4Vs53CkHWl4b6zAcl9YUV_LkRB5yByc9Qhz2CkCt164HRZMtJwD03etfxDUn_NzdxgiH3xljN97mzDJY38YqKHth64cYKyTBPIFbKnNv8fpGR2Cs=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczNWNYGsUNoHwCWzI7VIQ-cZwICBBLo-e5Bh443elYKaJX_cUlW7KNpDfILblsS5WTfI3VWNH17rG7pRA_Lj9Vj-tAeRdebOFUv0r3XJTdsHqY3Ufpc=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPGcnGNCyP59sURsrUAFNqR_uGtX43h5cWMl0XNtEA_Om8GIWsnqqa0MDWuvC1OjzSVFXts_Wnuqb7q9CJxevv1m7Vv55irkVBfdx5jcyNxRJZr0_M=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMcQO6v-gj5tVUlYUQ2zR3O7-eBr91JcULr2PMKfH9leEvyYnGMuXz1bAAZrqXrwno1tqtb-YNBOflpfIfbIhwHnf5nJSqHeorxCGMKpYcE29s9YQM=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczP3vmjCBu9CTzCkS7nMpjCCnlfea9R5xIRlGnqHbBEAZORb1LhCA_9JpAJ9Z0dBuIYr2jzuNLJAdyNS9XYwTNtHbwVWJPLmawTMxvdseCjyDHGHbOg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO34OwAMqFUeYv8eKtIvQV9PP0bVdJJzzT7058kMScVQUh2W3iBMb00LeP3q7kFKBeQQ6qUbX1ngzu8D0JzfcebyYxdw3E3UX5I6V03OmKwXh3UyBg=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMiyKuuTCxQCAYXMac-oCOvF8bKz8pIPiaKQZd9TRyeBROzpG6hiETf2beDHq5D-DO9LSnUyJYU3RVVtHXVEYRFt0DlB16EpMf3aoO1laa17sdhO44=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOiUTCqSwGd7HwMn-IXuTY3BAfRk1Ufy00RBNKcPENlibVVvMUbzOWJVubxxxOol2gcuHbL6QCKbFh6N5hamh0wvt1ypNR8E4Mkc33J16qSBuvEwYQ=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczPQGkeTFK2Ai4ORfDmdhtITsSyC7jqOqpj9iNRKUOeeZJGandVKNbEsqlQAv2aHJKMyDi1CT_M7qp2qIcC61Oqw3mDA650DqfixFlY6x1rEBdeDbec=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMp2tYSm-DXs_3y2xDqDbhkjaPTnLM2Atb2wEJL7WaT1RR4ISzI7B026BK2GnJ22mtgWvRCivXhwLUquY0YdDKnKvEUnoGQHYk7CjlGz4Ni2hjepJ8=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczMR0wbodedbgMfx8Z0BtVLqQ9i7VkVk1yGxXNvaT9DnM3jovcb6dgHX8LUHa0oZZpTNGrGeLVsBIlMpKupope99DtZl7qlgqeFwfuF0kXEe1fee46Q=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczO2y-fDTeBVVoddT5QknzwioxlBmnt_HcGOK0VFOkhcSpPpfxRx4lpjoSWZhfeA1i9r0tbiB7ov3UxHiNeHE3h4XccumkyLCl05YBMQdCxN9OGjA9U=w1920-h1080"></object>
-</div>
-  </div>
-</section>
-<!-- Administrasi -->
-        <section class="administrasi" id="administras">
-  <div class="container">
-    <h2>Aministrasi</h2>
-    <ul class="cards">
-      <li class="card">
-        <div>
-          <h3 class="card-title">Aplikasi</h3>
-          <div class="card-content">
-            <img src="../assets/img/Ilustrasi_PotensiDesa-BPS.png" style="width: 60px; height:60px" alt="SK">
-            
+    </section>
+    <!-- Survei Harga Konsumen -->
+
+    <!-- Survei Harga Perdagangan Besar -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Survei Harga Perdagangan Besar (SHPB)</h1>
+        <p style="margin-right: 24px; text-align: justify">
+          Statistik Harga melaksanakan kegiatan yang berkaitan dengan pemantauan dan pengumpulan data harga pada tingkat perdagangan besar, mencakup berbagai komoditas seperti bahan makanan, hasil pertanian, industri, dan jasa. Data yang
+          dikumpulkan melalui Survei Harga Perdagangan Besar (SHPB) digunakan sebagai indikator untuk memantau pergerakan harga grosir serta menganalisis perkembangan inflasi dan aktivitas ekonomi di suatu wilayah.
+        </p>
+      </div>
+      <div class="welcome-img" style="margin-left: auto">
+        <ul class="cards">
+          <li class="card">
+            <div>
+              <h3 class="card-title">Jadwal</h3>
+              <div class="card-content">
+                <img src="../assets/img/Jadwal_SHPB.png" style="width: 60px; height: 60px" alt="Jadwal" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Alokasi</h3>
+              <div class="card-content">
+                <img src="../assets/img/Alokasi-SHPB.png" style="width: 60px; height: 60px" alt="Alokasi" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Dokumentasi</h3>
+              <div class="card-content">
+                <img src="../assets/img/Dokumentasi-SHPB.png" style="width: 60px; height: 60px" alt="Dokumentasi" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Pengolahan</h3>
+              <div class="card-content">
+                <img src="../assets/img/Pengolahan-SHPB.png" style="width: 60px; height: 60px" alt="Pengolahan" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Survei Harga Perdagangan Besar -->
+
+    <!-- Survei Harga Produksi -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Survei Harga Produksi (SHP)</h1>
+        <p style="margin-right: 24px; text-align: justify">
+          Statistik Harga melaksanakan kegiatan yang berkaitan dengan pemantauan dan pengumpulan data harga pada tingkat produsen, mencakup berbagai komoditas hasil pertanian, pertambangan, industri pengolahan, serta energi. Data yang
+          dikumpulkan melalui Survei Harga Produsen (SHP) digunakan untuk menghitung Indeks Harga Produsen (IHP) yang menjadi indikator penting dalam memantau perubahan harga di tingkat produsen serta menganalisis tekanan inflasi dari sisi
+          produksi di suatu wilayah.
+        </p>
+      </div>
+      <div class="welcome-img" style="margin-left: auto">
+        <ul class="cards">
+          <li class="card">
+            <div>
+              <h3 class="card-title">Jadwal</h3>
+              <div class="card-content">
+                <img src="../assets/img/Jadwal_SHPB.png" style="width: 60px; height: 60px" alt="Jadwal" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Alokasi</h3>
+              <div class="card-content">
+                <img src="../assets/img/Alokasi-SHPB.png" style="width: 60px; height: 60px" alt="Alokasi" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Dokumentasi</h3>
+              <div class="card-content">
+                <img src="../assets/img/Dokumentasi-SHPB.png" style="width: 60px; height: 60px" alt="Dokumentasi" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Pengolahan</h3>
+              <div class="card-content">
+                <img src="../assets/img/Pengolahan-SHPB.png" style="width: 60px; height: 60px" alt="Pengolahan" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Survei Harga Produksi -->
+
+    <!-- Survei Harga Kemahalan Konstruksi -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Survei Harga Kemahalan Konstruksi (SHKK)</h1>
+        <p style="margin-right: 24px; text-align: justify">
+          Statistik Harga melaksanakan kegiatan yang berkaitan dengan pemantauan dan pengumpulan data harga pada tingkat perdagangan besar, mencakup berbagai komoditas seperti bahan makanan, hasil pertanian, industri, dan jasa. Data yang
+          dikumpulkan melalui Survei Harga Perdagangan Besar (SHPB) digunakan sebagai indikator untuk memantau pergerakan harga grosir serta menganalisis perkembangan inflasi dan aktivitas ekonomi di suatu wilayah.
+        </p>
+      </div>
+      <div class="welcome-img" style="margin-left: auto">
+        <ul class="cards">
+          <li class="card">
+            <div>
+              <h3 class="card-title">Jadwal</h3>
+              <div class="card-content">
+                <img src="../assets/img/Jadwal_SHPB.png" style="width: 60px; height: 60px" alt="Jadwal" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Alokasi</h3>
+              <div class="card-content">
+                <img src="../assets/img/Alokasi-SHPB.png" style="width: 60px; height: 60px" alt="Alokasi" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Dokumentasi</h3>
+              <div class="card-content">
+                <img src="../assets/img/Dokumentasi-SHPB.png" style="width: 60px; height: 60px" alt="Dokumentasi" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Pengolahan</h3>
+              <div class="card-content">
+                <img src="../assets/img/Pengolahan-SHPB.png" style="width: 60px; height: 60px" alt="Pengolahan" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Survei Harga Kemahalan Konstruksi -->
+
+    <!-- Survei Komoditas Spesifik -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Survei Komoditas Spesifik (SVK)</h1>
+        <p style="margin-right: 24px; text-align: justify">
+          Statistik Harga melaksanakan kegiatan yang berkaitan dengan pemantauan dan pengumpulan data harga pada tingkat perdagangan besar, mencakup berbagai komoditas seperti bahan makanan, hasil pertanian, industri, dan jasa. Data yang
+          dikumpulkan melalui Survei Harga Perdagangan Besar (SHPB) digunakan sebagai indikator untuk memantau pergerakan harga grosir serta menganalisis perkembangan inflasi dan aktivitas ekonomi di suatu wilayah.
+        </p>
+      </div>
+      <div class="welcome-img" style="margin-left: auto">
+        <ul class="cards">
+          <li class="card">
+            <div>
+              <h3 class="card-title">Jadwal</h3>
+              <div class="card-content">
+                <img src="../assets/img/Jadwal_SHPB.png" style="width: 60px; height: 60px" alt="Jadwal" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Alokasi</h3>
+              <div class="card-content">
+                <img src="../assets/img/Alokasi-SHPB.png" style="width: 60px; height: 60px" alt="Alokasi" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Dokumentasi</h3>
+              <div class="card-content">
+                <img src="../assets/img/Dokumentasi-SHPB.png" style="width: 60px; height: 60px" alt="Dokumentasi" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Pengolahan</h3>
+              <div class="card-content">
+                <img src="../assets/img/Pengolahan-SHPB.png" style="width: 60px; height: 60px" alt="Pengolahan" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Survei Komoditas Spesifik -->
+
+    <!-- Kualitas Data Harga -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Kualitas Data Harga</h1>
+        <div class="carousel">
+          <div class="carousel__viewport">
+            <!-- Slide 1: Rekonsiliasi Harga -->
+            <div class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <div class="col">
+                <img src="../assets/img/Rekonsiliasi_Harga.png" style="width: 50px; height: 50px" /><br />
+                <a href="#" class="a-Kepegawaian">Rekonsiliasi Harga</a>
+              </div>
+            </div>
+            <!-- Slide 2: Jenggala Harga -->
+            <div class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <div class="col">
+                <img src="../assets/img/Jenggala_Harga.png" style="width: 50px; height: 50px" /><br />
+                <a href="#" class="a-Kepegawaian">Monitoring Jenggala</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Dots -->
+          <div class="carousel__navigation">
+            <ol class="carousel__navigation-list">
+              <li class="carousel__navigation-item">
+                <a href="#slide1" class="carousel__navigation-button"></a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#slide2" class="carousel__navigation-button"></a>
+              </li>
+            </ol>
           </div>
         </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
+      </div>
+    </section>
+    <!-- Kualitas Data Harga -->
+
+    <!-- Publikasi Harga Start-->
+    <section class="publikasi-harga">
+      <div id="publikasi" class="section">
+        <section class="welcome" id="welcome">
+          <div class="welcome-text">
+            <h1>Publikasi Inflasi Tahun 2025</h1>
+            <p>Publikasi Buku yang disusun berdasarkan hasil kegiatan sensus, survei, dan/atau kegiatan statistik lainnya yang diselenggarakan oleh BPS</p>
+            <button class="custom-btn btn-6" href=""><span>Selanjutnya</span></button>
+          </div>
+          <div class="welcome-img">
+            <img src="../assets/img/PublikasiInflasi.png" alt="Publkasi Inflasi" style="width: 250px; height: auto" />
+          </div>
+        </section>
+        <section class="welcome" id="welcome">
+          <div class="welcome-text">
+            <h1>BRS Inflasi Tahun 2025</h1>
+            <p style="margin-right: 24px; text-align: justify">
+              Berita Resmi Statistik merupakan media yang diterbitkan secara berkala yang memuat rignkasan fenomena sosial maupun ekonomi berdasarkan hasil kegiatan statistik yang diselenggerakan oleh BPS
+            </p>
+          </div>
+          <div class="welcome-img">
+            <div class="main-grid">
+              <div class="system-card">
+                <div class="card-header">
+                  <img src="../assets/img/SPM-BPS.png" alt="SPM" />
+                  <div class="card-title">
+                    <h3>Berita Inflasi</h3>
+                    <p class="p-Kepegawaian">Bulanan</p>
+                  </div>
+                  <div class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-content">
+                      <a href="#">Januari</a>
+                      <a href="#">Februari</a>
+                      <a href="#">Maret</a>
+                      <a href="#">April</a>
+                      <a href="#">Mei</a>
+                      <a href="#">Juni</a>
+                      <a href="#">Juli</a>
+                      <a href="#">Agustus</a>
+                      <a href="#">September</a>
+                      <a href="#">Oktober</a>
+                      <a href="#">November</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="cards-container">
+          <h1>Arsip</h1>
+          <div class="main-grid">
+            <div class="system-card">
+              <div class="card-header">
+                <img src="../assets/img/BRS2024_Harga.png" alt="BRS Inflasi 2024" />
+                <div class="card-title">
+                  <h3>BRS Inflasi 2024</h3>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-content">
+                    <a href="#">Januari</a>
+                    <a href="#">Februari</a>
+                    <a href="#">Maret</a>
+                    <a href="#">April</a>
+                    <a href="#">Mei</a>
+                    <a href="#">Juni</a>
+                    <a href="#">Juli</a>
+                    <a href="#">Agustus</a>
+                    <a href="#">September</a>
+                    <a href="#">Oktober</a>
+                    <a href="#">November</a>
+                    <a href="#">Desember</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-header">
+                <img src="../assets/img/BRSInflasi2023.png" alt="BRS Inflasi 2023" />
+                <div class="card-title">
+                  <h3>BRS Inflasi 2023</h3>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-content">
+                    <a href="#">Januari</a>
+                    <a href="#">Februari</a>
+                    <a href="#">Maret</a>
+                    <a href="#">April</a>
+                    <a href="#">Mei</a>
+                    <a href="#">Juni</a>
+                    <a href="#">Juli</a>
+                    <a href="#">Agustus</a>
+                    <a href="#">September</a>
+                    <a href="#">Oktober</a>
+                    <a href="#">November</a>
+                    <a href="#">Desember</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="system-card">
+              <div class="card-header">
+                <img src="../assets/img/BRSInflasi2022.png" alt="BRS Inflasi 2022" />
+                <div class="card-title">
+                  <h3>BRS Inflasi 2022</h3>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-content">
+                    <a href="#">Januari</a>
+                    <a href="#">Februari</a>
+                    <a href="#">Maret</a>
+                    <a href="#">April</a>
+                    <a href="#">Mei</a>
+                    <a href="#">Juni</a>
+                    <a href="#">Juli</a>
+                    <a href="#">Agustus</a>
+                    <a href="#">September</a>
+                    <a href="#">Oktober</a>
+                    <a href="#">November</a>
+                    <a href="#">Desember</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-header">
+                <img src="../assets/img/BRSInflasi2021.png" alt="BRS Inflasi 2021" />
+                <div class="card-title">
+                  <h3>BRS Inflasi 2021</h3>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-content">
+                    <a href="#">Januari</a>
+                    <a href="#">Februari</a>
+                    <a href="#">Maret</a>
+                    <a href="#">April</a>
+                    <a href="#">Mei</a>
+                    <a href="#">Juni</a>
+                    <a href="#">Juli</a>
+                    <a href="#">Agustus</a>
+                    <a href="#">September</a>
+                    <a href="#">Oktober</a>
+                    <a href="#">November</a>
+                    <a href="#">Desember</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-header">
+                <img src="../assets/img/BRSInflasi2020.png" alt="BRS Inflasi 2020" />
+                <div class="card-title">
+                  <h3>BRS Inflasi 2020</h3>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-content">
+                    <a href="#">Januari</a>
+                    <a href="#">Februari</a>
+                    <a href="#">Maret</a>
+                    <a href="#">April</a>
+                    <a href="#">Mei</a>
+                    <a href="#">Juni</a>
+                    <a href="#">Juli</a>
+                    <a href="#">Agustus</a>
+                    <a href="#">September</a>
+                    <a href="#">Oktober</a>
+                    <a href="#">November</a>
+                    <a href="#">Desember</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-header">
+                <img src="../assets/img/BRSInflasi2019.png" alt="BRS Inflasi 2019" />
+                <div class="card-title">
+                  <h3>BRS Inflasi 2019</h3>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-content">
+                    <a href="#">Januari</a>
+                    <a href="#">Februari</a>
+                    <a href="#">Maret</a>
+                    <a href="#">April</a>
+                    <a href="#">Mei</a>
+                    <a href="#">Juni</a>
+                    <a href="#">Juli</a>
+                    <a href="#">Agustus</a>
+                    <a href="#">September</a>
+                    <a href="#">Oktober</a>
+                    <a href="#">November</a>
+                    <a href="#">Desember</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </li>
-    </ul>
-  </div>
-</section>
-    <!-- Footer -->
+      </div>
+    </section>
+    <!-- Publikasi Harga End -->
+
+    <!-- Laporan Harga Start -->
+    <section class="laporan-harga">
+      <div id="laporan" class="section">
+        <div class="cards-container">
+          <h1>Laporan Statistik Harga</h1>
+          <div class="main-grid">
+            <div class="system-card">
+              <div class="card-header">
+                <img src="../assets/img/BRS2024_Harga.png" alt="Laporan Statistik Harga" />
+                <div class="card-title">
+                  <h3>Laporan Statistik Harga</h3>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-content">
+                    <a href="#">Laporan Statistik Harga Tahunan</a>
+                    <a href="#">Laporan SVK</a>
+                    <a href="#">Laporan SVPEB</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-header">
+                <img src="../assets/img/PelatihanStatistikHarga.png" alt="Laporan Pelatihan Statistik Harga" />
+                <div class="card-title">
+                  <h3>Laporan Pelatihan Statistik Harga</h3>
+                </div>
+                <div class="dropdown">
+                  <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-content">
+                    <a href="#">Pelatihan SHKK</a>
+                    <a href="#">Briefing SHPB</a>
+                    <a href="#">Uji Coba Jenggalat</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Laporan Harga End -->
+
+    <!-- Publikasi Kegiatan Start-->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Publikasi Kegiatan</h1>
+        <p>Kumpulan publikasi kegiatan</p>
+      </div>
+      <div class="welcome-img">
+        <div
+          class="pa-gallery-player-widget"
+          style="width: 100%; height: 480px; display: none"
+          data-link="https://photos.google.com/share/AF1QipNM29xnjJSCdiY-5OLcjqbPkRJg5Eu3FY8V_mlkGLUKgeiLEsO4eiJLqR2PDNQ1Qg?key=d09FLWQ4RlJWX0tHTnl0RjFYczhZUGo2dUlxNDF3"
+          data-background-color="#003366"
+          data-title="GDG Bandung x ISTTS x SurabayaDev · Saturday, Mar 22 📸"
+          data-description="Shared album · Tap to view!"
+        >
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOVB4GxgCq1XiYSMjs7iUCA2TjlQYSLDnwQIU7RDjopREBfzv72nL8tUrjdH9iZea6rnAh6Ed5IDJu1qF6jcRSee3BnldOmgVZhSNoHqOS7nsgUhD0=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczP2FTJXIOuwcN0-OW3RLbF-XbgazzHjJHPEgBYD39flpKjPVKRM2rVSU9A3fFZaTwkmAyVDY-Iyk4JzI2QDb9OD4SCDqdUOANtPzb1pnRllB_zpIDk=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNQKzr08q9oU3AUTsLnq_xXB4yJ__tnE1XJW4RKBSZqoY4N3Y8j0giTiKReK5anPANVljPcyfV1awSmsSUCHrmtXRaw-cpGRMtQOYbO5PlL2OCnm9Y=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPFoG5hRmpf6eNiQSv-0p5Hnm1l0p3t-s5OE0L5JdK4WWWZZlFhlZA27_17z0Q0cQxAk2uhpBG0RaoEpu-lmDNO-ID8fAKal-v283Ubts7pP8CqF_U=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNNjUX84k7pE1-TDffXHoCuOjl3d9nUuOLgMNokXL-WE9mIEVo14RamUAa3x1NIzX1zYTCcgKfl5XKKTsXD7MsSRTKVkN_VDAffnB4p6IiOTKqL_g=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMEIjwRL7TlhTd_XqP7tzzUMcOBERuM_H0zOcdzvZIQLRRsjlXcCx7jXYEkgzz1i-AONkyZKFxLx_64NogEnF1I7NGN3kz9EcOTzom4IdMyRHQMPQ=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOIjWMZR75DKtYWUWHG9cgYMKtkRlKXnILynKCClq9OUrjhz7TYwIz60jORpsVoLNIuVDLhFLDiUW-r9_HjeiexBNg1LSGZZbndJ9hDA-m73b0JFwE=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNRDtOSspcmRoqjLIBZsSYQ54nJrF0kffLpUrnq2GjxuQMnkUagnNgW39t_3Is1UwooTQgLh5vtdlZXaQxeL1DT_BRXi0ahpcrctYJrRz9x5BxtLXo=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNzWy1q97IQYZJMKYs3H8BzPKikFYq7bB7cwKCshbYxvdfNIFlEfKbIe31CqHh7q7fMNhhCiaPmhS0qcUA00vucst8hz8RosYomM7BRE7jYPlEgn84=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczN5gL8FkDRcUCUYKFOZp1HbB4fSEFhVwJjk9JuwMkl4pDHpno51HFCGGiSAZ40vlzDYkef-ndTjDtfVY-YsoOCJSdT-uruj16DGaqbDBty_YEQ649Y=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOKNJkvw8toOLzemkVcVVh4jOpuxzVB0xD5bESpLkpys9tv7Nr2OgKHZe8ChXy2vd8FoWUXgPOOo1pNUoEQCwQhtPuooalsocnpQYf-gcsWY9_2K2c=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczM0mclr77vEybxfnrOr9HnoucEKpt6r4N57ecTsRWgybA6d9hUMf0LBUnzRmYChV8VHtAFEnKXKjLL8tluJd2JzoIuG-iZSkUqOJhgENpnGYRVmkog=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMrw3hd2inKofETesez2GBaGBtUg0R2tKFKm4oy4uP_3O_RmAePC_A94deeWMAEFJOYB7erpdhHUW2n9dq5-oktjzW6gSqmAB9HhV_JpGvkZJQgb_E=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPgSYMiJ8ETYX-XYcplil9UEQZWBBRrgluFXG8qZlh6Cq7cPD1OT65PjInIPR86MHeqqLSpKX7OJELPIeJ1YbvxZQE1jNhZrEPWzIWuMEon3MLOiaY=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNGX_5kL14ob1h2RmFx3EHhY6M5nWPoQ11c08aSWD9H6sW2spEe-xnNQYS8zGW1SldmreGBkDsQxUsVr32oTf58j6ooFLl3jYESzij5QBODOd4ajWg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOGuMpmd_uaAjXnflCPEcfrXu9nbIdSQlP7TX-vt_P4hSBZC7UCV4TXS43yRS4idvHrUU0Oooi7AfPl_Zas6EhJ9fczq2hnvfl98sfadsFFxp_xVaw=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPBkwG2QLX9Xb7mF2MSXDICu-hNJqqA0DmVnWogy6vf8MsSotU5sgFCvP26FxVhrWeEm5DIg7W7-QEdrx9IX_V2RsujGrSWqiGKO59SUsTUgumE1d4=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczP8j1XKPEh1VhMFkfwj2Jr9D3O6d0xk8841HG8uLblAD7N29PyF6LsnTNDSg5ITKRWC2q3Mk5JQjbTmSfp8Via2FCjzWiwHuxMwvHfnqMdIq5wyToo=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczN5gSWQH5tUPqNB1ulemf0ifZhPVQkYWwVMFN9f3C1ObMpWM4kwxiynl4Q6rnTw21p6TLGZXZrQEZwr6q91MOOlxRhZ8nbJEWF2zjRTpjGh5BJ2w-A=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPJAC803M5Rkbj4Qksulg43ZDcW_eUssnUTQi2QpVisfszJ2MG_EiovXjusRPtOZdyAFfLIOL1W2zMPsiI61UgurBbDNaVf9u89-bqAkp2MVPdv9BU=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOX9uLnYu6ZbNSLo9BVZqpeWFdxj1dpbobgMnCYi7mH5vs5xaaPgX9D6lTdrd-t5C4PGhYh2_Kise729lo4x9XdOO5fgRN5Yx4CH_7xWy4VUdUcmtU=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMTqI_NbQNBHv5xvxzW-WQeVxmUJHC_qrwIuIZhriNw_1Z12U52YyZPHvuUbFOwdlywbZXn3Ifi7AnPzqp9p3GWKPTsIjnfwP9MmavvklwUMPku_TY=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPzj_KiwEGAU5ekWeJC1pY1Hz63_2oftE4YlfX_rHfTjEKi2zgcYB1Ql_czhYx7SYyOl-u81XHvCUTkH56sb0Np0QxTcTtmyQIu-DfATMO3NuJT-ug=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMccmPC5e-0p3IWYnwlJWrBHotavLygb9lPJWfFi7nl1Gx7GnRsF3KNi3pEmXOBOPWLOTcJ5PeTb6x2MJbtn9rlJlIzkhaf8aSCgZYe-cU4jZwfHPE=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNh32lVgsHLlvU0kklngeOdmOs0DOc8gk-NZ56h8TY2m6zECLuI7G6xgt9s_TXj9PxroQiTrsv6P7owKMlV8wxannfm0sKL3yimGP5rd0iQ3N-VnEU=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOBLQyxxF8YC0NCUPpn4RNBXnpOnhiTVEElEx7fxtO8Xr_lCyjXceb1j5IE2sjSTcSPZ6r5CRCPlZcl9sjIf1l-qctqtSmGNJOPrhATECU9YJBVYcA=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPG1H6P6mOdZaovpQLpjQW_g9SgR9F4IMHLz8Q53gM4ZzfwZjruD_u4fYLDL2AVJ8v3HVe06smmYcgDdGLMckPlP2c_vFOh6lwZcKIROaI2Cem1nuw=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOILlRJNJ4fntsS2bd7IPwuCDHQuK51YaAjPO_u1fhSXkPo_9rPb5IZSZCxEDD7z-APa3BTzI-aBvh0V3xqR-wo7s8WD-3ilkYHwYZiRBxqBKqmpOM=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPMcTmh06Ptk2inByRUMHg3Xan9k-UZePUO942t25Etma2rUJIBl6dy83UXHjzN8r50hAI08JTw09vtOE9lzFTADi9G8zLGOyGnxBwl1HYiFKTBVLs=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczN5h6vC3zuYtQ2zm-_OwnxMhKf6rQ2hBdrtTRnmpbyPUtiraVkQ0F3SaF9TrcPgjVnEJsyKKjV8jQMEUAPuY_27LkAR3i0zN108lzxzshzrOqBypYE=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOn4zDiohrTjkAI3FnHlbK7d2NcM4AQvC1uKwD6r0SoIwOfZg_O53pGpkxeAr_3-5yIU_d-ukm82FeHqIUhdHKl88rWhVwrgD4n90V-E9VdCRspoeg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPFm_RqjFoeas8h5_jVb7e7GkE21WlhW-5gDU8pAhv_jNwnQlbbDXUEd3dUrlFbxFY5tOs0gdxudn_09wa4Jd0WoFKsX8ZN64K_uWiLEl8r5IksbSk=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO7Yzt6aYAVlDFXNXjJmsPw-wgco1UcKGR4BVGiH7rvbqQsoOdL1Ocf9JvCoafBmnPVHxsRc_GXAcG-ccnhLB7ZxT--1OzdvThYnwQE7WleLigBClI=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOD6ad2Eju8j1OM0dKxFtVsAq5wEmovcm89X5qjE0jXeLLn6hqvpapPb7EgRvKD-9_dbzJkv60nm79Yuei_hV1zUre5gJ613KMp6sEqto_4xQut2Wc=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPoeB1pBcEtAqgPwnLyPvPDIgCtz7tPzSBzvUxZqFdSW5VXK-jIHUNIwGpn2561GLS1KGDdoQiPO3tP11eD3vm9HNWw9K2XQ-6pHnAL1ldgI_Q-i74=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPdNgrm1Awyh1n_GBY8YkSIgrjaO6m0f-xUORuSPijwquxRb8Auq6mYmgkvmRB5JR4SzSYwoOOL0KH1An7LW3oglIGFc8akMbs7GRzmXLrJWbtw4CA=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPtmMihBNCzTo5LqBGrd_sj4RKM3NRR8R9maBYhiaR9ZowYsUNBgdw3qCm8SC36QoNwwSk0nwXQ-UNshd2VKzAoNSU91cKqZ5skn2kgsBtDu3hS2-k=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNUUuPds8_CGqe-ReYi7zvvh9BmGupMr2f-QgMpWOYXR1HdEn6I0OwbsdijTGd2a2Z6FmUCS4Aby1Kse9J3moJ2iPLAbwEYREGcKGzFLN3LHyQ_3iU=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMa8GWLmYOSdCljwId7qYcRfA2hJjGvlcomQW2uJ0vBLMe7xSdk8QaClSaUhgaLGr2koKc0XkwMSWgfdwooEGBUXxMe5Fjwp8TyYj7e3mlLk5yfdTg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPybfjwr4TlsJOpZYBiKholqfB2AfiVKFqDvXbrlmtmR0bi_EinbViHpLXdoAtLSglg5Po0qWg1tvRmPYTuNsl074pDNdo-Tyhr3Wuj7VlpYPvvGvQ=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczP4kn11kVEAP5X0Hirks_nHEv883PLOmM4x9XWDDW1gmsqTkaUaz4bqdudCyWPzWEVVWlRcvfO6po7D_sX8cNFpbC9uM2Y9SkA0aJAWWRPncwTdNT0=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOl9q_s82YOImHdtdeCY1RKxIR-pqjR01AlbClWWdx1xRR14uRyMxER7_u8eQ4zGg3CZSp6vsZItjAYlJ7l8zttPVH9JPUiu5aPce4OzPjGxHSYfTk=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPMECsfEQoywnuW2Vr0K8Onga_Hh24MWAPL7N_t1UJsZ9VGlTRrkMszj-43kgsDjVA0uyBCuQmYP-kEo8_L6cyenFImJpDAeacWZQEkkLnO6Yd-a8M=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOEhek8Zf76kWr9iZbZcENOkGOMaoeRadRiwNmIoRqbw-2oMp2GibSkSLtU2nPG8akNkTgDJmzU4HHJQDyJ_YUdreeM5-QG8VCcmEq3CUcjG77FRXU=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNGiWstIuyh6Qm0RKjlE_ffmngloNgaqnX481IK1ADVVDMI-Pi-x0b1UREXX-cz9jsBmQLAhUbCGTgTFX07lnhRyWfLf2idBTHGZGgPcpjvq3hAJp0=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMl7elUkTNPtafKrLKRv76uoO9pS0RhAk-jndma_TMG1NBUoYg9cy4zEjLr5LTvm6MoCzR0Ztu60YteCFn5WIRoIDjJ5mkpD7NRUgLsne2dH-Y0EnI=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPAm7nQayTJ97ygyf59K1fLYuzpfJZR3qdEEC2DmNDoQpsGFDq5DecrU3dQRd8gNBnFopEhYwq1kxQ0VVsvtgXF1qG-nRuNsC8YtlP2nQEQ3alptu0=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPys6p9t6TDnEay7qEqyjziGge9po0uGHm47H7jMrUzBzDrqrjbY1YwRE1biCfkaWXL6jyqqCwrQ-RzOPBjR1lxF5rTnbmIUXfEVoqFKRI2MwfTl_o=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO7OTIW_GqIupwiaIxiPeMb5h6MwUITtlVFj_NoyGorrMYCKkD8coSuanr_lWTW5Ntt1SkpDjzhaE38ujmU35AcwZ-VToXg_7JuyETXDk846ub1D54=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOzHR1grMwQk4FfU1POSOgQxxPaH0eNEbbjKlySdBSRNEesByH5rpIJBh8zUvNfMhMY2dDhOZX3pXlIkwEOR82Ym9ry1ecW018xkqqPclI6MXP4gSI=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPnJOxKOT8nFUV6A2Qj-9Bf-sQLzbnlJMb_2az-a0KijYSYoPQ6CTzYG7eFtX7gDp8Of92m9PGqmiZJTNpoiL1_7eFzmk2qr20ZJsildgN4OoROnF8=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNMKlkJKyRkVDHzQh0PjfKyWDi6WIckJ04zftxRjN7iSha4mcFVuFzrxF_rmrqeu3qZLYEhqKuzS25U1z2CI66V-3ndzwKiQt8jakN_UEyyNCpvR0E=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMeBvPi-760mMbqIeZ-Ch33ZN9elZG1TnDlb3VVpU-rxhaCLTjHLAXJYpWoX_QmgOGKdHIC7s0eJy0RWW_BjP1mmeSIr5JU44fHA5M7mgfShoHmiKs=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOZljlx1rFHzPK0XnD4Yg7JBUs5AGJS7o51aebooYFUYd4UyEBqaIE2CEAc8_bSN3RBqNsobKuhVyJ60VVkVGk9u4SX1XL-FWfz5P1lN9DirSSmsuc=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczM5gqB6LPYUzMFIaDZtWm5BJcS103Th-de9CPs6BKF2KIzLZ0loaa6bfYFdAk62mkVMFHvwxywavBUXAIFdS6ChG7uEh0UT5g0AIYhjJWQTms4tYjg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO9WUWmam6W8Msov9IT9dMWivcy1ka4JkB6l5YVem_oEktihqgxg-5AqsBAJmp8jfd87zi01G8koXk_zpSYJXPpyYvN_uEY88ES_HntLtVLIEkw2Do=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPfBsxOYeh4bioKEOG5zbCwHtjtoi4R5A-lkOCuJwNNUhzPHIT7OBytNl5dHBooeNywECb9wrDVi8poNU1lV15m0sI72eMGof9CmyFzaawD693GXaE=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPYqrYtkTE6D4L-pqm7l3C-goiZZ6HJwvS4D_CPNf9YPuNRiINGJDye76YUDT1gKDwICqk0f69kP8eh1F7HofOWFH4kgVB3v3-BacU97kAth5PI0Rc=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPUL94UCncW4ct4njv7qpPQXUG47XNA7g5hH0Gx7SfyI8YKmCZe4HrYEgt57LRuHPlKQo520_8MuvjvryWy9YhZPYCvl_JjC0KLF8EIX5Fwejwhs6k=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMfdryfgqeaXIigNM06jpMaOMfoYzsg8KHfNqrd4FqMu781QL5ONYa7lOvFUSE1FrUSe0GIK5Nt41X8nl5r3vTzzEH8oSMBuwO49gBLhu4_40fWO0w=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczObwSVS-TaJtfSmXRpgmb50qGtctlEUB0cXslfVHw5ua6KEA0dreYFmHWEcaePfu9Fg3lVmGsxotMo4XKmT65ve694j3JHrehtsNmRKxU2H4LMNd2Q=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPbMPeBHBArk8pBSPdcTRL35AGTab6Ua1cBwTzMLCw3heKK0omXdsOj2LovIFyIvxL3WP3wNn9_KaQf8kEhTNNJUv9ZEFrZJStER8IiFTRGd-s8Uos=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO4Vs53CkHWl4b6zAcl9YUV_LkRB5yByc9Qhz2CkCt164HRZMtJwD03etfxDUn_NzdxgiH3xljN97mzDJY38YqKHth64cYKyTBPIFbKnNv8fpGR2Cs=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczNWNYGsUNoHwCWzI7VIQ-cZwICBBLo-e5Bh443elYKaJX_cUlW7KNpDfILblsS5WTfI3VWNH17rG7pRA_Lj9Vj-tAeRdebOFUv0r3XJTdsHqY3Ufpc=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPGcnGNCyP59sURsrUAFNqR_uGtX43h5cWMl0XNtEA_Om8GIWsnqqa0MDWuvC1OjzSVFXts_Wnuqb7q9CJxevv1m7Vv55irkVBfdx5jcyNxRJZr0_M=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMcQO6v-gj5tVUlYUQ2zR3O7-eBr91JcULr2PMKfH9leEvyYnGMuXz1bAAZrqXrwno1tqtb-YNBOflpfIfbIhwHnf5nJSqHeorxCGMKpYcE29s9YQM=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczP3vmjCBu9CTzCkS7nMpjCCnlfea9R5xIRlGnqHbBEAZORb1LhCA_9JpAJ9Z0dBuIYr2jzuNLJAdyNS9XYwTNtHbwVWJPLmawTMxvdseCjyDHGHbOg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO34OwAMqFUeYv8eKtIvQV9PP0bVdJJzzT7058kMScVQUh2W3iBMb00LeP3q7kFKBeQQ6qUbX1ngzu8D0JzfcebyYxdw3E3UX5I6V03OmKwXh3UyBg=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMiyKuuTCxQCAYXMac-oCOvF8bKz8pIPiaKQZd9TRyeBROzpG6hiETf2beDHq5D-DO9LSnUyJYU3RVVtHXVEYRFt0DlB16EpMf3aoO1laa17sdhO44=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczOiUTCqSwGd7HwMn-IXuTY3BAfRk1Ufy00RBNKcPENlibVVvMUbzOWJVubxxxOol2gcuHbL6QCKbFh6N5hamh0wvt1ypNR8E4Mkc33J16qSBuvEwYQ=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczPQGkeTFK2Ai4ORfDmdhtITsSyC7jqOqpj9iNRKUOeeZJGandVKNbEsqlQAv2aHJKMyDi1CT_M7qp2qIcC61Oqw3mDA650DqfixFlY6x1rEBdeDbec=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMp2tYSm-DXs_3y2xDqDbhkjaPTnLM2Atb2wEJL7WaT1RR4ISzI7B026BK2GnJ22mtgWvRCivXhwLUquY0YdDKnKvEUnoGQHYk7CjlGz4Ni2hjepJ8=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczMR0wbodedbgMfx8Z0BtVLqQ9i7VkVk1yGxXNvaT9DnM3jovcb6dgHX8LUHa0oZZpTNGrGeLVsBIlMpKupope99DtZl7qlgqeFwfuF0kXEe1fee46Q=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/pw/AP1GczO2y-fDTeBVVoddT5QknzwioxlBmnt_HcGOK0VFOkhcSpPpfxRx4lpjoSWZhfeA1i9r0tbiB7ov3UxHiNeHE3h4XccumkyLCl05YBMQdCxN9OGjA9U=w1920-h1080"></object>
+        </div>
+      </div>
+    </section>
+    <!-- Publikasi Kegiatan End-->
+
+    <!-- Administrasi Start -->
+    <section class="administrasi-harga">
+      <div class="cards-container">
+        <h1>Administrasi</h1>
+        <ul class="cards">
+          <li class="card">
+            <div>
+              <h3 class="card-title">Bukti Dukung Majapahit dan Kip App</h3>
+              <div class="card-content">
+                <img src="../assets/img/DukungMajapahit_Harga.png" style="width: 60px; height: 60px" alt="Majapahit & KIP APP" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Surat Tugas Harga</h3>
+              <div class="card-content">
+                <img src="../assets/img/SuratTugasHarga.png" style="width: 60px; height: 60px" alt="Surat Tugas Harga" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">KAK Tim Harga</h3>
+              <div class="card-content">
+                <img src="../assets/img/KAK_Harga.png" style="width: 60px; height: 60px" alt="KAK Tim Harga" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">BAST Kegiatan</h3>
+              <div class="card-content">
+                <img src="../assets/img/BAST_Harga.png" style="width: 60px; height: 60px" alt="BAST Kegiatan" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Translok dan Honor</h3>
+              <div class="card-content">
+                <img src="../assets/img/TranslokHonor_Harga.jpg" style="width: 60px; height: 60px" alt="Translok & Honor" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Administrasi End -->
+
+    <!-- Susunan Organisas Section Start -->
+    <!-- Susunan Organisas Section -->
+    <section class="team-structure" id="struktur">
+      <div class="container">
+        <h2>Struktur Tim</h2>
+
+        <div class="team-structure__members">
+          <div class="team-structure__row">
+            <div class="member-card">
+              <img src="../assets/img/Harga_Fajar.png" alt="Ketua Tim" />
+              <div class="member-card__info">
+                <h3>Ketua Tim</h3>
+                <p>"My Trip My Adventure"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/img/Harga_Fajar.png" alt="Anggota 1" />
+              <div class="member-card__info">
+                <h3>Anggota 1</h3>
+                <p>"Selalu Kompak dan Solid"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/img/Harga_Fajar.png" alt="Anggota 2" />
+              <div class="member-card__info">
+                <h3>Anggota 2</h3>
+                <p>"Tepat Waktu dan Rapi"</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-structure__row">
+            <div class="member-card">
+              <img src="../assets/img/Harga_Fajar.png" alt="Anggota 3" />
+              <div class="member-card__info">
+                <h3>Anggota 3</h3>
+                <p>"Siap Sedia Kapan Pun"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/img/Harga_Fajar.png" alt="Anggota 4" />
+              <div class="member-card__info">
+                <h3>Anggota 4</h3>
+                <p>"Jaga Kesehatan Selalu"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Susunan Organisas Section End -->
+
+    <!-- Footer Start -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
             <h3>BPS Kota Surabaya</h3>
             <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <p>Email: bps3578@bps.go.id</p>
             <p>Telepon: (031) 8296692</p>
           </div>
@@ -416,7 +1041,7 @@
             <a href="#">Data Statistik</a>
             <a href="#">Dokumentasi</a>
             <a href="#">Layanan Kearsipan</a>
-            <a href="#">Pojok Statistik</a>
+            <a href="pojok-statistik.html">Pojok Statistik</a>
             <a href="#">Kelurahan Cantik</a>
           </div>
           <div class="footer-section">
@@ -448,8 +1073,84 @@
         </div>
       </div>
     </footer>
+    <!-- Footer End -->
+
     <!-- Custom JavaScript -->
-    <script src="../script2.js"></script>
+    <script>
+      function toggleDropdown(el) {
+        const dropdown = el.parentElement;
+        dropdown.classList.toggle("show");
+      }
+
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const sidebarToggle = document.getElementById("sidebarToggle");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Toggle submenu
+      document.querySelectorAll(".toggle-submenu").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const parent = btn.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+
+      // Scroll effect untuk navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      function toggleDropdown(element) {
+        const dropdownContent = element.nextElementSibling;
+
+        // Tutup dropdown lain yang mungkin terbuka
+        document.querySelectorAll(".sh-dropdown-toggle").forEach((toggle) => {
+          if (toggle !== element) {
+            toggle.nextElementSibling.classList.remove("show");
+            toggle.classList.remove("active");
+          }
+        });
+
+        // Toggle dropdown yang diklik
+        dropdownContent.classList.toggle("show");
+        element.classList.toggle("active");
+      }
+
+      // Menutup dropdown saat klik di luar area dropdown
+      document.addEventListener("click", function (e) {
+        // Menggunakan class baru untuk pengecekan
+        const isDropdownToggle = e.target.closest(".sh-dropdown-toggle");
+
+        if (!isDropdownToggle) {
+          document.querySelectorAll(".sh-dropdown-toggle").forEach((toggle) => {
+            const content = toggle.nextElementSibling;
+            if (content && content.classList.contains("show")) {
+              content.classList.remove("show");
+              toggle.classList.remove("active");
+            }
+          });
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+    <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-  

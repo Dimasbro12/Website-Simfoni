@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tim Nerwilis - BPS Kota Surabaya</title>
     <meta name="description" content="Tim Neraca Wilayah BPS Kota Surabaya - Menganalisis statistik produk domestik bruto dan perekonomian" />
+    <link rel="icon" type="image/png" href="../assets/bps.png" />
 
     <!-- External CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
@@ -15,23 +17,59 @@
     <link rel="stylesheet" href="../styles/nerwilis.css" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header Start -->
     <header class="header" id="header">
-      <nav class="navbar container">
-        <a href="#" class="logo">
-          <i class="fas fa-chart-bar"></i>
-          BPS KOTA Surabaya
-        </a>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="../home.html">Home</a></li>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <!-- Hamburger di kiri -->
+          <button class="navbar-toggler text-white border-0" type="button" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="#"><img src="../assets/bps.png" alt="logo BPS" />BPS Kota Surabaya</a>
+
+          <!-- Menu untuk desktop -->
+          <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto text-center text-md-start">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="subbag.html">Subbag Umum</a></li>
+              <li class="nav-item"><a class="nav-link" href="pss.html">PSS</a></li>
+              <li class="nav-item"><a class="nav-link" href="pojok-statistik.html">Pojok Statistik</a></li>
+              <li class="nav-item"><a class="nav-link" href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button">Tim</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="ipds.html">IPDS</a></li>
+                  <li><a class="dropdown-item" href="humas.html">Humas</a></li>
+                  <li><a class="dropdown-item" href="sosial.html">Sosial</a></li>
+                  <li><a class="dropdown-item" href="produksi.html">Produksi</a></li>
+                  <li><a class="dropdown-item" href="nerwilis.html">Nerwilis</a></li>
+                  <li><a class="dropdown-item" href="sakip.html">Sakip-ZI</a></li>
+                  <li><a class="dropdown-item" href="harga.html">Harga</a></li>
+                  <li><a class="dropdown-item" href="disjas.html">Disjas</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar (Mobile) -->
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="subbag.html">Subbag Umum</a></li>
-          <li><a href="#rbzi">RB/ZI</a></li>
+          <li><a href="pss.html">PSS</a></li>
           <li><a href="pojok-statistik.html">Pojok Statistik</a></li>
           <li><a href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
-          <li class="dropdown">
-            <a href="#tim" class="dropdown-toggle">Tim <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#umum">Umum</a></li>
+          <li class="has-submenu">
+            <a href="#" class="toggle-submenu"> Lainnya <i class="fa-solid fa-chevron-down"></i> </a>
+            <ul class="submenu">
               <li><a href="ipds.html">IPDS</a></li>
               <li><a href="humas.html">Humas</a></li>
               <li><a href="sosial.html">Sosial</a></li>
@@ -43,231 +81,420 @@
             </ul>
           </li>
         </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
     </header>
+    <!-- Header End -->
 
-    <!-- Hero Section -->
-    <section class="hero-nerwilis">
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <h1 class="hero-title">TIM Nerwilis</h1>
-        <p class="hero-subtitle">Mengenal Struktur Organisasi, Profil, dan Tugas Tim Nerwilis</p>
+    <!-- Hero Start -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Tim Nerwilis</h1>
+        <p>Neraca Wilayah dan Analisis Statistik</p>
       </div>
     </section>
+    <!-- Hero End -->
 
-    <!-- Intro Section - Tentang Tim Neraca Wilayah -->
-    <section class="intro-nerwilis">
-      <div class="container">
-        <div class="intro-content">
-          <div class="intro-text fade-in">
-            <h1>Tentang Tim Neraca Wilayah</h1>
-            <p class="intro-subtitle">Kami menganalisis statistik produk domestik bruto dan perekonomian untuk memberikan wawasan yang mendalam.</p>
-            <div class="stats-highlight">
-              <div class="stat-item">
-                <div class="stat-icon">
-                  <i class="fas fa-users"></i>
-                </div>
-                <h3>150+</h3>
-                <p>Tim Ahli</p>
-              </div>
-              <div class="stat-item">
-                <div class="stat-icon">
-                  <i class="fas fa-user-check"></i>
-                </div>
-                <h3>15</h3>
-                <p>Analis Terpercaya</p>
-              </div>
-            </div>
-          </div>
-          <div class="intro-image fade-in">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop" alt="Analisis Data" loading="lazy" />
-          </div>
+    <!-- Welcome Start-->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Tentang Tim Nerwilis</h1>
+        <p>
+          "Nerwilis BPS" adalah singkatan dari Neraca Wilayah dan Analisis Statistik Badan Pusat Statistik. Ini adalah salah satu bidang di BPS yang bertugas menyusun dan menganalisis data terkait neraca produksi, neraca pengeluaran, dan
+          Produk Domestik Regional Bruto (PDRB) untuk suatu wilayah.
+        </p>
+
+        <div class="welcome-buttons">
+          <a href="#neraca-produksi" class="btn">Neraca Produksi</a>
+          <a href="#neraca-konsumsi" rel="noopener noreferrer" class="btn">Neraca Konsumsi</a>
+          <a href="#analisis" rel="noopener noreferrer" class="btn">Analisis dan Pengembangan Statistik</a>
         </div>
+      </div>
+      <div class="welcome-img">
+        <img src="../assets/img/ilustrasi_neraca wilayah.png" alt="Selamat Datang" />
       </div>
     </section>
+    <!-- Welcome End-->
 
-    <!-- Our Team Section -->
-    <section class="team-section">
-      <h2 class="team-title">Meet Our Team</h2>
+    <!--================
+        Neraca Produksi
+    =================-->
 
-      <div class="carousel-container">
-        <!-- Left Arrow -->
-        <button class="nav-arrow left">&#10094;</button>
-
-        <!-- Track / Cards -->
-        <div class="carousel-track">
-          <div class="card center" data-index="0">
-            <img src="img/emily.jpg" alt="Emily Kim" />
-          </div>
-          <div class="card right-1" data-index="1">
-            <img src="img/michael.jpg" alt="Michael Steward" />
-          </div>
-          <div class="card right-2" data-index="2">
-            <img src="img/emma.jpg" alt="Emma Rodriguez" />
-          </div>
-          <div class="card hidden" data-index="3">
-            <img src="img/julia.jpg" alt="Julia Gimmel" />
-          </div>
-          <div class="card hidden" data-index="4">
-            <img src="img/lisa.jpg" alt="Lisa Anderson" />
-          </div>
-          <div class="card hidden" data-index="5">
-            <img src="img/james.jpg" alt="James Wilson" />
-          </div>
+    <!-- Neraca Produksi Start -->
+    <section class="produksi" id="neraca-produksi">
+      <div class="produksi-container">
+        <div class="produksi-img">
+          <img src="../assets/img/ilustrasi_neraca produksi (1).png" alt="Neraca Produksi" />
         </div>
 
-        <!-- Right Arrow -->
-        <button class="nav-arrow right">&#10095;</button>
-      </div>
-
-      <!-- Member Info -->
-      <div class="member-info">
-        <h3 class="member-name">Emily Kim</h3>
-        <p class="member-role">Founder</p>
-      </div>
-
-      <!-- Dots -->
-      <div class="dots-container">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-        <span class="dot" data-index="3"></span>
-        <span class="dot" data-index="4"></span>
-        <span class="dot" data-index="5"></span>
-      </div>
-    </section>
-
-    <!-- Analisis Ekonomi Section -->
-    <section class="analisis-ekonomi">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title-light">Analisis Ekonomi</h2>
-          <p class="section-subtitle-light">Mendalami produk domestik bruto dan perekonomian melalui tim neraca wilayah analisis statistik.</p>
-        </div>
-
-        <!-- Main Grid Cards (2x2) -->
-        <div class="analisis-grid-main">
-          <div class="analisis-card fade-in">
-            <div class="card-image">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop" alt="Tim Analisis" loading="lazy" />
-            </div>
-            <div class="card-content">
-              <h3>Tim Analisis</h3>
-              <p>Menghadirkan analisis ekonomi dan statistik akurat.</p>
-            </div>
-          </div>
-
-          <div class="analisis-card fade-in">
-            <div class="card-image">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop" alt="Data Statistik" loading="lazy" />
-            </div>
-            <div class="card-content">
-              <h3>Data Statistik</h3>
-              <p>Mengolah dan memvisualisasikan data statistik laporan.</p>
-            </div>
-          </div>
-
-          <div class="analisis-card fade-in">
-            <div class="card-image">
-              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop" alt="Laporan Ekonomi" loading="lazy" />
-            </div>
-            <div class="card-content">
-              <h3>Laporan Ekonomi</h3>
-              <p>Menyediakan informasi ekonomi berbasis penelitian.</p>
-            </div>
-          </div>
-
-          <div class="analisis-card fade-in">
-            <div class="card-image">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop" alt="Proyek Terbaru" loading="lazy" />
-            </div>
-            <div class="card-content">
-              <h3>Proyek Terbaru</h3>
-              <p>Proyek-proyek terbaru berbasis analisis statistik.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Additional Grid Cards (3 columns) -->
-        <div class="analisis-grid-secondary">
-          <div class="analisis-card-small fade-in">
-            <div class="card-image-small">
-              <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=500&auto=format&fit=crop" alt="Data Ekonomi" loading="lazy" />
-            </div>
-            <div class="card-content-small">
-              <h4>Data Ekonomi</h4>
-              <p>Pengumpulan dan analisis data ekonomi regional yang komprehensif.</p>
-            </div>
-          </div>
-
-          <div class="analisis-card-small fade-in">
-            <div class="card-image-small">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop" alt="Laporan Statistik" loading="lazy" />
-            </div>
-            <div class="card-content-small">
-              <h4>Laporan Statistik</h4>
-              <p>Visualisasi data dalam bentuk dashboard dan laporan interaktif.</p>
-            </div>
-          </div>
-
-          <div class="analisis-card-small fade-in">
-            <div class="card-image-small">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&auto=format&fit=crop" alt="Tim Profesional" loading="lazy" />
-            </div>
-            <div class="card-content-small">
-              <h4>Tim Profesional</h4>
-              <p>Tenaga ahli berpengalaman dalam bidang statistik dan ekonomi.</p>
-            </div>
-          </div>
+        <div class="produksi-text">
+          <h1>Neraca Produksi</h1>
+          <p>
+            Neraca produksi di BPS adalah tabel yang menunjukkan hubungan antara nilai output (barang dan jasa) yang dihasilkan suatu sektor ekonomi dengan konsumsi antara yang digunakan dalam proses produksi, sehingga menghasilkan nilai tambah bruto (NTB) yang menjadi dasar perhitungan Produk Domestik Bruto (PDB) dan analisis kontribusi setiap sektor terhadap perekonomian.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-      <div class="contact-overlay"></div>
-      <div class="container">
-        <div class="contact-header">
-          <h2 class="section-title-light">Kontak Tim</h2>
-          <p class="section-subtitle-light">Hubungi kami untuk informasi lebih lanjut tentang analisis statistik.</p>
+    <!-- Pilar 1 Start -->
+    <section class="cards-container">
+      <h1>Penyusunan PDRB Lapangan Usaha</h1>
+      <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Data Fenomena Bulanan</h2>
+            <img src="../assets/img/icon_fenomena (1).png" alt="Pespa" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
         </div>
-
-        <div class="contact-form-wrapper fade-in">
-          <form class="contact-form" id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">Nama Depan</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Masukkan nama depan Anda" required />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Nama Belakang</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Masukkan nama belakang Anda" />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="email@example.com" required />
-            </div>
-
-            <div class="form-group">
-              <label for="message">Pesan</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit">
-              <i class="fas fa-paper-plane"></i>
-              Kirim Pesan
-            </button>
-          </form>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Entri Data PLN</h2>
+            <img src="../assets/img/icon_entri pln (1).png" alt="Sejuta Rasa" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Entri Data PDAM</h2>
+            <img src="../assets/img/icon_entri pdam (1).png" alt="Dharma" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Data PLN</h2>
+            <img src="../assets/img/icon_data pln (1).png" alt="Khotmil" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Data PDAM</h2>
+            <img src="../assets/img/icon_data pdam (1).png" alt="Sholat" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Fenomena Konstruksi</h2>
+            <img src="../assets/img/Icon_fenomena konstruksi (1).png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Fenomena dari Media</h2>
+            <img src="../assets/img/icon_fenomena media (1).png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Rekonsiliasi PDRB Lapus</h2>
+            <img src="../assets/img/icon_pdrb (1).png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Upload Tabel Rilis</h2>
+            <img src="../assets/img/icon_upload tabel (1).png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Data Dasar KabKota</h2>
+            <img src="../assets/img/icon_data kabkota (1).png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
         </div>
       </div>
     </section>
+    <!-- Pilar 1 End -->
+
+
+    <!-- sktnp -->
+    <section class="sktnp-section">
+      <h1 class="sktnp-title">SKTNP Barang dan Jasa</h1>
+      <div class="sktnp-grid">
+        <div class="sktnp-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_upload lap keg (1).png" alt="zona-integritas" />
+            <h3>Upload Laporan Kegiatan</h3>
+            <!-- <p>Daerah Dalam Angka</p> -->
+          </a>
+        </div>
+        <div class="sktnp-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_raw sktnp (1).png" alt="zona-integritas" />
+            <h3>Raw Data SKTNP</h3>
+            <!-- <p>Kecamatan Dalam Angka</p> -->
+          </a>
+        </div>
+        <div class="sktnp-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_sample sktnp (1).png" alt="zona-integritas" />
+            <h3>Daftar Sampel SKTNP</h3>
+            <!-- <p>Kecamatan Dalam Angka</p> -->
+          </a>
+        </div>
+        <div class="sktnp-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_publikasi sktnp (1).png" alt="zona-integritas" />
+            <h3>Publikasi SKTNP</h3>
+            <!-- <p>Kecamatan Dalam Angka</p> -->
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publikasi PDRB-->
+    <section class="publikasi">
+      <h1 class="publikasi-title">Publikasi PDRB</h1>
+      <div class="publikasi-container">
+        <div class="publikasi-img">
+          <img src="../assets/img/icon_publikasi pdrb (1).png" alt="Publikasi" />
+        </div>
+
+        <div class="publikasi-text">
+          <h1>Publikasi PDRB Lapangan Usaha</h1>
+          <div class="laporan-brs-buttons">
+            <a href="https://drive.google.com/drive/folders/1CeNNumlG-zn0i5mBvEzvXyf1eZrBhpiV?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn lihat">Lihat Selengkapnya <span>-></span></a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--================
+        Neraca Konsumsi
+    ===================-->
+
+    <!-- Neraca Konsumsi Start -->
+    <section class="konsumsi" id="neraca-konsumsi">
+      <div class="konsumsi-container">
+        
+        <div class="konsumsi-text">
+          <h1>Neraca Konsumsi</h1>
+          <p>
+            Neraca konsumsi di BPS adalah tabel yang menggambarkan nilai penggunaan barang dan jasa oleh berbagai pelaku ekonomi seperti rumah tangga, pemerintah, dan perusahaan baik untuk konsumsi akhir maupun sebagai input dalam proses produksi, sehingga menunjukkan pola permintaan dan peran konsumsi dalam membentuk total permintaan domestik.
+          </p>
+        </div>
+        <div class="konsumsi-img">
+          <img src="../assets/img/ilustrasi_neraca konsumsi.png" alt="Neraca Konsumsi" />
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- pdrb-pengeluaran -->
+    <section class="pdrb-pengeluaran-section">
+      <h1 class="pdrb-pengeluaran-title">Penyusunan PDRB Pengeluaran</h1>
+      <div class="pdrb-pengeluaran-grid">
+        <div class="pdrb-pengeluaran-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_fenomena (1).png" alt="zona-integritas" />
+            <h3>Data / Fenomena Bulanan</h3>
+            <!-- <p>Daerah Dalam Angka</p> -->
+          </a>
+        </div>
+        <div class="pdrb-pengeluaran-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_rekon pdrb pengeluaran (1).png" alt="zona-integritas" />
+            <h3>Rekonsiliasi PDRB Pengeluaran</h3>
+            <!-- <p>Kecamatan Dalam Angka</p> -->
+          </a>
+        </div>
+        <div class="pdrb-pengeluaran-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_upload tabel (1).png" alt="zona-integritas" />
+            <h3>Upload Tabel Rilis dan Insight</h3>
+            <!-- <p>Kecamatan Dalam Angka</p> -->
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- laporan Survei Per Tahun -->
+    <section class="survei">
+      <div class="survei-container">
+        <h1 class="survei-title">Laporan Survei (per Tahun)</h1>
+        <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SKLNPRT</h2>
+            <img src="../assets/img/icon_sklnprt (1).png" alt="Pespa" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SKLNP</h2>
+            <img src="../assets/img/icon_sklnp (1).png" alt="Sejuta Rasa" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SKPS</h2>
+            <img src="../assets/img/icon_skps (1).png" alt="Dharma" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SKSPPI</h2>
+            <img src="../assets/img/icon_sksppi (1).png" alt="Khotmil" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">PMTB</h2>
+            <img src="../assets/img/icon_pmtb (1).png" alt="Sholat" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Publikasi PDRB Pengeluaran</h2>
+            <img src="../assets/img/icon_pdrb pengeluaran (1).png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--================
+        Analisis dan Pengembangan
+    =================-->
+
+    <!-- Analisis dan Pengembangan Start -->
+    <section class="analisis" id="neraca-analisis">
+      <div class="analisis-container">
+        <div class="analisis-img">
+          <img src="../assets/img/ilustrasi_analisis neraca.png" alt="Analisis dan Pengembangan" />
+        </div>
+
+        <div class="analisis-text">
+          <h1>Analisis dan Pengembangan Statistik</h1>
+          <p>
+            Analisis Nerwilis (Neraca Wilayah dan Analisis Statistik) BPS adalah kegiatan mengolah, menginterpretasikan, dan menyajikan data hasil survei atau sensus untuk memberikan gambaran kondisi sosial-ekonomi suatu wilayah. Fokusnya pada penghitungan indikator makro seperti Produk Domestik Regional Bruto (PDRB), inflasi, kemiskinan, ketimpangan, pengangguran, dan pertumbuhan ekonomi, kemudian dianalisis tren, penyebab, serta dampaknya terhadap pembangunan daerah. Hasil analisis ini biasanya digunakan pemerintah daerah dan pusat sebagai bahan perencanaan, evaluasi kebijakan, dan pengambilan keputusan berbasis data.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- highlight -->
+    <section class="highlight-section">
+      <h1 class="highlight-title">Highlight Potensi Wilayah</h1>
+      <div class="highlight-grid">
+        <div class="highlight-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_unduh dokumen (1).png" alt="zona-integritas" />
+            <h3>Unduh Dokumentasi Sosialisasi Potensi Wilayah</h3>
+            <!-- <p>Daerah Dalam Angka</p> -->
+          </a>
+        </div>
+        <div class="highlight-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_unduh paparan (1).png" alt="zona-integritas" />
+            <h3>Upload Paparan Potensi Wilayah</h3>
+            <!-- <p>Kecamatan Dalam Angka</p> -->
+          </a>
+        </div>
+        <div class="highlight-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_hasil analisis (1).png" alt="zona-integritas" />
+            <h3>Lihat Hasil Analisis BPS</h3>
+            <!-- <p>Kecamatan Dalam Angka</p> -->
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- IPM -->
+    <section class="ipm-section">
+      <h1 class="ipm-title">IPM (Index Pembangunan Manusia)</h1>
+      <div class="ipm-grid">
+        <div class="ipm-item">
+          <img src="../assets/img/icon_entri data boarding (1).png" alt="zona-integritas" />
+          <h3 class="title-h3">Entry Data Boarding School IPM</h3>
+          <!-- <p>Berisi hasil kerja pemilihan petugas ipm.</p> -->
+          <button class="card-btn" onclick="window.open('https://www.google.com', '_blank')">Lihat detail</button>
+        </div>
+        <div class="ipm-item">
+          <img src="../assets/img/icon_entri data pendukung (1).png" alt="zona-integritas" />
+          <h3 class="title-h3">Entry Data Pendukung IPM</h3>
+          <!-- <p>SK dan Sertifikat Penghargaan Petugas Peipm Terbaik.</p> -->
+          <button class="card-btn" onclick="window.open('https://www.google.com', '_blank')">Lihat detail</button>
+        </div>
+        <div class="ipm-item">
+          <img src="../assets/img/icon_publikasi ipm (1).png" alt="zona-integritas" />
+          <h3 class="title-h3-2">Publikasi IPM</h3>
+          <!-- <p>Surat Keputusan penunjukan petugas ipm dan Jadwal.</p> -->
+          <button class="card-btn" onclick="window.open('https://www.google.com', '_blank')">Lihat detail</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- gender -->
+    <section class="highlight-section">
+      <h1 class="highlight-title">Analisis Gender</h1>
+      <div class="highlight-grid">
+        <div class="highlight-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_ipg (1).png" alt="zona-integritas" />
+            <h3>Indeks Pembangunan Gender (IPG)</h3>
+            <!-- <p>Daerah Dalam Angka</p> -->
+          </a>
+        </div>
+        <div class="highlight-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_idg (1).png" alt="zona-integritas" />
+            <h3>Indeks Pemberdayaan Gender (IDG)</h3>
+            <!-- <p>Kecamatan Dalam Angka</p> -->
+          </a>
+        </div>
+        <div class="highlight-item">
+          <a href="https://www.google.com" target="_blank">
+            <img src="../assets/img/icon_ikg (1).png" alt="zona-integritas" />
+            <h3>Indeks Ketimpangan Gender (IKG)</h3>
+            <!-- <p>Kecamatan Dalam Angka</p> -->
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- publikasi -->
+    <section class="ipm-section">
+      <h1 class="ipm-title">Publikasi</h1>
+      <div class="ipm-grid">
+        <div class="ipm-item">
+          <img src="../assets/img/icon_stada (1).png" alt="zona-integritas" />
+          <h3 class="title-h3">Stada</h3>
+          <!-- <p>Berisi hasil kerja pemilihan petugas ipm.</p> -->
+          <button class="card-btn" onclick="window.open('https://www.google.com', '_blank')">Lihat detail</button>
+        </div>
+        <div class="ipm-item">
+          <img src="../assets/img/icon_isu terkini (1).png" alt="zona-integritas" />
+          <h3 class="title-h3">Isu Terkini</h3>
+          <!-- <p>SK dan Sertifikat Penghargaan Petugas Peipm Terbaik.</p> -->
+          <button class="card-btn" onclick="window.open('https://www.google.com', '_blank')">Lihat detail</button>
+        </div>
+        <div class="ipm-item">
+          <img src="../assets/img/logo_SDGs.png" alt="zona-integritas" />
+          <h3 class="title-h3">SDGs</h3>
+          <!-- <p>Surat Keputusan penunjukan petugas ipm dan Jadwal.</p> -->
+          <button class="card-btn" onclick="window.open('https://www.google.com', '_blank')">Lihat detail</button>
+        </div>
+      </div>
+    </section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -276,7 +503,15 @@
           <div class="footer-section">
             <h3>BPS Kota Surabaya</h3>
             <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
-            <p>Jl. Ahmad Yani No.152E, Gayungan, Kec. Gayungan, Surabaya, Jawa Timur 60235</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <p>Email: bps3578@bps.go.id</p>
             <p>Telepon: (031) 8296692</p>
           </div>
@@ -285,18 +520,30 @@
             <a href="#">Data Statistik</a>
             <a href="#">Dokumentasi</a>
             <a href="#">Layanan Kearsipan</a>
-            <a href="#">Pojok Statistik</a>
+            <a href="pojok-statistik.html">Pojok Statistik</a>
             <a href="#">Kelurahan Cantik</a>
           </div>
           <div class="footer-section">
             <h3>Hubungi Kami</h3>
             <p>Ikuti media sosial kami untuk update terbaru</p>
             <div class="social-links">
-              <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/surabayakota.bps.go.id/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPo5btTNZoTAIAKPbLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084462/RO=10/RU=https%3a%2f%2ftwitter.com%2fbps_surabaya/RK=2/RS=lOK88kby79v.CKODxjVvgx4R7GI-"
+                title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPrqQ9TdZoGQIACCvLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084542/RO=10/RU=https%3a%2f%2fwww.instagram.com%2fbpskotasurabaya%2f/RK=2/RS=A.x9yjFwkHyFoZw.jW97bxuM0eM-"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrKAX7GTdZoEAIAnZDLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084678/RO=10/RU=https%3a%2f%2fwww.youtube.com%2f%40bpskotasurabaya3578/RK=2/RS=3.S5VICmokrlo9U3LBzg3k4TV5I-"
+                title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" title="Website"><i class="fab fa-globe"></i></a>
             </div>
           </div>
         </div>
@@ -307,6 +554,50 @@
     </footer>
 
     <!-- Custom JavaScript -->
-    <script src="../script.js"></script>
+    <script>
+      function toggleDropdown(el) {
+        const dropdown = el.parentElement;
+        dropdown.classList.toggle("show");
+      }
+
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const sidebarToggle = document.getElementById("sidebarToggle");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Toggle submenu
+      document.querySelectorAll(".toggle-submenu").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const parent = btn.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+
+      // Scroll effect untuk navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+    <script src="../script2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+

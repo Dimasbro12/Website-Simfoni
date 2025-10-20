@@ -1,0 +1,1396 @@
+/* welcome*/
+.welcome {
+  padding-bottom: 25px;
+}
+.welcome-text {
+  flex: 0.55;
+}
+
+.welcome-img {
+  max-width: 100%;
+  flex: 0.45;
+}
+
+.welcome-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.welcome .btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.welcome .btn {
+  background: #1e3a8a;
+  color: white;
+  padding: 8px 16px; /* diperkecil */
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.8rem; /* lebih kecil */
+  white-space: nowrap; /* cegah teks terpotong ke bawah */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.welcome .btn:hover {
+  background: #ff7a00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .welcome {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 50px 5%;
+  }
+
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.95rem;
+  }
+
+  .welcome-img img {
+    max-width: 400px;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .welcome {
+    padding: 40px 5%;
+  }
+
+  .welcome-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.9rem;
+  }
+
+  .welcome-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .welcome .btn {
+    width: 90%;
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .welcome-img img {
+    max-width: 320px;
+  }
+}
+
+/* ================
+  Neraca Produksi
+  ================= */
+.produksi {
+  display: flex;
+  background: #1e3a8a;
+}
+
+.produksi-container {
+  max-width: 1100px;
+  padding: 35px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.produksi-img {
+  flex: 0.35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produksi-img img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.produksi-text {
+  flex: 0.65;
+}
+
+.produksi-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.produksi-text p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+/* responsif */
+/* Tablet */
+@media (max-width: 992px) {
+  .produksi-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .produksi-text {
+    flex: 1 1 100%;
+  }
+
+  .produksi-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .produksi-text p {
+    font-size: 0.95rem;
+  }
+
+  .produksi-img img {
+    max-width: 350px;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .produksi {
+    padding: 40px 0;
+  }
+
+  .produksi-container {
+    padding: 0 5%;
+  }
+
+  .produksi-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .produksi-text p {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
+  .produksi-img img {
+    max-width: 65%;
+  }
+}
+
+/* ===================
+  Card Slider
+====================== */
+/* Kontainer utama */
+.cards-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 8%;
+}
+
+.cards-container h1 {
+  font-size: 1.7rem;
+  color: #003366;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cards-scroll {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 15px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.cards-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb,
+.cards-scroll::-webkit-scrollbar-track {
+  border-radius: 92px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb {
+  background: var(--darkorange);
+}
+
+.cards-scroll::-webkit-scrollbar-track {
+  background: var(--thumb);
+}
+.card {
+  flex: 0 0 264px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 30px 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  scroll-snap-align: start;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #ff7a00, #ffb347);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Konten kartu */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Gambar besar */
+.card-content img {
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  max-width: 40%;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Tombol */
+.card-link {
+  display: inline-block;
+  background: var(--orange);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.card:hover .card-link {
+  background: var(--darkorange);
+}
+
+.scroll-btn {
+  background: linear-gradient(90deg, #ff7a00, #ffae42);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background: linear-gradient(90deg, #ffae42, #ffd580);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .card-content img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-content img {
+    width: 150px;
+  }
+}
+/* Responsif */
+@media (max-width: 699px) {
+  .cards {
+    grid-auto-columns: calc(100% / 2 - 15px); /* tablet: 2 card */
+  }
+
+  .card .card-content img {
+    width: 80px; /* lebih kecil di tablet */
+  }
+}
+
+@media (max-width: 499px) {
+  .cards {
+    grid-auto-columns: 100%; /* HP kecil: 1 card */
+  }
+
+  .card .card-content img {
+    width: 70px; /* lebih kecil di HP */
+  }
+}
+
+/* sktnp */
+.sktnp-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 8%;
+  text-align: center;
+  max-height: fit-content;
+  padding-top: 30px;
+}
+
+.sktnp-title {
+  font-size: 1.7rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.sktnp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.sktnp-item {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.sktnp-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.sktnp-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.sktnp-item:hover img {
+  filter: brightness(80%);
+}
+
+.sktnp-item h3 {
+  /* padding: 10px 0 10px 0; */
+  font-size: 1.15rem;
+}
+
+.sktnp-item p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+  /* text-align: justify; */
+}
+
+/* 🌐 Responsif */
+@media (max-width: 900px) {
+  .sktnp-title {
+    font-size: 1.5rem;
+  }
+
+  .sktnp-grid {
+    gap: 20px;
+  }
+
+  .sktnp-item img {
+    width: 75%;
+  }
+}
+
+/* 📱 Untuk handphone: 2 card per baris */
+@media (max-width: 600px) {
+  .sktnp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .sktnp-item {
+    padding: 15px 8px;
+  }
+
+  .sktnp-item img {
+    width: 80%;
+  }
+
+  .sktnp-item h3 {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Untuk layar sangat kecil (misal <400px): 1 card per baris */
+@media (max-width: 400px) {
+  .sktnp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* publikasi */
+.publikasi {
+  max-width: 1100px;
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 8%;
+  background: #fff;
+  margin: 0 auto;
+  gap: 40px;
+  /* padding-bottom: 20px; */
+}
+
+.publikasi-container {
+  display: flex;
+}
+.publikasi-title {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  /* position: relative; */
+  /* display: inline-block; */
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.publikasi-img {
+  flex: 0.45;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.publikasi-img img {
+  max-width: 40%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.publikasi-text {
+  flex: 0.55;
+}
+
+.publikasi-text h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.publikasi-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.publikasi .btn {
+  display: inline-block;
+  padding: 10px 0px;
+  /* border-radius: 5px; */
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.publikasi .btn.lihat {
+  color: #000;
+  border: none;
+  /* border-radius: 25px; */
+  padding: 8px 0px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* width: 50%; */
+}
+
+.publikasi .btn.lihat:hover {
+  /* background: #fff; */
+  color: #1e3a8a;
+  transform: translateY(-3px);
+  /* box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3); */
+}
+
+/* ====== RESPONSIVE BREAKPOINTS ====== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .publikasi-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .publikasi-img img {
+    max-width: 40%;
+  }
+
+  .publikasi-text {
+    text-align: center;
+  }
+
+  .laporan-brs-buttons {
+    justify-content: center;
+  }
+
+  .publikasi-text h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .publikasi {
+    padding: 40px 5%;
+  }
+
+  .publikasi-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .publikasi-text h1 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .publikasi .btn.lihat {
+    font-size: 0.9rem;
+  }
+
+  .publikasi-img img {
+    max-width: 50%;
+  }
+}
+
+/* ================
+  Neraca Konsumsi
+  ================= */
+.konsumsi {
+  display: flex;
+  background: #1e3a8a;
+}
+
+.konsumsi-container {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 8%;
+  margin: 0 auto;
+  gap: 40px;
+  padding-bottom: 10px;
+}
+
+.konsumsi-img {
+  flex: 0.45;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.konsumsi-img img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.konsumsi-text {
+  flex: 0.55;
+}
+
+.konsumsi-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.konsumsi-text p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+/* responsif */
+/* Tablet */
+@media (max-width: 992px) {
+  .konsumsi-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .konsumsi-text {
+    flex: 1 1 100%;
+  }
+
+  .konsumsi-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .konsumsi-text p {
+    font-size: 0.95rem;
+  }
+
+  .konsumsi-img img {
+    max-width: 350px;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .konsumsi {
+    padding: 40px 0;
+  }
+
+  .konsumsi-container {
+    padding: 0 5%;
+  }
+
+  .konsumsi-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .konsumsi-text p {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
+  .konsumsi-img img {
+    max-width: 65%;
+  }
+}
+
+/* pdrb-pengeluaran */
+.pdrb-pengeluaran-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 8%;
+  text-align: center;
+  max-height: fit-content;
+  padding-top: 30px;
+}
+
+.pdrb-pengeluaran-title {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.pdrb-pengeluaran-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.pdrb-pengeluaran-item {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.pdrb-pengeluaran-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pdrb-pengeluaran-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.pdrb-pengeluaran-item:hover img {
+  filter: brightness(80%);
+}
+
+.pdrb-pengeluaran-item h3 {
+  /* padding: 10px 0 10px 0; */
+  font-size: 1.15rem;
+}
+
+.pdrb-pengeluaran-item p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+  /* text-align: justify; */
+}
+
+/* 🌐 Responsif */
+@media (max-width: 900px) {
+  .pdrb-pengeluaran-title {
+    font-size: 1.5rem;
+  }
+
+  .pdrb-pengeluaran-grid {
+    gap: 20px;
+  }
+
+  .pdrb-pengeluaran-item img {
+    width: 75%;
+  }
+}
+
+/* 📱 Untuk handphone: 2 card per baris */
+@media (max-width: 600px) {
+  .pdrb-pengeluaran-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .pdrb-pengeluaran-item {
+    padding: 15px 8px;
+  }
+
+  .pdrb-pengeluaran-item img {
+    width: 80%;
+  }
+
+  .pdrb-pengeluaran-item h3 {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Untuk layar sangat kecil (misal <400px): 1 card per baris */
+@media (max-width: 400px) {
+  .pdrb-pengeluaran-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* laporan survei */
+.survei-title {
+  font-size: 1.7rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  /* display: inline-block; */
+  /* margin-bottom: 20px; */
+  text-align: center;
+  padding: 20px 0;
+}
+
+.survei-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 8%;
+}
+
+/* ========================
+  Analisis dan Pengembangan
+  ========================= */
+
+.analisis {
+  display: flex;
+  background: #1e3a8a;
+}
+
+.analisis-container {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 8%;
+  margin: 0 auto;
+  gap: 40px;
+  padding-bottom: 10px;
+}
+
+.analisis-img {
+  flex: 0.35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analisis-img img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.analisis-text {
+  flex: 0.65;
+}
+
+.analisis-text h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.analisis-text p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+/* responsif */
+/* Tablet */
+@media (max-width: 992px) {
+  .analisis-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .analisis-text {
+    flex: 1 1 100%;
+  }
+
+  .analisis-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .analisis-text p {
+    font-size: 0.8rem;
+  }
+
+  .analisis-img img {
+    max-width: 350px;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .analisis {
+    padding: 40px 0;
+  }
+
+  .analisis-container {
+    padding: 0 5%;
+  }
+
+  .analisis-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .analisis-text p {
+    font-size: 0.8rem;
+    text-align: justify;
+  }
+
+  .analisis-img img {
+    max-width: 65%;
+  }
+}
+
+/* highlight */
+.highlight-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 8%;
+  text-align: center;
+  max-height: fit-content;
+  /* padding-top: 30px; */
+}
+
+.highlight-title {
+  font-size: 1.7rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.highlight-item {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.highlight-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.highlight-item:hover img {
+  filter: brightness(80%);
+}
+
+.highlight-item h3 {
+  /* padding: 10px 0 10px 0; */
+  font-size: 1.05rem;
+}
+
+.highlight-item p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+  /* text-align: justify; */
+}
+
+/* 🌐 Responsif */
+@media (max-width: 900px) {
+  .highlight-title {
+    font-size: 1.5rem;
+  }
+
+  .highlight-grid {
+    gap: 20px;
+  }
+
+  .highlight-item img {
+    width: 75%;
+  }
+}
+
+/* 📱 Untuk handphone: 2 card per baris */
+@media (max-width: 600px) {
+  .highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .highlight-item {
+    padding: 15px 8px;
+  }
+
+  .highlight-item img {
+    width: 80%;
+  }
+
+  .highlight-item h3 {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Untuk layar sangat kecil (misal <400px): 1 card per baris */
+@media (max-width: 400px) {
+  .highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ipm */
+.ipm-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 8%;
+  text-align: center;
+}
+
+.ipm-title {
+  font-size: 1.7rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.ipm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.ipm-item {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.ipm-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.ipm-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.ipm-item:hover img {
+  filter: brightness(80%);
+}
+
+.ipm-item .title-h3 {
+  padding: 15px 0 15px 0;
+}
+
+.ipm-item .title-h3-2 {
+  padding: 15px 0px;
+  padding-bottom: 45px;
+}
+
+.ipm-item p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+  /* text-align: justify; */
+}
+
+.card-btn {
+  background: linear-gradient(90deg, #0056b3, #0073e6);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.card-btn:hover {
+  background: linear-gradient(90deg, #0073e6, #00aaff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 115, 230, 0.3);
+}
+
+/* 🌐 Responsif */
+@media (max-width: 900px) {
+  .ipm-title {
+    font-size: 1.5rem;
+  }
+
+  .ipm-grid {
+    gap: 20px;
+  }
+
+  .ipm-item img {
+    width: 75%;
+  }
+}
+
+/* 📱 Untuk handphone: 2 card per baris */
+@media (max-width: 600px) {
+  .ipm-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .ipm-item {
+    padding: 15px 8px;
+  }
+
+  .ipm-item img {
+    width: 80%;
+  }
+
+  .ipm-item h3 {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Untuk layar sangat kecil (misal <400px): 1 card per baris */
+@media (max-width: 400px) {
+  .ipm-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* gender */
+.gender {
+  background: #fff;
+  padding: 30px 0;
+}
+
+.gender-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
+  /* flex-wrap: wrap; biar responsif di layar kecil */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+.gender-item {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gender-title {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  /* position: relative; */
+  /* display: inline-block; */
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.gender-img {
+  flex: 0.35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gender-img img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.gender-text {
+  flex: 0.65;
+}
+
+.gender-text h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.gender-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.gender .btn {
+  display: inline-block;
+  padding: 10px 0px;
+  /* border-radius: 5px; */
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.gender .btn.lihat {
+  color: #000;
+  border: none;
+  /* border-radius: 25px; */
+  padding: 8px 0px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* width: 50%; */
+}
+
+.gender .btn.lihat:hover {
+  /* background: #fff; */
+  color: #1e3a8a;
+  transform: translateY(-3px);
+  /* box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3); */
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+@media (max-width: 1024px) {
+  .intro-content {
+    gap: 60px;
+  }
+
+  .analisis-grid-main {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .analisis-grid-secondary {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: 2rem;
+  }
+
+  .intro-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .stats-highlight {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-title-light {
+    font-size: 2rem;
+  }
+
+  .section-subtitle-light {
+    font-size: 1rem;
+  }
+
+  .analisis-grid-main,
+  .analisis-grid-secondary {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .contact-form-wrapper {
+    padding: 30px 25px;
+  }
+
+  .contact-section {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-nerwilis,
+  .analisis-ekonomi,
+  .contact-section {
+    padding: 60px 0;
+  }
+
+  .intro-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro-subtitle {
+    font-size: 1rem;
+  }
+
+  .stat-item {
+    padding: 20px 15px;
+  }
+
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .stat-icon i {
+    font-size: 25px;
+  }
+
+  .stat-item h3 {
+    font-size: 2rem;
+  }
+
+  .section-title-light {
+    font-size: 1.8rem;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-content,
+  .card-content-small {
+    padding: 20px;
+  }
+
+  .contact-form-wrapper {
+    padding: 25px 20px;
+  }
+
+  .btn-submit {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}

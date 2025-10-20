@@ -1,0 +1,458 @@
+/* Responsive */
+@media (max-width: 992px) {
+  .welcome {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 50px 5%;
+  }
+
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.95rem;
+  }
+
+  .welcome-img img {
+    max-width: 400px;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .welcome {
+    padding: 40px 5%;
+  }
+
+  .welcome-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.9rem;
+  }
+
+  .welcome-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .welcome .btn {
+    width: 90%;
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .welcome-img img {
+    max-width: 320px;
+  }
+}
+
+/* =================================
+   KOLEKSI
+================================= */
+/* laporan brs */
+.pengolahan {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 8%;
+  background: #fff;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.pengolahan-img {
+  flex: 0.45;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pengolahan-img img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.pengolahan-text {
+  flex: 0.55;
+}
+
+.pengolahan-text h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.pengolahan-text p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+.pengolahan-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.btn.lihat {
+  background: linear-gradient(90deg, #056ad0, #014589);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50%;
+}
+
+.btn.lihat:hover {
+  background: linear-gradient(90deg, #023a72, #197bdc);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .pengolahan {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pengolahan-img img {
+    max-width: 60%;
+  }
+
+  .pengolahan-buttons {
+    justify-content: center;
+  }
+}
+
+/* pengolahan-seruti */
+.pengolahan-seruti-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 15px 8%;
+  text-align: center;
+  max-height: fit-content;
+}
+
+.pengolahan-seruti-title {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.pengolahan-seruti-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 5px;
+}
+
+.pengolahan-seruti-item {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.pengolahan-seruti-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pengolahan-seruti-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.pengolahan-seruti-item:hover img {
+  filter: brightness(80%);
+}
+
+.pengolahan-seruti-item h3 {
+  /* padding: 10px 0 10px 0; */
+  font-size: 1.15rem;
+}
+
+.pengolahan-seruti-item p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+  /* text-align: justify; */
+}
+
+/* 🌐 Responsif */
+@media (max-width: 900px) {
+  .pengolahan-seruti-title {
+    font-size: 1.5rem;
+  }
+
+  .pengolahan-seruti-grid {
+    gap: 20px;
+  }
+
+  .pengolahan-seruti-item img {
+    width: 75%;
+  }
+}
+
+/* 📱 Untuk handphone: 2 card per baris */
+@media (max-width: 600px) {
+  .pengolahan-seruti-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .pengolahan-seruti-item {
+    padding: 15px 8px;
+  }
+
+  .pengolahan-seruti-item img {
+    width: 80%;
+  }
+
+  .pengolahan-seruti-item h3 {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Untuk layar sangat kecil (misal <400px): 1 card per baris */
+@media (max-width: 400px) {
+  .pengolahan-seruti-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* laporan brs */
+.pengolahan-supas {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 8%;
+  background: #fff;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.pengolahan-supas-img {
+  flex: 0.45;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pengolahan-supas-img img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.pengolahan-supas-text {
+  flex: 0.55;
+}
+
+.pengolahan-supas-text h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.pengolahan-supas-text p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+.pengolahan-supas-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.pengolahan-supas.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.pengolahan-supas.btn.lihat {
+  background: linear-gradient(90deg, #056ad0, #014589);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50%;
+}
+
+.pengolahan-supas.btn.lihat:hover {
+  background: linear-gradient(90deg, #023a72, #197bdc);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .pengolahan-supas {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pengolahan-supas-img img {
+    max-width: 60%;
+  }
+
+  .pengolahan-supas-buttons {
+    justify-content: center;
+  }
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10%, -10%);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 60px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .org-level.level-3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .koleksi-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .diseminasi-grid,
+  .pengolahan-grid,
+  .jaringan-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .org-card {
+    min-width: 150px;
+    padding: 20px;
+  }
+
+  .org-icon {
+    font-size: 2rem;
+  }
+
+  .card-dark {
+    padding: 25px 20px;
+  }
+
+  .card-icon {
+    font-size: 40px;
+  }
+}

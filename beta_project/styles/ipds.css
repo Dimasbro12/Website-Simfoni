@@ -1,0 +1,408 @@
+/* Responsive */
+@media (max-width: 992px) {
+  .welcome {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 50px 5%;
+  }
+
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.95rem;
+  }
+
+  .welcome-img img {
+    max-width: 400px;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .welcome {
+    padding: 40px 5%;
+  }
+
+  .welcome-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.9rem;
+  }
+
+  .welcome-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .welcome .btn {
+    width: 90%;
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .welcome-img img {
+    max-width: 320px;
+  }
+}
+
+/* =================================
+   KOLEKSI
+================================= */
+/* kegiatan */
+.kegiatan-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 8%;
+  text-align: center;
+}
+
+.kegiatan-title {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.kegiatan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.kegiatan-item {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.kegiatan-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.kegiatan-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.kegiatan-item:hover img {
+  filter: brightness(80%);
+}
+
+.kegiatan-item p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+  /* text-align: justify; */
+}
+
+/* 🌐 Tablet (max-width: 900px) */
+@media (max-width: 900px) {
+  .kegiatan-title {
+    font-size: 1.6rem;
+  }
+
+  .kegiatan-item img {
+    width: 75%;
+  }
+
+  .kegiatan-item {
+    padding: 18px 10px;
+  }
+}
+
+/* 📱 Handphone (max-width: 600px): 2 card per baris */
+@media (max-width: 600px) {
+  .kegiatan-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+
+  .kegiatan-item {
+    padding: 15px 8px;
+    max-width: 100%;
+  }
+
+  .kegiatan-item img {
+    width: 80%;
+  }
+
+  .kegiatan-item h3 {
+    font-size: 0.95rem;
+  }
+
+  .kegiatan-item p {
+    font-size: 0.8rem;
+  }
+}
+
+/* 📱 Layar sangat kecil (max-width: 400px): 1 card per baris */
+@media (max-width: 400px) {
+  .kegiatan-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .kegiatan-item img {
+    width: 85%;
+  }
+}
+
+/* layanan */
+.layanan-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 8%;
+  text-align: center;
+}
+
+.layanan-title {
+  font-size: 1.8rem;
+  color: #003366;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.layanan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.layanan-item {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.layanan-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.layanan-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.layanan-item:hover img {
+  filter: brightness(80%);
+}
+
+.layanan-item .title-h3 {
+  padding: 15px 0 15px 0;
+}
+
+.layanan-item p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0 15px 0;
+  /* text-align: justify; */
+}
+
+.card-btn {
+  background: linear-gradient(90deg, #0056b3, #0073e6);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.card-btn:hover {
+  background: linear-gradient(90deg, #0073e6, #00aaff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 115, 230, 0.3);
+}
+
+/* 🌐 Tablet (max-width: 900px) */
+@media (max-width: 900px) {
+  .layanan-title {
+    font-size: 1.6rem;
+  }
+
+  .layanan-item img {
+    width: 75%;
+  }
+
+  .layanan-item {
+    padding: 18px 10px;
+  }
+}
+
+/* 📱 Handphone (max-width: 600px): 2 card per baris */
+@media (max-width: 600px) {
+  .layanan-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .layanan-item {
+    padding: 15px 8px;
+    max-width: 100%;
+  }
+
+  .layanan-item img {
+    width: 80%;
+  }
+
+  .layanan-item h3 {
+    font-size: 0.95rem;
+  }
+
+  .layanan-item p {
+    font-size: 0.8rem;
+  }
+}
+
+/* 📱 Layar sangat kecil (max-width: 400px): 1 card per baris */
+@media (max-width: 400px) {
+  .layanan-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .layanan-item img {
+    width: 85%;
+  }
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10%, -10%);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .layanan-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 60px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .org-level.level-3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .layanan-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .koleksi-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .diseminasi-grid,
+  .pengolahan-grid,
+  .jaringan-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .org-card {
+    min-width: 150px;
+    padding: 20px;
+  }
+
+  .org-icon {
+    font-size: 2rem;
+  }
+
+  .card-dark {
+    padding: 25px 20px;
+  }
+
+  .card-icon {
+    font-size: 40px;
+  }
+}

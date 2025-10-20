@@ -5,32 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simfoni BPS Kota Surabaya - Pusat Informasi Statistik dan Kearsipan</title>
     <meta name="description" content="Simfoni, pusat informasi kegiatan statistik dan kearsipan BPS Kota Surabaya. Menyajikan berbagai data, dokumentasi, dan layanan terintegrasi untuk transparansi dan kemudahan akses informasi." />
+    <link rel="icon" type="image/png" href="../assets/bps.png" />
 
     <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles/produksi.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header Start -->
     <header class="header" id="header">
-      <nav class="navbar container">
-        <a href="#" class="logo">
-          <i class="fas fa-chart-bar"></i>
-          BPS KOTA Surabaya
-        </a>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="../home.html">Home</a></li>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <!-- Hamburger di kiri -->
+          <button class="navbar-toggler text-white border-0" type="button" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="#"><img src="../assets/bps.png" alt="logo BPS" />BPS Kota Surabaya</a>
+
+          <!-- Menu untuk desktop -->
+          <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto text-center text-md-start">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="subbag.html">Subbag Umum</a></li>
+              <li class="nav-item"><a class="nav-link" href="pss.html">PSS</a></li>
+              <li class="nav-item"><a class="nav-link" href="pojok-statistik.html">Pojok Statistik</a></li>
+              <li class="nav-item"><a class="nav-link" href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button">Tim</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="ipds.html">IPDS</a></li>
+                  <li><a class="dropdown-item" href="humas.html">Humas</a></li>
+                  <li><a class="dropdown-item" href="sosial.html">Sosial</a></li>
+                  <li><a class="dropdown-item" href="produksi.html">Produksi</a></li>
+                  <li><a class="dropdown-item" href="nerwilis.html">Nerwilis</a></li>
+                  <li><a class="dropdown-item" href="sakip.html">Sakip-ZI</a></li>
+                  <li><a class="dropdown-item" href="harga.html">Harga</a></li>
+                  <li><a class="dropdown-item" href="disjas.html">Disjas</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar (Mobile) -->
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="subbag.html">Subbag Umum</a></li>
-          <li><a href="#rbzi">RB/ZI</a></li>
+          <li><a href="pss.html">PSS</a></li>
           <li><a href="pojok-statistik.html">Pojok Statistik</a></li>
           <li><a href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
-          <li class="dropdown">
-            <a href="#tim" class="dropdown-toggle">Tim <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#umum">Umum</a></li>
+          <li class="has-submenu">
+            <a href="#" class="toggle-submenu"> Lainnya <i class="fa-solid fa-chevron-down"></i> </a>
+            <ul class="submenu">
               <li><a href="ipds.html">IPDS</a></li>
               <li><a href="humas.html">Humas</a></li>
               <li><a href="sosial.html">Sosial</a></li>
@@ -42,23 +81,22 @@
             </ul>
           </li>
         </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
     </header>
+    <!-- Header End -->
 
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="hero-content">
         <h1>Produksi</h1>
         <p>Mengenal Struktur Organisasi, Profil, dan Tugas Tim Produksi BPS Kota Surabaya</p>
-        <a href="#welcome" class="cta-button"> <i class="fas fa-chart-line"></i> Lihat Selengkapnya </a>
+        <a href="#produksi" class="cta-button"> <i class="fas fa-chart-line"></i> Lihat Selengkapnya </a>
       </div>
-    </section>
-
+    </section> 
+    
     <!-- Welcome Section -->
     <section class="welcome" id="welcome">
       <div class="container">
@@ -66,161 +104,523 @@
           <div class="welcome-text fade-in">
             <h2>Tentang Tim Kerja Produksi</h2>
             <p>
-              Tim kerja Produksi adalah tim yang mengelola statistik pertanian dan industri, memberikan analisis yang akurat untuk mendukung pengambilan keputusan yang tepat.
+              Tim kerja Produksi menangani pengelolaan statistik di sektor pertanian, industri, dan INPEK. 
+              Dengan analisis yang cermat, tim berperan penting dalam menyediakan informasi yang akurat untuk mendukung pengambilan keputusan.Pengelolaan data dilakukan secara teliti dan profesional, 
+              sehingga informasi yang dihasilkan tidak hanya berkualitas, tetapi juga relevan dan bermanfaat bagi berbagai pihak.
+              <a style="color: #ff7a00" href="https://sites.google.com/view/login-statproboy/halaman-muka" target="_blank">Lihat Selengkapnya</a>
             </p>
-          </div>
-          <div class="welcome-img fade-in">
-            <img src="photo-1518186285589-2f7649de83e0 (1).avif" alt="" width="700" height="600" style="border-radius: 15px;" >
+            <div class="section-buttons">
+              <a href="#pertanian" class="btn-section">Pertanian</a>
+              <a href="#inpek" class="btn-section">INPEK</a>
+              <a href="#analisis" class="btn-section">Analisis & Diseminasi</a>
+              <a href="#administrasi" class="btn-section">Administrasi</a>
+            </div>
           </div>
         </div>
       </section> 
-    
-        <!-- Susunan Organisas Section -->
-         <section class="struktur" id="struktur">
-          <div class="container">
-            <div class="welcome-content">
-              <div class="welcome-text fade-in" >
-            <h2>Struktur Tim</h2>
-              <div class="stats">
-              <div class="flip-card">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <img src="../beta_project/assets/img/produksi_septa.png" alt="Ketua Tim Sosial">
+
+    <!-- Pertanian -->
+    <section class="produksi" id="pertanian">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img src="../assets/img/pertanian.png" alt="Pertanian" style="width: 200px; height: auto" />
           </div>
-          <div class="flip-card-back">
-            <p class="title">Ketua Tim</p>
-            <p>"Jalani profesimu dengan sepenuh hati"</p>
-          </div>
-           </div>
-</div>
-        <div class="flip-card">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <img src="../beta_project/assets/img/produksi_septa.png" alt="Ketua Tim Sosial">
-          </div>
-          <div class="flip-card-back">
-            <p class="title">Anngota Tim</p>
-            <p>"My Trip My Adventure"</p>
-          </div>
-           </div>
-</div>
-            </div>
-            </div>
+          <div class="col">
+            <div class="content">
+              <div class="text-box">
+                <h2>Pertanian</h2>
+                <p>
+                  Survei yang dilakukan untuk penyediaan data pada sektor industri adalah Updating Direktori
+                  Perusahaan Industri Manufaktur, Survei Tahunan Perusahaan Industri Manufaktur (STPIM),
+                  Survei Industri Besar Sedang Bulanan (IBS Bulanan), Survei Industri Mikro Kecil Tahunan
+                  (VIMK Tahunan) dan Survei Industri Mikro Kecil Triwulanan (VIMK Triwulanan).
+                </p>
+              </div>
             </div>
           </div>
-         </section>
+        </div>
 
-
-        <!-- Statistik Kependudukan dan Ketenagakerjaan -->
-<section class="produksi" id="produksi">
-  <div class="container">
-    <h2>Statistik Produksi</h2>
-    <div class="row">
-      <div class="col">
-        <img src="../beta_project/assets/img/Ilustrasi_KependudukanKetenagakerjaan-BPS.png" alt="Statistik Kependudukan dan Ketenagakerjaan" style="width: 250px; height:auto">
-        
-      </div>
-      <div class="col">
-        <div class="content">
-          <div class="text-box">
-      <p>Tim kami menangani statistik pertanian dan industri secara profesional.</p>
-      </div></div></div>
-    </div>
-    <div class="main-grid">
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../beta_project/assets/img/SPM-BPS.png" alt="SPM"/>
-                                <div class="card-title">
-                                    <h3>INDUSTRI</h3>
-                                    <p class="p-Kepegawaian">Survei Penyediaan Data Sektor Industri</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">IBS Bulanan</a>
-                                        <a href="#">IBS Tahunan</a>
-                                        <a href="#">IMK Tahunan</a>
-                                        <a href="#">IMK Triwulan</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../beta_project/assets/img/RPD-BPS.png" alt="RPD"/>
-                                <div class="card-title">
-                                    <h3>PEK</h3>
-                                    <p class="p-Kepegawaian">Survei Penyediaan Data Sektor Pertambangan, Energi, dan Konstruksi</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Survei Kontruksi Triwulan</a>
-                                        <a href="#">Survei Kontruksi Tahunan</a>
-                                        <a href="#">Survei Captive Power</a>
-                                        <a href="#">UDP</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../beta_project/assets/img/RPD-BPS.png" alt="RPD"/>
-                                <div class="card-title">
-                                    <h3>PERTANIAN</h3>
-                                    <p class="p-Kepegawaian">Survei Penyediaan Data Sektor Pertanian</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Survei Ubinan</a>
-                                        <a href="#">Survei KSA</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                            
-                    </div>
-  </div>
-</section>
-
-        <!-- Stats Cards -->
-        <div class="stats">
-          <div class="stat-card fade-in">
-            <i class="fas fa-database"></i>
-            <h3>Data Terintegrasi</h3>
-            <p>Berbagai data statistik dan kearsipan dalam satu platform</p>
+        <div class="main-grid">
+          <!-- Card 1 -->
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../assets/img/peternakan.png" alt="Peternakan" />
+              <div class="card-title">
+                <h3>Peternakan, Perikanan & Kehutanan</h3>
+                <p class="p-Kepegawaian">Survei Penyediaan Data Sektor Peternakan, Perikanan & Kehutanan</p>
+              </div>
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <a href="https://fasih-sm.bps.go.id/" target="_blank">Fasih-SM</a>
+                  <a href="https://drive.google.com/drive/folders/1zxWCd4WW3rmhwIyBP5UCGT4uUDCEWyem" target="_blank">
+                    Materi refreshing kegiatan stat peternakan
+                  </a>
+                  <a href="https://fasih-dashboard.bps.go.id/superset/dashboard/180/" target="_blank">
+                    Fasih dashboard
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="stat-card fade-in">
-            <i class="fas fa-users"></i>
-            <h3>Transparansi</h3>
-            <p>Akses informasi yang mudah dan transparan untuk masyarakat</p>
+
+          <!-- Card 2 -->
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../assets/img/tanaman pangan.png" alt="Tanaman Pangan" />
+              <div class="card-title">
+                <h3>Tanaman Pangan</h3>
+                <p class="p-Kepegawaian">Survei Penyediaan Data Sektor Pertanian Pangan</p>
+              </div>
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <a href="https://docs.google.com/spreadsheets/d/1ytH7o28WqHusSf6WqpeiD30EHN61Cxnx/edit?rtpof=true&sd=true&gid=585144663#gid=585144663"
+                    target="_blank">Alokasi Tugas</a>
+                  <a href="https://docs.google.com/spreadsheets/d/13xVjo8_0PgC6fTauSOW88diX6BkodQbT/edit?gid=101921799#gid=101921799"
+                    target="_blank">LK PCS/PMS & Logbook</a>
+                  <a href="https://drive.google.com/drive/folders/1GjOM-h2UXcrRHJNThWbf9h13_tBASFqn" target="_blank">
+                    Materi KSA dan Ubinan
+                  </a>
+                  <a href="https://docs.google.com/spreadsheets/d/1pM6RS7JUD7E-QWQQWzXNGcHXygO3Sok5/edit?rtpof=true&sd=true"
+                    target="_blank">Fenomena KSA & Ubinan</a>
+                  <a href="https://docs.google.com/spreadsheets/d/1StOWW96zwGwjMpQLHj_vaqBO4rnaztIeaUaUBwsbYlQ/edit?gid=88828598#gid=88828598"
+                    target="_blank">Daftar Sampel Ubinan</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="stat-card fade-in">
-            <i class="fas fa-chart-line"></i>
-            <h3>Akurasi Data</h3>
-            <p>Jaminan keakuratan dan keandalan informasi statistik</p>
+
+          <!-- Card 3 -->
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../assets/img/hortikultural.png" alt="Hortikultura & Perkebunan" />
+              <div class="card-title">
+                <h3>Hortikultura & Perkebunan</h3>
+                <p class="p-Kepegawaian">Survei Penyediaan Data Sektor Pertanian</p>
+              </div>
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <a href="https://pengolahan.bps.go.id/produksi/hortikultura/sph2021/index.php" target="_blank">
+                    Survei Statistik Hortikultura
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Inpek -->
+    <section class="produksi" id="inpek">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img
+              src="../assets/img/inpek.png"
+              alt="Statistik Kependudukan dan Ketenagakerjaan"
+              style="width: 250px; height: auto"
+            />
+          </div>
 
-  
+          <div class="col">
+            <div class="content">
+              <div class="text-box">
+                <h2>INPEK</h2>
+                <p>
+                  Survei yang dilakukan pada penyediaan data sektor Pertambangan, Energi, dan Konstruksi adalah
+                  Survei Tahunan Penggalian (Galian-URT), Survei Tahunan Perusahaan Air Bersih, Survei Captive
+                  Power, Updating Direktori Perusahaan Konstruksi, Survei Konstruksi Tahunan (SKTH), dan Survei
+                  Konstruksi Triwulanan (SKTR).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <!-- Footer -->
+        <div class="main-grid">
+          <!-- Card 1 -->
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../assets/img/industri.png" alt="Industri" />
+
+              <div class="card-title">
+                <h3>Industri</h3>
+                <p class="p-Kepegawaian">Survei Penyediaan Data Sektor Industri</p>
+              </div>
+
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="dropdown-content">
+                  <a
+                    href="https://docs.google.com/spreadsheets/d/1pc2Vi2Uc_UoP5msBGroSY0PfHRW9W79TglidCCt6tSE/edit?gid=152155250#gid=152155250"
+                    target="_blank"
+                    >Target dan Realisasi IBS Bulanan</a
+                  >
+                  <a href="https://drive.google.com/drive/folders/1RYm_BpMGkpj8n0nwz24oeKaYsSg3GEjX" target="_blank"
+                    >Panduan Materi IBS</a
+                  >
+                  <a href="https://webentry.bps.go.id/ibs/site/index" target="_blank">Web Pengolahan IBS</a>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScD3F9-y4YtevG8xLohFb7krx_UVQOFaYuV3OtvlQ6Gp2tzCQ/viewform"
+                    target="_blank"
+                    >Form Laporan IBS Bulanan</a
+                  >
+                  <a
+                    href="https://docs.google.com/spreadsheets/d/1rAesnet1rp2INbcxAOKFhaGrMcCIiYH_KsxyOmJJxg4/edit?gid=1712676160#gid=1712676160"
+                    target="_blank"
+                    >Dokumentasi IBS Bulanan</a
+                  >
+                  <a href="https://docs.google.com/spreadsheets/d/1yBIuXK2srI53Gl9cJWJSDBgbUqpn8zvqu1WEXqD78co/edit" target="_blank"
+                    >Target Realisasi DPA, STPIM & SKIM</a
+                  >
+                  <a href="https://drive.google.com/drive/folders/1VTwhh8DPAZByGZnu8r0tYlnPOkQZ_lHg" target="_blank"
+                    >Materi DPA</a
+                  >
+                  <a href="https://drive.google.com/drive/folders/13zUgc_RvLiimv6rfHGQ5GVs9gKBq42jQ" target="_blank"
+                    >Materi STPIM & SKIM</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../assets/img/pertambangan.png" alt="Pertambangan dan Energi" />
+
+              <div class="card-title">
+                <h3>Pertambangan dan Energi</h3>
+                <p class="p-Kepegawaian">
+                  Survei Penyediaan Data Sektor Pertambangan, Energi, dan Konstruksi
+                </p>
+              </div>
+
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="dropdown-content">
+                  <a href="https://drive.google.com/drive/folders/1wnazigZ74J2FyQqHFEDX8U3XANaBFW4E" target="_blank"
+                    >Pedoman PE</a
+                  >
+                  <a href="https://drive.google.com/drive/folders/1eG8XH2xw0wYeqM-AMOg078gUvt6NOrTm" target="_blank"
+                    >Kuisioner PE</a
+                  >
+                  <a
+                    href="https://docs.google.com/spreadsheets/d/1GSPa7BQxMZ9IZCZW8P2UD7sI0Ngcmwb6/edit?gid=2037167736#gid=2037167736"
+                    target="_blank"
+                    >Sampel PE</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="system-card">
+            <div class="card-header">
+              <img src="../assets/img/konstruksi.png" alt="Konstruksi" />
+
+              <div class="card-title">
+                <h3>Konstruksi</h3>
+                <p class="p-Kepegawaian">Survei Penyediaan Data Sektor Konstruksi</p>
+              </div>
+
+              <div class="dropdown">
+                <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="dropdown-content">
+                  <a href="https://drive.google.com/drive/folders/1e46-PBGTIV2euNp7jUjxDeETtcxrbwwV" target="_blank"
+                    >Pedoman</a
+                  >
+                  <a href="https://drive.google.com/drive/folders/1plqo8MYeiP2RFPRuaQ8tcQ3yXn-lXw54" target="_blank"
+                    >Instrumen</a
+                  >
+                  <a
+                    href="https://docs.google.com/spreadsheets/d/171lVxlQ6cZo5JSscyeRCH9iTj0Dg96yDGJNSyqdH4JI/edit?gid=2104195981#gid=2104195981"
+                    target="_blank"
+                    >Sampel</a
+                  >
+                  <a
+                    href="https://docs.google.com/spreadsheets/d/1NcGM1-qa8b-qFJ6dfbA9BaqA0wYbIo8G/edit?gid=1559736622#gid=1559736622"
+                    target="_blank"
+                    >Sampel Frame</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Analisis dan Diseminasi -->
+    <section class="cards-container" id="analisis">
+      <div class="row">
+        <div class="col">
+          <img
+            src="../assets/img/analisis.png"
+            alt="Analisis dan Diseminasi"
+            style="width: 250px; height: auto"
+          />
+        </div>
+
+        <div class="col">
+          <div class="content">
+            <div class="text-box">
+              <h2>Analisis dan Diseminasi</h2>
+              <p>
+                Survei yang dilakukan pada penyediaan data sektor Pertambangan, Energi, dan Konstruksi adalah
+                Survei Tahunan Penggalian (Galian-URT), Survei Tahunan Perusahaan Air Bersih, Survei Captive
+                Power, Updating Direktori Perusahaan Konstruksi, Survei Konstruksi Tahunan (SKTH), dan Survei
+                Konstruksi Triwulanan (SKTR).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Kegiatan Tim Pertanian</h2>
+            <img src="../assets/img/kegiatan_tim.png" alt="Kegiatan tim" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://public.tableau.com/app/profile/nurcholis.nurcholis/viz/RealisasiKegiatanTimPertanian/Dashboard3?publish=yes', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Dashboard IBS</h2>
+            <img src="../assets/img/dashboard.png" alt="Dashboard IBS" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://lookerstudio.google.com/u/0/reporting/e2d7fe52-330f-4495-96eb-d1995342fd26/page/Wjx7E', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Dashboard KSA Padi</h2>
+            <img src="../assets/img/dashboard.png" alt="Dashboard KSA Padi" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://lookerstudio.google.com/u/0/reporting/8038bbc6-98a5-43fc-bb4a-7441553e0ac2', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">RAW Ubinan</h2>
+            <img src="../assets/img/raw.png" alt="RAW Ubinan" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/drive/folders/17yDb6-Ozs2s4zkf29buETMsfozIkn3ft', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">RAW LPTB</h2>
+            <img src="../assets/img/raw.png" alt="RAW LPTB" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/drive/folders/1G3StftOvV184GZHc8w0L0EvIpdf8eaQt', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">RAW SPH</h2>
+            <img src="../assets/img/raw.png" alt="RAW SPH" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/drive/folders/1KOHP7WMo16l3V8Hk7yHlAKX4bsxc6tA-', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">RAW IBS</h2>
+            <img src="../assets/img/raw.png" alt="RAW IBS" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/drive/folders/1DmORqA4aUJysSfAWzBMhG03Dwn90vVQu', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">RAW IMK</h2>
+            <img src="../assets/img/raw.png" alt="RAW IMK" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/drive/folders/1PnxzVTBRMpMAqkLzHqUXQ8SVWFhReyoQ', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Analisis dan Diseminasi End -->
+
+
+    <!-- Administrasi -->
+    <section class="cards-container" id="administrasi">
+      <h1>Administrasi</h1>
+
+      <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Rapat Tim</h2>
+            <img src="../assets/img/rapat.png" alt="Rapat Tim" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/drive/folders/1CSclaYHkdJbo4FW7Y01gdCSnAVzoIDRK', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Surat-surat</h2>
+            <img src="../assets/img/surat.png" alt="Surat-surat" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/drive/folders/1WEmPRaf0W9smkJcNpE1r3RTCbR8TdNYp', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">KAK</h2>
+            <img src="../assets/img/kak.png" alt="KAK" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/drive/folders/12RkBsNtgUNsO9IZX3sq8BkwqgAhXKYkx', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Visum</h2>
+            <img src="../assets/img/visum.png" alt="Visum" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/file/d/1As2mTvekSD2djFMLCTAk4QbMWFDb1McB/view?usp=drive_link', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Kuitansi Pengganti Ubinan</h2>
+            <img src="../assets/img/kuitansi.png" alt="Kuitansi Pengganti Ubinan" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/file/d/1sBhkYY2T7RVK2wPSKOgH90ARmXNaUgVH/view?usp=drive_link', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Dokumentasi Lapangan Ubinan</h2>
+            <img src="../assets/img/dokumentasi.png" alt="Dokumentasi Lapangan Ubinan" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://drive.google.com/drive/folders/19r3_DzGIUF_FP31ViDobumaf1wYIcGyc?usp=drive_link', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Laporan Kegiatan Tim</h2>
+            <img src="../assets/img/kak.png" alt="Laporan Kegiatan Tim" />
+            <button
+              class="scroll-btn"
+              onclick="window.open('https://forms.zohopublic.com/cobismtb/form/LaporanKegiatanTimPertanianTahun2024/formperma/-Szmbz3xkJbg-Ojr1yU-ocGvG3mFPaNjnZ_E6v25AyI', '_blank')"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Administrasi End -->
+
+    <!-- Footer Start -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
             <h3>BPS Kota Surabaya</h3>
             <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
-            <p>Jl. Ahmad Yani No.152E, Gayungan, Kec. Gayungan, Surabaya, Jawa Timur 60235</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <p>Email: bps3578@bps.go.id</p>
             <p>Telepon: (031) 8296692</p>
           </div>
@@ -229,26 +629,84 @@
             <a href="#">Data Statistik</a>
             <a href="#">Dokumentasi</a>
             <a href="#">Layanan Kearsipan</a>
-            <a href="#">Pojok Statistik</a>
+            <a href="pojok-statistik.html">Pojok Statistik</a>
             <a href="#">Kelurahan Cantik</a>
           </div>
           <div class="footer-section">
             <h3>Hubungi Kami</h3>
             <p>Ikuti media sosial kami untuk update terbaru</p>
             <div class="social-links">
-              <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/surabayakota.bps.go.id/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPo5btTNZoTAIAKPbLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084462/RO=10/RU=https%3a%2f%2ftwitter.com%2fbps_surabaya/RK=2/RS=lOK88kby79v.CKODxjVvgx4R7GI-"
+                title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPrqQ9TdZoGQIACCvLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084542/RO=10/RU=https%3a%2f%2fwww.instagram.com%2fbpskotasurabaya%2f/RK=2/RS=A.x9yjFwkHyFoZw.jW97bxuM0eM-"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrKAX7GTdZoEAIAnZDLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084678/RO=10/RU=https%3a%2f%2fwww.youtube.com%2f%40bpskotasurabaya3578/RK=2/RS=3.S5VICmokrlo9U3LBzg3k4TV5I-"
+                title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" title="Website"><i class="fab fa-globe"></i></a>
             </div>
           </div>
-        </div class="footer-bottom">
-        <p>&copy; 2025 BPS Kota Surabaya. Semua hak dilindungi undang-undang.</p>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 BPS Kota Surabaya. Semua hak dilindungi undang-undang.</p>
+        </div>
       </div>
     </footer>
+    <!-- Footer End -->
 
     <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+        <script>
+      function toggleDropdown(el) {
+        const dropdown = el.parentElement;
+        dropdown.classList.toggle("show");
+      }
+
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const sidebarToggle = document.getElementById("sidebarToggle");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Toggle submenu
+      document.querySelectorAll(".toggle-submenu").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const parent = btn.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+
+      // Scroll effect untuk navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+    <script src="../script2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -5,32 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simfoni BPS Kota Surabaya - Pusat Informasi Statistik dan Kearsipan</title>
     <meta name="description" content="Simfoni, pusat informasi kegiatan statistik dan kearsipan BPS Kota Surabaya. Menyajikan berbagai data, dokumentasi, dan layanan terintegrasi untuk transparansi dan kemudahan akses informasi." />
+    <link rel="icon" type="image/png" href="../assets/bps.png" />
 
     <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../style2.css" />
+
+    <link rel="stylesheet" href="../styles/subbag.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body class="subbag">
-    <!-- Header -->
+    <!-- Header Start -->
     <header class="header" id="header">
-      <nav class="navbar container">
-        <a href="#" class="logo">
-          <i class="fas fa-chart-bar"></i>
-          BPS KOTA Surabaya
-        </a>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="../home.html">Home</a></li>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <!-- Hamburger di kiri -->
+          <button class="navbar-toggler text-white border-0" type="button" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="#"><img src="../assets/bps.png" alt="logo BPS" />BPS Kota Surabaya</a>
+
+          <!-- Menu untuk desktop -->
+          <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto text-center text-md-start">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="subbag.html">Subbag Umum</a></li>
+              <li class="nav-item"><a class="nav-link" href="pss.html">PSS</a></li>
+              <li class="nav-item"><a class="nav-link" href="pojok-statistik.html">Pojok Statistik</a></li>
+              <li class="nav-item"><a class="nav-link" href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button">Tim</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="ipds.html">IPDS</a></li>
+                  <li><a class="dropdown-item" href="humas.html">Humas</a></li>
+                  <li><a class="dropdown-item" href="sosial.html">Sosial</a></li>
+                  <li><a class="dropdown-item" href="produksi.html">Produksi</a></li>
+                  <li><a class="dropdown-item" href="nerwilis.html">Nerwilis</a></li>
+                  <li><a class="dropdown-item" href="sakip.html">Sakip-ZI</a></li>
+                  <li><a class="dropdown-item" href="harga.html">Harga</a></li>
+                  <li><a class="dropdown-item" href="disjas.html">Disjas</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar (Mobile) -->
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="subbag.html">Subbag Umum</a></li>
-          <li><a href="#rbzi">RB/ZI</a></li>
+          <li><a href="pss.html">PSS</a></li>
           <li><a href="pojok-statistik.html">Pojok Statistik</a></li>
           <li><a href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
-          <li class="dropdown">
-            <a href="#tim" class="dropdown-toggle">Tim <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#umum">Umum</a></li>
+          <li class="has-submenu">
+            <a href="#" class="toggle-submenu"> Lainnya <i class="fa-solid fa-chevron-down"></i> </a>
+            <ul class="submenu">
               <li><a href="ipds.html">IPDS</a></li>
               <li><a href="humas.html">Humas</a></li>
               <li><a href="sosial.html">Sosial</a></li>
@@ -42,344 +81,448 @@
             </ul>
           </li>
         </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
     </header>
+    <!-- Header End -->
 
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="hero-content">
         <h1>Subbag Umum</h1>
-        <h3>Simfoni BPS Kota Surabaya</h3>
+        <p>Mengenal Struktur Organisasi, Profil, dan Tugas Tim Subbag Umum BPS Kota Surabaya</p>
       </div>
     </section>
 
     <!-- Tentang Section -->
     <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Tentang Subbag Umum</h1>
+        <p>Sub Bagian Umum ditugaskan menyelenggarakan administrasi umum meliputi perencanaan, keuangan, kepegawaian, hubungan masyarakat, hukum & organisasi, arsip, persandian, barang milik negara, perlengkapan, dan rumah tangga.</p>
+      </div>
+      <div class="welcome-img">
+        <img src="../assets/img/SubbagUmum.png" alt="Img Subbag Umum" style="width: 250px; height: auto" />
+      </div>
+    </section>
+
+    <!-- Manajemen Kepgewaian Section -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1 class="kepegawaian">Manajemen Kepegawaian</h1>
+        <div class="carousel">
+          <div class="carousel__viewport">
+            <!-- Slide 1: SIMPEG-BPS -->
+            <div class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <div class="col">
+                <img src="../assets/img/SIMPEG-BPS.png" style="width: 50px; height: 50px" /><br />
+                <a
+                  href="https://r.search.yahoo.com/_ylt=AwrKHBMS6dloHAIAEH3LQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760321042/RO=10/RU=https%3a%2f%2fsimpeg.bps.go.id%2fdata%2f/RK=2/RS=iphMI4o1bny9R1fM5XWZSjTNQpE-"
+                  class="a-Kepegawaian"
+                  >SIMPEG-BPS</a
+                >
+                <p class="p-Kepegawaian">Sistem Kepegawaian BPS</p>
+              </div>
+            </div>
+            <!-- Slide 2: SIPECUT -->
+            <div class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <div class="col">
+                <img src="../assets/img/SIPECUT-BPS.png" style="width: 50px; height: 50px" /><br />
+                <a
+                  href="https://r.search.yahoo.com/_ylt=Awrx_VA66dloHQIA6FnLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760321082/RO=10/RU=https%3a%2f%2fsipecut.bps.go.id%2f/RK=2/RS=hf9ujv1ww.NErObQayqKd6ptaao-"
+                  class="a-Kepegawaian"
+                  >SIPECUT</a
+                >
+                <p class="p-Kepegawaian">Sistem Pengajuan Cuti</p>
+              </div>
+            </div>
+
+            <!-- Slide 3: SIIMUT -->
+            <div class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <div class="col">
+                <img src="../assets/img/SIIMUT-BPS.png" style="width: 50px; height: 50px" /><br />
+                <a href="" class="a-Kepegawaian">SIIMUT</a>
+                <p class="p-Kepegawaian">Sistem Informasi Manajemen User dan Tambahan</p>
+              </div>
+            </div>
+            <!-- Slide 5: Peningkatan Kompetensi Pegawai -->
+            <div class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <div class="col">
+                <img src="../assets/img/KompetensiPegawai-BPS.png" style="width: 50px; height: 50px" /><br />
+                <a href="" class="a-Kepegawaian">Peningkatan Kompetensi Pegawai</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Dots -->
+          <div class="carousel__navigation">
+            <ol class="carousel__navigation-list">
+              <li class="carousel__navigation-item">
+                <a href="#slide1" class="carousel__navigation-button"></a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#slide2" class="carousel__navigation-button"></a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#slide3" class="carousel__navigation-button"></a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#slide4" class="carousel__navigation-button"></a>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Manajemen Kearsipan Section -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text" style="direction: column; align-items: center">
+        <h1>Manajemen Kearsipan</h1>
+      </div>
+      <div class="welcome-img">
+        <ul class="cards">
+          <li class="card">
+            <div>
+              <h3 class="card-title">SK</h3>
+              <div class="card-content">
+                <img src="../assets/img/SK-BPS.png" style="width: 60px; height: 60px" alt="SK" />
+                <p>Surat Keputusan</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Srikandi</h3>
+              <div class="card-content">
+                <img src="../assets/img/SRIKANDI-BPS.png" style="width: 60px; height: 60px" alt="Srikandi" />
+                <p>Sistem Informasi Kearsipan Dinamis Terintegrasi</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">SIMPENSU</h3>
+              <div class="card-content">
+                <img src="../assets/img/SIMPENSU-BPS.png" style="width: 60px; height: 60px" alt="SIMPENSU" />
+                <p>Sistem Penatausahaan Surat Digital BPS Kota Surabaya</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">SEKAR</h3>
+              <div class="card-content">
+                <img src="../assets/img/Sekar-BPS.png" style="width: 60px; height: 60px" alt="SEKAR" />
+                <p>Sistem Entri Kelola Arsip</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!--Manajemen BMN Section -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Manajemen BMN</h1>
+      </div>
+
+      <div class="welcome-img">
+        <ul class="cards">
+          <li class="card">
+            <div>
+              <h3 class="card-title">Barang Milik Negara</h3>
+              <div class="card-content">
+                <img src="../assets/img/BMN-BPS.png" style="width: 60px; height: 60px" alt="Barang Milik Negara" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Berkas Pengarsipan</h3>
+              <div class="card-content">
+                <img src="../assets/img/Arsip-BPS.png" style="width: 60px; height: 60px" alt="Berkas Pengarsipan" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+
+          <li class="card">
+            <div>
+              <h3 class="card-title">Persediaan</h3>
+              <div class="card-content">
+                <img src="../assets/img/Persediaan-BPS.png" style="width: 60px; height: 60px" alt="Persediaan" />
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Manajemen Keuangan -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Manajemen Keuangan</h1>
+      </div>
+      <div class="welcome-img">
+        <ul class="cards">
+          <li class="card">
+            <div>
+              <h3 class="card-title">SPIDER</h3>
+              <div class="card-content">
+                <img src="../assets/img/SPIDER-BPS.png" alt="SPIDER" style="width: 60px; height: 60px" />
+                <p>Sistem Evaluasi dan Pelaporan Dokumen Berkala</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">SAKTI</h3>
+              <div class="card-content">
+                <img src="../assets/img/SAKTI-BPS.png" alt="SAKTI" style="width: 60px; height: 60px" />
+                <p>Sistem Aplikasi Keuangan Tingkat Instansi</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">SPANINT</h3>
+              <div class="card-content">
+                <img src="../assets/img/SPANINT-BPS.png" alt="SPANINT" style="width: 60px; height: 60px" />
+                <p>Online Monitoring Sistem Perbendaharaan dan Anggaran Negara</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">Monev BAPPENAS</h3>
+              <div class="card-content">
+                <img src="../assets/img/MONEV-BPS.png" alt="Monev BAPPENAS" style="width: 60px; height: 60px" />
+                <p>Pelaporan dan Pengendalian Pelaksanaan Rencana Pembangunan Nasional</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+          <li class="card">
+            <div>
+              <h3 class="card-title">BackOffice</h3>
+              <div class="card-content">
+                <img src="../assets/img/BackOffice-BPS.png" alt="BackOffice" style="width: 60px; height: 60px" />
+                <p>Sistem Informasi Manajemen terintegrasi untuk mendukung siklus APBN di BPS</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="#" class="card-link">Lihat Detail</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Lainnya -->
+    <section class="lainnya" id="lainnya">
       <div class="container">
+        <div class="welcome-text">
+          <h1>Sistem Lainnya</h1>
+        </div>
         <div class="welcome-content">
-          <div class="welcome-text fade-in">
-            <h2>Tentang Subbag Umum</h2>
-            <p>Sub Bagian Umum ditugaskan menyelenggarakan administrasi umum meliputi perencanaan, keuangan, kepegawaian, hubungan masyarakat, hukum & organisasi, arsip, persandian, barang milik negara, perlengkapan, dan rumah tangga.</p>
-          </div>
-          <div class="welcome-illustration fade-in">
-            <img src="../assets/img/SubbagUmum.png" alt="Img Subbag Umum" style="width: 250px; height:auto" />
-          </div>
-        </div>
-<!-- Manajemen Kepgewaian Section -->
-    <section class="kepegawaian" id="kepegawaian">
-        <div class="container">
-            <div class="welcome-content">
-                <div class="Kepegawaian fade-in">
-                    <h2>Manajemen Kepegawaian</h2>
-                    <div class="carousel">
-                        <div class="carousel__viewport">
-                            <!-- Slide 1: SIMPEG-BPS -->
-                            <div class="carousel__slide">
-                                <div class="carousel__snapper"></div>
-                                <div class="col">
-                                    <img src="../assets/img/SIMPEG-BPS.png" style="width: 50px; height:50px"/><br>
-                                    <a href="https://r.search.yahoo.com/_ylt=AwrKHBMS6dloHAIAEH3LQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760321042/RO=10/RU=https%3a%2f%2fsimpeg.bps.go.id%2fdata%2f/RK=2/RS=iphMI4o1bny9R1fM5XWZSjTNQpE-" class="a-Kepegawaian">SIMPEG-BPS</a>
-                                    <p class="p-Kepegawaian">Sistem Kepegawaian BPS</p>
-                                </div>
-                            </div>
-
-                            <!-- Slide 2: SIPECUT -->
-                            <div class="carousel__slide">
-                                <div class="carousel__snapper"></div>
-                                <div class="col">
-                                    <img src="../assets/img/SIPECUT-BPS.png" style="width: 50px; height:50px"/><br>
-                                    <a href="https://r.search.yahoo.com/_ylt=Awrx_VA66dloHQIA6FnLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760321082/RO=10/RU=https%3a%2f%2fsipecut.bps.go.id%2f/RK=2/RS=hf9ujv1ww.NErObQayqKd6ptaao-" class="a-Kepegawaian">SIPECUT</a>
-                                    <p class="p-Kepegawaian">Sistem Pengajuan Cuti</p>
-                                </div>
-                            </div>
-
-                            <!-- Slide 3: SIIMUT -->
-                            <div class="carousel__slide">
-                                <div class="carousel__snapper"></div>
-                                <div class="col">
-                                    <img src="../assets/img/SIIMUT-BPS.png" style="width: 50px; height:50px"/><br>
-                                    <a href="" class="a-Kepegawaian">SIIMUT</a>
-                                    <p class="p-Kepegawaian">Sistem Informasi Manajemen User dan Tambahan</p>
-                                </div>
-                            </div>
-                            <!-- Slide 5: Peningkatan Kompetensi Pegawai -->
-                            <div class="carousel__slide">
-                                <div class="carousel__snapper"></div>
-                                <div class="col">
-                                    <img src="../assets/img/KompetensiPegawai-BPS.png" style="width: 50px; height:50px"/><br>
-                                    <a href="" class="a-Kepegawaian">Peningkatan Kompetensi Pegawai</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Navigation Dots -->
-                        <div class="carousel__navigation">
-                            <ol class="carousel__navigation-list">
-                                <li class="carousel__navigation-item">
-                                    <a href="#slide1" class="carousel__navigation-button"></a>
-                                </li>
-                                <li class="carousel__navigation-item">
-                                    <a href="#slide2" class="carousel__navigation-button"></a>
-                                </li>
-                                <li class="carousel__navigation-item">
-                                    <a href="#slide3" class="carousel__navigation-button"></a>
-                                </li>
-                                <li class="carousel__navigation-item">
-                                    <a href="#slide4" class="carousel__navigation-button"></a>
-                                </li>
-                            </ol>
-                        </div>
+          <div class="fade-in">
+            <!-- Main Systems Grid -->
+            <div class="main-grid">
+              <!-- SPM Card -->
+              <div class="system-card">
+                <div class="card-header">
+                  <img src="../assets/img/SPM-BPS.png" alt="SPM" />
+                  <div class="card-title">
+                    <h3>SPM - BPS</h3>
+                    <p class="p-Kepegawaian">Sistem Evaluasi dan Pelaporan Dokumen Berkala</p>
+                  </div>
+                  <div class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                      <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-        <!--Manajemen Kearsipan Section -->
-        <section class="kearsipan" id="kearsipan">
-  <div class="container">
-    <h2>Manajemen Kearsipan</h2>
-    <ul class="cards">
-      <li class="card">
-        <div>
-          <h3 class="card-title">SK</h3>
-          <div class="card-content">
-            <img src="../assets/img/SK-BPS.png" style="width: 60px; height:60px" alt="SK">
-            <p>Surat Keputusan</p>
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">Srikandi</h3>
-          <div class="card-content">
-            <img src="../assets/img/SRIKANDI-BPS.png" style="width: 60px; height:60px" alt="Srikandi">
-            <p>Sistem Informasi Kearsipan Dinamis Terintegrasi</p>
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">SIMPENSU</h3>
-          <div class="card-content">
-            <img src="../assets/img/SIMPENSU-BPS.png" style="width: 60px; height:60px" alt="SIMPENSU">
-            <p>Sistem Penatausahaan Surat Digital BPS Kota Surabaya</p>
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">SEKAR</h3>
-          <div class="card-content">
-            <img src="../assets/img/Sekar-BPS.png" style="width: 60px; height:60px" alt="SEKAR">
-            <p>Sistem Entri Kelola Arsip</p>
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-        <!--Manajemen BMN Section -->
-        <section class="BMN" id="BMN">
-          <div class="container">
-          <div class="welcome-content">
-            <div class="welcome-text fade-in" >
-            <h2>Manajemen BMN</h2>
-            </div>
-          </div>
-          </div>
-          </div>
-        </section>
-        <!-- Manajemen Keuangan -->
-  <section class="keuangan" id="keuangan">
-  <div class="container">
-    <h2>Manajemen Keuangan</h2>
-    <ul class="cards">
-      <li class="card">
-        <div>
-          <h3 class="card-title">SPIDER</h3>
-          <div class="card-content">
-            <img src="../assets/img/SPIDER-BPS.png" alt="SPIDER" style="width: 60px; height:60px"/>
-            <p>Sistem Evaluasi dan Pelaporan Dokumen Berkala</p>
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">SAKTI</h3>
-          <div class="card-content">
-            <img src="../assets/img/SAKTI-BPS.png" alt="SAKTI" style="width: 60px; height:60px"/>
-            <p>Sistem Aplikasi Keuangan Tingkat Instansi</p>
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">SPANINT</h3>
-          <div class="card-content">
-            <img src="../assets/img/SPANINT-BPS.png" alt="SPANINT" style="width: 60px; height:60px"/>
-            <p>Online Monitoring Sistem Perbendaharaan dan Anggaran Negara</p>
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">Monev BAPPENAS</h3>
-          <div class="card-content">
-            <img src="../assets/img/MONEV-BPS.png" alt="Monev BAPPENAS" style="width: 60px; height:60px"/>
-            <p>Pelaporan dan Pengendalian Pelaksanaan Rencana Pembangunan Nasional</p>
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-      <li class="card">
-        <div>
-          <h3 class="card-title">BackOffice</h3>
-          <div class="card-content">
-            <img src="../assets/img/BackOffice-BPS.png" alt="BackOffice" style="width: 60px; height:60px"/>
-            <p>Sistem Informasi Manajemen terintegrasi untuk mendukung siklus APBN di BPS</p>
-          </div>
-        </div>
-        <div class="card-link-wrapper">
-          <a href="#" class="card-link">Lihat Detail</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
- <!-- Lainnya -->
-  <section class="lainnya" id="lainnya">
-        <div class="container">
-            <h2>Sistem Lainnya</h2>
-            <div class="welcome-content">
-                <div class="fade-in">
-                    
-                    <!-- Main Systems Grid -->
-                    <div class="main-grid">
-                        <!-- SPM Card -->
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/SPM-BPS.png" alt="SPM"/>
-                                <div class="card-title">
-                                    <h3>SPM - BPS</h3>
-                                    <p class="p-Kepegawaian">Sistem Evaluasi dan Pelaporan Dokumen Berkala</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Evaluasi Dokumen</a>
-                                        <a href="#">Pelaporan Berkala</a>
-                                        <a href="#">Monitoring SPM</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- RPD Card -->
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/RPD-BPS.png" alt="RPD"/>
-                                <div class="card-title">
-                                    <h3>RPD - BPS</h3>
-                                    <p class="p-Kepegawaian">Rencana Pembangunan Daerah</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Perencanaan Daerah</a>
-                                        <a href="#">Data Pembangunan</a>
-                                        <a href="#">Monitoring RPD</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- SPT Tahunan Card -->
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/SPTTahunan-BPS.png" alt="SPT Tahunan"/>
-                                <div class="card-title">
-                                    <h3>SPT Tahunan</h3>
-                                    <p class="p-Kepegawaian">Laporan SPT Tahunan</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Input SPT</a>
-                                        <a href="#">Verifikasi Data</a>
-                                        <a href="#">Laporan Tahunan</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- LKHASN Card -->
-                        <div class="system-card">
-                            <div class="card-header">
-                                <img src="../assets/img/LKHASN-BPS.png" alt="LKHASN"/>
-                                <div class="card-title">
-                                    <h3>LKHASN</h3>
-                                    <p class="p-Kepegawaian">Laporan LKHASN</p>
-                                </div>
-                                <div class="dropdown">
-                                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="dropdown-content">
-                                        <a href="#">Data LKHASN</a>
-                                        <a href="#">Analisis Laporan</a>
-                                        <a href="#">Publikasi</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="dropdown-content">
+                      <a href="#">Evaluasi Dokumen</a>
+                      <a href="#">Pelaporan Berkala</a>
+                      <a href="#">Monitoring SPM</a>
                     </div>
+                  </div>
                 </div>
+              </div>
+
+              <!-- RPD Card -->
+              <div class="system-card">
+                <div class="card-header">
+                  <img src="../assets/img/RPD-BPS.png" alt="RPD" />
+                  <div class="card-title">
+                    <h3>RPD - BPS</h3>
+                    <p class="p-Kepegawaian">Rencana Pembangunan Daerah</p>
+                  </div>
+                  <div class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-content">
+                      <a href="#">Perencanaan Daerah</a>
+                      <a href="#">Data Pembangunan</a>
+                      <a href="#">Monitoring RPD</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SPT Tahunan Card -->
+              <div class="system-card">
+                <div class="card-header">
+                  <img src="../assets/img/SPTTahunan-BPS.png" alt="SPT Tahunan" />
+                  <div class="card-title">
+                    <h3>SPT Tahunan</h3>
+                    <p class="p-Kepegawaian">Laporan SPT Tahunan</p>
+                  </div>
+                  <div class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-content">
+                      <a href="#">Input SPT</a>
+                      <a href="#">Verifikasi Data</a>
+                      <a href="#">Laporan Tahunan</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LKHASN Card -->
+              <div class="system-card">
+                <div class="card-header">
+                  <img src="../assets/img/LKHASN-BPS.png" alt="LKHASN" />
+                  <div class="card-title">
+                    <h3>LKHASN</h3>
+                    <p class="p-Kepegawaian">Laporan LKHASN</p>
+                  </div>
+                  <div class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-content">
+                      <a href="#">Data LKHASN</a>
+                      <a href="#">Analisis Laporan</a>
+                      <a href="#">Publikasi</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Susunan Organisas Section -->
+    <section class="team-structure" id="struktur">
+      <div class="container">
+        <h2>Struktur Tim</h2>
+
+        <div class="team-structure__members">
+          <div class="team-structure__row">
+            <div class="member-card">
+              <img src="../assets/pak-ali.png" alt="Ketua Tim" />
+              <div class="member-card__info">
+                <h3>Ketua Tim</h3>
+                <p>"My Trip My Adventure"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/pak-ali.png" alt="Anggota 1" />
+              <div class="member-card__info">
+                <h3>Anggota 1</h3>
+                <p>"Selalu Kompak dan Solid"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/pak-ali.png" alt="Anggota 2" />
+              <div class="member-card__info">
+                <h3>Anggota 2</h3>
+                <p>"Tepat Waktu dan Rapi"</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-structure__row">
+            <div class="member-card">
+              <img src="../assets/pak-ali.png" alt="Anggota 3" />
+              <div class="member-card__info">
+                <h3>Anggota 3</h3>
+                <p>"Siap Sedia Kapan Pun"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/pak-ali.png" alt="Anggota 4" />
+              <div class="member-card__info">
+                <h3>Anggota 4</h3>
+                <p>"Jaga Kesehatan Selalu"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Start -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
             <h3>BPS Kota Surabaya</h3>
             <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <p>Email: bps3578@bps.go.id</p>
             <p>Telepon: (031) 8296692</p>
           </div>
@@ -388,7 +531,7 @@
             <a href="#">Data Statistik</a>
             <a href="#">Dokumentasi</a>
             <a href="#">Layanan Kearsipan</a>
-            <a href="#">Pojok Statistik</a>
+            <a href="pojok-statistik.html">Pojok Statistik</a>
             <a href="#">Kelurahan Cantik</a>
           </div>
           <div class="footer-section">
@@ -420,9 +563,52 @@
         </div>
       </div>
     </footer>
+    <!-- Footer End -->
+
     <!-- Custom JavaScript -->
-     <script src="js/mobiscroll.javascript.min.js"></script>
-    <script src="../script2.js"></script>
+    <script>
+      function toggleDropdown(el) {
+        const dropdown = el.parentElement;
+        dropdown.classList.toggle("show");
+      }
+
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const sidebarToggle = document.getElementById("sidebarToggle");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Toggle submenu
+      document.querySelectorAll(".toggle-submenu").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const parent = btn.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+
+      // Scroll effect untuk navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+    <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-  

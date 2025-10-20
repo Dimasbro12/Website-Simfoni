@@ -3,34 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simfoni BPS Kota Surabaya - Pusat Informasi Statistik dan Kearsipan</title>
+    <title>Simfoni BPS Kota Surabaya</title>
     <meta name="description" content="Simfoni, pusat informasi kegiatan statistik dan kearsipan BPS Kota Surabaya. Menyajikan berbagai data, dokumentasi, dan layanan terintegrasi untuk transparansi dan kemudahan akses informasi." />
+    <link rel="icon" type="image/png" href="../assets/bps.png" />
 
     <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles/sakip.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header Start -->
     <header class="header" id="header">
-      <nav class="navbar container">
-        <a href="#" class="logo">
-          <i class="fas fa-chart-bar"></i>
-          BPS KOTA Surabaya
-        </a>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="../home.html">Home</a></li>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <!-- Hamburger di kiri -->
+          <button class="navbar-toggler text-white border-0" type="button" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="#"><img src="../assets/bps.png" alt="logo BPS" />BPS Kota Surabaya</a>
+
+          <!-- Menu untuk desktop -->
+          <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto text-center text-md-start">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="subbag.html">Subbag Umum</a></li>
+              <li class="nav-item"><a class="nav-link" href="#PSS">PSS</a></li>
+              <li class="nav-item"><a class="nav-link" href="pojok-statistik.html">Pojok Statistik</a></li>
+              <li class="nav-item"><a class="nav-link" href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button">Tim</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="ipds.html">IPDS</a></li>
+                  <li><a class="dropdown-item" href="humas.html">Humas</a></li>
+                  <li><a class="dropdown-item" href="sosial.html">Sosial</a></li>
+                  <li><a class="dropdown-item" href="produksi.html">Produksi</a></li>
+                  <li><a class="dropdown-item" href="nerwilis.html">Nerwilis</a></li>
+                  <li><a class="dropdown-item" href="sakip.html">Sakip-ZI</a></li>
+                  <li><a class="dropdown-item" href="harga.html">Harga</a></li>
+                  <li><a class="dropdown-item" href="disjas.html">Disjas</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar (Mobile) -->
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="subbag.html">Subbag Umum</a></li>
-          <li><a href="#rbzi">RB/ZI</a></li>
+          <li><a href="#pss">PSS</a></li>
           <li><a href="pojok-statistik.html">Pojok Statistik</a></li>
           <li><a href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
-          <li class="dropdown">
-            <a href="#tim" class="dropdown-toggle">Tim <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#umum">Umum</a></li>
+          <li class="has-submenu">
+            <a href="#" class="toggle-submenu"> Lainnya <i class="fa-solid fa-chevron-down"></i> </a>
+            <ul class="submenu">
               <li><a href="ipds.html">IPDS</a></li>
               <li><a href="humas.html">Humas</a></li>
               <li><a href="sosial.html">Sosial</a></li>
@@ -42,68 +81,532 @@
             </ul>
           </li>
         </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
     </header>
+    <!-- Header End -->
 
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="hero-content">
         <h1>Sakip-ZI</h1>
-        <p>Mengenal Struktur Organisasi, Profil, dan Tugas Tim Sakip-ZI Dan Jasa BPS Kota Surabaya</p>
-        <a href="#welcome" class="cta-button">Kunjungi Lebih Lanjut</a>
+        <p>Mengenal Struktur Organisasi, Profil, dan Tugas Tim Sakip-ZI BPS Kota Surabaya</p>
       </div>
     </section>
 
-    <!-- Welcome Section -->
+    <!-- Welcome Start-->
     <section class="welcome" id="welcome">
-      <div class="container">
-        <div class="welcome-content">
-          <div class="welcome-text fade-in">
-            <h2>Tentang Tim Sakip-ZI</h2>
-            <p>
-              Tim Sakip-ZI berperan dalam mengoordinasikan implementasi Sistem Akuntabilitas Kinerja Instansi Pemerintah (SAKIP) dan Zona Integritas (ZI), guna mendorong kinerja yang efektif, transparan, serta berorientasi pada pelayanan publik yang berkualitas.
-            </p>
+      <div class="welcome-text">
+        <h1>Tentang Sakip-ZI</h1>
+        <p>
+          Sistem Akuntabilitas Kinerja Instansi Pemerintah (SAKIP), yang merupakan sistem yang dirancang untuk menetapkan, mengukur, dan melaporkan kinerja instansi pemerintah. SAKIP bertujuan untuk meningkatkan akuntabilitas dan
+          efektivitas birokrasi dalam menjalankan tugas dan tanggung jawabnya kepada publik.
+        </p>
+      </div>
+      <div class="welcome-img">
+        <img src="../assets/welcome-sakip.png" alt="Selamat Datang" />
+      </div>
+    </section>
+    <!-- Welcome End-->
+
+    <!-- Struktur Tim Kerja Start -->
+    <div class="card-section">
+      <h1 class="section-title">Struktur Tim Kerja Sakip-ZI</h1>
+      <p class="section-subtitle">Kolaborasi dan dedikasi untuk membangun Zona Integritas yang berkualitas</p>
+      <div class="card-grid">
+        <div class="card-item fade-in">
+          <img src="../assets/zona-integritas.png" alt="zona-integritas" />
+          <h3>Surat Keterangan Tim Zona Integritas</h3>
+          <p>Mempermudah pengumpulan dan pencarian bukti dukung.</p>
+          <button class="card-btn">Lihat Detail</button>
+        </div>
+        <div class="card-item fade-in">
+          <img src="../assets/rencana-kerja-sakip.png" alt="rencana-kerja-sakip" />
+          <h3>Pedoman Rencana Kerja ZI</h3>
+          <p>Dukungan untuk pegawai BPS Kota Surabaya</p>
+          <button class="card-btn">Lihat Detail</button>
+        </div>
+        <div class="card-item fade-in">
+          <img src="../assets/monev-pembangunan.png" alt="BIS" />
+          <h3>Monev Pembangunan ZI</h3>
+          <p>Administrasi yang lebih efisien dan terintegrasi</p>
+          <button class="card-btn">Lihat Detail</button>
+        </div>
+      </div>
+    </div>
+    <!-- Struktur Tim Kerja End -->
+
+    <!-- Pilar 1 Start -->
+    <section class="cards-container">
+      <h1>Pilar I Manajemen Perubahan</h1>
+      <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Pespa</h2>
+            <img src="../assets/apel-pagi.png" alt="Pespa" />
+            <button class="scroll-btn">Lihat Detail</button>
           </div>
-          <div class="welcome-img fade-in">
-            <img src="../assets/welcome-distribusi.png" alt="" width="700" height="600" style="border-radius: 15px;" >
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Sejuta Rasa</h2>
+            <img src="../assets/senam-pagi.png" alt="Sejuta Rasa" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Dharma</h2>
+            <img src="../assets/Dharma.png" alt="Dharma" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Khatmil Qur'an</h2>
+            <img src="../assets/khotmil.png" alt="Khotmil" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Shalat Tepat Waktu</h2>
+            <img src="../assets/sholat.png" alt="Sholat" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Surabaya Berbagi</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
           </div>
         </div>
       </div>
-    </section> 
-    
+    </section>
+    <!-- Pilar 1 End -->
+
+    <!-- Pilar 2 Start -->
+    <section class="cards-container">
+      <h1>Pilar II Manajemen Perubahan</h1>
+      <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SOP Kegiatan</h2>
+            <img src="../assets/SOP-sakip.png" alt="SOP-sakip" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SOP Inovasi</h2>
+            <img src="../assets/Inovasi-sakip.png" alt="Inovasi sakip" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SIMFONI</h2>
+            <img src="../assets/simfoni-sakip.png" alt="SIMFONI" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SIMPENSU</h2>
+            <img src="../assets/simpensu-sakip.png" alt="SIMPENSU" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pilar 2 End -->
+
+    <!-- Pilar 3 Start -->
+    <section class="cards-container">
+      <h1>Pilar III Penataan Sistem Manajemen SDM</h1>
+      <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Sibook</h2>
+            <img src="../assets/sibook.png" alt="Sibook" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SKAK</h2>
+            <img src="../assets/skak.png" alt="SKAK" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Majapahit</h2>
+            <img src="../assets/Dharma.png" alt="Dharma" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Bromo</h2>
+            <img src="../assets/khotmil.png" alt="Khotmil" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pilar 3 End -->
+
+    <!-- Pilar 4 Start -->
+    <section class="cards-container">
+      <h1>Pilar IV Penguatan Akuntabilitas</h1>
+      <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Sinar Sakip</h2>
+            <img src="../assets/sinar-sakip.png" alt="Sinar-sakip" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">BOS</h2>
+            <img src="../assets/bos-sakip.png" alt="BOS-sakip" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Penataran</h2>
+            <img src="../assets/penataran.png" alt="Penataran" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SIPENA</h2>
+            <img src="../assets/sipena-sakip.png" alt="Sipena" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Srikandi</h2>
+            <img src="../assets/sholat.png" alt="Sholat" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">FRA</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Sekar</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">KipApp</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SIMONIK</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pilar 4 End -->
+
+    <!-- Pilar 5 Start -->
+    <section class="cards-container">
+      <h1>Pilar V Penguatan Pengawasan</h1>
+      <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Lapor</h2>
+            <img src="../assets/Lapor-sakip.png" alt="Lapor" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Public Campaign</h2>
+            <img src="../assets/kampanye-publik-sakip.png" alt="Kampanye Publik" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Quality Gate</h2>
+            <img src="../assets/Dharma.png" alt="Dharma" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Perisai</h2>
+            <img src="../assets/perisai-sakip.png" alt="Perisai" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">2-1-2 SUSENAS</h2>
+            <img src="../assets/sholat.png" alt="Sholat" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">KEN AROK</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Internaslis SPIP</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SIMOVIE</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pilar 5 End -->
+
+    <!-- Pilar 6 Start -->
+    <section class="cards-container">
+      <h1>Pilar VI Peningkatan Kualitas Pelayanan</h1>
+      <div class="cards-scroll">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">PST Mbois</h2>
+            <img src="../assets/apel-pagi.png" alt="Pespa" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Mbois Sekali</h2>
+            <img src="../assets/senam-pagi.png" alt="Sejuta Rasa" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Metro SATA</h2>
+            <img src="../assets/Dharma.png" alt="Dharma" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">PESSONA</h2>
+            <img src="../assets/khotmil.png" alt="Khotmil" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Mboisstat</h2>
+            <img src="../assets/sholat.png" alt="Sholat" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Pojok Statitik</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Kelurahan Cantik</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">BE-IZI</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Alaram Mbois</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">MEKAR</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">SIMDASI</h2>
+            <img src="../assets/surabaya-berbagi.png" alt="Surabaya Berbagi" />
+            <button class="scroll-btn">Lihat Detail</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pilar 6 End -->
+
+    <section class="archive-activity">
+      <div class="archive-activity__header">
+        <h1 class="archive-activity__title">Dokumentasi Kegiatan</h1>
+        <p class="archive-activity__subtitle">Kumpulan arsip kegiatan dari Tim Sakip-ZI</p>
+      </div>
+
+      <div class="archive-activity__content">
+        <div class="archive-activity__grid">
+          <div class="archive-card">
+            <div class="archive-card__year">Dokumentasi</div>
+            <div class="archive-card__body">
+              <div
+                class="pa-gallery-player-widget"
+                style="width: 100%; height: 220px"
+                data-link="https://photos.google.com/share/AF1QipNM29xnjJSCdiY-5OLcjqbPkRJg5Eu3FY8V_mlkGLUKgeiLEsO4eiJLqR2PDNQ1Qg?key=d09FLWQ4RlJWX0tHTnl0RjFYczhZUGo2dUlxNDF3"
+                data-background-color="#003366"
+                data-title="Dokumentasi Kegiatan Sakip-ZI BPS Kota Surabaya"
+                data-description="Shared album · Tap to view!"
+              >
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczOVB4GxgCq1XiYSMjs7iUCA2TjlQYSLDnwQIU7RDjopREBfzv72nL8tUrjdH9iZea6rnAh6Ed5IDJu1qF6jcRSee3BnldOmgVZhSNoHqOS7nsgUhD0=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczP2FTJXIOuwcN0-OW3RLbF-XbgazzHjJHPEgBYD39flpKjPVKRM2rVSU9A3fFZaTwkmAyVDY-Iyk4JzI2QDb9OD4SCDqdUOANtPzb1pnRllB_zpIDk=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczP2FTJXIOuwcN0-OW3RLbF-XbgazzHjJHPEgBYD39flpKjPVKRM2rVSU9A3fFZaTwkmAyVDY-Iyk4JzI2QDb9OD4SCDqdUOANtPzb1pnRllB_zpIDk=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczP2FTJXIOuwcN0-OW3RLbF-XbgazzHjJHPEgBYD39flpKjPVKRM2rVSU9A3fFZaTwkmAyVDY-Iyk4JzI2QDb9OD4SCDqdUOANtPzb1pnRllB_zpIDk=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczP2FTJXIOuwcN0-OW3RLbF-XbgazzHjJHPEgBYD39flpKjPVKRM2rVSU9A3fFZaTwkmAyVDY-Iyk4JzI2QDb9OD4SCDqdUOANtPzb1pnRllB_zpIDk=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczP2FTJXIOuwcN0-OW3RLbF-XbgazzHjJHPEgBYD39flpKjPVKRM2rVSU9A3fFZaTwkmAyVDY-Iyk4JzI2QDb9OD4SCDqdUOANtPzb1pnRllB_zpIDk=w1920-h1080"></object>
+              </div>
+            </div>
+            <div class="archive-card__action">
+              <button class="archive-card__button">Lihat Arsip</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Arsip Start -->
+    <section class="arsip-section">
+      <h1 class="arsip-title">Arsip Kegiatan</h1>
+      <div class="laporan-section">
+        <div class="laporan-kegiatan">
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0AfBX5G_rsoYukklJHGfl5m1VsJX3PQrjJSoEXl4HD96_bpUOk6dqGXwyMQ96ow/pubhtml?widget=true&amp;headers=false"
+            style="width: 100%; min-height: 500px; border: none; display: block"
+            allowfullscreen
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+      <div class="arsip-cards">
+        <div class="arsip-grid">
+          <!-- KARTU 1 -->
+          <div class="arsip-card">
+            <img src="../assets/bukti-dukung.png" alt="Perjadin" />
+            <div class="arsip-card-info">
+              <a href="#">Bukti Dukung Pembangunan ZI.</a>
+              <p class="arsip-desc">Dokumen final pendukung capaian ZI.</p>
+            </div>
+            <div class="arsip-dropdown">
+              <div class="arsip-toggle" onclick="toggleDropdown(this)"><i class="fa-solid fa-chevron-down"></i></div>
+              <div class="arsip-menu">
+                <a href="#">Lihat Dokumen</a>
+              </div>
+            </div>
+          </div>
+          <!-- KARTU 2 -->
+          <div class="arsip-card">
+            <img src="../assets/bukti-sementara.png" alt="Apel Asik" />
+            <div class="arsip-card-info">
+              <a href="#">Bukti Dukung Sementara Pembangunan ZI</a>
+              <p class="arsip-desc">Kumpulan eviden sementara untuk ZI.</p>
+            </div>
+            <div class="arsip-dropdown">
+              <div class="arsip-toggle" onclick="toggleDropdown(this)"><i class="fa-solid fa-chevron-down"></i></div>
+              <div class="arsip-menu"><a href="#">Lihat Dokumen</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Arsip End -->
+
     <!-- Susunan Organisas Section -->
-    <section class="struktur" id="struktur">
+    <section class="team-structure" id="struktur">
       <div class="container">
-        <div class="welcome-content">
-          <div class="welcome-text fade-in" >
-            <h2>Struktur Tim</h2>
-            <div class="stats">
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="../assets/ketua-humas.png" alt="Ketua Tim Humas">
-                    </div>
-                    <div class="flip-card-back">
-                      <p class="title">Ketua Tim</p>
-                      <p>"Jalani profesimu dengan sepenuh hati"</p>
-                    </div>
-                </div>
+        <h2>Struktur Tim</h2>
+
+        <div class="team-structure__members">
+          <div class="team-structure__row">
+            <div class="member-card">
+              <img src="../assets/ketua-sakip.png" alt="Ketua Tim" />
+              <div class="member-card__info">
+                <h3>Ketua Tim</h3>
+                <p>"My Trip My Adventure"</p>
               </div>
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../assets/ketua-humas.png" alt="Ketua Tim Humas">
-                      </div>
-                      <div class="flip-card-back">
-                        <p class="title">Anngota Tim</p>
-                        <p>"My Trip My Adventure"</p>
-                      </div>
-                </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/ketua-sakip.png" alt="Anggota 1" />
+              <div class="member-card__info">
+                <h3>Anggota 1</h3>
+                <p>"Selalu Kompak dan Solid"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/ketua-sakip.png" alt="Anggota 2" />
+              <div class="member-card__info">
+                <h3>Anggota 2</h3>
+                <p>"Tepat Waktu dan Rapi"</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-structure__row">
+            <div class="member-card">
+              <img src="../assets/ketua-sakip.png" alt="Anggota 3" />
+              <div class="member-card__info">
+                <h3>Anggota 3</h3>
+                <p>"Siap Sedia Kapan Pun"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/ketua-sakip.png" alt="Anggota 4" />
+              <div class="member-card__info">
+                <h3>Anggota 4</h3>
+                <p>"Jaga Kesehatan Selalu"</p>
               </div>
             </div>
           </div>
@@ -111,115 +614,22 @@
       </div>
     </section>
 
-    <!-- Statistik Kependudukan dan Ketenagakerjaan -->
-    <section class="produksi" id="produksi">
-      <div class="container">
-        <h2>Statistik Distribusi</h2>
-        <div class="row">
-          <div class="col">
-            <img src="../assets/distribusi2.png" alt="Statistik Kependudukan dan Ketenagakerjaan" style="width: 250px; height:auto">
-          </div>
-          <div class="col">
-            <div class="content">
-              <div class="text-box">
-              <p>Tim kami menangani statistik pertanian dan industri secara profesional.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="main-grid">
-          <div class="system-card">
-              <div class="card-header">
-                  <img src="../beta_project/assets/img/SPM-BPS.png" alt="SPM"/>
-                  <div class="card-title">
-                      <h3>VPEK</h3>
-                      <p class="p-Kepegawaian">Statistik Jasa Penunjang Angkutan</p>
-                  </div>
-                  <div class="dropdown">
-                      <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                          <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                      <div class="dropdown-content">
-                          <a href="#">IBS Bulanan</a>
-                          <a href="#">IBS Tahunan</a>
-                          <a href="#">IMK Tahunan</a>
-                          <a href="#">IMK Triwulan</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="system-card">
-              <div class="card-header">
-                  <img src="../beta_project/assets/img/RPD-BPS.png" alt="RPD"/>
-                  <div class="card-title">
-                      <h3>VPBD</h3>
-                      <p class="p-Kepegawaian">Survei Perdagangan Barang Kosmetik</p>
-                  </div>
-                  <div class="dropdown">
-                      <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                          <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                      <div class="dropdown-content">
-                          <a href="#">Survei Kontruksi Triwulan</a>
-                          <a href="#">Survei Kontruksi Tahunan</a>
-                          <a href="#">Survei Captive Power</a>
-                          <a href="#">UDP</a>
-                      </div>
-                  </div>
-              </div>
-          </div>                         
-          <div class="system-card">
-              <div class="card-header">
-                  <img src="../beta_project/assets/img/RPD-BPS.png" alt="RPD"/>
-                  <div class="card-title">
-                      <h3>SPDB</h3>
-                      <p class="p-Kepegawaian">Survei Pola Distribusi Barang</p>
-                  </div>
-                  <div class="dropdown">
-                      <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                          <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                      <div class="dropdown-content">
-                          <a href="#">Survei Kontruksi Triwulan</a>
-                          <a href="#">Survei Kontruksi Tahunan</a>
-                          <a href="#">Survei Captive Power</a>
-                          <a href="#">UDP</a>
-                      </div>
-                  </div>
-              </div>
-          </div>                         
-          <div class="system-card">
-              <div class="card-header">
-                  <img src="../beta_project/assets/img/RPD-BPS.png" alt="RPD"/>
-                  <div class="card-title">
-                      <h3>SPUNP</h3>
-                      <p class="p-Kepegawaian">Survei Pola Usaha Non Pertanian</p>
-                  </div>
-                  <div class="dropdown">
-                      <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                          <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                      <div class="dropdown-content">
-                          <a href="#">Survei Kontruksi Triwulan</a>
-                          <a href="#">Survei Kontruksi Tahunan</a>
-                          <a href="#">Survei Captive Power</a>
-                          <a href="#">UDP</a>
-                      </div>
-                  </div>
-              </div>
-          </div>                         
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer Start -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
             <h3>BPS Kota Surabaya</h3>
             <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
-            <p>Jl. Ahmad Yani No.152E, Gayungan, Kec. Gayungan, Surabaya, Jawa Timur 60235</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <p>Email: bps3578@bps.go.id</p>
             <p>Telepon: (031) 8296692</p>
           </div>
@@ -228,26 +638,84 @@
             <a href="#">Data Statistik</a>
             <a href="#">Dokumentasi</a>
             <a href="#">Layanan Kearsipan</a>
-            <a href="#">Pojok Statistik</a>
+            <a href="pojok-statistik.html">Pojok Statistik</a>
             <a href="#">Kelurahan Cantik</a>
           </div>
           <div class="footer-section">
             <h3>Hubungi Kami</h3>
             <p>Ikuti media sosial kami untuk update terbaru</p>
             <div class="social-links">
-              <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/surabayakota.bps.go.id/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPo5btTNZoTAIAKPbLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084462/RO=10/RU=https%3a%2f%2ftwitter.com%2fbps_surabaya/RK=2/RS=lOK88kby79v.CKODxjVvgx4R7GI-"
+                title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPrqQ9TdZoGQIACCvLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084542/RO=10/RU=https%3a%2f%2fwww.instagram.com%2fbpskotasurabaya%2f/RK=2/RS=A.x9yjFwkHyFoZw.jW97bxuM0eM-"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrKAX7GTdZoEAIAnZDLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084678/RO=10/RU=https%3a%2f%2fwww.youtube.com%2f%40bpskotasurabaya3578/RK=2/RS=3.S5VICmokrlo9U3LBzg3k4TV5I-"
+                title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" title="Website"><i class="fab fa-globe"></i></a>
             </div>
           </div>
-        </div class="footer-bottom">
-        <p>&copy; 2025 BPS Kota Surabaya. Semua hak dilindungi undang-undang.</p>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 BPS Kota Surabaya. Semua hak dilindungi undang-undang.</p>
+        </div>
       </div>
     </footer>
+    <!-- Footer End -->
 
     <!-- Custom JavaScript -->
-    <script src="../script2.js"></script>
+    <script>
+      function toggleDropdown(el) {
+        const dropdown = el.parentElement;
+        dropdown.classList.toggle("show");
+      }
+
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const sidebarToggle = document.getElementById("sidebarToggle");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Toggle submenu
+      document.querySelectorAll(".toggle-submenu").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const parent = btn.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+
+      // Scroll effect untuk navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+    <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

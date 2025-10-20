@@ -1,371 +1,657 @@
-/* =================================
-   RESET & BASE STYLES
-================================= */
+@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i");
+:root {
+  --orange: #fd9940;
+  --darkorange: #dd7d25;
+  --platinum: #e5e5e5;
+  --black: #2b2d42;
+  --white: #fff;
+  --thumb: #edf2f4;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  line-height: 1.6;
-  color: #333;
   overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 /* =================================
-   HEADER & NAVIGATION
+  Navbar
 ================================= */
-.header {
+.navbar {
   background: rgba(0, 51, 102, 0.95);
   backdrop-filter: blur(10px);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
   transition: all 0.3s ease;
+  padding: 0;
 }
 
-.header.scrolled {
+.navbar.scrolled {
   background: rgba(0, 51, 102, 1);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  color: white;
-  text-decoration: none;
+.navbar-brand {
+  color: white !important;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.logo i {
-  margin-right: 10px;
+.navbar-brand i {
   color: #ff6600;
   font-size: 2rem;
 }
 
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
+.navbar-brand img {
+  height: 40px;
+  width: auto;
 }
 
-.nav-menu a {
+.navbar-nav {
+  gap: 1rem;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.5rem;
   color: white;
-  text-decoration: none;
+  margin: auto 10px;
+}
+
+.nav-link {
+  position: relative;
+  color: white !important;
   font-weight: 500;
   transition: color 0.3s ease;
-  position: relative;
 }
 
-.nav-menu a:hover {
-  color: #ff6600;
-}
-
-.nav-menu a::after {
+/* Garis bawah efek hover hanya untuk link selain dropdown */
+.nav-item:not(.dropdown) .nav-link::after {
   content: "";
   position: absolute;
+  bottom: 0px;
+  left: 0;
   width: 0;
   height: 2px;
-  bottom: -5px;
-  left: 0;
   background-color: #ff6600;
   transition: width 0.3s ease;
 }
 
-.nav-menu a:hover::after {
+.nav-item:not(.dropdown) .nav-link:hover {
+  color: #ff6600 !important;
+}
+
+.nav-item:not(.dropdown) .nav-link:hover::after {
   width: 100%;
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  margin: 3px 0;
-  transition: 0.3s;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-/* Dropdown Menu */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-toggle {
+/* Dropdown "Tim" */
+.dropdown .nav-link {
+  color: white !important;
   display: flex;
   align-items: center;
   gap: 5px;
-}
-
-.dropdown-toggle i {
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.dropdown:hover .dropdown-toggle i {
-  transform: rotate(180deg);
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  min-width: 200px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  padding: 10px 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-  z-index: 1001;
-  list-style: none;
-}
-
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown-menu li {
-  margin: 0;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  color: #333 !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
   position: relative;
 }
 
-.dropdown-menu a:hover {
-  background: #f8f9fa;
+/* Panah bawah default */
+.dropdown .nav-link::after {
+  content: "\f078"; /* fa-chevron-down */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.7rem;
+  margin-left: 5px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: white;
+}
+
+/* Saat hover ubah jadi panah atas dan warna orange */
+.dropdown:hover .nav-link::after {
+  content: "\f077"; /* fa-chevron-up */
+  color: #ff6600;
+}
+
+.dropdown:hover .nav-link {
+  color: #ff6600 !important;
+}
+
+/* Dropdown menu */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.dropdown-menu {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 110px !important;
+  min-width: unset !important;
+  left: -20px;
+  right: auto;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Efek hover untuk item di dropdown menu */
+.dropdown-menu .dropdown-item {
+  position: relative;
+  color: #003366;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 10px;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+  color: #ff6600;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: transparent !important;
   color: #ff6600 !important;
   padding-left: 25px;
 }
 
-.dropdown-menu a::after {
-  display: none;
+.dropdown-menu .dropdown-item:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* === SIDEBAR (Untuk Responsif) === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 260px;
+  height: 100vh;
+  background: #2d4263;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 2000;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar .close-btn {
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  background: none;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  display: block;
+  color: white;
+  padding: 7px 0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.4s ease;
+}
+
+.sidebar.active ul li a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Tambahkan delay bertahap untuk setiap link agar muncul satu-satu */
+.sidebar.active ul li:nth-child(1) a {
+  transition-delay: 0.1s;
+}
+.sidebar.active ul li:nth-child(2) a {
+  transition-delay: 0.2s;
+}
+.sidebar.active ul li:nth-child(3) a {
+  transition-delay: 0.3s;
+}
+.sidebar.active ul li:nth-child(4) a {
+  transition-delay: 0.4s;
+}
+.sidebar.active ul li:nth-child(5) a {
+  transition-delay: 0.5s;
+}
+.sidebar.active ul li:nth-child(6) a {
+  transition-delay: 0.6s;
+}
+
+/* Awalnya submenu disembunyikan dan geser ke kiri */
+.sidebar .submenu {
+  padding-left: 15px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateX(-20px);
+  transition: all 0.4s ease;
+}
+
+/* Saat "Lainnya" diklik (aktif), submenu muncul dengan animasi ke kanan */
+.sidebar .has-submenu.active .submenu {
+  max-height: 500px; /* cukup besar agar semua link terlihat */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animasi link submenu muncul satu per satu dari kiri ke kanan */
+.sidebar .has-submenu.active .submenu li a {
+  opacity: 0;
+  transform: translateX(-15px);
+  transition: all 0.3s ease;
+}
+
+.sidebar .has-submenu.active .submenu li:nth-child(1) a {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.1s;
+}
+.sidebar .has-submenu.active .submenu li:nth-child(2) a {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+.sidebar .has-submenu.active .submenu li:nth-child(3) a {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+.sidebar .has-submenu.active .submenu li:nth-child(4) a {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.4s;
+}
+.sidebar .has-submenu.active .submenu li:nth-child(5) a {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.5s;
+}
+.sidebar .has-submenu.active .submenu li:nth-child(6) a {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.6s;
+}
+.sidebar .has-submenu.active .submenu li:nth-child(7) a {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.7s;
+}
+.sidebar .has-submenu.active .submenu li:nth-child(8) a {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.8s;
+}
+
+/* Atur tampilan panah default */
+.sidebar .toggle-submenu i {
+  transition: transform 0.3s ease;
+}
+
+/* Saat submenu aktif, rotasikan panah ke atas */
+.sidebar .has-submenu.active .toggle-submenu i {
+  transform: rotate(180deg);
+}
+
+/* Overlay ketika sidebar terbuka */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* TATA LETAK HAMBURGER DAN LOGO SAAT HP */
+@media (max-width: 991.98px) {
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .navbar-toggler {
+    order: 1;
+  }
+
+  .navbar-brand {
+    order: 2;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .sidebar,
+  .overlay {
+    display: none;
+  }
 }
 
 /* =================================
-   HERO SECTION
+  Welcome
 ================================= */
-.hero {
-  background: linear-gradient(135deg, rgba(0, 51, 102, 0.8), rgba(255, 102, 0, 0.6)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23003366" width="1200" height="600"/><g fill="%23ffffff" opacity="0.1"><circle cx="200" cy="150" r="80"/><circle cx="800" cy="200" r="120"/><circle cx="1000" cy="400" r="100"/><rect x="100" y="350" width="200" height="150" rx="20"/><rect x="600" y="100" width="150" height="200" rx="15"/></g></svg>');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+.welcome {
+  max-width: 1100px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 70px 8% 20px 8%;
+  background: #fafafa;
+  margin: 0 auto;
+}
+
+.welcome-text {
+  flex: 1;
+}
+
+.welcome-text h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.welcome-text p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+}
+
+.welcome-img {
+  flex: 1;
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.welcome-img img {
+  max-width: 50%;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  .welcome {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 8% 0 8%;
+  }
+  .welcome-text {
+    margin-bottom: 20px;
+  }
+}
+/* =================================
+  Hero
+================================= */
+.hero {
+  margin-top: 40px;
+  min-height: 50vh;
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.7), rgba(255, 102, 0, 0.5)), url("https://picsum.photos/1920/1080?blur=3");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: white;
-  position: relative;
+  color: #fff;
+  padding: 0;
 }
 
 .hero-content {
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fadeInUp 1s ease forwards 0.5s;
+  max-width: 1000px;
+  padding: 1rem;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .hero p {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.5rem, 1vw, 1rem);
   margin-bottom: 2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .cta-button {
   display: inline-block;
-  background: linear-gradient(45deg, #ff6600, #ff8533);
-  color: white;
-  padding: 15px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
-  transform: translateY(20px);
-  opacity: 0;
-  animation: fadeInUp 1s ease forwards 1s;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #ff6600;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+.cta-button:hover {
+  background: #ff3300;
+  transform: translateY(-3px);
 }
 
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 102, 0, 0.4);
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll; /* agar lancar di hp */
+    min-height: 40vh; /* tetap full view */
+  }
 }
 
 /* =================================
-   WELCOME SECTION
+   Struktur Tim
 ================================= */
-.welcome {
-  padding: 100px 0;
-  background: #f9f9f9;
+/* Kelas: struktur -> team-structure */
+.team-structure {
+  padding: 20px 0;
+  text-align: center;
 }
 
-.welcome-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+.team-structure h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+/* Kelas: stats -> team-structure__members */
+.team-structure__members {
+  /* Main container: Flexbox to arrange card rows */
+  display: flex;
+  flex-direction: column; /* Default: stack .team-structure__row vertically */
+  gap: 40px;
   align-items: center;
 }
 
-.welcome-text h2 {
-  font-size: 2.5rem;
-  color: #003366;
-  margin-bottom: 2rem;
-  font-weight: 700;
-}
-
-.welcome-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.welcome-illustration {
-  position: relative;
-  text-align: center;
-}
-
-.illustration-svg {
+/* Row wrapper */
+/* Kelas: baris-card -> team-structure__row */
+.team-structure__row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
   width: 100%;
-  max-width: 500px;
-  height: auto;
+  max-width: 900px;
 }
 
-/* =================================
-   STATS CARDS
-================================= */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 60px;
+/* ==================================
+        DESKTOP VIEW (Default / Width > 700px)
+      ================================== */
+/* Rules to combine 5 cards into 1 row on desktop */
+@media (min-width: 701px) {
+  .team-structure__members {
+    /* Change main container orientation to horizontal */
+    flex-direction: row;
+    /* Allow all items (now 2x .team-structure__row) to align */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping if width is close to 701px */
+  }
+
+  .team-structure__row {
+    /* Remove Flexbox influence on the row wrapper */
+    display: contents;
+    /* Changing 'display: flex' to 'display: contents' on .team-structure__row
+               will make its children (.member-card) direct children of .team-structure__members 
+               visually, allowing 5 cards to align. */
+  }
+
+  .member-card {
+    /* Default card width maintained */
+    width: 190px;
+    height: 320px;
+  }
 }
 
-.stat-card {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
+/* Member card */
+/* Kelas: card -> member-card */
+.member-card {
+  position: relative;
+  width: 190px;
+  height: 320px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.member-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.member-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.4s ease;
+}
+
+/* Member info appears on hover */
+/* Kelas: card-info -> member-card__info */
+.member-card__info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 2px 10px 2px;
+  background: black;
+  color: #fff;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.stat-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.member-card:hover .member-card__info {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.stat-card i {
-  font-size: 32px;
-  color: #ff6600;
-  margin-bottom: 15px;
+.member-card__info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
 }
 
-.stat-card h3 {
-  font-size: 24px;
-  color: #003366;
-  margin-bottom: 3px;
-  font-weight: 700;
-}
-
-.stat-card p {
-  color: #003366;
-  font-weight: 700;
-  font-size: 16px;
+.member-card__info p {
+  font-size: 0.9rem;
   margin: 0;
 }
 
-.stat-card p {
-  color: #666;
-  font-size: 0.9rem;
+/* ==================================
+        MOBILE VIEW (Width <= 700px)
+      ================================== */
+@media (max-width: 700px) {
+  .team-structure__members {
+    gap: 20px;
+    /* flex-direction: column; maintained */
+  }
+
+  .team-structure__row {
+    gap: 10px;
+  }
+
+  .member-card {
+    /* 3 cards per row layout on mobile */
+    width: calc(33.33% - 15px);
+    height: 200px;
+  }
+
+  /* If screen is very narrow (optional) */
+  @media (max-width: 420px) {
+    .member-card {
+      /* Back to 1 card per row */
+      width: 90%;
+      height: 300px;
+    }
+  }
 }
 
-.stat-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-.stat-card:hover .stat-card-inner {
-  transform: rotateX(180deg);
-}
-.stat-card-back {
-  transform: rotateX(180deg);
-}
-.stat-card-front,
-.stat-card-back {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
 /* =================================
-   FOOTER
+  FOOTER
 ================================= */
 .footer {
   background: #003366;
   color: white;
   padding: 60px 0 30px;
+  width: 100vw;
+  margin-top: auto;
+  left: 0;
+  right: 0;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-  margin-bottom: 40px;
 }
 
 .footer-section h3 {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #ff6600;
 }
 
@@ -380,6 +666,10 @@ body {
 
 .footer-section a:hover {
   color: #ff6600;
+}
+
+.footer-section a:hover i {
+  color: white;
 }
 
 .social-links {
@@ -411,136 +701,37 @@ body {
   text-align: center;
   color: #ccc;
 }
-
-/* =================================
-   ANIMATIONS
-================================= */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.footer iframe {
+  border: none;
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =================================
-   RESPONSIVE DESIGN
-================================= */
+/* ================================
+  RESPONSIVE (UNTUK HP)
+================================ */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 70px;
-    flex-direction: column;
-    background-color: #003366;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    padding: 20px 0;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .dropdown-menu {
-    position: static;
-    background: rgba(0, 51, 102, 0.95);
-    box-shadow: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    border-radius: 0;
-    padding: 0;
-    margin: 10px 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .dropdown.active .dropdown-menu {
-    max-height: 400px;
-  }
-
-  .dropdown-menu a {
-    color: #ccc !important;
-    padding: 10px 30px;
-    border-left: 3px solid transparent;
-  }
-
-  .dropdown-menu a:hover {
-    background: rgba(255, 102, 0, 0.1);
-    color: #ff6600 !important;
-    border-left-color: #ff6600;
-    padding-left: 30px;
-  }
-
-  .welcome-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .welcome-text h2 {
-    font-size: 2rem;
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
   .footer-content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
-}
 
-@media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
+  .footer-section {
+    width: 100%;
+    max-width: 400px;
   }
 
-  .welcome {
-    padding: 60px 0;
+  .social-links {
+    justify-content: center;
   }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .welcome-text h2 {
-    font-size: 1.8rem;
-  }
-
-  .stat-card {
-    padding: 20px;
-  }
-
-  .stat-card i {
-    font-size: 2.5rem;
-  }
-
-  .stat-card h3 {
-    font-size: 1.3rem;
+  .footer iframe {
+    width: 90%;
+    height: 200px;
   }
 }

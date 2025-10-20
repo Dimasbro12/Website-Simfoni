@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tim IPDS - BPS Kota Surabaya</title>
     <meta name="description" content="Tim IPDS BPS Kota Surabaya - Integrasi Pengolahan dan Diseminasi Statistik" />
+    <link rel="icon" type="image/png" href="../assets/bps.png" />
 
     <!-- External CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
@@ -15,398 +17,122 @@
     <link rel="stylesheet" href="../styles/ipds.css" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header Start -->
     <header class="header" id="header">
-      <nav class="navbar container">
-        <a href="#" class="logo">
-          <i class="fas fa-chart-bar"></i>
-          BPS KOTA Surabaya
-        </a>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="../home.html">Home</a></li>
-          <li><a href="subbag.html">Subbag Umum</a></li>
-          <li><a href="#rbzi">RB/ZI</a></li>
-          <li><a href="pojok-statistik.html">Pojok Statistik</a></li>
-          <li><a href="kelurahan-cantik.html">Kelurahan Cantik</a></li>
-          <li class="dropdown">
-            <a href="#tim" class="dropdown-toggle">Tim <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#umum">Umum</a></li>
-              <li><a href="ipds.html">IPDS</a></li>
-              <li><a href="humas.html">Humas</a></li>
-              <li><a href="sosial.html">Sosial</a></li>
-              <li><a href="produksi.html">Produksi</a></li>
-              <li><a href="nerwilis.html">Nerwilis</a></li>
-              <li><a href="sakip.html">Sakip-ZI</a></li>
-              <li><a href="harga.html">Harga</a></li>
-              <li><a href="disjas.html">Disjas</a></li>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <!-- Hamburger di kiri -->
+          <button class="navbar-toggler text-white border-0" type="button" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="../index.html"><img src="../assets/bps.png" alt="logo BPS" />BPS Kota Surabaya</a>
+
+          <!-- Menu untuk desktop -->
+          <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto text-center text-md-start">
+              <li class="nav-item"><a class="nav-link" href="ipds.html">Beranda</a></li>
+              <li class="nav-item"><a class="nav-link" href="jaringan.html">Jaringan</a></li>
+              <li class="nav-item"><a class="nav-link" href="diseminasi.html">Diseminasi</a></li>
+              <li class="nav-item"><a class="nav-link" href="pengolahan.html">Pengolahan</a></li>
             </ul>
-          </li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+          </div>
         </div>
       </nav>
+
+      <!-- Sidebar (Mobile) -->
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="ipds.html">Beranda</a></li>
+          <li><a href="jaringan.html">Jaringan</a></li>
+          <li><a href="diseminasi.html">Diseminasi</a></li>
+          <li><a href="pengolahan.html">Pengolahan</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
     </header>
+    <!-- Header End -->
 
-    <!-- Hero Section -->
-    <section class="hero-ipds">
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <h1 class="hero-title">TIM IPDS</h1>
-        <p class="hero-subtitle">Mengenal Struktur Organisasi, Profil, dan Tugas Tim IPDS</p>
+    <!-- Hero Start -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Tim IPDS</h1>
+        <p>Mengenal Struktur Organisasi, Profil, dan Tugas Tim IPDS BPS Kota Surabaya</p>
+      </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- Welcome Start-->
+    <section class="welcome" id="welcome">
+      <div class="welcome-text">
+        <h1>Tentang Tim IPDS</h1>
+        <p>
+          Integrasi Pengolahan dan Diseminasi Statistik (IPDS) adalah salah satu fungsi strategis di Badan Pusat Statistik (BPS) yang berperan dalam mengelola seluruh proses pengolahan data statistik hingga penyebaran informasi kepada
+          publik.
+        </p>
+      </div>
+      <div class="welcome-img">
+        <img src="../assets/img/welcome_ipds.png" alt="Selamat Datang" />
       </div>
     </section>
 
-    <!-- Tentang IPDS Section -->
-    <section class="tentang-ipds">
-      <div class="container">
-        <div class="tentang-wrapper">
-          <div class="tentang-text fade-in">
-            <h2>Tentang IPDS</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi aliquam, repellat corporis aliquid beatae ipsam quibusdam nemo commodi ab similique totam at architecto iste quo, rem, eaque odio aut! Magnam.</p>
-            <a href="#layanan" class="read-more">
-              Lihat Layanan Kami
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <div class="tentang-illustration fade-in">
-            <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-              <!-- Background -->
-              <rect width="500" height="400" fill="transparent" />
-
-              <!-- Central Server/Computer -->
-              <rect x="200" y="150" width="100" height="120" rx="8" fill="#003366" />
-              <rect x="210" y="165" width="80" height="50" rx="4" fill="#3366CC" />
-              <circle cx="215" cy="230" r="3" fill="#00ff00" />
-              <circle cx="225" cy="230" r="3" fill="#FF6600" />
-              <circle cx="235" cy="230" r="3" fill="#00ff00" />
-
-              <!-- Lines/Signals -->
-              <line x1="215" y1="190" x2="180" y2="190" stroke="#66CCFF" stroke-width="2" />
-              <line x1="285" y1="190" x2="320" y2="190" stroke="#66CCFF" stroke-width="2" />
-              <line x1="250" y1="150" x2="250" y2="120" stroke="#66CCFF" stroke-width="2" />
-              <line x1="250" y1="270" x2="250" y2="300" stroke="#66CCFF" stroke-width="2" />
-
-              <!-- Left Device (Database) -->
-              <circle cx="150" cy="190" r="30" fill="#FF6600" opacity="0.9" />
-              <path d="M 140 180 L 140 200 Q 140 205 150 205 Q 160 205 160 200 L 160 180 Q 160 175 150 175 Q 140 175 140 180 Z" fill="#fff" />
-              <line x1="140" y1="185" x2="160" y2="185" stroke="#FF6600" stroke-width="2" />
-              <line x1="140" y1="195" x2="160" y2="195" stroke="#FF6600" stroke-width="2" />
-
-              <!-- Right Device (Cloud) -->
-              <circle cx="350" cy="190" r="30" fill="#3366CC" opacity="0.9" />
-              <path d="M 335 185 Q 335 175 345 175 Q 350 170 355 175 Q 365 175 365 185 Q 365 190 360 190 L 340 190 Q 335 190 335 185 Z" fill="#fff" />
-
-              <!-- Top Device (Mobile) -->
-              <rect x="235" y="90" width="30" height="50" rx="5" fill="#2ecc71" opacity="0.9" />
-              <rect x="240" y="95" width="20" height="35" rx="2" fill="#fff" />
-              <circle cx="250" cy="133" r="2" fill="#fff" />
-
-              <!-- Bottom Device (Network) -->
-              <circle cx="250" cy="330" r="30" fill="#e74c3c" opacity="0.9" />
-              <circle cx="250" cy="330" r="15" fill="none" stroke="#fff" stroke-width="2" />
-              <circle cx="250" cy="330" r="8" fill="none" stroke="#fff" stroke-width="2" />
-              <circle cx="250" cy="330" r="3" fill="#fff" />
-
-              <!-- Person (Left) -->
-              <circle cx="100" cy="280" r="20" fill="#f4a261" />
-              <rect x="85" y="300" width="30" height="35" rx="5" fill="#003366" />
-              <rect x="90" y="335" width="10" height="20" fill="#2c3e50" />
-              <rect x="105" y="335" width="10" height="20" fill="#2c3e50" />
-
-              <!-- Person (Right) -->
-              <circle cx="400" cy="280" r="20" fill="#2a9d8f" />
-              <rect x="385" y="300" width="30" height="35" rx="5" fill="#FF6600" />
-              <rect x="390" y="335" width="10" height="20" fill="#2c3e50" />
-              <rect x="405" y="335" width="10" height="20" fill="#2c3e50" />
-
-              <!-- Connection to people -->
-              <line x1="130" y1="250" x2="150" y2="220" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5" opacity="0.5" />
-              <line x1="370" y1="250" x2="350" y2="220" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5" opacity="0.5" />
-
-              <!-- Data particles -->
-              <circle cx="190" cy="185" r="2" fill="#66CCFF" />
-              <circle cx="310" cy="195" r="2" fill="#66CCFF" />
-              <circle cx="245" cy="135" r="2" fill="#66CCFF" />
-              <circle cx="255" cy="285" r="2" fill="#66CCFF" />
-              <circle cx="270" cy="200" r="3" fill="#f1c40f" />
-              <circle cx="230" cy="210" r="3" fill="#f39c12" />
-            </svg>
-          </div>
+    <!-- Kegiatan -->
+    <section class="kegiatan-section">
+      <h1 class="kegiatan-title">Kegiatan IPDS</h1>
+      <div class="kegiatan-grid">
+        <div class="kegiatan-item">
+          <a href="jaringan.html">
+            <img src="../assets/img/icon_jaringan.png" alt="zona-integritas" />
+            <h3>Jaringan</h3>
+            <p>Mendukung pengolahan, integrasi, dan penyebaran data statistik.</p>
+          </a>
+        </div>
+        <div class="kegiatan-item">
+          <a href="diseminasi.html">
+            <img src="../assets/img/icon_diseminasi.png" alt="zona-integritas" />
+            <h3>Diseminasi</h3>
+            <p>Penyebaran informasi statistik agar dapat dimanfaatkan oleh Pengguna.</p>
+          </a>
+        </div>
+        <div class="kegiatan-item">
+          <a href="pengolahan.html">
+            <img src="../assets/img/icon_pengolahan.png" alt="zona-integritas" />
+            <h3>Pengolahan</h3>
+            <p>Mengubah data mentah menjadi informasi statistik.</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Profil Anggota Tim -->
-    <section class="profil-tim">
-      <div class="container">
-        <h2 class="section-title">Profil Anggota Tim</h2>
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="team-photo">
-              <i class="fas fa-user-circle"></i>
-            </div>
-            <h3>Nama Kepala Seksi</h3>
-            <p class="position">Kepala Seksi IPDS</p>
-            <div class="team-details">
-              <p>Koordinasi dan supervisi seluruh kegiatan IPDS, pengolahan data, dan diseminasi statistik</p>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <i class="fas fa-user-circle"></i>
-            </div>
-            <h3>Nama Staf 1</h3>
-            <p class="position">Lorem</p>
-            <div class="team-details">
-              <p>lorem</p>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <i class="fas fa-user-circle"></i>
-            </div>
-            <h3>Nama Staf 2</h3>
-            <p class="position">lorem</p>
-            <div class="team-details">
-              <p>lorem</p>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <i class="fas fa-user-circle"></i>
-            </div>
-            <h3>Nama Staf 3</h3>
-            <p class="position">lorem</p>
-            <div class="team-details">
-              <p>lorem</p>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <i class="fas fa-user-circle"></i>
-            </div>
-            <h3>Nama Staf 4</h3>
-            <p class="position">lorem</p>
-            <div class="team-details">
-              <p>lorem</p>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <i class="fas fa-user-circle"></i>
-            </div>
-            <h3>Nama Staf 5</h3>
-            <p class="position">lorem</p>
-            <div class="team-details">
-              <p>lorem</p>
-            </div>
-          </div>
+    <!-- layanan -->
+    <section class="layanan-section">
+      <h1 class="layanan-title">Layanan IPDS</h1>
+      <div class="layanan-grid">
+        <div class="layanan-item">
+          <img src="../assets/img/icon_lembar penilaian (1).png" alt="zona-integritas" />
+          <h3 class="title-h3">Lembar Penilaian</h3>
+          <p>Berisi hasil kerja pemilihan petugas layanan.</p>
+          <button class="card-btn" onclick="window.open('https://www.google.com', '_blank')">Lihat detail</button>
         </div>
-      </div>
-    </section>
-
-    <!-- Layanan Tim IPDS -->
-    <section class="layanan-ipds">
-      <div class="container">
-        <h2 class="section-title">Layanan Tim IPDS</h2>
-        <p class="section-subtitle">Kami menyediakan solusi IT lengkap untuk kebutuhan aplikasi, jaringan, dan pengolahan data Anda.</p>
-        <div class="layanan-grid">
-          <div class="layanan-card">
-            <div class="layanan-image">
-              <i class="fas fa-network-wired"></i>
-            </div>
-            <h3>Pengelolaan Jaringan</h3>
-            <p>Tim kami siap mengelola jaringan Anda untuk memastikan konektivitas yang stabil dan aman setiap saat.</p>
-          </div>
-          <div class="layanan-card">
-            <div class="layanan-image">
-              <i class="fas fa-laptop-code"></i>
-            </div>
-            <h3>Pembuatan Aplikasi</h3>
-            <p>Kami mengembangkan aplikasi sesuai kebutuhan bisnis Anda untuk meningkatkan efisiensi dan produktivitas.</p>
-          </div>
+        <div class="layanan-item">
+          <img src="../assets/img/icon_sk sertfikat (1).png" alt="zona-integritas" />
+          <h3 class="title-h3">SK dan Sertifikat</h3>
+          <p>SK dan Sertifikat Penghargaan Petugas Pelayanan Terbaik.</p>
+          <button class="card-btn" onclick="window.open('https://www.google.com', '_blank')">Lihat detail</button>
         </div>
-      </div>
-    </section>
-
-    <!-- Koleksi -->
-    <section class="koleksi">
-      <div class="container">
-        <h2 class="section-title">Koleksi</h2>
-        <div class="koleksi-list">
-          <div class="koleksi-item">
-            <div class="koleksi-image">
-              <i class="fas fa-file-alt"></i>
-            </div>
-            <div class="koleksi-content">
-              <h3>SOP</h3>
-              <p>Standar Operasional Prosedur untuk setiap kegiatan IPDS yang terstruktur dan terintegrasi.</p>
-            </div>
-          </div>
-          <div class="koleksi-item">
-            <div class="koleksi-image">
-              <i class="fas fa-clipboard-list"></i>
-            </div>
-            <div class="koleksi-content">
-              <h3>Laporan Kegiatan</h3>
-              <p>Dokumentasi lengkap semua kegiatan dan pencapaian Tim IPDS secara berkala.</p>
-            </div>
-          </div>
-          <div class="koleksi-item">
-            <div class="koleksi-image">
-              <i class="fas fa-calendar-alt"></i>
-            </div>
-            <div class="koleksi-content">
-              <h3>Jadwal Kegiatan</h3>
-              <p>Kalender kegiatan dan timeline proyek IPDS yang terencana dengan baik.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Diseminasi -->
-    <section class="diseminasi">
-      <div class="container">
-        <h2 class="section-title">Diseminasi</h2>
-        <div class="diseminasi-grid">
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-globe"></i></div>
-            <h3>Portal Publikasi</h3>
-            <p>Platform publikasi data statistik resmi BPS</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-database"></i></div>
-            <h3>Simdasi</h3>
-            <p>Sistem Informasi Manajemen Data dan Diseminasi Statistik</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-server"></i></div>
-            <h3>Website Backend</h3>
-            <p>Pengelolaan konten dan data website BPS</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
-            <h3>SKD</h3>
-            <p>Sistem Katalog Data Statistik Terintegrasi</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-box-open"></i></div>
-            <h3>WebDash</h3>
-            <p>Dashboard Website</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-book"></i></div>
-            <h3>Daerah Dalam Angka</h3>
-            <p>Publikasi statistik daerah komprehensif</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-comments"></i></div>
-            <h3>Halo IPST</h3>
-            <p>Layanan komunikasi dan konsultasi IPDS</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-users-cog"></i></div>
-            <h3>FGD</h3>
-            <p>Forum Group Discussion untuk pengembangan sistem</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pengolahan Data -->
-    <section class="pengolahan-data">
-      <div class="container">
-        <h2 class="section-title">Pengolahan Data</h2>
-        <div class="pengolahan-grid">
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-warehouse"></i></div>
-            <h3>Webmonitoring</h3>
-            <p>lorem</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-calculator"></i></div>
-            <h3>Simasi</h3>
-            <p>Sistem Informasi Manajemen Pengolahan Data</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-            <h3>Backup</h3>
-            <p>Sistem backup dan recovery data yang handal</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-user-friends"></i></div>
-            <h3>Manajemen Mitra</h3>
-            <p>Pengelolaan kemitraan pengumpulan data</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-certificate"></i></div>
-            <h3>Fasih SM</h3>
-            <p>lorem</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-tachometer-alt"></i></div>
-            <h3>Fasih Dashboard</h3>
-            <p>lorem</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Jaringan -->
-    <section class="jaringan">
-      <div class="container">
-        <h2 class="section-title">Jaringan</h2>
-        <div class="jaringan-grid">
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-network-wired"></i></div>
-            <h3>MFD</h3>
-            <p>lorem</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-map-marked-alt"></i></div>
-            <h3>Data Spasial</h3>
-            <p>Pengelolaan data geografis dan geospasial</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-map"></i></div>
-            <h3>Peta</h3>
-            <p>Sistem pemetaan dan visualisasi data spasial</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-wifi"></i></div>
-            <h3>Wilkerstat</h3>
-            <p>lorem</p>
-            <button class="btn-seemore">See more</button>
-          </div>
-          <div class="card-dark">
-            <div class="card-icon"><i class="fas fa-laptop"></i></div>
-            <h3>IT BMN</h3>
-            <p>lorem</p>
-            <button class="btn-seemore">See more</button>
-          </div>
+        <div class="layanan-item">
+          <img src="../assets/img/icon_sk petugas (1).png" alt="zona-integritas" />
+          <h3>SK Petugas Layanan dan Jadwal</h3>
+          <p>Surat Keputusan penunjukan petugas layanan dan Jadwal.</p>
+          <button class="card-btn" onclick="window.open('https://www.google.com', '_blank')">Lihat detail</button>
         </div>
       </div>
     </section>
@@ -418,7 +144,15 @@
           <div class="footer-section">
             <h3>BPS Kota Surabaya</h3>
             <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
-            <p>Jl. Ahmad Yani No.152E, Gayungan, Kec. Gayungan, Surabaya, Jawa Timur 60235</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <p>Email: bps3578@bps.go.id</p>
             <p>Telepon: (031) 8296692</p>
           </div>
@@ -427,18 +161,30 @@
             <a href="#">Data Statistik</a>
             <a href="#">Dokumentasi</a>
             <a href="#">Layanan Kearsipan</a>
-            <a href="#">Pojok Statistik</a>
+            <a href="pojok-statistik.html">Pojok Statistik</a>
             <a href="#">Kelurahan Cantik</a>
           </div>
           <div class="footer-section">
             <h3>Hubungi Kami</h3>
             <p>Ikuti media sosial kami untuk update terbaru</p>
             <div class="social-links">
-              <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/surabayakota.bps.go.id/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPo5btTNZoTAIAKPbLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084462/RO=10/RU=https%3a%2f%2ftwitter.com%2fbps_surabaya/RK=2/RS=lOK88kby79v.CKODxjVvgx4R7GI-"
+                title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPrqQ9TdZoGQIACCvLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084542/RO=10/RU=https%3a%2f%2fwww.instagram.com%2fbpskotasurabaya%2f/RK=2/RS=A.x9yjFwkHyFoZw.jW97bxuM0eM-"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrKAX7GTdZoEAIAnZDLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084678/RO=10/RU=https%3a%2f%2fwww.youtube.com%2f%40bpskotasurabaya3578/RK=2/RS=3.S5VICmokrlo9U3LBzg3k4TV5I-"
+                title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" title="Website"><i class="fab fa-globe"></i></a>
             </div>
           </div>
         </div>
@@ -449,6 +195,49 @@
     </footer>
 
     <!-- Custom JavaScript -->
+    <script>
+      function toggleDropdown(el) {
+        const dropdown = el.parentElement;
+        dropdown.classList.toggle("show");
+      }
+
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const sidebarToggle = document.getElementById("sidebarToggle");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Toggle submenu
+      document.querySelectorAll(".toggle-submenu").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const parent = btn.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+
+      // Scroll effect untuk navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
     <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
