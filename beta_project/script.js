@@ -5,7 +5,6 @@
 // Get DOM elements
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
-
 // Toggle mobile menu
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
@@ -1180,3 +1179,10 @@ colorElms.forEach(function (elm) {
     }
   });
 });
+function showSection(sectionID) {
+  const sections = document.querySelectorAll(".section");
+  sections.forEach((section) => {
+    section.style.display = "none";
+  });
+  document.getElementById(sectionID).style.display = "block";
+}
