@@ -770,6 +770,130 @@
   color: #ff6600;
   padding-left: 25px;
 }
+.system-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 102, 0, 0.1);
+  position: relative;
+  overflow: visible;
+}
+.system-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #003366);
+  transition: all 0.3s ease;
+}
+.system-card:hover::before {
+  background: linear-gradient(90deg, #ff6600);
+}
+.card-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f1f3f4;
+  overflow: visible;
+}
+.card-header img {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 15px;
+  padding: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+.card-title h3 {
+  font-size: 1.4rem;
+  color: #003366;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.card-title p {
+  margin: 2px 0 0 0;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+.dropdown {
+  position: relative;
+  margin-left: auto;
+}
+.dropdown-toggle {
+  background: rgba(0, 102, 255, 0.1);
+  border: 2px solid rgba(0, 102, 255, 0.2);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dropdown-toggle:hover {
+  border: 2px solid rgba(255, 102, 0, 0.2);
+}
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+}
+.dropdown-content {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: white;
+  min-width: 220px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  /* PERBAIKAN: Nilai Z-INDEX yang lebih agresif */
+  z-index: 9999;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.dropdown-content.show {
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown-content a:hover {
+  background: linear-gradient(135deg, rgba(255, 102, 0, 0.1), rgba(255, 133, 51, 0.1));
+  color: #ff6600;
+  padding-left: 25px;
+}
+.dropdown-content a {
+  display: block;
+  padding: 15px 20px;
+  color: #495057;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+.dropdown-content a:hover {
+  background: linear-gradient(135deg, rgba(255, 102, 0, 0.1), rgba(255, 133, 51, 0.1));
+  color: #ff6600;
+  padding-left: 25px;
+}
+.dropdown-toggle::after {
+  content: none !important;
+  border: none !important;
+}
 
 /* ================================== */
 /* MEDIA QUERIES (RESPONSIVE DESIGN) */

@@ -251,24 +251,23 @@
             </div>
           </div>
         </li>
-
-        <li class="sh-card">
-          <div class="sh-card-content">
-            <img src="../assets/img/SPM-BPS.png" alt="SPM" />
+        <div class="system-card">
+          <div class="card-header">
+            <img src="../assets/img/BRS2024_Harga.png" alt="Laporan Statistik Harga" />
             <div class="card-title">
               <h3>SUSENAS</h3>
               <p class="p-Kepegawaian">Survei Sosial Ekonomi Nasional</p>
             </div>
-            <div class="sh-dropdown">
-              <div class="sh-dropdown-toggle" onclick="toggleDropdown(this)">
+            <div class="dropdown">
+              <div class="dropdown-toggle" onclick="toggleDropdown(this)">
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
-              <div class="sh-dropdown-content">
+              <div class="dropdown-content">
                 <a href="#">Pendukung</a>
               </div>
             </div>
           </div>
-        </li>
+        </div>
       </ul>
     </section>
 
@@ -473,33 +472,49 @@
     </section>
 
     <!-- Susunan Organisas Section -->
-    <section class="struktur" id="struktur">
+    <section class="team-structure" id="struktur">
       <div class="container">
-        <div class="welcome-content">
-          <div class="welcome-text fade-in">
-            <h2>Struktur Tim</h2>
-            <div class="stats">
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src="../assets/img/Sosial_Wulan.png" alt="Ketua Tim Sosial" />
-                  </div>
-                  <div class="flip-card-back">
-                    <p class="title">Ketua Tim</p>
-                    <p>"Jalani profesimu dengan sepenuh hati"</p>
-                  </div>
-                </div>
+        <h2>Struktur Tim</h2>
+        <div class="team-structure__members">
+          <div class="team-structure__row">
+            <div class="member-card">
+              <img src="../assets/img/Sosial_Wulan.png" alt="Ketua Tim" />
+              <div class="member-card__info">
+                <h3>Ketua Tim</h3>
+                <p>"My Trip My Adventure"</p>
               </div>
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src="../assets/img/Sosial_Wulan.png" alt="Ketua Tim Sosial" />
-                  </div>
-                  <div class="flip-card-back">
-                    <p class="title">Anngota Tim</p>
-                    <p>"My Trip My Adventure"</p>
-                  </div>
-                </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/img/Sosial_Wulan.png" alt="Anggota 1" />
+              <div class="member-card__info">
+                <h3>Anggota 1</h3>
+                <p>"Selalu Kompak dan Solid"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/img/Sosial_Wulan.png" alt="Anggota 2" />
+              <div class="member-card__info">
+                <h3>Anggota 2</h3>
+                <p>"Tepat Waktu dan Rapi"</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-structure__row">
+            <div class="member-card">
+              <img src="../assets/img/Sosial_Wulan.png" alt="Anggota 3" />
+              <div class="member-card__info">
+                <h3>Anggota 3</h3>
+                <p>"Siap Sedia Kapan Pun"</p>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img src="../assets/img/Sosial_Wulan.png" alt="Anggota 4" />
+              <div class="member-card__info">
+                <h3>Anggota 4</h3>
+                <p>"Jaga Kesehatan Selalu"</p>
               </div>
             </div>
           </div>
@@ -507,14 +522,22 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Start -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
             <h3>BPS Kota Surabaya</h3>
             <p>Badan Pusat Statistik Kota Surabaya (Statistics of Surabaya City)</p>
-            <p>Jl. Ahmad Yani No.152E, Gayungan, Kec. Gayungan, Surabaya, Jawa Timur 60235</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.1044111988094!2d112.72590637318618!3d-7.328359772068824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb42a2028c4b%3A0x6ee99db676fcc3d2!2sBadan%20Pusat%20Statistik%20Kota%20Surabaya!5e1!3m2!1sid!2sid!4v1759073391594!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <p>Email: bps3578@bps.go.id</p>
             <p>Telepon: (031) 8296692</p>
           </div>
@@ -523,18 +546,30 @@
             <a href="#">Data Statistik</a>
             <a href="#">Dokumentasi</a>
             <a href="#">Layanan Kearsipan</a>
-            <a href="#">Pojok Statistik</a>
+            <a href="pojok-statistik.html">Pojok Statistik</a>
             <a href="#">Kelurahan Cantik</a>
           </div>
           <div class="footer-section">
             <h3>Hubungi Kami</h3>
             <p>Ikuti media sosial kami untuk update terbaru</p>
             <div class="social-links">
-              <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/surabayakota.bps.go.id/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPo5btTNZoTAIAKPbLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084462/RO=10/RU=https%3a%2f%2ftwitter.com%2fbps_surabaya/RK=2/RS=lOK88kby79v.CKODxjVvgx4R7GI-"
+                title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrPrqQ9TdZoGQIACCvLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084542/RO=10/RU=https%3a%2f%2fwww.instagram.com%2fbpskotasurabaya%2f/RK=2/RS=A.x9yjFwkHyFoZw.jW97bxuM0eM-"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrKAX7GTdZoEAIAnZDLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760084678/RO=10/RU=https%3a%2f%2fwww.youtube.com%2f%40bpskotasurabaya3578/RK=2/RS=3.S5VICmokrlo9U3LBzg3k4TV5I-"
+                title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" title="Website"><i class="fab fa-globe"></i></a>
             </div>
           </div>
         </div>
@@ -543,6 +578,7 @@
         </div>
       </div>
     </footer>
+    <!-- Footer End -->
     <!-- Custom JavaScript -->
     <script src="../script2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
