@@ -729,6 +729,7 @@ a {
   .footer-section {
     width: 100%;
     max-width: 400px;
+    margin-left: 0;
   }
 
   .social-links {
