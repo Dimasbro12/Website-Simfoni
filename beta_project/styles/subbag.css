@@ -549,6 +549,10 @@
   color: #ff6600;
   padding-left: 25px;
 }
+.dropdown-toggle::after {
+  content: none !important;
+  border: none !important;
+}
 
 /* =================================== */
 /* 3. MEDIA QUERY (Mobile)             */
