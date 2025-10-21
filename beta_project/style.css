@@ -488,68 +488,40 @@ a {
    Struktur Tim
 ================================= */
 /* Kelas: struktur -> team-structure */
+/* =================================
+        
+
+        /* Kelas: team-structure__members (Main container) */
 .team-structure {
-  padding: 20px 0;
+  padding: 40px 0;
   text-align: center;
 }
 
 .team-structure h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: #003366;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
-
-/* Kelas: stats -> team-structure__members */
 .team-structure__members {
-  /* Main container: Flexbox to arrange card rows */
+  /* Default: stack rows vertically */
   display: flex;
-  flex-direction: column; /* Default: stack .team-structure__row vertically */
+  flex-direction: column;
   gap: 40px;
   align-items: center;
 }
 
-/* Row wrapper */
-/* Kelas: baris-card -> team-structure__row */
+/* Kelas: team-structure__row (Row wrapper) */
 .team-structure__row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
-  max-width: 900px;
-}
-
-/* ==================================
-        DESKTOP VIEW (Default / Width > 700px)
-      ================================== */
-/* Rules to combine 5 cards into 1 row on desktop */
-@media (min-width: 701px) {
-  .team-structure__members {
-    /* Change main container orientation to horizontal */
-    flex-direction: row;
-    /* Allow all items (now 2x .team-structure__row) to align */
-    justify-content: center;
-    flex-wrap: wrap; /* Allow wrapping if width is close to 701px */
-  }
-
-  .team-structure__row {
-    /* Remove Flexbox influence on the row wrapper */
-    display: contents;
-    /* Changing 'display: flex' to 'display: contents' on .team-structure__row
-               will make its children (.member-card) direct children of .team-structure__members 
-               visually, allowing 5 cards to align. */
-  }
-
-  .member-card {
-    /* Default card width maintained */
-    width: 190px;
-    height: 320px;
-  }
+  max-width: 1000px;
 }
 
 /* Member card */
-/* Kelas: card -> member-card */
 .member-card {
   position: relative;
   width: 190px;
@@ -559,11 +531,20 @@ a {
   box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
-  border: 2px solid #fff;
+  border: 4px solid #fff;
+  background-color: #fff;
+}
+
+/* Tambahkan warna border untuk memperjelas identitas */
+.team-structure__row:nth-child(1) .member-card {
+  border-color: #0066cc; /* Biru untuk baris atas */
+}
+.team-structure__row:nth-child(2) .member-card {
+  border-color: #ff9900; /* Oranye untuk baris bawah */
 }
 
 .member-card:hover {
-  transform: translateY(-8px) scale(1.05);
+  transform: translateY(-8px) scale(1.03);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
 
@@ -575,13 +556,12 @@ a {
 }
 
 /* Member info appears on hover */
-/* Kelas: card-info -> member-card__info */
 .member-card__info {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 5px 2px 10px 2px;
-  background: black;
+  padding: 10px 5px;
+  background: rgba(0, 0, 0, 0.7); /* Transparan gelap */
   color: #fff;
   text-align: center;
   opacity: 0;
@@ -596,40 +576,78 @@ a {
 
 .member-card__info h3 {
   font-size: 1.1rem;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
+  font-weight: 700;
 }
 
 .member-card__info p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin: 0;
+  font-style: italic;
 }
 
 /* ==================================
-        MOBILE VIEW (Width <= 700px)
-      ================================== */
-@media (max-width: 700px) {
+           DESKTOP VIEW (min-width: 701px)
+           (Mengubah tata letak menjadi 1 baris untuk 5 kartu)
+        ================================== */
+@media (min-width: 701px) {
   .team-structure__members {
-    gap: 20px;
-    /* flex-direction: column; maintained */
+    /* Mengubah arah utama menjadi horizontal */
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; /* Izinkan wrapping jika terlalu sempit */
+    gap: 20px; /* Gunakan gap kartu */
   }
-
+  /* Menghilangkan elemen .team-structure__row agar 5 kartu menjadi
+               direct children dari .team-structure__members */
   .team-structure__row {
-    gap: 10px;
+    display: contents;
   }
 
   .member-card {
-    /* 3 cards per row layout on mobile */
-    width: calc(33.33% - 15px);
-    height: 200px;
+    /* Menyesuaikan lebar kartu agar 5 kartu muat */
+    width: 190px;
+    height: 320px;
+  }
+}
+
+/* ==================================
+           MOBILE VIEW (max-width: 700px)
+           (Perbaikan Responsif: Mempertahankan 3-2)
+        ================================== */
+@media (max-width: 700px) {
+  .team-structure h2 {
+    font-size: 2rem;
+  }
+  .team-structure__row {
+    gap: 10px;
+    /* Di tampilan mobile, baris tetap sebagai flex container */
+    display: flex;
   }
 
-  /* If screen is very narrow (optional) */
-  @media (max-width: 420px) {
-    .member-card {
-      /* Back to 1 card per row */
-      width: 90%;
-      height: 300px;
-    }
+  /* 1. Target kartu di baris PERTAMA (3 kartu) */
+  .team-structure__row:nth-of-type(1) .member-card {
+    /* Hitungan: (100% / 3) - sedikit margin/gap */
+    width: calc(33.33% - 7px);
+    height: 220px;
+  }
+
+  /* 2. Target kartu di baris KEDUA (2 kartu) */
+  .team-structure__row:nth-of-type(2) .member-card {
+    /* Ukuran kartu sama dengan Baris 1 */
+    width: calc(33.33% - 7px);
+    height: 220px;
+  }
+
+  /* Penyesuaian teks agar tetap terbaca di layar sempit */
+  .member-card__info {
+    padding: 5px 2px;
+  }
+  .member-card__info h3 {
+    font-size: 0.8rem;
+  }
+  .member-card__info p {
+    font-size: 0.65rem;
   }
 }
 
