@@ -651,7 +651,9 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
 }
-
+.footer-section {
+  margin-left: 20px;
+}
 .footer-section h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
