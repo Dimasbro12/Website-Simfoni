@@ -1061,7 +1061,7 @@ button {
   width: 250px;
   margin: 0;
   height: 250px;
-  position: absolute;
+  poition: absolute;
   left: 30%;
   bottom: 0;
 }
